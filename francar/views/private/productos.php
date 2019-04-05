@@ -63,7 +63,6 @@
         <tr>
           <th>Libro</th>
           <th>Descripcion</th>
-          <th>Editorial</th>
           <th>Imagen</th>
           <th>Precio</th>
         </tr>
@@ -77,7 +76,6 @@
           <td>
             <p>Descripción</p>
           </td>
-          <td>Salamandra</td>
           <td>.jpg</td>
           <td>$25.00</td>
         </tr>
@@ -86,7 +84,6 @@
           <td>
             <p>Descripción </p>
           </td>
-          <td>Santillana</td>
           <td>.jpg</td>
           <td>$25.00</td>
         </tr>
@@ -94,19 +91,12 @@
           <td>Harry Potter y las Reliquias de la muerte</td>
           <td>
             <p>Descripción</td>
-          <td>Nacho</td>
           <td>.jpg</td>
           <td>$25.00</td>
         </tr>
       </tbody>
     </table>
     <h1 align="center">
-      <a class="waves-effect cyan darken-4 btn-small">
-        <i class="material-icons left">create</i>Editar</a>
-      <a class="waves-effect  red darken-2 btn-small">
-        <i class="material-icons left">delete_sweep</i>Eliminar</a>
-      <a class="waves-effect grey btn-small">
-        <i class="material-icons left">remove_red_eye</i>Habilitar</a>
       <a class="waves-effect green btn-small" href="agregar_productos.php">
         <i class="material-icons left">add_circle</i>Agregar</a>
     </h1>
