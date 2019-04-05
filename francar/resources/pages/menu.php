@@ -14,7 +14,7 @@
                     <li> <a class="waves-effect waves-light btn modal-trigger black" href="editoriales.php">Editoriales</a></li>
                     <li> <a class="waves-effect waves-light btn modal-trigger black" href="categorias.php">Categorias</a></li>
                     <li> <a class="waves-effect waves-light btn modal-trigger black" href="usuarios.php">Usuarios</a></li>  
-                    <li> <a class="waves-effect waves-light btn modal-trigger black" href="login_private.php"> <i class="material-icons">settings_power</i></a> 
+                    <li> <a class="waves-effect waves-light btn modal-trigger black" href="index.php"> <i class="material-icons">settings_power</i></a> 
                     </nav> 
               </div>
           </div>

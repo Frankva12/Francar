@@ -24,93 +24,86 @@
   ?>
 
 
-    <h3 align="center">Categorias
-      <a class="btn-floating black pulse">
-        <i class="material-icons">book</i>
-      </a>
-    </h3>
-    <nav>
-      <div class="nav-wrapper cyan lighten-2">
-        <div class="col s12">
-          <a href="#!" class="breadcrumb"></a>
-          <a href="private.php" class="breadcrumb">Estadisticas</a>
-          <a href="categorias.php" class="breadcrumb">Categorias</a>
-        </div>
+  <h3 align="center">Categorias
+    <a class="btn-floating black pulse">
+      <i class="material-icons">book</i>
+    </a>
+  </h3>
+  <nav>
+    <div class="nav-wrapper cyan lighten-2">
+      <div class="col s12">
+        <a href="#!" class="breadcrumb"></a>
+        <a href="private.php" class="breadcrumb">Estadisticas</a>
+        <a href="categorias.php" class="breadcrumb">Categorias</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+  <div class="container white">
+    <nav class=" brown lighten-5">
+      <div class="nav-wrapper">
+        <form>
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
       </div>
     </nav>
-    <br>
+  </div>
+  <br>
+  <!--Se hace una tabla donde iran las categorias de los libros que se poseen-->
+  <div class="container">
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Categoria</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
 
-    <div class="container white">
-      <nav class=" brown lighten-5">
-        <div class="nav-wrapper">
-          <form>
-            <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"> 
-                <i class="material-icons">search</i> 
-              </label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
-        </div>
-      </nav>
-    </div>
-    <br>
-    <!--Se hace una tabla donde iran las categorias de los libros que se poseen-->
-    <table class="striped">
-      <thead>
-        <tr>
-          <th>Categoria</th>
-          <th>Descripción</th>
-          <th>Acciones</th>
+      </tr>
+    </thead>
 
-        </tr>
-      </thead>
+    <tbody>
+      <tr>
+        <td>Romantico</td>
+        <td> Descripción </td>
+        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Policial</td>
+        <td> Descripción
+        </td>
+        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Aventura</td>
+        <td> Descripción </td>
+        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 align="center">
 
-      <tbody>
-        <tr>
-          <td>Romantico</td>
-          <td> Descripción </td>
-          <td> 
-        
-        <a class="waves-effect cyan darken-4 btn-small">
-        <i class="material-icons left">create</i>Editar</a>
-        <a class="waves-effect  red darken-2 btn-small">
-        <i class="material-icons left">delete_sweep</i>Eliminar</a> </td>
-        </tr>
-        <tr>
-          <td>Policial</td>
-          <td> Descripción
-          </td> <td> 
-        
-        <a class="waves-effect cyan darken-4 btn-small">
-        <i class="material-icons left">create</i>Editar</a>
-        <a class="waves-effect  red darken-2 btn-small">
-        <i class="material-icons left">delete_sweep</i>Eliminar</a> </td>
-        </tr>
-        <tr>
-          <td>Aventura</td>
-          <td> Descripción </td>
-          <td> 
-        
-        <a class="waves-effect cyan darken-4 btn-small">
-        <i class="material-icons left">create</i>Editar</a>
-        <a class="waves-effect  red darken-2 btn-small">
-        <i class="material-icons left">delete_sweep</i>Eliminar</a> </td>
-        </tr>
-      </tbody>
-    </table>
-    <h1 align="center">
-      
-      <a class="waves-effect green btn-small" href="agregar_categoria.php">
-        <i class="material-icons left">add_circle</i>Agregar</a>
-    </h1>
-</body>
-
-</html>
-
+    <a class="waves-effect green btn-small" href="agregar_categoria.php">
+      <i class="material-icons left">add_circle</i>Agregar</a>
+  </h1>
+  </div>
 <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
 <?php
 require("../../resources/pages/footer.php");
 Footer::foot();
 ?>
+</body>
+
+</html>

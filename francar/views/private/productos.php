@@ -58,12 +58,12 @@
     </div>
     <br>
     <!--Tabla donde se muestran los libros que hay en la tienda donde se puede modificar, eliminar y agregar-->
+    <div class="container">
     <table class="striped">
       <thead>
         <tr>
           <th>Libro</th>
           <th>Descripcion</th>
-          <th>Imagen</th>
           <th>Precio</th>
         </tr>
       </thead>
@@ -78,7 +78,10 @@
           </td>
           <td>.jpg</td>
           <td>$25.00</td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+    <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a></td>
         </tr>
+         
         <tr>
           <td>Harry Potter y el misterio de principe</td>
           <td>
@@ -86,6 +89,8 @@
           </td>
           <td>.jpg</td>
           <td>$25.00</td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+    <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a></td>
         </tr>
         <tr>
           <td>Harry Potter y las Reliquias de la muerte</td>
@@ -93,19 +98,20 @@
             <p>Descripción</td>
           <td>.jpg</td>
           <td>$25.00</td>
-        </tr>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+    <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a></td>
+         </tr>
       </tbody>
     </table>
     <h1 align="center">
       <a class="waves-effect green btn-small" href="agregar_productos.php">
         <i class="material-icons left">add_circle</i>Agregar</a>
     </h1>
-</body>
-
-<!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
+    </div>
+    <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
 <?php
 require("../../resources/pages/footer.php");
 Footer::foot();
 ?>
-
+</body>
 </html>
