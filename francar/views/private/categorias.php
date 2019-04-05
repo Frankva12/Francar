@@ -46,8 +46,8 @@
           <form>
             <div class="input-field">
               <input id="search" type="search" required>
-              <label class="label-icon" for="search">
-                <i class="material-icons">search</i>
+              <label class="label-icon" for="search"> 
+                <i class="material-icons">search</i> 
               </label>
               <i class="material-icons">close</i>
             </div>
@@ -62,6 +62,8 @@
         <tr>
           <th>Categoria</th>
           <th>Descripción</th>
+          <th>Acciones</th>
+
         </tr>
       </thead>
 
@@ -69,25 +71,37 @@
         <tr>
           <td>Romantico</td>
           <td> Descripción </td>
+          <td> 
+        
+        <a class="waves-effect cyan darken-4 btn-small">
+        <i class="material-icons left">create</i>Editar</a>
+        <a class="waves-effect  red darken-2 btn-small">
+        <i class="material-icons left">delete_sweep</i>Eliminar</a> </td>
         </tr>
         <tr>
           <td>Policial</td>
           <td> Descripción
-          </td>
+          </td> <td> 
+        
+        <a class="waves-effect cyan darken-4 btn-small">
+        <i class="material-icons left">create</i>Editar</a>
+        <a class="waves-effect  red darken-2 btn-small">
+        <i class="material-icons left">delete_sweep</i>Eliminar</a> </td>
         </tr>
         <tr>
           <td>Aventura</td>
           <td> Descripción </td>
+          <td> 
+        
+        <a class="waves-effect cyan darken-4 btn-small">
+        <i class="material-icons left">create</i>Editar</a>
+        <a class="waves-effect  red darken-2 btn-small">
+        <i class="material-icons left">delete_sweep</i>Eliminar</a> </td>
         </tr>
       </tbody>
     </table>
     <h1 align="center">
-      <a class="waves-effect cyan darken-4 btn-small">
-        <i class="material-icons left">create</i>Editar</a>
-      <a class="waves-effect  red darken-2 btn-small">
-        <i class="material-icons left">delete_sweep</i>Eliminar</a>
-      <a class="waves-effect grey btn-small">
-        <i class="material-icons left">remove_red_eye</i>Habilitar</a>
+      
       <a class="waves-effect green btn-small" href="agregar_categoria.php">
         <i class="material-icons left">add_circle</i>Agregar</a>
     </h1>
