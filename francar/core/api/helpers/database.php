@@ -18,7 +18,7 @@ class Database
     private function connect()
     {
         $server = 'localhost';
-        $database = 'coffeeshop';
+        $database = 'libreria_francar';
         $username = 'root';
         $password = '';
         try {
