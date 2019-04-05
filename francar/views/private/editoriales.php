@@ -52,50 +52,50 @@
   <br>
   <!--Se hace una tabla con el nombre de cada editorial-->
   <div class="container">
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Editoriales</th>
-        <th>Descripción</th>
-      </tr>
-    </thead>
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Editoriales</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <tr>
-        <td>Romantico</td>
-        <td> Descripción </td>
-        
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-      </tr>
-      <tr>
-        <td>Policial</td>
-        <td> Descripción
-        </td>
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-      </tr>
-      <tr>
-        <td>Aventura</td>
-        <td> Descripción </td>
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h1 align="center">
-    <a class="waves-effect green btn-small" href="agregar_Editorial.php"><i
-        class="material-icons left">add_circle</i>Agregar</a></h1>
-        </div>
+      <tbody>
+        <tr>
+          <td>Romantico</td>
+          <td> Descripción </td>
+
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Policial</td>
+          <td> Descripción
+          </td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Aventura</td>
+          <td> Descripción </td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h1 align="center">
+      <a class="waves-effect green btn-small" href="agregar_Editorial.php"><i
+          class="material-icons left">add_circle</i>Agregar</a></h1>
+  </div>
+
+  <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
+  <?php
+  require("../../resources/pages/footer.php");
+  Footer::foot();
+  ?>
 </body>
 
 </html>
-
-<!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
-<?php
-require("../../resources/pages/footer.php");
-Footer::foot();
-?>

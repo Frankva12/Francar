@@ -58,49 +58,49 @@
   <br>
   <!--Se hace una tabla donde iran las categorias de los libros que se poseen-->
   <div class="container">
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Categoria</th>
-        <th>Descripción</th>
-        <th>Acciones</th>
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
 
-      </tr>
-    </thead>
+        </tr>
+      </thead>
 
-    <tbody>
-      <tr>
-        <td>Romantico</td>
-        <td> Descripción </td>
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-      </tr>
-      <tr>
-        <td>Policial</td>
-        <td> Descripción
-        </td>
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-      </tr>
-      <tr>
-        <td>Aventura</td>
-        <td> Descripción </td>
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h1 align="center">
+      <tbody>
+        <tr>
+          <td>Romantico</td>
+          <td> Descripción </td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Policial</td>
+          <td> Descripción
+          </td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Aventura</td>
+          <td> Descripción </td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h1 align="center">
 
-    <a class="waves-effect green btn-small" href="agregar_categoria.php">
-      <i class="material-icons left">add_circle</i>Agregar</a>
-  </h1>
+      <a class="waves-effect green btn-small" href="agregar_categoria.php">
+        <i class="material-icons left">add_circle</i>Agregar</a>
+    </h1>
   </div>
-<!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
-<?php
+  <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
+  <?php
 require("../../resources/pages/footer.php");
 Footer::foot();
 ?>

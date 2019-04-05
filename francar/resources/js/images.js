@@ -1,6 +1,5 @@
   // Or with jQuery
 
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.materialboxed').materialbox();
   });
-        

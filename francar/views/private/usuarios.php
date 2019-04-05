@@ -57,57 +57,56 @@
   <br>
   <!--Se hace tabla donde muestran los diferentes usuarios que hay-->
   <div class="container">
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Telefono</th>
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-      </tr>
-    </thead>
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Telefono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <tr>
-        <td>Alvin</td>
-        <td>Eclair</td>
-        <td>7727-3278</td>
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-        </td>
-      </tr>
-      <tr>
-        <td>Alan</td>
-        <td>Jellybean</td>
-        <td>7198-5659</td>
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-      </tr>
-      <tr>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>7965-5959</td>
-        <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
-          <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
-        </td>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <h1 align="center">
+      <tbody>
+        <tr>
+          <td>Alvin</td>
+          <td>Eclair</td>
+          <td>7727-3278</td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+          </td>
+        </tr>
+        <tr>
+          <td>Alan</td>
+          <td>Jellybean</td>
+          <td>7198-5659</td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Jonathan</td>
+          <td>Lollipop</td>
+          <td>7965-5959</td>
+          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h1 align="center">
 
-    <a class="waves-effect green btn-small" href="agregar_usuarios.php">
-      <i class="material-icons left">add_circle</i>Agregar</a>
-  </h1>
+      <a class="waves-effect green btn-small" href="agregar_usuarios.php">
+        <i class="material-icons left">add_circle</i>Agregar</a>
+    </h1>
   </div>
-<!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
-<?php
+  <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
+  <?php
 require("../../resources/pages/footer.php");
 Footer::foot();
 ?>
 </body>
+
 </html>

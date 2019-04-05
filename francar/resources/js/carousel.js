@@ -12,7 +12,8 @@ $('.carousel.carousel-slider').carousel({
 
 //permite el play del carousel
 autoplay();
+
 function autoplay() {
-    $('.carousel').carousel('next');
-    setTimeout(autoplay, 4500);
+  $('.carousel').carousel('next');
+  setTimeout(autoplay, 4500);
 }
