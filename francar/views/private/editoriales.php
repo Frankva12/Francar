@@ -87,8 +87,6 @@
     </tbody>
   </table>
   <h1 align="center">
-
-    <a class="waves-effect grey btn-small"><i class="material-icons left">remove_red_eye</i>Habilitar</a>
     <a class="waves-effect green btn-small" href="agregar_Editorial.php"><i
         class="material-icons left">add_circle</i>Agregar</a></h1>
         </div>
