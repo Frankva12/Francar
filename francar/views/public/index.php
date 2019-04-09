@@ -285,9 +285,9 @@
   </div>
   <!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
   <?php
-        require("../../resources/pages/footer.php");
-        Footer::foot();
-         ?>
+  require("../../resources/pages/footer.php");
+  Footer::foot();
+  ?>
 
     <!--Se importan lo que son los archivos de JavaScript-->
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>

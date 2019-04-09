@@ -56,8 +56,8 @@
 
             <div class="input-field col s6 m6 l6">
               <p align='right'>
-                <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="#modal1">¿Olvidó su
-                  contraseña?</a>
+                <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="#modal1">¿Olvidó su contraseña?
+                </a>
               </p>
               <!-- Modal Structure -->
               <div id="modal1" class="modal">
@@ -78,14 +78,14 @@
               </div>
             </div>
         </form>
+        </div>
       </div>
     </div>
-</div>
 
-<!--Se importan los archivos de JavaScript-->
-<script src="../../resources/js/jquery-3.3.1.min.js"></script>
-<script src="../../resources/js/materialize.min.js"></script>
-<script src="../../resources/js/modal.js"></script>
-</body>
+    <!--Se importan los archivos de JavaScript-->
+    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+    <script src="../../resources/js/modal.js"></script>
+  </body>
 
 </html>

@@ -25,31 +25,31 @@
     inicio::navigate();
   ?>
 
-  <div class="container white">
-    <h3 align="center">Libreria Francar
-      <a class="btn-floating black pulse">
-        <i class="material-icons">book</i>
-      </a>
-    </h3>
-    <nav>
-      <div class="nav-wrapper blue">
-        <div class="col s12">
-          <a href="#!" class="breadcrumb"></a>
-          <a href="#!" class="breadcrumb">Estadisticas</a>
+    <div class="container white">
+      <h3 align="center">Libreria Francar
+        <a class="btn-floating black pulse">
+          <i class="material-icons">book</i>
+        </a>
+      </h3>
+      <nav>
+        <div class="nav-wrapper blue">
+          <div class="col s12">
+            <a href="#!" class="breadcrumb"></a>
+            <a href="#!" class="breadcrumb">Estadisticas</a>
+          </div>
         </div>
-      </div>
-    </nav>
-    <br>
-    <?php
+      </nav>
+      <br>
+      <?php
       require("../../resources/pages/grafica.php");
       Graficas::grafica();
     ?>
-    <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
-    <br>
-    <?php
-require("../../resources/pages/footer.php");
-Footer::foot();
-?>
+        <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
+        <br>
+        <?php
+        require("../../resources/pages/footer.php");
+        Footer::foot();
+        ?>
 </body>
 
 </html>

@@ -121,16 +121,17 @@
   </div>
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
-require("../../resources/pages/footer.php");
-Footer::foot();
-?>
+  require("../../resources/pages/footer.php");
+  Footer::foot();
+  ?>
 
-  <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-  <script src="../../resources/js/materialize.min.js"></script>
-  <script src="../../resources/js/carousel.js"></script>
-  <script src="../../resources/js/parallax.js"></script>
-  <script src="../../resources/js/images.js"></script>
-  <script src="../../resources/js/modal.js"></script>
+    <!--Se llaman todos los archivos JavaScript-->
+    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+    <script src="../../resources/js/carousel.js"></script>
+    <script src="../../resources/js/parallax.js"></script>
+    <script src="../../resources/js/images.js"></script>
+    <script src="../../resources/js/modal.js"></script>
 </body>
 
 </html>
