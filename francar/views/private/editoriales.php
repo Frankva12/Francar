@@ -93,7 +93,7 @@
 
 
   <div id="modal1" class="modal">
-  <h3 align="center">AGREGAR CATEGORIAS
+  <h3 align="center">AGREGAR EDITORIALES
         <a class="btn-floating black pulse">
             <i class="material-icons">add_circle</i>
         </a>
@@ -105,7 +105,7 @@
                 <div class="input-field col s11">
                     <i class="material-icons prefix">book</i>
                     <input id="text" type="text" class="validate">
-                    <label for="text">Categoria</label>
+                    <label for="text">Editoriales</label>
                 </div>
             </div>
             <div class="row">
@@ -120,14 +120,14 @@
                 </form>
             </div>
             <p class="center-align">
-                <a class="waves-effect waves-light btn-large">Agregar Categoria</a>
+                <a class="waves-effect waves-light btn-large">Agregar categorias</a>
             </p>
         </form>
     </div>
         </div>
         
   <div id="modal2" class="modal">
-  <h3 align="center">EDITAR CATEGORIAS
+  <h3 align="center">EDITAR EDITORIAL
         <a class="btn-floating black pulse">
             <i class="material-icons">create</i>
         </a>
@@ -139,7 +139,7 @@
                 <div class="input-field col s11">
                     <i class="material-icons prefix">book</i>
                     <input id="text" type="text" class="validate">
-                    <label for="text">Categoria</label>
+                    <label for="text">Editorial</label>
                 </div>
             </div>
             <div class="row">
@@ -154,7 +154,7 @@
                 </form>
             </div>
             <p class="center-align">
-                <a class="waves-effect waves-light btn-large">Agregar Categoria</a>
+                <a class="waves-effect waves-light btn-large">Agregar editoriales</a>
             </p>
         </form>
     </div>

@@ -72,7 +72,7 @@
           <td>Alvin</td>
           <td>Eclair</td>
           <td>7727-3278</td>
-          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <td><a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2"><i class="material-icons left">create</i>Editar</a>
             <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
           </td>
@@ -81,7 +81,7 @@
           <td>Alan</td>
           <td>Jellybean</td>
           <td>7198-5659</td>
-          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <td><a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2"><i class="material-icons left">create</i>Editar</a>
             <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
         </tr>
@@ -89,7 +89,7 @@
           <td>Jonathan</td>
           <td>Lollipop</td>
           <td>7965-5959</td>
-          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <td><a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2"><i class="material-icons left">create</i>Editar</a>
             <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
           </td>
@@ -97,11 +97,91 @@
       </tbody>
     </table>
     <h1 align="center">
-
-      <a class="waves-effect green btn-small" href="agregar_usuarios.php">
-        <i class="material-icons left">add_circle</i>Agregar</a>
+    <a align="center" class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">Agregar usuarios</a> 
     </h1>
   </div>
+  
+
+  <div id="modal1" class="modal">
+ 
+  <h3 align="center">AGREGAR USUARIOS
+    <a class="btn-floating black pulse">
+      <i class="material-icons">add_circle</i>
+    </a>
+  </h3>
+  <hr>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="text" type="text" class="validate">
+          <label for="text">Nombre</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="text" type="text" class="validate">
+          <label for="text">Apellido</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="text" type="text" class="validate">
+          <label for="text">Cargo</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">call</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Telefono</label>
+        </div>
+      </div>
+      <br>
+      <p class="center-align">
+        <a class="waves-effect waves-light btn-large">Agregar Usuario</a>
+      </p>
+    </form>
+  </div>
+        </div>
+        
+  <div id="modal2" class="modal">
+ 
+  <h3 align="center">EDITAR USUARIOS
+  <a class="btn-floating black pulse">
+    <i class="material-icons">add_circle</i>
+  </a>
+</h3>
+<hr>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="text" type="text" class="validate">
+        <label for="text">Nombre</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="text" type="text" class="validate">
+        <label for="text">Apellido</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="text" type="text" class="validate">
+        <label for="text">Cargo</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">call</i>
+        <input id="icon_telephone" type="tel" class="validate">
+        <label for="icon_telephone">Telefono</label>
+      </div>
+    </div>
+    <br>
+    <p class="center-align">
+      <a class="waves-effect waves-light btn-large">Agregar Usuario</a>
+    </p>
+  </form>
+</div>
+        </div>
+
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
 require("../../resources/pages/footer.php");

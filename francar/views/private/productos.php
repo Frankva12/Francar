@@ -213,7 +213,7 @@
             </div>
             <br>
                 <p class="center-align">
-                  <a class="waves-effect waves-light btn-large">Agregar Producto</a>
+                  <a class="waves-effect waves-light btn-large">Agregar Productos</a>
                 </p>
             </form>
         </div>

@@ -72,7 +72,7 @@
         <tr>
           <td>Romantico</td>
           <td> Descripción </td>
-          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <td><a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2"><i class="material-icons left">create</i>Editar</a>
             <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
         </tr>
@@ -80,23 +80,92 @@
           <td>Policial</td>
           <td> Descripción
           </td>
-          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <td><a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2"><i class="material-icons left">create</i>Editar</a>
             <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
         </tr>
         <tr>
           <td>Aventura</td>
           <td> Descripción </td>
-          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <td><a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2"><i class="material-icons left">create</i>Editar</a>
             <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
         </tr>
       </tbody>
       </table>
       <h1 align="center">
-      <a align="center" class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">Agregar Productos</a> 
+      <a align="center" class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">Agregar categorias</a> 
       </h1>
   </div>
+  
+  <div id="modal1" class="modal">
+  <h3 align="center">AGREGAR CATEGORIAS
+        <a class="btn-floating black pulse">
+            <i class="material-icons">add_circle</i>
+        </a>
+    </h3>
+    <hr>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s11">
+                    <i class="material-icons prefix">book</i>
+                    <input id="text" type="text" class="validate">
+                    <label for="text">Categorias</label>
+                </div>
+            </div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s11">
+                            <i class="material-icons prefix">edit</i>
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Descripcion</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <p class="center-align">
+                <a class="waves-effect waves-light btn-large">Agregar categorias</a>
+            </p>
+        </form>
+    </div>
+        </div>
+        
+  <div id="modal2" class="modal">
+  <h3 align="center">EDITAR CATEGORIAS
+        <a class="btn-floating black pulse">
+            <i class="material-icons">create</i>
+        </a>
+    </h3>
+    <hr>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s11">
+                    <i class="material-icons prefix">book</i>
+                    <input id="text" type="text" class="validate">
+                    <label for="text">Categoria</label>
+                </div>
+            </div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s11">
+                            <i class="material-icons prefix">edit</i>
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Descripcion</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <p class="center-align">
+                <a class="waves-effect waves-light btn-large">Agregar categorias</a>
+            </p>
+        </form>
+    </div>
+        </div>
+
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
 require("../../resources/pages/footer.php");
