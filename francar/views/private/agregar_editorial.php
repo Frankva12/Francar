@@ -25,7 +25,8 @@
                 <div class="container">
                     <ul class="right hide-on-med-and-down">
                         <li>
-                            <a class="waves-effect waves-light btn modal-trigger black" href="editoriales.php">REGRESAR</a>
+                            <a class="waves-effect waves-light btn modal-trigger black"
+                                href="editoriales.php">REGRESAR</a>
                         </li>
                 </div>
             </div>
@@ -85,7 +86,7 @@ Footer::foot();
 
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
     <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
+    <script src="../../resources/js/initialize.js"></script>
     <script src="../../resources/js/modal.js"></script>
 </body>
 

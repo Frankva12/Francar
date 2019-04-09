@@ -15,13 +15,11 @@
                       <h5 class="white-text" align="center">Redes Sociales</h5>
                       <br>
                       <br>
-                      <img src="../../resources/img/facebook.png"><a class="white-text text-lighten-4"> LIBRERIAFRANCAR </a>
+                      <img src="../../resources/img/facebook.png"><a href class="white-text text-lighten-4"> LIBRERIAFRANCAR </a>
                       <br>
                       <br>
-                      <img src="../../resources/img/instagram.png"><a class="white-text text-lighten-4"> @libreria_francar </a>
+                      <img src="../../resources/img/instagram.png"><a href=www.instagram.com class="white-text text-lighten-4"> @libreria_francar </a>
                       <br>
-                      <br>
-                      <img src="../../resources/img/gmail.png"><a class="white-text text-lighten-4"> libreriaFrancar@gmail.com </a>
                 </div>
               </div>
             </div>

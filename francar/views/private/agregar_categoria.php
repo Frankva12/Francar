@@ -25,7 +25,8 @@
                 <div class="container">
                     <ul class="right hide-on-med-and-down">
                         <li>
-                            <a class="waves-effect waves-light btn modal-trigger black" href="categorias.php">REGRESAR</a>
+                            <a class="waves-effect waves-light btn modal-trigger black"
+                                href="categorias.php">REGRESAR</a>
                         </li>
                 </div>
             </div>
