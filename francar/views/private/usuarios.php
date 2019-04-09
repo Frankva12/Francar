@@ -44,7 +44,7 @@
         <div class="nav-wrapper">
           <form>
             <div class="input-field">
-              <input id="search" type="search" required>
+                            <input type="search" id="myInput"  required>
               <label class="label-icon" for="search">
                 <i class="material-icons">search</i>
               </label>
@@ -56,7 +56,7 @@
     </div>
     <br>
     <!--Se hace tabla donde muestran los diferentes usuarios que hay-->
-    <div class="container">
+    <div class="container" id="myTable">
       <table class="striped">
         <thead>
           <tr>
@@ -199,11 +199,12 @@ Footer::foot();
 ?>
     <!--Se importan lo que son los archivos de JavaScript-->
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/parallax.js"></script>
-    <script src="../../resources/js/images.js"></script>
-    <script src="../../resources/js/modal.js"></script>
+            <script src="../../resources/js/materialize.min.js"></script>
+            <script src="../../resources/js/carousel.js"></script>
+            <script src="../../resources/js/parallax.js"></script>
+            <script src="../../resources/js/images.js"></script>
+            <script src="../../resources/js/modal.js"></script>
+            <script src="../../resources/js/search.js"></script>
 </body>
 
 </html>

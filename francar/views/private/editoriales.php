@@ -27,8 +27,8 @@
         <h3 align="center">Editoriales
             <a class="btn-floating black pulse">
                 <i class="material-icons">book</i>
+            </a>
         </h3>
-        </a>
         <nav>
             <div class="nav-wrapper cyan lighten-2">
                 <div class="col s12">
@@ -45,7 +45,7 @@
                 <div class="nav-wrapper">
                     <form>
                         <div class="input-field">
-                            <input id="search" type="search" required>
+                            <input type="search" id="myInput"  required>
                             <label class="label-icon" for="search">
                                 <i class="material-icons">search</i>
                             </label>
@@ -57,7 +57,7 @@
         </div>
         <br>
         <!--Se hace una tabla con el nombre de cada editorial-->
-        <div class="container">
+        <div class="container" id="myTable">
             <table class="striped">
                 <thead>
                     <tr>
@@ -190,6 +190,7 @@
             <script src="../../resources/js/parallax.js"></script>
             <script src="../../resources/js/images.js"></script>
             <script src="../../resources/js/modal.js"></script>
+            <script src="../../resources/js/search.js"></script>
 </body>
 
 </html>

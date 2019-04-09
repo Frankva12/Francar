@@ -43,23 +43,23 @@
     <br>
 
     <div class="container white">
-      <nav class=" brown lighten-5">
-        <div class="nav-wrapper">
-          <form>
-            <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search">
-                <i class="material-icons">search</i>
-              </label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
+            <nav class=" brown lighten-5">
+                <div class="nav-wrapper">
+                    <form>
+                        <div class="input-field">
+                            <input type="search" id="myInput"  required>
+                            <label class="label-icon" for="search">
+                                <i class="material-icons">search</i>
+                            </label>
+                            <i class="material-icons">close</i>
+                        </div>
+                    </form>
+                </div>
+            </nav>
         </div>
-      </nav>
-    </div>
     <br>
     <!--Tabla donde se muestran los libros que hay en la tienda donde se puede modificar, eliminar y agregar-->
-    <div class="container">
+    <div class="container" id="myTable">
       <table class="striped">
         <thead>
           <tr>
@@ -243,11 +243,12 @@
 
       <!--Se importan lo que son los archivos de JavaScript-->
       <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-      <script src="../../resources/js/materialize.min.js"></script>
-      <script src="../../resources/js/carousel.js"></script>
-      <script src="../../resources/js/parallax.js"></script>
-      <script src="../../resources/js/images.js"></script>
-      <script src="../../resources/js/modal.js"></script>
+            <script src="../../resources/js/materialize.min.js"></script>
+            <script src="../../resources/js/carousel.js"></script>
+            <script src="../../resources/js/parallax.js"></script>
+            <script src="../../resources/js/images.js"></script>
+            <script src="../../resources/js/modal.js"></script>
+            <script src="../../resources/js/search.js"></script>
 </body>
 
 </html>
