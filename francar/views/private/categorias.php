@@ -92,18 +92,24 @@
           </td>
         </tr>
       </tbody>
-    </table>
-    <h1 align="center">
-
-      <a class="waves-effect green btn-small" href="agregar_categoria.php">
-        <i class="material-icons left">add_circle</i>Agregar</a>
-    </h1>
+      </table>
+      <h1 align="center">
+      <a align="center" class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">Agregar Productos</a> 
+      </h1>
   </div>
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
 require("../../resources/pages/footer.php");
 Footer::foot();
 ?>
+
+<!--Se importan lo que son los archivos de JavaScript-->
+<script src="../../resources/js/jquery-3.3.1.min.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+    <script src="../../resources/js/carousel.js"></script>
+    <script src="../../resources/js/parallax.js"></script>
+    <script src="../../resources/js/images.js"></script>
+    <script src="../../resources/js/modal.js"></script>
 </body>
 
 </html>

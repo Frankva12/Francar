@@ -1,5 +1,5 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,7 +78,7 @@
           </td>
           <td>.jpg</td>
           <td>$25.00</td>
-          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <td><a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2"><i class="material-icons left">create</i>Editar</a>
             <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
         </tr>
@@ -90,7 +90,7 @@
           </td>
           <td>.jpg</td>
           <td>$25.00</td>
-          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <td><a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2"><i class="material-icons left">create</i>Editar</a>
             <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
         </tr>
@@ -101,22 +101,135 @@
           </td>
           <td>.jpg</td>
           <td>$25.00</td>
-          <td><a class="waves-effect cyan darken-4 btn-small"><i class="material-icons left">create</i>Editar</a>
+          <td><a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2"><i class="material-icons left">create</i>Editar</a>
             <a class="waves-effect  red darken-2 btn-small"><i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
         </tr>
       </tbody>
     </table>
     <h1 align="center">
-      <a class="waves-effect green btn-small" href="agregar_productos.php">
-        <i class="material-icons left">add_circle</i>Agregar</a>
+    <a align="center" class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">Agregar Productos</a> 
     </h1>
   </div>
+
+  <div id="modal1" class="modal">
+                    
+        <h3 align="center">AGREGAR PRODUCTOS   <a class="btn-floating black pulse"><i class="material-icons">add_circle</i></h3></a>
+        <hr>
+        <div class="row">
+            <form class="col s12">
+            <div class="row">
+                <div class="input-field col s11">
+                <i class="material-icons prefix">book</i>
+                <input id="text" type="text" class="validate">
+                <label for="text">Producto</label>
+                </div>
+            </div>
+            <div class="row">
+                <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s11">
+                    <i class="material-icons prefix">edit</i>
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Descripcion</label>
+                    </div>
+                </div>
+                </form>
+            </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">book</i>
+                  <input id="text" type="text" class="validate">
+                  <label for="text">Editorial</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">attach_money</i>
+                  <input id="number" type="number" class="validate">
+                  <label for="number">Precio</label>
+                </div>
+                <form action="#">
+                  <div class="file-field input-field col 10">
+                    <div class="btn">
+                      <span>Imagen</span>
+                      <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text">
+                    </div>
+                  </div>
+                </form>
+            </div>
+            <br>
+                <p class="center-align">
+                  <a class="waves-effect waves-light btn-large">Agregar Producto</a>
+                </p>
+            </form>
+        </div>
+
+        <div id="modal2" class="modal">
+                    
+        <h3 align="center">EDITAR PRODUCTOS   <a class="btn-floating black pulse"><i class="material-icons">create</i></h3></a>
+        <hr>
+        <div class="row">
+            <form class="col s12">
+            <div class="row">
+                <div class="input-field col s11">
+                <i class="material-icons prefix">book</i>
+                <input id="text" type="text" class="validate">
+                <label for="text">Producto</label>
+                </div>
+            </div>
+            <div class="row">
+                <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s11">
+                    <i class="material-icons prefix">edit</i>
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Descripcion</label>
+                    </div>
+                </div>
+                </form>
+            </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">book</i>
+                  <input id="text" type="text" class="validate">
+                  <label for="text">Editorial</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">attach_money</i>
+                  <input id="number" type="number" class="validate">
+                  <label for="number">Precio</label>
+                </div>
+                <form action="#">
+                  <div class="file-field input-field col 10">
+                    <div class="btn">
+                      <span>Imagen</span>
+                      <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text">
+                    </div>
+                  </div>
+                </form>
+            </div>
+            <br>
+                <p class="center-align">
+                  <a class="waves-effect waves-light btn-large">Agregar Producto</a>
+                </p>
+            </form>
+        </div>
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
 require("../../resources/pages/footer.php");
 Footer::foot();
 ?>
+
+<!--Se importan lo que son los archivos de JavaScript-->
+    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+    <script src="../../resources/js/carousel.js"></script>
+    <script src="../../resources/js/parallax.js"></script>
+    <script src="../../resources/js/images.js"></script>
+    <script src="../../resources/js/modal.js"></script>
 </body>
 
 </html>
