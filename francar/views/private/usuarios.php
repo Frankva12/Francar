@@ -156,7 +156,7 @@
     <div id="modal2" class="modal">
       <h3 align="center">EDITAR USUARIOS
         <a class="btn-floating black pulse">
-          <i class="material-icons">add_circle</i>
+          <i class="material-icons">create</i>
         </a>
       </h3>
       <hr>
