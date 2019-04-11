@@ -9,6 +9,7 @@
   <!--Se importa el css de materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="text/css" href="../../resources/css/fondo.css">
+  
 </head>
 <!--Se hcae un contenedor donde se le pone lo que es el login para el administrador-->
 <div class="container ">
