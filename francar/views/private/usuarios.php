@@ -17,7 +17,7 @@
   <title>Libreria Francar</title>
 </head>
 
-<body background="">
+  <body background="">
   <?php
     require("../../resources/pages/menu.php");
     inicio::navigate();
