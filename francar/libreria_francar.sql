@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2019 at 09:28 PM
+-- Generation Time: Apr 19, 2019 at 12:40 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -49,6 +49,7 @@ CREATE TABLE `administrador` (
   `id_administrador` int(12) NOT NULL,
   `nombre_administrador` varchar(255) NOT NULL,
   `apellido_administrador` varchar(255) NOT NULL,
+  `alias_usuario` varchar(255) NOT NULL,
   `contrasenia` varchar(20) NOT NULL,
   `direccion` varchar(255) NOT NULL,
   `telefono` int(9) NOT NULL,
@@ -62,12 +63,12 @@ CREATE TABLE `administrador` (
 -- Dumping data for table `administrador`
 --
 
-INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apellido_administrador`, `contrasenia`, `direccion`, `telefono`, `correo`, `edad`, `id_genero`, `id_cargo`) VALUES
-(1, 'Ulysses', 'Travis', '123', '8025 Nullam Rd.', 0, 'eget.odio@Nullam.edu', 48, 1, 1),
-(2, 'Jarrod', 'Sweet', 'RNU03EWU9ID', '8819 Nunc, Street', 0, 'cubilia.Curae@vitae.edu', 49, 1, 1),
-(3, 'Ulric', 'Mayo', 'WCF72ZFW9PA', '542 Lorem St.', 0, 'iaculis@magnaDuis.org', 57, 1, 1),
-(4, 'Eric', 'Stanley', 'NLP44MXH2IG', '5424 Magnis Rd.', 0, 'arcu.imperdiet.ullamcorper@utnullaCras.ca', 28, 2, 1),
-(5, 'Flynn', 'Medina', 'ATC58RWP2PT', 'Ap #374-9610 Aliquet Avenue', 0, 'consectetuer.euismod.est@vestibulumMauris.co.uk', 54, 2, 1);
+INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apellido_administrador`, `alias_usuario`, `contrasenia`, `direccion`, `telefono`, `correo`, `edad`, `id_genero`, `id_cargo`) VALUES
+(1, 'Ulysses', 'Travis', '0', '123', '8025 Nullam Rd.', 0, 'eget.odio@Nullam.edu', 48, 1, 1),
+(2, 'Jarrod', 'Sweet', '0', 'RNU03EWU9ID', '8819 Nunc, Street', 0, 'cubilia.Curae@vitae.edu', 49, 1, 1),
+(3, 'Ulric', 'Mayo', '0', 'WCF72ZFW9PA', '542 Lorem St.', 0, 'iaculis@magnaDuis.org', 57, 1, 1),
+(4, 'Eric', 'Stanley', '0', 'NLP44MXH2IG', '5424 Magnis Rd.', 0, 'arcu.imperdiet.ullamcorper@utnullaCras.ca', 28, 2, 1),
+(5, 'Flynn', 'Medina', '0', 'ATC58RWP2PT', 'Ap #374-9610 Aliquet Avenue', 0, 'consectetuer.euismod.est@vestibulumMauris.co.uk', 54, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -144,6 +145,7 @@ CREATE TABLE `clientes` (
   `id_cliente` int(12) NOT NULL,
   `nombre_cliente` varchar(255) NOT NULL,
   `apellido_cliente` varchar(255) NOT NULL,
+  `alias_usuario` varchar(255) NOT NULL,
   `edad` int(3) NOT NULL,
   `direccion` varchar(255) NOT NULL,
   `telefono` int(9) NOT NULL,
@@ -156,17 +158,17 @@ CREATE TABLE `clientes` (
 -- Dumping data for table `clientes`
 --
 
-INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `edad`, `direccion`, `telefono`, `contrasenia`, `id_genero`, `id_cargo`) VALUES
-(1, 'Hector', 'Richards', 59, 'P.O. Box 301, 1514 Ipsum. Avenue', 1, 0, 2, 2),
-(2, 'Dennis', 'Campbell', 47, '4621 Varius Ave', 1, 0, 2, 2),
-(3, 'Aphrodite', 'Snow', 51, '9381 Risus St.', 1, 0, 1, 2),
-(4, 'Ethan', 'Harper', 39, '280-8948 Nec Avenue', 1, 0, 1, 2),
-(5, 'Azalia', 'Nielsen', 49, 'Ap #237-2911 Fringilla Av.', 1, 0, 1, 2),
-(6, 'Slade', 'Buckner', 23, 'P.O. Box 175, 6856 Hendrerit Rd.', 1, 0, 2, 2),
-(7, 'Doris', 'Duke', 50, '2208 Ante, Rd.', 1, 0, 2, 2),
-(8, 'Geraldine', 'Wheeler', 51, '6032 Aenean St.', 1, 0, 1, 2),
-(9, 'Phillip', 'Brewer', 38, '2075 Sagittis Av.', 1, 0, 2, 2),
-(10, 'Magee', 'Tyson', 56, '4308 Vehicula. Street', 1, 0, 1, 2);
+INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `alias_usuario`, `edad`, `direccion`, `telefono`, `contrasenia`, `id_genero`, `id_cargo`) VALUES
+(1, 'Hector', 'Richards', '', 59, 'P.O. Box 301, 1514 Ipsum. Avenue', 1, 0, 2, 2),
+(2, 'Dennis', 'Campbell', '', 47, '4621 Varius Ave', 1, 0, 2, 2),
+(3, 'Aphrodite', 'Snow', '', 51, '9381 Risus St.', 1, 0, 1, 2),
+(4, 'Ethan', 'Harper', '', 39, '280-8948 Nec Avenue', 1, 0, 1, 2),
+(5, 'Azalia', 'Nielsen', '', 49, 'Ap #237-2911 Fringilla Av.', 1, 0, 1, 2),
+(6, 'Slade', 'Buckner', '', 23, 'P.O. Box 175, 6856 Hendrerit Rd.', 1, 0, 2, 2),
+(7, 'Doris', 'Duke', '', 50, '2208 Ante, Rd.', 1, 0, 2, 2),
+(8, 'Geraldine', 'Wheeler', '', 51, '6032 Aenean St.', 1, 0, 1, 2),
+(9, 'Phillip', 'Brewer', '', 38, '2075 Sagittis Av.', 1, 0, 2, 2),
+(10, 'Magee', 'Tyson', '', 56, '4308 Vehicula. Street', 1, 0, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -268,20 +270,21 @@ CREATE TABLE `libros` (
   `nombre_libro` varchar(255) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `imagen_libro` varchar(255) NOT NULL,
-  `Autor` varchar(255) NOT NULL,
-  `Precio` int(20) NOT NULL
+  `autor` varchar(255) NOT NULL,
+  `precio` int(20) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `libros`
 --
 
-INSERT INTO `libros` (`id_libro`, `id_categoria`, `id_editorial`, `nombre_libro`, `descripcion`, `imagen_libro`, `Autor`, `Precio`) VALUES
-(1, 1, 1, 'Consequat Lectus Industries', 'erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus', '', 'Brody C. William', 0),
-(2, 2, 2, 'Et Company', 'pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis', '', 'Jennifer W. Alford', 0),
-(3, 3, 3, 'Penatibus Et LLP', 'sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing.', '', 'Craig J. Gates', 0),
-(4, 4, 4, 'Magna PC', 'iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam', '', 'Henry Quinn', 0),
-(5, 5, 5, 'Et Tristique Ltd', 'Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem.', '', 'Victoria Vazquez', 0);
+INSERT INTO `libros` (`id_libro`, `id_categoria`, `id_editorial`, `nombre_libro`, `descripcion`, `imagen_libro`, `autor`, `precio`, `estado`) VALUES
+(1, 1, 1, 'Consequat Lectus Industries', 'erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus', '', 'Brody C. William', 0, 0),
+(2, 2, 2, 'Et Company', 'pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis', '', 'Jennifer W. Alford', 0, 0),
+(3, 3, 3, 'Penatibus Et LLP', 'sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing.', '', 'Craig J. Gates', 0, 0),
+(4, 4, 4, 'Magna PC', 'iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam', '', 'Henry Quinn', 0, 0),
+(5, 5, 5, 'Et Tristique Ltd', 'Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem.', '', 'Victoria Vazquez', 0, 0);
 
 --
 -- Triggers `libros`
@@ -376,7 +379,7 @@ ALTER TABLE `libros`
 -- AUTO_INCREMENT for table `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id_administrador` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_administrador` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `bitacora`
@@ -394,19 +397,19 @@ ALTER TABLE `cargo`
 -- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id_categoria` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id_cliente` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id_compra` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
+  MODIFY `id_compra` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `detalle_compra`
@@ -418,7 +421,7 @@ ALTER TABLE `detalle_compra`
 -- AUTO_INCREMENT for table `editoriales`
 --
 ALTER TABLE `editoriales`
-  MODIFY `id_editorial` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id_editorial` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `genero`
@@ -430,7 +433,7 @@ ALTER TABLE `genero`
 -- AUTO_INCREMENT for table `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libro` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id_libro` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
