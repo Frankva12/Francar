@@ -107,7 +107,7 @@
     </div>
 
     <!--Se hace el modal de agregar categorias-->
-    <div id="modal-create" class="modal">
+    <div id="modal1" class="modal">
         <h4 align="center">AGREGAR CATEGORIAS
             <a class="btn-floating black pulse">
                 <i class="material-icons">add_circle</i>
