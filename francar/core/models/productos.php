@@ -122,25 +122,34 @@ class Productos extends Validator
 		return $this->ruta;
 	}
 
+	public function getAutor(){
+		return $this->autor;
+	}
+
+	public function setAutor(){
+		return $this->autor;
+	}
+
+	public function getEditorial(){
+		return $this->autor;
+	}
+
+	public function setEditorial(){
+		return $this->autor;
+	}
+
 	//Metodos para el manejo del CRUD
 	public function readProductosCategoria()
 	{
-		$sql = 'SELECT nombre_categoria, id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto FROM productos INNER JOIN categorias USING(id_categoria) WHERE id_categoria = ? AND estado_producto = 1 ORDER BY nombre_producto';
+		$sql = 'SELECT nombre_categoria, id_producto, id_categoria, id_editorial, nombre_libro, descripcion, imagen_libro, autor, precio FROM productos INNER JOIN categorias and editoriales USING(id_categoria) and (id_editorial) WHERE id_categoria = ? AND id_editoriales = ? AND estado = 1  ORDER BY nombre_libro';
 		$params = array($this->categoria);
 		return Database::getRows($sql, $params);
 	}
 
 	public function readProductos()
 	{
-		$sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, nombre_categoria, estado_producto FROM productos INNER JOIN categorias USING(id_categoria) ORDER BY nombre_producto';
+		$sql = 'SELECT id_libro, imagen_libro, nombre_libro, descripcion, precio, estado FROM productos INNER JOIN categorias and editoriales USING(id_categoria) and (id_editoriales) ORDER BY nombre_libro';
 		$params = array(null);
-		return Database::getRows($sql, $params);
-	}
-
-	public function searchProductos($value)
-	{
-		$sql = 'SELECT id_producto, imagen_producto, nombre_producto, descripcion_producto, precio_producto, nombre_categoria, estado_producto FROM productos INNER JOIN categorias USING(id_categoria) WHERE nombre_producto LIKE ? OR descripcion_producto LIKE ? ORDER BY nombre_producto';
-		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
 	}
 
@@ -151,30 +160,37 @@ class Productos extends Validator
 		return Database::getRows($sql, $params);
 	}
 
+	public function readEditoriales()
+	{
+		$sql = 'SELECT id_editorial, nombre_editorial FROM editoriales';
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+
 	public function createProducto()
 	{
-		$sql = 'INSERT INTO productos(nombre_producto, descripcion_producto, precio_producto, imagen_producto, estado_producto, id_categoria) VALUES(?, ?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO libros(id_editorial, id_categoria, nombre_libro, descripcion, precio, imagen_libro, estado) VALUES(?, ?, ?, ?, ?, ?, ?)';
 		$params = array($this->nombre, $this->descripcion, $this->precio, $this->imagen, $this->estado, $this->categoria);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function getProducto()
 	{
-		$sql = 'SELECT id_producto, nombre_producto, descripcion_producto, precio_producto, imagen_producto, id_categoria, estado_producto FROM productos WHERE id_producto = ?';
+		$sql = 'SELECT id_libro, nombre_libro, descripcion, precio, imagen_libro, id_categoria, id_editorial, estado FROM productos WHERE id_libro = ?';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
 
 	public function updateProducto()
 	{
-		$sql = 'UPDATE productos SET nombre_producto = ?, descripcion_producto = ?, precio_producto = ?, imagen_producto = ?, estado_producto = ?, id_categoria = ? WHERE id_producto = ?';
+		$sql = 'UPDATE libros SET nombre_libro = ?, descripcion = ?, precio = ?, imagen_libro = ?, estado = ?, id_categoria = ?, id_editoriales = ? WHERE id_producto = ?';
 		$params = array($this->nombre, $this->descripcion, $this->precio, $this->imagen, $this->estado, $this->categoria, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function deleteProducto()
 	{
-		$sql = 'DELETE FROM productos WHERE id_producto = ?';
+		$sql = 'DELETE FROM libros WHERE id_libro = ?';
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}

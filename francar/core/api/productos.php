@@ -15,7 +15,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 if ($result['dataset'] = $producto->readProductos()) {
                     $result['status'] = 1;
                 } else {
-                    $result['exception'] = 'No hay productos registrados';
+                    $result['exception'] = 'No hay libros registrados';
                 }
                 break;
             case 'readCategorias':
@@ -29,42 +29,47 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 $_POST = $producto->validateForm($_POST);
                 if ($producto->setNombre($_POST['create_nombre'])) {
                     if ($producto->setDescripcion($_POST['create_descripcion'])) {
-                        if ($producto->setPrecio($_POST['create_precio'])) {
-                            if ($producto->setCategoria($_POST['create_categoria'])) {
-                                if ($producto->setEstado(isset($_POST['create_estado']) ? 1 : 0)) {
-                                    if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
-                                        if ($producto->setImagen($_FILES['create_archivo'], null)) {
-                                            if ($producto->createProducto()) {
-                                                if ($producto->saveFile($_FILES['create_archivo'], $producto->getRuta(), $producto->getImagen())) {
-                                                    $result['status'] = 1;
-                                                } else {
-                                                    $result['status'] = 2;
-                                                    $result['exception'] = 'No se guardó el archivo';
-                                                }
+                        if ($producto->setAutor($_POST['create_autor'])) {
+                            if ($producto->setPrecio($_POST['create_precio'])) {
+                                if ($producto->setCategoria($_POST['create_categoria'])) {
+                                    if ($producto->setEditorial($_POST['create_editorial'])) {
+                                        if ($producto->setEstado(isset($_POST['create_estado']) ? 1 : 0)) {
+                                            if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
+                                                if ($producto->setImagen($_FILES['create_archivo'], null)) {
+                                                    if ($producto->createProducto()) {
+                                                        if ($producto->saveFile($_FILES['create_archivo'], $producto->getRuta(), $producto->getImagen())) {
+                                                            $result['status'] = 1;
+                                                        } else {
+                                                            $result['status'] = 2;
+                                                            $result['exception'] = 'No se guardó el archivo';
+                                                        }
+                                                    } else {
+                                                        $result['exception'] = 'Operación fallida';
+                                                        }
+                                                    } else {
+                                                        $result['exception'] = $producto->getImageError();
+                                                }else {
+                                                    $result['exception'] = 'Autor incorrecto'
                                             } else {
-                                                $result['exception'] = 'Operación fallida';
-                                            }
-                                        } else {
-                                            $result['exception'] = $producto->getImageError();
+                                                $result['exception'] = 'Seleccione una imagen';
+                                        }else {
+                                            $result['exception'] = 'Seleccione un editorial';
                                         }
                                     } else {
-                                        $result['exception'] = 'Seleccione una imagen';
+                                        $result['exception'] = 'Estado incorrecto';
                                     }
                                 } else {
-                                    $result['exception'] = 'Estado incorrecto';
+                                    $result['exception'] = 'Seleccione una categoría';
                                 }
                             } else {
-                                $result['exception'] = 'Seleccione una categoría';
+                                $result['exception'] = 'Precio incorrecto';
                             }
                         } else {
-                            $result['exception'] = 'Precio incorrecto';
+                            $result['exception'] = 'Descripción incorrecta';
                         }
                     } else {
-                        $result['exception'] = 'Descripción incorrecta';
+                        $result['exception'] = 'Nombre incorrecto';
                     }
-                } else {
-                    $result['exception'] = 'Nombre incorrecto';
-                }
                 break;
             case 'get':
                 if ($producto->setId($_POST['id_producto'])) {
@@ -83,12 +88,14 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                     if ($producto->getProducto()) {
                         if ($producto->setNombre($_POST['update_nombre'])) {
                             if ($producto->setDescripcion($_POST['update_descripcion'])) {
-                                if ($producto->setPrecio($_POST['update_precio'])) {
-                                    if ($producto->setCategoria($_POST['update_categoria'])) {
-                                        if ($producto->setEstado(isset($_POST['update_estado']) ? 1 : 0)) {
-                                            if (is_uploaded_file($_FILES['update_archivo']['tmp_name'])) {
-                                                if ($producto->setImagen($_FILES['update_archivo'], $_POST['imagen_producto'])) {
-                                                    $archivo = true;
+                                if ($producto->setAutor($_POST['update_autor'])) {
+                                    if ($producto->setPrecio($_POST['update_precio'])) {
+                                        if ($producto->setCategoria($_POST['update_categoria'])) {
+                                            if ($producto->setEditorial($_POST['update_editorial'])) {
+                                                if ($producto->setEstado(isset($_POST['update_estado']) ? 1 : 0)) {
+                                                    if (is_uploaded_file($_FILES['update_archivo']['tmp_name'])) {
+                                                        if ($producto->setImagen($_FILES['update_archivo'], $_POST['imagen_producto'])) {
+                                                            $archivo = true;
                                                 } else {
                                                     $result['exception'] = $producto->getImageError();
                                                     $archivo = false;
@@ -116,6 +123,8 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                                 $result['exception'] = 'Operación fallida';
                                             }
                                         } else {
+                                            $result['exception'] = 'Autor incorrecto';
+                                        } else {
                                             $result['exception'] = 'Estado incorrecto';
                                         }
                                     } else {
@@ -124,6 +133,8 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                 } else {
                                     $result['exception'] = 'Precio incorrecto';
                                 }
+                            } else {
+                                $result['exception'] = 'Editorial incorrecta';
                             } else {
                                 $result['exception'] = 'Descripción incorrecta';
                             }
