@@ -24,11 +24,11 @@
   ?>
 
         <!--Se pone lo que es el titulo-->
-        <h3 align="center">Editoriales
+        <h4 align="center">Editoriales
             <a class="btn-floating black pulse">
                 <i class="material-icons">book</i>
             </a>
-        </h3>
+        </h4>
         <nav>
             <div class="nav-wrapper cyan lighten-2">
                 <div class="col s12">
@@ -109,12 +109,11 @@
 
         <!--Se hace el modal de agregar editoriales-->
         <div id="modal1" class="modal">
-            <h3 align="center">AGREGAR EDITORIALES
+            <h4 align="center">AGREGAR EDITORIALES
                 <a class="btn-floating black pulse">
                     <i class="material-icons">add_circle</i>
                 </a>
-            </h3>
-            <hr>
+            </h4>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
@@ -144,12 +143,11 @@
 
         <!--Se hace el modal de editar editoriales-->
         <div id="modal2" class="modal">
-            <h3 align="center">EDITAR EDITORIAL
+            <h4 align="center">EDITAR EDITORIAL
                 <a class="btn-floating black pulse">
                     <i class="material-icons">create</i>
                 </a>
-            </h3>
-            <hr>
+            </h4>
             <div class="row">
                 <form class="col s12">
                     <div class="row">

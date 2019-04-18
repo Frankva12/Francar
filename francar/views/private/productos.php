@@ -124,12 +124,10 @@
   </div>
   <!--Se hace el modal de agregar productos-->
   <div id="modal1" class="modal">
-    <h3 align="center">AGREGAR PRODUCTOS
+    <h4 align="center">AGREGAR PRODUCTOS
       <a class="btn-floating black pulse">
-        <i class="material-icons">add_circle</i>
-    </h3>
-    </a>
-    <hr>
+        <i class="material-icons">add_circle</i></a>
+    </h4>
     <div class="row">
       <form class="col s12">
         <div class="row">
@@ -151,17 +149,31 @@
           </form>
         </div>
         <div class="input-field col s6">
-          <i class="material-icons prefix">book</i>
-          <input id="text" type="text" class="validate">
-          <label for="text">Editorial</label>
+          <i class="material-icons prefix">assignment</i>
+          <select>
+            <option value="" disabled selected>Escoge tu categoria</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
         </div>
         <div class="input-field col s6">
           <i class="material-icons prefix">attach_money</i>
           <input id="number" type="number" class="validate">
           <label for="number">Precio</label>
         </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">bookmark</i>
+
+          <select>
+            <option value="" disabled selected>Escoge tu editorial</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
         <form action="#">
-          <div class="file-field input-field col 10">
+          <div class="file-field input-field col 6">
             <div class="btn">
               <span>Imagen</span>
               <input type="file">
@@ -182,12 +194,11 @@
 
   <!--Se hace el modal de editar prouductos-->
   <div id="modal2" class="modal">
-    <h3 align="center">EDITAR PRODUCTOS
+    <h4 align="center">EDITAR PRODUCTOS
       <a class="btn-floating black pulse">
-        <i class="material-icons">create</i>
-      </a>
-    </h3>
-    <hr>
+        <i class="material-icons">add_circle</i></a>
+    </h4>
+
     <div class="row">
       <form class="col s12">
         <div class="row">
@@ -209,17 +220,31 @@
           </form>
         </div>
         <div class="input-field col s6">
-          <i class="material-icons prefix">book</i>
-          <input id="text" type="text" class="validate">
-          <label for="text">Editorial</label>
+          <i class="material-icons prefix">assignment</i>
+          <select>
+            <option value="" disabled selected>Escoge tu categoria</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
         </div>
         <div class="input-field col s6">
           <i class="material-icons prefix">attach_money</i>
           <input id="number" type="number" class="validate">
           <label for="number">Precio</label>
         </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">bookmark</i>
+
+          <select>
+            <option value="" disabled selected>Escoge tu editorial</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
         <form action="#">
-          <div class="file-field input-field col 10">
+          <div class="file-field input-field col 6">
             <div class="btn">
               <span>Imagen</span>
               <input type="file">
@@ -232,7 +257,7 @@
     </div>
     <br>
     <p class="center-align">
-      <a class="waves-effect waves-light btn-large">Agregar Productos</a>
+      <a class="waves-effect waves-light btn-large">Agregar Producto</a>
     </p>
     </form>
   </div>
@@ -250,6 +275,7 @@
   <script src="../../resources/js/images.js"></script>
   <script src="../../resources/js/modal.js"></script>
   <script src="../../resources/js/search.js"></script>
+  <script src="../../resources/js/combo.js"></script>
 </body>
 
 </html>

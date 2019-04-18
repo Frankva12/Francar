@@ -15,7 +15,7 @@ class Categorias extends Validator
 			$this->id = $value;
 			return true;
 		} else {
-			return false;
+			return false;z
 		}
 	}
 
@@ -82,35 +82,35 @@ class Categorias extends Validator
 	//Metodos para el manejo del CRUD
 	public function readCategorias()
 	{
-		$sql = 'SELECT id_categoria, nombre_categoria, imagen_categoria, descripcion_categoria FROM categorias ORDER BY nombre_categoria';
+		$sql = 'SELECT id_categoria, nombre_categoria, descripcion, imagen_categoria FROM categorias ORDER BY nombre_categoria';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
 
 	public function searchCategorias($value)
 	{
-		$sql = 'SELECT * FROM categorias WHERE nombre_categoria LIKE ? OR descripcion_categoria LIKE ? ORDER BY nombre_categoria';
+		$sql = 'SELECT * FROM categorias WHERE nombre_categoria LIKE ? OR descripcion LIKE ? ORDER BY nombre_categoria';
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
 	}
 
 	public function createCategoria()
 	{
-		$sql = 'INSERT INTO categorias(nombre_categoria, imagen_categoria, descripcion_categoria) VALUES(?, ?, ?)';
+		$sql = 'INSERT INTO categorias(nombre_categoria, imagen_categoria, descripcion) VALUES(?, ?, ?)';
 		$params = array($this->nombre, $this->imagen, $this->descripcion);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function getCategoria()
 	{
-		$sql = 'SELECT id_categoria, nombre_categoria, imagen_categoria, descripcion_categoria FROM categorias WHERE id_categoria = ?';
+		$sql = 'SELECT id_categoria, nombre_categoria, imagen_categoria, descripcion FROM categorias WHERE id_categoria = ?';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
 
 	public function updateCategoria()
 	{
-		$sql = 'UPDATE categorias SET nombre_categoria = ?, imagen_categoria = ?, descripcion_categoria = ? WHERE id_categoria = ?';
+		$sql = 'UPDATE categorias SET nombre_categoria = ?, imagen_categoria = ?, descripcion = ? WHERE id_categoria = ?';
 		$params = array($this->nombre, $this->imagen, $this->descripcion, $this->id);
 		return Database::executeRow($sql, $params);
 	}

@@ -25,18 +25,6 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                     $result['exception'] = 'No hay categorías registradas';
                 }
                 break;
-            case 'search':
-                $_POST = $producto->validateForm($_POST);
-                if ($_POST['busqueda'] != '') {
-                    if ($result['dataset'] = $producto->searchProductos($_POST['busqueda'])) {
-                        $result['status'] = 1;
-                    } else {
-                        $result['exception'] = 'No hay coincidencias';
-                    }
-                } else {
-                    $result['exception'] = 'Ingrese un valor para buscar';
-                }
-                break;
             case 'create':
                 $_POST = $producto->validateForm($_POST);
                 if ($producto->setNombre($_POST['create_nombre'])) {

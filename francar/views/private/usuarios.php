@@ -24,11 +24,11 @@
   ?>
 
 
-    <h3 align="center">Usuarios
+    <h4 align="center">Usuarios
       <a class="btn-floating black pulse">
         <i class="material-icons">account_circle</i>
       </a>
-    </h3>
+    </h4>
     <nav>
       <div class="nav-wrapper cyan lighten-2">
         <div class="col s12">
@@ -113,12 +113,11 @@
     <!--Se hace el modal de agregar usuarios-->
     <div id="modal1" class="modal">
 
-      <h3 align="center">AGREGAR USUARIOS
+      <h4 align="center">AGREGAR USUARIOS
         <a class="btn-floating black pulse">
           <i class="material-icons">add_circle</i>
         </a>
-      </h3>
-      <hr>
+      </h4>
       <div class="row">
         <form class="col s12">
           <div class="row">
@@ -154,12 +153,11 @@
 
     <!--Se hace el modal de editar usuarios-->
     <div id="modal2" class="modal">
-      <h3 align="center">EDITAR USUARIOS
+      <h4 align="center">EDITAR USUARIOS
         <a class="btn-floating black pulse">
           <i class="material-icons">create</i>
         </a>
-      </h3>
-      <hr>
+      </h4>
       <div class="row">
         <form class="col s12">
           <div class="row">
