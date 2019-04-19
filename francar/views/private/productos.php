@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="../../resources/css/icon.css" rel="stylesheet">
+  <link href="../../resources/css/tablas.css" rel="stylesheet">
   <!--Se importa el css de Materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
 
@@ -41,31 +42,16 @@
     </div>
   </nav>
   <br>
-
-  <div class="container white">
-    <nav class=" brown lighten-5">
-      <div class="nav-wrapper">
-        <form>
-          <div class="input-field">
-            <input type="search" id="myInput" required>
-            <label class="label-icon" for="search">
-              <i class="material-icons">search</i>
-            </label>
-            <i class="material-icons">close</i>
-          </div>
-        </form>
-      </div>
-    </nav>
-  </div>
-  <br>
   <!--Tabla donde se muestran los libros que hay en la tienda donde se puede modificar, eliminar y agregar-->
   <div class="container" id="myTable">
-    <table class="striped">
+    <table class="display example">
       <thead>
         <tr>
           <th>Libro</th>
           <th>Descripcion</th>
+          <th>Imagen</th>
           <th>Precio</th>
+          <th>Acciones</th>
         </tr>
       </thead>
 
@@ -86,7 +72,566 @@
               <i class="material-icons left">delete_sweep</i>Eliminar</a>
           </td>
         </tr>
-
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p align="left">Harry Potter y la orden del Fenix</p>
+          </td>
+          <td>
+            <p>Descripción</p>
+          </td>
+          <td>.jpg</td>
+          <td>$25.00</td>
+          <td>
+            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
+              <i class="material-icons left">create</i>Editar</a>
+            <a class="waves-effect  red darken-2 btn-small">
+              <i class="material-icons left">delete_sweep</i>Eliminar</a>
+          </td>
+        </tr>
         <tr>
           <td>Harry Potter y el misterio de principe</td>
           <td>
@@ -276,6 +821,8 @@
   <script src="../../resources/js/modal.js"></script>
   <script src="../../resources/js/search.js"></script>
   <script src="../../resources/js/combo.js"></script>
+  <script src="../../resources/js/datatables.min.js"></script>
+  <script src="../../resources/js/tabla.js"></script>
 </body>
 
 </html>
