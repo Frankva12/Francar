@@ -67,7 +67,7 @@
                               </a>
                             </h3>
                           </blockquote>
-                          <p align="left">Lograr ser la mejor librería a nivel mundial con ayuda de la tecnología.</p>
+                          <p align="left">Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.</p>
                         </div>
                       </div>
                     </div>
