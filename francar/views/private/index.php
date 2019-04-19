@@ -9,14 +9,13 @@
   <!--Se importa el css de materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="text/css" href="../../resources/css/fondo.css">
-  
-</head>
-<!--Se hcae un contenedor donde se le pone lo que es el login para el administrador-->
-<div class="container ">
 
+</head>
+<!--Se hace un contenedor donde se le pone lo que es el login para el administrador-->
+<div class="container1">
   <body background="../../resources/img/login_imagen.jpg">
-    <div id="login-page" class="row">
-      <div class="col s12 z-depth-6 card-panel">
+    <div id="login-page" class="row center-align">
+      <div class="col s12 m12 l12 z-depth-6 card-panel center-align">
         <form class="login-form">
           <div class="row teal lime grey lighten-1">
             <br>
@@ -57,7 +56,8 @@
 
             <div class="input-field col s6 m6 l6">
               <p align='right'>
-                <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="#modal1">¿Olvidó su contraseña?
+                <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="#modal1">¿Olvidó su
+                  contraseña?
                 </a>
               </p>
               <!-- Modal Structure -->
@@ -79,14 +79,14 @@
               </div>
             </div>
         </form>
-        </div>
       </div>
     </div>
+</div>
 
-    <!--Se importan los archivos de JavaScript-->
-    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/modal.js"></script>
-  </body>
+<!--Se importan los archivos de JavaScript-->
+<script src="../../resources/js/jquery-3.3.1.min.js"></script>
+<script src="../../resources/js/materialize.min.js"></script>
+<script src="../../resources/js/modal.js"></script>
+</body>
 
 </html>

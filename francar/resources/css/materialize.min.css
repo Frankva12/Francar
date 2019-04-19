@@ -3497,6 +3497,25 @@ table span.badge {
   }
 }
 
+
+.container1 {
+  margin: 0 auto;
+  max-width: 2500px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 700px) {
+  .container1 {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container1 {
+    width: 50%;
+  }
+}
+
 .col .row {
   margin-left: -0.75rem;
   margin-right: -0.75rem;
