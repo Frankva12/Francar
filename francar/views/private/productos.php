@@ -44,315 +44,90 @@
   <br>
   <!--Tabla donde se muestran los libros que hay en la tienda donde se puede modificar, eliminar y agregar-->
   <div class="container" id="myTable">
-    <table class="display example">
+    <table class="highlight">
       <thead>
         <tr>
+          <th>Categoria</th>
+          <th>Editorial</th>
           <th>Libro</th>
           <th>Descripcion</th>
           <th>Imagen</th>
+          <th>Autor</th>
           <th>Precio</th>
+          <th>Estado</th>
           <th>Acciones</th>
         </tr>
       </thead>
-
-      <tbody>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p align="left">Harry Potter y la orden del Fenix</p>
-          </td>
-          <td>
-            <p>Descripción</p>
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
-          <td>Harry Potter y las Reliquias de la muerte</td>
-          <td>
-            <p>Descripción
-          </td>
-          <td>.jpg</td>
-          <td>$25.00</td>
-          <td>
-            <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-              <i class="material-icons left">create</i>Editar</a>
-            <a class="waves-effect  red darken-2 btn-small">
-              <i class="material-icons left">delete_sweep</i>Eliminar</a>
-          </td>
-        </tr>
+      <tbody id="tbody-read">
       </tbody>
     </table>
-    <h1 align="center">
-      <a align="center" class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">Agregar
-        Productos</a>
-    </h1>
+    <!-- Botón para abrir ventana de nuevo registro -->
+    <div class="input-field center-align col s12 m4">
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Productos</a>
+        </div>
+    </div>
   </div>
-  <!--Se hace el modal de agregar productos-->
-  <div id="modal1" class="modal">
-    <h4 align="center">AGREGAR PRODUCTOS
-      <a class="btn-floating black pulse">
-        <i class="material-icons">add_circle</i></a>
-    </h4>
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s11">
-            <i class="material-icons prefix">book</i>
-            <input id="text" type="text" class="validate">
-            <label for="text">Producto</label>
-          </div>
-        </div>
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s11">
-                <i class="material-icons prefix">edit</i>
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Descripcion</label>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">assignment</i>
-          <select>
-            <option value="" disabled selected>Escoge tu categoria</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">attach_money</i>
-          <input id="number" type="number" class="validate">
-          <label for="number">Precio</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">bookmark</i>
 
-          <select>
-            <option value="" disabled selected>Escoge tu editorial</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-        </div>
-        <form action="#">
-          <div class="file-field input-field col 6">
-            <div class="btn">
-              <span>Imagen</span>
-              <input type="file">
+  <!-- Ventana para crear un nuevo registro -->
+<div id="modal-create" class="modal">
+    <div class="modal-content">
+        <h4 class="center-align">Crear producto</h4>
+        <form method="post" id="form-create" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="input-field col s12 m6">
+                  	<i class="material-icons prefix">note_add</i>
+                  	<input id="create_nombre" type="text" name="create_nombre" class="validate" required/>
+                  	<label for="create_nombre">Nombre del libro</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                  	<i class="material-icons prefix">attach_money</i>
+                  	<input id="create_precio" type="number" name="create_precio" class="validate" max="999.99" min="0.01" step="any" required/>
+                  	<label for="create_precio">Precio USD($)</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                  	<i class="material-icons prefix">description</i>
+                  	<input id="create_descripcion" type="text" name="create_descripcion" class="validate" required/>
+                  	<label for="create_descripcion">Descripción</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <select id="create_categoria" name="create_categoria">
+                    </select>
+                </div>
+
+              	<div class="file-field input-field col s12 m6">
+                    <div class="btn waves-effect">
+                        <span><i class="material-icons">image</i></span>
+                        <input id="create_archivo" type="file" name="create_archivo" required/>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input type="text" placeholder="Seleccione una imagen"/>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <p>
+                        <div class="switch">
+                            <span>Estado:</span>
+                            <label>
+                                <i class="material-icons">visibility_off</i>
+                                <input id="create_estado" type="checkbox" name="create_estado" checked/>
+                                <span class="lever"></span>
+                                <i class="material-icons">visibility</i>
+                            </label>
+                        </div>
+                    </p>
+                </div>
             </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text">
+            <div class="row center-align">
+                <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
+                <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i class="material-icons">save</i></button>
             </div>
-          </div>
         </form>
     </div>
-    <br>
-    <p class="center-align">
-      <a class="waves-effect waves-light btn-large">Agregar Producto</a>
-    </p>
-    </form>
-  </div>
-
+</div>
 
   <!--Se hace el modal de editar prouductos-->
   <div id="modal2" class="modal">
