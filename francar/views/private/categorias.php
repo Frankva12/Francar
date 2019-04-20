@@ -48,7 +48,6 @@
                     <th>Imagen</th>
                     <th>Categoria</th>
                     <th>Descripción</th>
-                    <th>Probando</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
