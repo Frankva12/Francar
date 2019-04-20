@@ -92,11 +92,41 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div class="row center-align">
                     <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
                             class="material-icons">cancel</i></a>
                     <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i
                             class="material-icons">save</i></button>
+=======
+            </div>
+            <div class="row center-align">
+                <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
+                <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i class="material-icons">save</i></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Ventana para modificar un registro existente -->
+<div id="modal-update" class="modal">
+    <div class="modal-content">
+        <h4 class="center-align">Modificar categoría</h4>
+        <form method="post" id="form-update" enctype="multipart/form-data">
+            <input type="hidden" id="id_categoria" name="id_categoria"/>
+            <input type="hidden" id="imagen_categoria" name="imagen_categoria"/>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">note_add</i>
+                    <input id="update_categoria" type="text" name="update_categoria" class="validate" required/>
+                    <label for="update_nombre">Categoria</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">description</i>
+                    <input id="update_descripcion" type="text" name="update_descripcion" class="validate"/>
+                    <label for="update_descripcion">Descripción</label>
+>>>>>>> 9962ac5c45afcd654268a6e9a547cf4a717cc3a2
                 </div>
             </form>
         </div>

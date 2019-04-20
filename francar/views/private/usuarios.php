@@ -48,8 +48,6 @@
         <tr>
           <th>Nombre</th>
           <th>Apellido</th>
-          <th>Alias</th>
-          <th>Contraseña</th>
           <th>Direccion</th>
           <th>Telefono</th>
           <th>Correo</th>

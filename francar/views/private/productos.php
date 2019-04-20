@@ -48,11 +48,9 @@
       <thead>
         <tr>
           <th>Categoria</th>
-          <th>Editorial</th>
           <th>Libro</th>
           <th>Descripcion</th>
           <th>Imagen</th>
-          <th>Autor</th>
           <th>Precio</th>
           <th>Estado</th>
           <th>Acciones</th>
