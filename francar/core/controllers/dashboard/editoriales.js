@@ -4,7 +4,7 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiCategorias = '../../core/api/categorias.php?site=dashboard&action=';
+const apiEditoriales = '../../core/api/editoriales.php?site=dashboard&action=';
 
 //Función para llenar tabla con los datos de los registros
 function fillTable(rows)
@@ -14,19 +14,16 @@ function fillTable(rows)
     rows.forEach(function(row){
         content += `
             <tr>
-                <td><img src="../../resources/img/categorias/${row.imagen_categoria}" class="materialboxed" height="100"></td>
-                <td>${row.imagen_categoria}</td>
-                <td>${row.nombre_categoria}</td>
+                <td>${row.nombre_editorial}</td>
                 <td>${row.descripcion}</td>
                 <td>
-                    <a href="#" onclick="modalUpdate(${row.id_categoria})" class="blue-text tooltipped" data-tooltip="Modificar"><i class="material-icons">mode_edit</i></a>
-                    <a href="#" onclick="confirmDelete(${row.id_categoria}, '${row.imagen_categoria}')" class="red-text tooltipped" data-tooltip="Eliminar"><i class="material-icons">delete</i></a>
+                    <a href="#" onclick="modalUpdate(${row.id_editorial})" class="blue-text tooltipped" data-tooltip="Modificar"><i class="material-icons">mode_edit</i></a>
+                    <a href="#" onclick="confirmDelete(${row.id_editorial})" class="red-text tooltipped" data-tooltip="Eliminar"><i class="material-icons">delete</i></a>
                 </td>
             </tr>
         `;
     });
     $('#tbody-read').html(content);
-    $('.materialboxed').materialbox();
     $('.tooltipped').tooltip();
 }
 
@@ -34,7 +31,7 @@ function fillTable(rows)
 function showTable()
 {
     $.ajax({
-        url: apiCategorias + 'read',
+        url: apiEditoriales + 'read',
         type: 'post',
         data: null,
         datatype: 'json'
@@ -63,7 +60,7 @@ $('#form-create').submit(function()
 {
     event.preventDefault();
     $.ajax({
-        url: apiCategorias + 'create',
+        url: apiEditoriales + 'create',
         type: 'post',
         data: new FormData($('#form-create')[0]),
         datatype: 'json',
@@ -80,9 +77,9 @@ $('#form-create').submit(function()
                 $('#form-create')[0].reset();
                 $('#modal-create').modal('close');
                 if (result.status == 1) {
-                    sweetAlert(1, 'Categoría creada correctamente', null);
+                    sweetAlert(1, 'Editorial creada correctamente', null);
                 } else if (result.status == 2) {
-                    sweetAlert(3, 'Categoría creada. ' + result.exception, null);
+                    sweetAlert(3, 'Editorial creada. ' + result.exception, null);
                 }
                 showTable();
             } else {
@@ -102,10 +99,10 @@ $('#form-create').submit(function()
 function modalUpdate(id)
 {
     $.ajax({
-        url: apiCategorias + 'get',
+        url: apiEditoriales + 'get',
         type: 'post',
         data:{
-            id_categoria: id
+            id_editorial: id
         },
         datatype: 'json'
     })
@@ -116,11 +113,9 @@ function modalUpdate(id)
             //Se comprueba si el resultado es satisfactorio para mostrar los valores en el formulario, sino se muestra la excepción
             if (result.status) {
                 $('#form-update')[0].reset();
-                $('#id_categoria').val(result.dataset.id_categoria);    
-                $('#nombre_categoria').val(result.dataset.nombre_categoria);
-                $('#imagen_categoria').val(result.dataset.imagen_categoria);
-                $('#update_nombre').val(result.dataset.nombre_categoria);
-                $('#update_descripcion').val(result.dataset.descripcion);
+                $('#id_editorial').val(result.dataset.id_editorial);    
+                $('#nombre_editorial').val(result.dataset.nombre_editorial);
+                $('#update_nombre').val(result.dataset.nombre_editorial);
                 M.updateTextFields();
                 $('#modal-update').modal('open');
             } else {
@@ -141,7 +136,7 @@ $('#form-update').submit(function()
 {
     event.preventDefault();
     $.ajax({
-        url: apiCategorias + 'update',
+        url: apiEditoriales + 'update',
         type: 'post',
         data: new FormData($('#form-update')[0]),
         datatype: 'json',
@@ -157,11 +152,11 @@ $('#form-update').submit(function()
             if (result.status) {
                 $('#modal-update').modal('close');
                 if (result.status == 1) {
-                    sweetAlert(1, 'Categoría modificada correctamente', null);
+                    sweetAlert(1, 'Editorial modificada correctamente', null);
                 } else if(result.status == 2) {
-                    sweetAlert(3, 'Categoría modificada. ' + result.exception, null);
+                    sweetAlert(3, 'Editorial modificada. ' + result.exception, null);
                 } else if(result.status == 3) {
-                    sweetAlert(1, 'Categoría modificada. ' + result.exception, null);
+                    sweetAlert(1, 'Editorial modificada. ' + result.exception, null);
                 }
                 showTable();
             } else {
@@ -182,7 +177,7 @@ function confirmDelete(id, file)
 {
     swal({
         title: 'Advertencia',
-        text: '¿Quiere eliminar la categoría?',
+        text: '¿Quiere eliminar la editorial?',
         icon: 'warning',
         buttons: ['Cancelar', 'Aceptar'],
         closeOnClickOutside: false,
@@ -191,11 +186,10 @@ function confirmDelete(id, file)
     .then(function(value){
         if (value) {
             $.ajax({
-                url: apiCategorias + 'delete',
+                url: apiEditoriales + 'delete',
                 type: 'post',
                 data:{
-                    id_categoria: id,
-                    imagen_categoria: file
+                    id_editorial: id,
                 },
                 datatype: 'json'
             })
@@ -206,9 +200,9 @@ function confirmDelete(id, file)
                     //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
                     if (result.status) {
                         if (result.status == 1) {
-                            sweetAlert(1, 'Categoría eliminada correctamente', null);
+                            sweetAlert(1, 'Editorial eliminada correctamente', null);
                         } else if(result.status == 2) {
-                            sweetAlert(3, 'Categoría eliminada. ' + result.exception, null);
+                            sweetAlert(3, 'Editorial eliminada. ' + result.exception, null);
                         }
                         showTable();
                     } else {

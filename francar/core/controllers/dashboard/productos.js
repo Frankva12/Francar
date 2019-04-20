@@ -17,9 +17,11 @@ function fillTable(rows)
         content += `
             <tr>
                 <td><img src="../../resources/img/productos/${row.imagen_libro}" class="materialboxed" height="100"></td>
-                <td>${row.nombre_libro}</td>
-                <td>${row.precio}</td>
                 <td>${row.nombre_categoria}</td>
+                <td>${row.nombre_libro}</td>
+                <td>${row.descripcion_producto}</td>
+                <td>${row.precio}</td>
+                <td>${row.estado_producto}</td>
                 <td><i class="material-icons">${icon}</i></td>
                 <td>
                     <a href="#" onclick="modalUpdate(${row.id_producto})" class="blue-text tooltipped" data-tooltip="Modificar"><i class="material-icons">mode_edit</i></a>
