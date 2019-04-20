@@ -42,94 +42,111 @@
     <br>
     <!--Se hace una tabla donde iran las categorias de los libros que se poseen-->
     <div class="container" id="myTable">
-        <table class="display example">
+        <table class="highlight">
             <thead>
                 <tr>
+                    <th>Imagen</th>
                     <th>Categoria</th>
                     <th>Descripción</th>
                     <th>Acciones</th>
-
                 </tr>
             </thead>
 
-            <tbody>
-                <tr>
-                    <td>Romantico</td>
-                    <td> Descripción </td>
-                    <td>
-                        <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-                            <i class="material-icons left">create</i>Editar</a>
-                        <a class="waves-effect  red darken-2 btn-small">
-                            <i class="material-icons left">delete_sweep</i>Eliminar</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Policial</td>
-                    <td> Descripción
-                    </td>
-                    <td>
-                        <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-                            <i class="material-icons left">create</i>Editar</a>
-                        <a class="waves-effect  red darken-2 btn-small">
-                            <i class="material-icons left">delete_sweep</i>Eliminar</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aventura</td>
-                    <td> Descripción </td>
-                    <td>
-                        <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-                            <i class="material-icons left">create</i>Editar</a>
-                        <a class="waves-effect  red darken-2 btn-small">
-                            <i class="material-icons left">delete_sweep</i>Eliminar</a>
-                    </td>
-                </tr>
+            <tbody id="tbody-read">
             </tbody>
         </table>
-        <h1 align="center">
-            <a align="center" class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">Agregar
-                categorias</a>
-        </h1>
-    </div>
-
-    <!--Se hace el modal de agregar categorias-->
-    <div id="modal1" class="modal">
-        <h4 align="center">AGREGAR CATEGORIAS
-            <a class="btn-floating black pulse">
-                <i class="material-icons">add_circle</i>
-            </a>
-        </h4>
-        <div class="row">
-            <form method="post" id="form-create" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="input-field col s12 m11">
-                        <i class="material-icons prefix">book</i>
-                        <input id="create_nombre" type="text" name="create_nombre" class="validate" required />
-                        <label for="create_nombre">Nombre categoria</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s12 m11">
-                                <i class="material-icons prefix">edit</i>
-                                <input id="create_descripcion" type="text" name="create_descripcion" class="validate" />
-                                <label for="create_descripcion">Descripción</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="row center-align">
-                    <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
-                            class="material-icons">cancel</i></a>
-                    <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i
-                            class="material-icons">save</i></button>
-                </div>
-            </form>
+        <!-- Botón para abrir ventana de nuevo registro -->
+    <div class="input-field center-align col s12 m4">
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Categorias</a>
         </div>
     </div>
+  </div>
 
-    <!--Se hace el modal de editar categorias-->
+<!-- Ventana para crear un nuevo registro -->
+<div id="modal-create" class="modal">
+    <div class="modal-content">
+        <h4 class="center-align">Crear categoría</h4>
+        <form method="post" id="form-create" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="input-field col s12 m6">
+                  	<i class="material-icons prefix">note_add</i>
+                  	<input id="create_nombre" type="text" name="create_nombre" class="validate" required/>
+                  	<label for="create_nombre">Categoria</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">description</i>
+                    <input id="create_descripcion" type="text" name="create_descripcion" class="validate"/>
+                    <label for="create_descripcion">Descripción</label>
+                </div>
+                <div class="file-field input-field col s12 m6">
+                    <div class="btn waves-effect">
+                        <span><i class="material-icons">image</i></span>
+                        <input id="create_archivo" type="file" name="create_archivo" required/>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input type="text" class="file-path validate" placeholder="Seleccione una imagen"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row center-align">
+                <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
+                <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i class="material-icons">save</i></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Ventana para modificar un registro existente -->
+<div id="modal-update" class="modal">
+    <div class="modal-content">
+        <h4 class="center-align">Modificar categoría</h4>
+        <form method="post" id="form-update" enctype="multipart/form-data">
+            <input type="hidden" id="id_categoria" name="id_categoria"/>
+            <input type="hidden" id="imagen_categoria" name="imagen_categoria"/>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">note_add</i>
+                    <input id="update_nombre" type="text" name="update_nombre" class="validate" required/>
+                    <label for="update_nombre">Nombre</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">description</i>
+                    <input id="update_descripcion" type="text" name="update_descripcion" class="validate"/>
+                    <label for="update_descripcion">Descripción</label>
+                </div>
+                <div class="file-field input-field col s12 m6">
+                    <div class="btn waves-effect">
+                        <span><i class="material-icons">image</i></span>
+                        <input id="update_archivo" type="file" name="update_archivo"/>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Seleccione una imagen"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row center-align">
+                <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
+                <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Modificar"><i class="material-icons">save</i></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Se hace el modal de editar categorias
     <div id="modal2" class="modal">
         <h3 align="center">EDITAR CATEGORIAS
             <a class="btn-floating black pulse">
@@ -163,7 +180,7 @@
             </form>
         </div>
     </div>
-
+-->
     <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
     <?php
         require("../../resources/pages/footer.php");

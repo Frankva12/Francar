@@ -42,124 +42,68 @@
     <br>
     <!--Se hace una tabla con el nombre de cada editorial-->
     <div class="container" id="myTable">
-        <table class="display example">
+        <table class="highlight">
             <thead>
                 <tr>
                     <th>Editoriales</th>
-                    <th>Descripción</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>Romantico</td>
-                    <td> Descripción </td>
-
-                    <td>
-                        <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-                            <i class="material-icons left">create</i>Editar</a>
-                        <a class="waves-effect  red darken-2 btn-small">
-                            <i class="material-icons left">delete_sweep</i>Eliminar</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Policial</td>
-                    <td> Descripción
-                    </td>
-                    <td>
-                        <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-                            <i class="material-icons left">create</i>Editar</a>
-                        <a class="waves-effect  red darken-2 btn-small">
-                            <i class="material-icons left">delete_sweep</i>Eliminar</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Aventura</td>
-                    <td> Descripción </td>
-                    <td>
-                        <a class="waves-effect waves-light btn modal-trigger cyan darken-4" href="#modal2">
-                            <i class="material-icons left">create</i>Editar</a>
-                        <a class="waves-effect  red darken-2 btn-small">
-                            <i class="material-icons left">delete_sweep</i>Eliminar</a>
-                    </td>
-                </tr>
             </tbody>
         </table>
-        <h1 align="center">
-            <a align="center" class="waves-effect waves-light btn modal-trigger light-green" href="#modal1">Agregar
-                Editoriales</a>
-        </h1>
-    </div>
-
-
-    <!--Se hace el modal de agregar editoriales-->
-    <div id="modal1" class="modal">
-        <h4 align="center">AGREGAR EDITORIALES
-            <a class="btn-floating black pulse">
-                <i class="material-icons">add_circle</i>
-            </a>
-        </h4>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s11">
-                        <i class="material-icons prefix">book</i>
-                        <input id="text" type="text" class="validate">
-                        <label for="text">Editoriales</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s11">
-                                <i class="material-icons prefix">edit</i>
-                                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                <label for="textarea1">Descripcion</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <p class="center-align">
-                    <a class="waves-effect waves-light btn-large">Agregar categorias</a>
-                </p>
-            </form>
+        <!-- Botón para abrir ventana de nuevo registro -->
+    <div class="input-field center-align col s12 m4">
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Productos</a>
         </div>
     </div>
-
-    <!--Se hace el modal de editar editoriales-->
-    <div id="modal2" class="modal">
-        <h4 align="center">EDITAR EDITORIAL
-            <a class="btn-floating black pulse">
-                <i class="material-icons">create</i>
-            </a>
-        </h4>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s11">
-                        <i class="material-icons prefix">book</i>
-                        <input id="text" type="text" class="validate">
-                        <label for="text">Editorial</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s11">
-                                <i class="material-icons prefix">edit</i>
-                                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                <label for="textarea1">Descripcion</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <p class="center-align">
-                    <a class="waves-effect waves-light btn-large">Agregar editoriales</a>
-                </p>
-            </form>
-        </div>
     </div>
+
+
+    <!-- Ventana para crear un nuevo registro -->
+<div id="modal-create" class="modal">
+    <div class="modal-content">
+        <h4 class="center-align">Crear editorial</h4>
+        <form method="post" id="form-create" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="input-field col s12 m6">
+                  	<i class="material-icons prefix">note_add</i>
+                  	<input id="create_nombre" type="text" name="create_nombre" class="validate" required/>
+                  	<label for="create_nombre">Editorial</label>
+                </div>
+            </div>
+            <div class="row center-align">
+                <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
+                <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i class="material-icons">save</i></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    
+
+
+    <!-- Ventana para modificar un registro existente -->
+<div id="modal-update" class="modal">
+    <div class="modal-content">
+        <h4 class="center-align">Modificar categoría</h4>
+        <form method="post" id="form-update" enctype="multipart/form-data">
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">note_add</i>
+                    <input id="update_nombre" type="text" name="update_nombre" class="validate" required/>
+                    <label for="update_nombre">Nombre editorial</label>
+                </div>
+            </div>
+            <div class="row center-align">
+                <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
+                <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Modificar"><i class="material-icons">save</i></button>
+            </div>
+        </form>
+    </div>
+</div>
 
     <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
     <?php
