@@ -9,10 +9,11 @@
   <!--Se importa el css de materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="text/css" href="../../resources/css/fondo.css">
-
+  <link rel="icon" type="ico" href="../../resources/img/icono.ico">
 </head>
 <!--Se hace un contenedor donde se le pone lo que es el login para el administrador-->
 <div class="container1">
+
   <body background="../../resources/img/login_imagen.jpg">
     <div id="login-page" class="row center-align">
       <div class="col s12 m12 l12 z-depth-6 card-panel center-align">

@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
   <link href="../../resources/css/icon.css" rel="stylesheet">
   <!--Se importa el css de materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
-
+  <link rel="icon" type="ico" href="../../resources/img/icono.ico">
   <!--Deja que la pagina web sea responsive-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
@@ -26,7 +27,8 @@
           <a href="index.php" class="brand-logo"></a>
           <ul class="right hide-on-med-and-down">
             <li>
-              <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA PRINCIPAL</a>
+              <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA
+                PRINCIPAL</a>
             </li>
         </div>
       </div>
@@ -57,9 +59,12 @@
           <br>
           <p> Editorial: Salamandra</p>
           <br>
-          <p> Descripcion: Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra
-            más inquieto que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está sucediendo
-            en Hogwarts. En efecto, cuando por fin comienza otro curso en el famoso colegio de magia y hechicería, sus temores
+          <p> Descripcion: Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se
+            encuentra
+            más inquieto que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está
+            sucediendo
+            en Hogwarts. En efecto, cuando por fin comienza otro curso en el famoso colegio de magia y hechicería, sus
+            temores
             se vuelven realidad.</p>
           <br>
           <br>
@@ -84,9 +89,12 @@
           <br>
           <p> Editorial: Salamandra</p>
           <br>
-          <p>Descripcion: Con dieciséis años cumplidos, Harry Potter inicia el sexto curso en Hogwarts en medio de terribles
-            acontecimientos que asolan Inglaterra. Elegido capitán del equipo de Quidditch, los entrenamientos, los exámenes
-            y las chicas ocupan todo su tiempo, pero la tranquilidad dura poco. A pesar de los férreos controles de seguridad
+          <p>Descripcion: Con dieciséis años cumplidos, Harry Potter inicia el sexto curso en Hogwarts en medio de
+            terribles
+            acontecimientos que asolan Inglaterra. Elegido capitán del equipo de Quidditch, los entrenamientos, los
+            exámenes
+            y las chicas ocupan todo su tiempo, pero la tranquilidad dura poco. A pesar de los férreos controles de
+            seguridad
             que protegen la escuela, dos alumnos son brutalmente atacados. </p>
           <br>
         </div>
@@ -110,8 +118,10 @@
           <br>
           <p> Editorial: Salamandra</p>
           <br>
-          <p>Descripcion: La fecha crucial se acerca. Cuando cumpla diecisiete años, Harry perderá el encantamiento protector
-            que lo mantiene a salvo. El anunciado enfrentamiento a muerte con lord Voldemort es inminente, y la casi imposible
+          <p>Descripcion: La fecha crucial se acerca. Cuando cumpla diecisiete años, Harry perderá el encantamiento
+            protector
+            que lo mantiene a salvo. El anunciado enfrentamiento a muerte con lord Voldemort es inminente, y la casi
+            imposible
             misión de encontrar y destruir los restantes Horrocruxes más urgente que nunca. Ha llegado la hora final, el
             momento de tomar las decisiones más difíciles. </p>
           <br>
@@ -125,13 +135,13 @@
   Footer::foot();
   ?>
 
-    <!--Se llaman todos los archivos JavaScript-->
-    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/parallax.js"></script>
-    <script src="../../resources/js/images.js"></script>
-    <script src="../../resources/js/modal.js"></script>
+  <!--Se llaman todos los archivos JavaScript-->
+  <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+  <script src="../../resources/js/carousel.js"></script>
+  <script src="../../resources/js/parallax.js"></script>
+  <script src="../../resources/js/images.js"></script>
+  <script src="../../resources/js/modal.js"></script>
 </body>
 
 </html>

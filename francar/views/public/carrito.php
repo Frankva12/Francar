@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
   <link href="../../resources/css/icon.css" rel="stylesheet">
   <!--Se importa el css de materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
-
+  <link rel="icon" type="ico" href="../../resources/img/icono.ico">
   <!--Deja que la pagina web sea responsive-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
@@ -26,7 +27,8 @@
           <a href="#" class="brand-logo">Libreria Francar</a>
           <ul class="right hide-on-med-and-down">
             <li>
-              <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA PRINCIPAL</a>
+              <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA
+                PRINCIPAL</a>
             </li>
         </div>
       </div>
@@ -110,11 +112,11 @@
   Footer::foot();
   ?>
 
-    <!--Se llaman todos los archivos JavaScript-->
-    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/modal.js"></script>
+  <!--Se llaman todos los archivos JavaScript-->
+  <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+  <script src="../../resources/js/carousel.js"></script>
+  <script src="../../resources/js/modal.js"></script>
 </body>
 
 </html>
