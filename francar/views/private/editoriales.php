@@ -55,7 +55,7 @@
         </table>
         <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
-            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Productos</a>
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Editoriales</a>
         </div>
     </div>
     </div>
@@ -69,7 +69,7 @@
             <div class="row">
 
                 <div class="input-field col s12 m6">
-                  	<i class="material-icons prefix">note_add</i>
+                  	<i class="material-icons prefix">description</i>
                   	<input id="create_nombre" type="text" name="create_nombre" class="validate" required/>
                   	<label for="create_nombre">Editorial</label>
                 </div>

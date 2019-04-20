@@ -48,11 +48,9 @@
       <thead>
         <tr>
           <th>Categoria</th>
-          <th>Editorial</th>
           <th>Libro</th>
           <th>Descripcion</th>
           <th>Imagen</th>
-          <th>Autor</th>
           <th>Precio</th>
           <th>Estado</th>
           <th>Acciones</th>
@@ -94,7 +92,18 @@
                 </div>
 
                 <div class="input-field col s12 m6">
+                  	<i class="material-icons prefix">account_circle</i>
+                  	<input id="create_autor" type="text" name="create_autor" class="validate" required/>
+                  	<label for="create_autor">Autor</label>
+                </div>
+
+                <div class="input-field col s12 m6">
                     <select id="create_categoria" name="create_categoria">
+                    </select>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <select id="create_editorial" name="create_editorial">
                     </select>
                 </div>
 
@@ -152,10 +161,23 @@
                   	<input id="update_descripcion" type="text" name="update_descripcion" class="validate" required/>
                   	<label for="update_descripcion">Descripción</label>
                 </div>
+
+                <div class="input-field col s12 m6">
+                  	<i class="material-icons prefix">account_circle</i>
+                  	<input id="update_autor" type="text" name="update_autor" class="validate" required/>
+                  	<label for="update_autor">Autor</label>
+                </div>
+
                 <div class="input-field col s12 m6">
                     <select id="update_categoria" name="update_categoria">
                     </select>
                 </div>
+
+                <div class="input-field col s12 m6">
+                    <select id="update_editorial" name="update_editorial">
+                    </select>
+                </div>
+
               	<div class="file-field input-field col s12 m6">
                     <div class="btn waves-effect">
                         <span><i class="material-icons">image</i></span>
