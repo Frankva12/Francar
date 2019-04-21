@@ -47,7 +47,7 @@
     <table class="highlight">
       <thead>
         <tr>
-        ||<th>Imagen</th>
+          <th>Imagen</th>
           <th>Libro</th>
           <th>Descripcion</th>
           <th>Categoria</th>
