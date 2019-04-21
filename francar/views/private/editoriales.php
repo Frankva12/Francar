@@ -57,7 +57,7 @@
         <!-- Botón para abrir ventana de nuevo registro -->
         <div class="input-field center-align col s12 m4">
             <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
-                data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Productos</a>
+                data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Editorial</a>
         </div>
     </div>
     </div>
@@ -71,7 +71,7 @@
                 <div class="row">
 
                     <div class="input-field col s12 m6">
-                        <i class="material-icons prefix">note_add</i>
+                        <i class="material-icons prefix">description</i>
                         <input id="create_nombre" type="text" name="create_nombre" class="validate" required />
                         <label for="create_nombre">Editorial</label>
                     </div>
@@ -90,28 +90,15 @@
 
 
     <!-- Ventana para modificar un registro existente -->
-<<<<<<< HEAD
-    <div id="modal-update" class="modal">
-        <div class="modal-content">
-            <h4 class="center-align">Modificar categoría</h4>
-            <form method="post" id="form-update" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <i class="material-icons prefix">note_add</i>
-                        <input id="update_nombre" type="text" name="update_nombre" class="validate" required />
-                        <label for="update_nombre">Nombre editorial</label>
-                    </div>
-=======
 <div id="modal-update" class="modal">
     <div class="modal-content">
         <h4 class="center-align">Modificar categoría</h4>
         <form method="post" id="form-update" enctype="multipart/form-data">
             <div class="row">
                 <div class="input-field col s12 m6">
-                    <i class="material-icons prefix">note_add</i>
+                    <i class="material-icons prefix">description</i>
                     <input id="update_editorial" type="text" name="update_editorial" class="validate" required/>
                     <label for="update_editorial">Nombre editorial</label>
->>>>>>> 9962ac5c45afcd654268a6e9a547cf4a717cc3a2
                 </div>
                 <div class="row center-align">
                     <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
