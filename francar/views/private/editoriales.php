@@ -8,7 +8,7 @@
     <link href="../../resources/css/icon.css" rel="stylesheet">
     <link href="../../resources/css/tablas.css" rel="stylesheet">
     <link rel="icon" type="ico" href="../../resources/img/icono.ico">
-
+    <link href="../../resources/css/tablas.css" rel="stylesheet">
     <!--Importa el css de materialize-->
     <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
     <!--Deja que la pagina web sea responsive-->
@@ -44,22 +44,10 @@
     <br>
 
     <div class="row">
-    <!-- Formulario de búsqueda -->
-    <form method="post" id="form-search">
-        <div class="input-field col s6 m4">
-            <i class="material-icons prefix">search</i>
-            <input id="buscar" type="text" name="busqueda"/>
-            <label for="buscar">Buscador</label>
-        </div>
-        <div class="input-field col s6 m4">
-            <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>
-        </div>
-    </form>
-</div>
     
     <!--Se hace una tabla con el nombre de cada editorial-->
-    <div class="container" id="myTable">
-        <table class="highlight">
+    <div class="container">
+  <table class="display example">
             <thead>
                 <tr>
                     <th>Editoriales</th>

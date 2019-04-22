@@ -10,6 +10,7 @@
     <!--Se importa el css de materialize-->
     <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
     <link rel="icon" type="ico" href="../../resources/img/icono.ico">
+    <link href="../../resources/css/tablas.css" rel="stylesheet">
     <!--Deja que la pagina web sea responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
@@ -42,8 +43,8 @@
     </nav>
     <br>
     <!--Se hace una tabla donde iran las categorias de los libros que se poseen-->
-    <div class="container" id="myTable">
-        <table class="highlight">
+    <div class="container">
+  <table class="display example">
             <thead>
                 <tr>
                     <th>Imagen</th>
@@ -192,15 +193,15 @@
 
     <!--Se importan lo que son los archivos de JavaScript-->
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/parallax.js"></script>
-    <script src="../../resources/js/images.js"></script>
-    <script src="../../resources/js/modal.js"></script>
-    <script src="../../resources/js/search.js"></script>
-    <script src="../../resources/js/combo.js"></script>
-    <script src="../../resources/js/datatables.min.js"></script>
-    <script src="../../resources/js/tabla.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+  <script src="../../resources/js/carousel.js"></script>
+  <script src="../../resources/js/parallax.js"></script>
+  <script src="../../resources/js/images.js"></script>
+  <script src="../../resources/js/modal.js"></script>
+  <script src="../../resources/js/search.js"></script>
+  <script src="../../resources/js/combo.js"></script>
+  <script src="../../resources/js/datatables.min.js"></script>
+  <script src="../../resources/js/tabla.js"></script>
 </body>
 
 </html>
