@@ -244,7 +244,14 @@ function confirmDelete(id, file)
                         sweetAlert(1, 'Editorial eliminada correctamente', result.exception, null);
                     }
                 } else {
-                    console.log(response);
+                    swal({
+                        title: 'Advertencia',
+                        text: 'Registro ocupado, no se puede borrar editorial',
+                        icon: 'error',
+                        buttons: ['Aceptar'],
+                        closeOnClickOutside: true,
+                        closeOnEsc: true
+                    })
                 }
             })
             .fail(function(jqXHR){

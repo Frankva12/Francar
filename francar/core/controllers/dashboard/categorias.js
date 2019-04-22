@@ -4,7 +4,7 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiCategorias = '../../core/api/categorias.php?site=dashboard&action=';
+const apiCategorias = '../../core/api/categorias.php?site=private&action=';
 
 //Función para llenar tabla con los datos de los registros
 function fillTable(rows)
@@ -15,9 +15,8 @@ function fillTable(rows)
         content += `
             <tr>
                 <td><img src="../../resources/img/categorias/${row.imagen_categoria}" class="materialboxed" height="100"></td>
-                <td>${row.imagen_categoria}</td>
                 <td>${row.nombre_categoria}</td>
-                <td>${row.descripcion}</td>
+                <td>${row.descripcion_categoria}</td>
                 <td>
                     <a href="#" onclick="modalUpdate(${row.id_categoria})" class="blue-text tooltipped" data-tooltip="Modificar"><i class="material-icons">mode_edit</i></a>
                     <a href="#" onclick="confirmDelete(${row.id_categoria}, '${row.imagen_categoria}')" class="red-text tooltipped" data-tooltip="Eliminar"><i class="material-icons">delete</i></a>
@@ -118,9 +117,9 @@ function modalUpdate(id)
                 $('#form-update')[0].reset();
                 $('#id_categoria').val(result.dataset.id_categoria);    
                 $('#nombre_categoria').val(result.dataset.nombre_categoria);
-                $('#imagen_categoria').val(result.dataset.imagen_categoria);
+                $('#descripcion_categoria').val(result.dataset.descripcion_categoria);
                 $('#update_nombre').val(result.dataset.nombre_categoria);
-                $('#update_descripcion').val(result.dataset.descripcion);
+                $('#update_descripcion_categoria').val(result.dataset.descripcion_categoria);
                 M.updateTextFields();
                 $('#modal-update').modal('open');
             } else {
@@ -195,7 +194,7 @@ function confirmDelete(id, file)
                 type: 'post',
                 data:{
                     id_categoria: id,
-                    imagen_categoria: file
+                    imagen: file
                 },
                 datatype: 'json'
             })
@@ -208,14 +207,21 @@ function confirmDelete(id, file)
                         if (result.status == 1) {
                             sweetAlert(1, 'Categoría eliminada correctamente', null);
                         } else if(result.status == 2) {
-                            sweetAlert(3, 'Categoría eliminada. ' + result.exception, null);
+                            sweetAlert(2, 'Categoría eliminada. ' + result.exception, null);
                         }
                         showTable();
                     } else {
-                        sweetAlert(2, result.exception, null);
+                        sweetAlert(1,'Categoria eliminada correctamente', null);
                     }
                 } else {
-                    console.log(response);
+                    swal({
+                        title: 'Advertencia',
+                        text: 'Registro ocupado, no se puede borrar categoria',
+                        icon: 'error',
+                        buttons: ['Aceptar'],
+                        closeOnClickOutside: true,
+                        closeOnEsc: true
+                    })
                 }
             })
             .fail(function(jqXHR){
