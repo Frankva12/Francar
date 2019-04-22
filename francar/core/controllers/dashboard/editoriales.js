@@ -23,7 +23,6 @@ function fillTable(rows)
         `;
     });
     $('#tbody-read').html(content);
-    $('.materialboxed').materialbox();
     $('.tooltipped').tooltip();
 }
 
