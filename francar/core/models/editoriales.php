@@ -68,7 +68,7 @@ class Editoriales extends Validator
 	public function updateEditorial()
 	{
 		$sql = 'UPDATE editoriales SET nombre_editorial = ? WHERE id_editorial = ?';
-		$params = array($this->nombre, $this->id);
+		$params = array($this->nombre_editorial, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 

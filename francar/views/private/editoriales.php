@@ -42,19 +42,19 @@
         </div>
     </nav>
     <br>
+
     <div class="row">
     <!-- Formulario de búsqueda -->
-    <nav>
-    <div class="nav-wrapper #eeeeee grey lighten-3">
-      <form>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
+    <form method="post" id="form-search">
+        <div class="input-field col s6 m4">
+            <i class="material-icons prefix">search</i>
+            <input id="buscar" type="text" name="busqueda"/>
+            <label for="buscar">Buscador</label>
         </div>
-      </form>
-    </div>
-  </nav>
+        <div class="input-field col s6 m4">
+            <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>
+        </div>
+    </form>
 </div>
     
     <!--Se hace una tabla con el nombre de cada editorial-->
@@ -143,9 +143,11 @@
     <script src="../../resources/js/parallax.js"></script>
     <script src="../../resources/js/images.js"></script>
     <script src="../../resources/js/modal.js"></script>
-    <script src="../../resources/js/search.js"></script>
     <script src="../../resources/js/combo.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/tabla.js"></script>
+
+    <script src="../../core/controllers/dashboard/editoriales.js"></script>
+    <script src="../../core/helpers/functions.js"></script>
 </body>
 </html>
