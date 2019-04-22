@@ -146,6 +146,7 @@
     <script src="../../resources/js/combo.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/tabla.js"></script>
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
 
     <script src="../../core/controllers/dashboard/editoriales.js"></script>
     <script src="../../core/helpers/functions.js"></script>

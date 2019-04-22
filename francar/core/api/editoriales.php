@@ -9,7 +9,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 	$editorial = new Editoriales;
 	$result = array('status' => 0, 'exception' => '');
 	//Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-	if (isset($_SESSION['idUsuario']) && $_GET['site'] == 'private') {
+	if ($_GET['site'] == 'private') {
 		switch ($_GET['action']) {
 
 					case 'read': 
@@ -23,7 +23,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 
 					case 'create':
 						$_POST = $editorial->validateForm($_POST);
-						if ($editorial->setNombre($_POST['create_editorial'])) {
+						if ($editorial->setNombreEditorial($_POST['create_editorial'])) {
 						} else {
 							$result['exception'] = 'Nombre incorrecto';
 						}
@@ -46,8 +46,8 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 					case 'update':
 						$_POST = $editorial->validateForm($_POST);
 						if ($editorial->setId($_POST['id_editorial'])) {
-							if ($editorial->getEditorial()) {
-								if ($editorial->setNombre($_POST['update_editorial'])) {
+							if ($editorial->getNombreEditorial()) {
+								if ($editorial->setNombreEditorial($_POST['update_editorial'])) {
 								} else {
 									$result['exception'] = 'Nombre incorrecto';
 								}
