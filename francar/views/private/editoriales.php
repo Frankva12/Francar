@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../../resources/css/icon.css" rel="stylesheet">
     <link href="../../resources/css/tablas.css" rel="stylesheet">
+    <link rel="icon" type="ico" href="../../resources/img/icono.ico">
+
     <!--Importa el css de materialize-->
     <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
-    <link rel="icon" type="ico" href="../../resources/img/icono.ico">
     <!--Deja que la pagina web sea responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>

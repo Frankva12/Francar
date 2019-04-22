@@ -25,7 +25,25 @@ class Dashboard
 					self::modals();
 					print('
 						<header>
-						
+							<div class="navbar-fixed">
+								<nav class="teal">
+									<div class="nav-wrapper">
+										<a href="main.php" class="brand-logo"><img src="../../resources/img/logo.png" height="60"></a>
+										<a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+										<ul class="right hide-on-med-and-down">
+											<li><a href="productos.php"><i class="material-icons left">shop</i>Productos</a></li>
+											<li><a href="categorias.php"><i class="material-icons left">shop_two</i>Categorías</a></li>
+											<li><a href="usuarios.php"><i class="material-icons left">group</i>Usuarios</a></li>
+											<li><a href="#" class="dropdown-trigger" data-target="dropdown"><i class="material-icons left">verified_user</i>Cuenta: <b>'.$_SESSION['aliasUsuario'].'</b></a></li>
+										</ul>
+										<ul id="dropdown" class="dropdown-content">
+											<li><a href="#" onclick="modalProfile()"><i class="material-icons">face</i>Editar perfil</a></li>
+											<li><a href="#modal-password" class="modal-trigger"><i class="material-icons">lock</i>Cambiar clave</a></li>
+											<li><a href="#" onclick="signOff()"><i class="material-icons">clear</i>Salir</a></li>
+										</ul>
+									</div>
+								</nav>
+							</div>
 							<ul class="sidenav" id="mobile">
 								<li><a href="productos.php"><i class="material-icons">shop</i>Productos</a></li>
 								<li><a href="categorias.php"><i class="material-icons">shop_two</i>Categorías</a></li>
