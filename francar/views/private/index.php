@@ -46,9 +46,10 @@
               <span>Recuerdame</span>
             </div>
           </div>
+
           <div class="row">
             <div class="input-field col s12">
-            <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Ingresar"><i class="material-icons">send</i></button>
+            <a href="private.php" class="btn waves-effect grey darken-4 col s12">Iniciar Sesion</a>
             </div>
           </div>
           <div class="row">
