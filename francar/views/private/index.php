@@ -29,15 +29,15 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">mail_outline</i>
-              <input class="validate" id="email" type="email">
-              <label for="email" data-error="wrong" data-success="right">Correo</label>
+              <input class="validate"  type="text">
+              <label for="alias" data-error="wrong" data-success="right">Correo</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">lock_outline</i>
               <input id="password" type="password">
-              <label for="password">Contraseña</label>
+              <label for="contraseña">Contraseña</label>
             </div>
           </div>
           <div class="row">
@@ -48,7 +48,7 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <a href="private.php" class="btn waves-effect grey darken-4 col s12">Iniciar sesion</a>
+            <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Ingresar"><i class="material-icons">send</i></button>
             </div>
           </div>
           <div class="row">
@@ -67,7 +67,7 @@
                   <h4 align='center'>¿Olvidaste tu contraseña?</h4>
                   <div class="input-field col s12">
                     <i class="material-icons prefix">mail_outline</i>
-                    <input class="validate" id="email" type="email">
+                    <input class="validate"  type="email">
                     <label for="email" data-error="wrong" data-success="right">Correo</label>
                   </div>
                   <p class="center-align">
