@@ -9,7 +9,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 	$categoria = new Categorias;
 	$result = array('status' => 0, 'exception' => '');
 	//Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-	if (isset($_SESSION['idUsuario']) && $_GET['site'] == 'dashboard') {
+	if ($_GET['site'] == 'private') {
 		switch ($_GET['action']) {
 			case 'read':
 				if ($result['dataset'] = $categoria->readCategorias()) {
@@ -18,6 +18,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 					$result['exception'] = 'No hay categorías registradas';
 				}
 				break;
+				
 			case 'create':
 				$_POST = $categoria->validateForm($_POST);
         		if ($categoria->setNombre($_POST['create_nombre'])) {
@@ -34,6 +35,12 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 								} else {
 									$result['exception'] = 'Operación fallida';
 								}
+							} else {
+								$result['exception'] = $categoria->getImageError();
+							}
+						} else {
+							$result['exception'] = 'Seleccione una imagen';
+						}
 					} else {
 						$result['exception'] = 'Descripción incorrecta';
 					}

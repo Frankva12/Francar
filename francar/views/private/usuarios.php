@@ -44,7 +44,7 @@
   <br>
   <!--Se hace tabla donde muestran los diferentes usuarios que hay-->
   <div class="container">
-  <table class="display example">
+    <table class="display example">
       <thead>
         <tr>
           <th>Nombre</th>
@@ -200,6 +200,11 @@ Footer::foot();
   <script src="../../resources/js/combo.js"></script>
   <script src="../../resources/js/datatables.min.js"></script>
   <script src="../../resources/js/tabla.js"></script>
+
+  <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+
+  <script src="../../core/controllers/dashboard/usuarios.js"></script>
+  <script src="../../core/helpers/functions.js"></script>
 </body>
 
 </html>

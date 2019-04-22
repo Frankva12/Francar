@@ -45,7 +45,7 @@
   <br>
   <!--Tabla donde se muestran los libros que hay en la tienda donde se puede modificar, eliminar y agregar-->
   <div class="container">
-  <table class="display example">
+    <table class="display example">
       <thead>
         <tr>
           <th>Imagen</th>
@@ -58,13 +58,13 @@
         </tr>
       </thead>
       <tbody id="tbody-read">
-      <td>jidsojfds</td>
-      <td>jidsojfds</td>
-      <td>jidsojfds</td>
-      <td>jidsojfds</td>
-      <td>jidsojfds</td>
-      <td>jidsojfds</td>
-      <td>jidsojfds</td>
+        <td>jidsojfds</td>
+        <td>jidsojfds</td>
+        <td>jidsojfds</td>
+        <td>jidsojfds</td>
+        <td>jidsojfds</td>
+        <td>jidsojfds</td>
+        <td>jidsojfds</td>
       </tbody>
     </table>
     <!-- Botón para abrir ventana de nuevo registro -->
@@ -183,7 +183,7 @@
             <input id="update_autor" type="text" name="update_autor" class="validate" required />
             <label for="update_autor">Autor</label>
           </div>
-          
+
           <div class="input-field col s12 m6">
             <select id="update_categoria" name="update_categoria">
             </select>
@@ -314,6 +314,11 @@
   <script src="../../resources/js/combo.js"></script>
   <script src="../../resources/js/datatables.min.js"></script>
   <script src="../../resources/js/tabla.js"></script>
+
+  <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+
+  <script src="../../core/controllers/dashboard/productos.js"></script>
+  <script src="../../core/helpers/functions.js"></script>
 </body>
 
 </html>

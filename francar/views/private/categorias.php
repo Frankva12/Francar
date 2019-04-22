@@ -16,7 +16,6 @@
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
     <script src="../../resources/js/highcharts.js"></script>
     <script src="../../resources/js/modules.js"></script>
-
     <title>Libreria Francar</title>
 </head>
 
@@ -44,7 +43,7 @@
     <br>
     <!--Se hace una tabla donde iran las categorias de los libros que se poseen-->
     <div class="container">
-  <table class="display example">
+        <table class="display example">
             <thead>
                 <tr>
                     <th>Imagen</th>
@@ -92,14 +91,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row center-align">
-                <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
-                <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i class="material-icons">save</i></button>
-            </div>
+        </div>
+        <div class="row center-align">
+            <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
+                    class="material-icons">cancel</i></a>
+            <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i
+                    class="material-icons">save</i></button>
+        </div>
         </form>
     </div>
-</div>
+    </div>
 
     <!-- Ventana para modificar un registro existente -->
     <div id="modal-update" class="modal">
@@ -138,53 +139,6 @@
             </form>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--Se hace el modal de editar categorias
-    <div id="modal2" class="modal">
-        <h3 align="center">EDITAR CATEGORIAS
-            <a class="btn-floating black pulse">
-                <i class="material-icons">create</i>
-            </a>
-        </h3>
-        <hr>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s11">
-                        <i class="material-icons prefix">book</i>
-                        <input id="text" type="text" class="validate">
-                        <label for="text">Categoria</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s11">
-                                <i class="material-icons prefix">edit</i>
-                                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                <label for="textarea1">Descripcion</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <p class="center-align">
-                    <a class="waves-effect waves-light btn-large">Agregar categorias</a>
-                </p>
-            </form>
-        </div>
-    </div>
--->
     <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
     <?php
         require("../../resources/pages/footer.php");
@@ -193,15 +147,18 @@
 
     <!--Se importan lo que son los archivos de JavaScript-->
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-  <script src="../../resources/js/materialize.min.js"></script>
-  <script src="../../resources/js/carousel.js"></script>
-  <script src="../../resources/js/parallax.js"></script>
-  <script src="../../resources/js/images.js"></script>
-  <script src="../../resources/js/modal.js"></script>
-  <script src="../../resources/js/search.js"></script>
-  <script src="../../resources/js/combo.js"></script>
-  <script src="../../resources/js/datatables.min.js"></script>
-  <script src="../../resources/js/tabla.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+    <script src="../../resources/js/carousel.js"></script>
+    <script src="../../resources/js/parallax.js"></script>
+    <script src="../../resources/js/images.js"></script>
+    <script src="../../resources/js/modal.js"></script>
+    <script src="../../resources/js/combo.js"></script>
+    <script src="../../resources/js/datatables.min.js"></script>
+    <script src="../../resources/js/tabla.js"></script>
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+
+    <script src="../../core/controllers/dashboard/categorias.js"></script>
+    <script src="../../core/helpers/functions.js"></script>
 </body>
 
 </html>
