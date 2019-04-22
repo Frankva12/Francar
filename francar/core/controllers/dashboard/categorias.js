@@ -29,6 +29,38 @@ function fillTable(rows)
     $('.tooltipped').tooltip();
 }
 
+//Función para mostrar los resultados de una búsqueda
+$('#form-search').submit(function()
+{
+    event.preventDefault();
+    $.ajax({
+        url: apiCategorias + 'search',
+        type: 'post',
+        data: $('#form-search').serialize(),
+        datatype: 'json'
+    })
+    .done(function(response){
+        //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
+        if (isJSONString(response)) {
+            const result = JSON.parse(response);
+            //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
+            if (result.status) {
+                sweetAlert(4, 'Coincidencias: ' + result.dataset.length, null);
+                fillTable(result.dataset);
+            } else {
+                sweetAlert(3, result.exception, null);
+            }
+        } else {
+            console.log(response);
+        }
+    })
+    .fail(function(jqXHR){
+        //Se muestran en consola los posibles errores de la solicitud AJAX
+        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+    });
+})
+
+
 //Función para obtener y mostrar los registros disponibles
 function showTable()
 {
@@ -212,6 +244,7 @@ function confirmDelete(id, file)
                         showTable();
                     } else {
                         sweetAlert(1,'Categoria eliminada correctamente', null);
+                         showTable();
                     }
                 } else {
                     swal({

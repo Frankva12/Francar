@@ -100,7 +100,7 @@ $('#form-search').submit(function()
 {
     event.preventDefault();
     $.ajax({
-        url: apiCategorias + 'search',
+        url: apiEditoriales + 'search',
         type: 'post',
         data: $('#form-search').serialize(),
         datatype: 'json'
@@ -125,11 +125,6 @@ $('#form-search').submit(function()
         console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
     });
 })
-
-
-
-
-
 
 //Función para mostrar formulario con registro a modificar
 function modalUpdate(id)
