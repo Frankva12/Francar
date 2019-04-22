@@ -238,11 +238,11 @@ function confirmDelete(id, file)
                         if (result.status == 1) {
                             sweetAlert(1, 'Editorial eliminada correctamente', null);
                         } else if(result.status == 2) {
-                            sweetAlert(3, 'Editorial eliminada. ' + result.exception, null);
+                            sweetAlert(2, 'Editorial eliminada. ' + result.exception, null);
                         }
                         showTable();
                     } else {
-                        sweetAlert(2, result.exception, null);
+                        sweetAlert(1, 'Editorial eliminada correctamente', result.exception, null);
                     }
                 } else {
                     console.log(response);

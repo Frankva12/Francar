@@ -46,7 +46,7 @@
     <div class="row">
     
     <!--Se hace una tabla con el nombre de cada editorial-->
-    <div class="container">
+    <div class="container"> 
   <table class="display example">
             <thead>
                 <tr>
