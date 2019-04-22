@@ -10,6 +10,7 @@
   <!--Se importa el css de Materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="icon" type="ico" href="../../resources/img/icono.ico">
+  <link href="../../resources/css/tablas.css" rel="stylesheet">
   <!--Deja que la pagina web sea responsive-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
@@ -43,8 +44,8 @@
   </nav>
   <br>
   <!--Tabla donde se muestran los libros que hay en la tienda donde se puede modificar, eliminar y agregar-->
-  <div class="container" id="myTable">
-    <table class="highlight">
+  <div class="container">
+  <table class="display example">
       <thead>
         <tr>
           <th>Imagen</th>
@@ -57,6 +58,13 @@
         </tr>
       </thead>
       <tbody id="tbody-read">
+      <td>jidsojfds</td>
+      <td>jidsojfds</td>
+      <td>jidsojfds</td>
+      <td>jidsojfds</td>
+      <td>jidsojfds</td>
+      <td>jidsojfds</td>
+      <td>jidsojfds</td>
       </tbody>
     </table>
     <!-- Botón para abrir ventana de nuevo registro -->

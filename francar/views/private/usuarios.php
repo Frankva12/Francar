@@ -10,6 +10,7 @@
   <!--Se importa el css de materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="icon" type="ico" href="../../resources/img/icono.ico">
+  <link href="../../resources/css/tablas.css" rel="stylesheet">
   <!--Deja que la pagina web sea responsive-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
@@ -42,8 +43,8 @@
   </nav>
   <br>
   <!--Se hace tabla donde muestran los diferentes usuarios que hay-->
-  <div class="container" id="myTable">
-    <table class="highlight">
+  <div class="container">
+  <table class="display example">
       <thead>
         <tr>
           <th>Nombre</th>

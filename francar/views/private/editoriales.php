@@ -8,7 +8,7 @@
     <link href="../../resources/css/icon.css" rel="stylesheet">
     <link href="../../resources/css/tablas.css" rel="stylesheet">
     <link rel="icon" type="ico" href="../../resources/img/icono.ico">
-
+    <link href="../../resources/css/tablas.css" rel="stylesheet">
     <!--Importa el css de materialize-->
     <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
     <!--Deja que la pagina web sea responsive-->
@@ -44,22 +44,10 @@
     <br>
 
     <div class="row">
-    <!-- Formulario de búsqueda -->
-    <form method="post" id="form-search">
-        <div class="input-field col s6 m4">
-            <i class="material-icons prefix">search</i>
-            <input id="buscar" type="text" name="busqueda"/>
-            <label for="buscar">Buscador</label>
-        </div>
-        <div class="input-field col s6 m4">
-            <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>
-        </div>
-    </form>
-</div>
     
     <!--Se hace una tabla con el nombre de cada editorial-->
-    <div class="container" id="myTable">
-        <table class="highlight">
+    <div class="container">
+  <table class="display example">
             <thead>
                 <tr>
                     <th>Editoriales</th>
@@ -138,16 +126,14 @@
         
     <!--Se importan lo que son los archivos de JavaScript-->
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/parallax.js"></script>
-    <script src="../../resources/js/images.js"></script>
-    <script src="../../resources/js/modal.js"></script>
-    <script src="../../resources/js/combo.js"></script>
-    <script src="../../resources/js/datatables.min.js"></script>
-    <script src="../../resources/js/tabla.js"></script>
-
-    <script src="../../core/controllers/dashboard/editoriales.js"></script>
-    <script src="../../core/helpers/functions.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+  <script src="../../resources/js/carousel.js"></script>
+  <script src="../../resources/js/parallax.js"></script>
+  <script src="../../resources/js/images.js"></script>
+  <script src="../../resources/js/modal.js"></script>
+  <script src="../../resources/js/search.js"></script>
+  <script src="../../resources/js/combo.js"></script>
+  <script src="../../resources/js/datatables.min.js"></script>
+  <script src="../../resources/js/tabla.js"></script>
 </body>
 </html>
