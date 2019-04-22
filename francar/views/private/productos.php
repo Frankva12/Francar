@@ -47,10 +47,10 @@
     <table class="highlight">
       <thead>
         <tr>
-          <th>Categoria</th>
+          <th>Imagen</th>
           <th>Libro</th>
           <th>Descripcion</th>
-          <th>Imagen</th>
+          <th>Categoria</th>
           <th>Precio</th>
           <th>Estado</th>
           <th>Acciones</th>
@@ -62,7 +62,7 @@
     <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
       <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i
-          align="center" class="material-icons"></i>Agregar Productos</a>
+          align="center" class="material-icons"></i>Agregar Libros</a>
     </div>
   </div>
   </div>
@@ -76,8 +76,8 @@
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">note_add</i>
-            <input id="create_nombre" type="text" name="create_nombre" class="validate" required />
-            <label for="create_nombre">Nombre del libro</label>
+            <input id="create_nombre_libro" type="text" name="create_nombre_libro" class="validate" required />
+            <label for="create_nombre_libro">Nombre del libro</label>
           </div>
 
           <div class="input-field col s12 m6">
@@ -94,7 +94,18 @@
           </div>
 
           <div class="input-field col s12 m6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="create_autor" type="text" name="create_autor" class="validate" required />
+            <label for="create_autor">Autor</label>
+          </div>
+
+          <div class="input-field col s12 m6">
             <select id="create_categoria" name="create_categoria">
+            </select>
+          </div>
+
+          <div class="input-field col s12 m6">
+            <select id="create_editorial" name="create_editorial">
             </select>
           </div>
 
@@ -139,26 +150,42 @@
         <input type="hidden" id="id_libro" name="id_libro" />
         <input type="hidden" id="imagen_libro" name="imagen_libro" />
         <div class="row">
+
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">note_add</i>
-            <input id="update_nombre" type="text" name="update_nombre" class="validate" required />
-            <label for="update_nombre">Nombre</label>
+            <input id="update_nombre_libro" type="text" name="update_nombre_libro" class="validate" required />
+            <label for="update_nombre_libro">Nombre del libro</label>
           </div>
+
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">shopping_cart</i>
+            <i class="material-icons prefix">attach_money</i>
             <input id="update_precio" type="number" name="update_precio" class="validate" min="0.01" max="999.99"
               step="any" required />
             <label for="update_precio">Precio USD($)</label>
           </div>
+
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">description</i>
             <input id="update_descripcion" type="text" name="update_descripcion" class="validate" required />
             <label for="update_descripcion">Descripción</label>
           </div>
+
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="update_autor" type="text" name="update_autor" class="validate" required />
+            <label for="update_autor">Autor</label>
+          </div>
+          
           <div class="input-field col s12 m6">
             <select id="update_categoria" name="update_categoria">
             </select>
           </div>
+
+          <div class="input-field col s12 m6">
+            <select id="update_editorial" name="update_editorial">
+            </select>
+          </div>
+
           <div class="file-field input-field col s12 m6">
             <div class="btn waves-effect">
               <span><i class="material-icons">image</i></span>

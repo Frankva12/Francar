@@ -61,7 +61,7 @@
     <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
       <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i
-          align="center" class="material-icons"></i>Agregar Productos</a>
+          align="center" class="material-icons"></i>Agregar Usuarios</a>
     </div>
   </div>
   </div>
@@ -75,45 +75,45 @@
         <div class="row">
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">note_add</i>
-            <input id="create_nombre" type="text" name="create_nombres" class="validate" required />
+            <i class="material-icons prefix">account_circle</i>
+            <input id="create_nombre" type="text" name="create_nombre" class="validate" required />
             <label for="create_nombre">Nombre</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">note_add</i>
-            <input id="create_descripcion" type="text" name="create_apellidos" class="validate" />
-            <label for="create_descripcion">Apellido</label>
+            <i class="material-icons prefix">account_circle</i>
+            <input id="create_apellido" type="text" name="create_apellido" class="validate" />
+            <label for="create_apellido">Apellido</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">note_add</i>
-            <input id="create_descripcion" type="text" name="create_alias" class="validate" />
-            <label for="create_descripcion">Alias</label>
+            <i class="material-icons prefix">account_circle</i>
+            <input id="create_alias" type="text" name="create_alias" class="validate" />
+            <label for="create_alias">Alias</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">note_add</i>
-            <input id="create_descripcion" type="text" name="create_contrasenia1" class="validate" />
-            <label for="create_descripcion">contraseña</label>
+            <i class="material-icons prefix">lock</i>
+            <input id="create_contrasenia" type="text" name="create_contrasenia" class="validate" />
+            <label for="create_contrasenia">Contraseña</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">note_add</i>
-            <input id="create_descripcion" type="text" name="create_direccion" class="validate" />
-            <label for="create_descripcion">direccion</label>
+            <i class="material-icons prefix">place</i>
+            <input id="create_direccion" type="text" name="create_direccion" class="validate" />
+            <label for="create_direccion">Direccion</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">note_add</i>
-            <input id="create_descripcion" type="text" name="create_telefono" class="validate" />
-            <label for="create_descripcion">telefono</label>
+            <i class="material-icons prefix">phone</i>
+            <input id="create_telefono" type="text" name="create_telefono" class="validate" />
+            <label for="create_telefono">Telefono</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">note_add</i>
-            <input id="create_descripcion" type="text" name="create_correo" class="validate" />
-            <label for="create_descripcion">correo</label>
+            <i class="material-icons prefix">mail</i>
+            <input id="create_correo" type="text" name="create_correo" class="validate" />
+            <label for="create_correo">Correo</label>
           </div>
 
         </div>
@@ -136,37 +136,41 @@
         <input type="hidden" id="id_usuario" name="id_usuario" />
         <div class="row">
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">person</i>
-            <input id="update_nombres" type="text" name="update_nombres" class="validate" required />
-            <label for="update_nombres">Nombres</label>
+            <i class="material-icons prefix">account_circle</i>
+            <input id="update_nombre" type="text" name="update_nombre" class="validate" required />
+            <label for="update_nombre">Nombre</label>
           </div>
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">person</i>
-            <input id="update_apellidos" type="text" name="update_apellidos" class="validate" required />
-            <label for="update_apellidos">Apellidos</label>
+            <i class="material-icons prefix">account_circle</i>
+            <input id="update_apellido" type="text" name="update_apellido" class="validate" required />
+            <label for="update_apellido">Apellido</label>
           </div>
+
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">correo</i>
-            <input id="update_correo" type="email" name="update_correo" class="validate" required />
-            <label for="update_correo">Correo</label>
-          </div>
-          <div class="input-field col s12 m6">
-            <i class="material-icons prefix">person_pin</i>
+            <i class="material-icons prefix">account_circle</i>
             <input id="update_alias" type="text" name="update_alias" class="validate" required />
             <label for="update_alias">Alias</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">person_pin</i>
-            <input id="update_alias" type="text" name="update_telefono" class="validate" required />
-            <label for="update_alias">telefono</label>
+            <i class="material-icons prefix">place</i>
+            <input id="update_direccion" type="text" name="update_direccion" class="validate" required />
+            <label for="update_direccion">direccion</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">person_pin</i>
-            <input id="update_alias" type="text" name="update_direccion" class="validate" required />
-            <label for="update_alias">direccion</label>
+            <i class="material-icons prefix">phone</i>
+            <input id="update_telefono" type="text" name="update_telefono" class="validate" required />
+            <label for="update_telefono">telefono</label>
           </div>
+
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">mail</i>
+            <input id="update_correo" type="email" name="update_correo" class="validate" required />
+            <label for="update_correo">Correo</label>
+          </div>
+
+
 
         </div>
         <div class="row center-align">
