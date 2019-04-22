@@ -11,8 +11,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 	//Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
 	if (isset($_SESSION['idUsuario']) && $_GET['site'] == 'dashboard') {
 		switch ($_GET['action']) {
-            case 'read':
-            
+            case 'read': 
 				if ($result['dataset'] = $editorial->readEditoriales()) {
 					$result['status'] = 1;
 				} else {
@@ -21,18 +20,14 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 				break;
 			case 'create':
 				$_POST = $editorial->validateForm($_POST);
-        		if ($editorial->setNombre($_POST['create_nombre'])) {
-					if ($editorial->setDescripcion($_POST['create_descripcion'])) {	
-					} else {
-						$result['exception'] = 'Descripción incorrecta';
-					}
+        		if ($editorial->setNombre($_POST['create_editorial'])) {
 				} else {
 					$result['exception'] = 'Nombre incorrecto';
 				}
             	break;
             case 'get':
                 if ($editorial->setId($_POST['id_editorial'])) {
-                    if ($result['dataset'] = $editorial->getEditoriales()) {
+                    if ($result['dataset'] = $editorial->getEditorial()) {
                         $result['status'] = 1;
                     } else {
                         $result['exception'] = 'Editorial inexistente';
@@ -45,14 +40,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 				$_POST = $editorial->validateForm($_POST);
 				if ($editorial->setId($_POST['id_editorial'])) {
 					if ($editorial->getEditorial()) {
-		                if ($editorial->setNombre($_POST['update_nombre'])) {
-							if ($editorial->setDescripcion($_POST['update_descripcion'])) {
-								} else {
-									$result['exception'] = 'Operación fallida';
-								}
-							} else {
-								$result['exception'] = 'Descripción incorrecta';
-							}
+		                if ($editorial->setNombre($_POST['update_editorial'])) {
 						} else {
 							$result['exception'] = 'Nombre incorrecto';
 						}
@@ -65,8 +53,8 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             	break;
             case 'delete':
 				if ($editorial->setId($_POST['id_editorial'])) {
-					if ($editorial->getEditoriales()) {
-						if ($editorial->deleteEditoriales()) {
+					if ($editorial->getEditorial()) {
+						if ($editorial->deleteEditorial()) {
 					} else {
 						$result['exception'] = 'Editorial inexistente';
 					}

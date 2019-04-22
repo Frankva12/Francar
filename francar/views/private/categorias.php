@@ -62,7 +62,6 @@
                 data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Categorias</a>
         </div>
     </div>
-    </div>
 
     <!-- Ventana para crear un nuevo registro -->
     <div id="modal-create" class="modal">

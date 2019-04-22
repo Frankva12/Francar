@@ -15,7 +15,6 @@ function fillTable(rows)
         content += `
             <tr>
                 <td>${row.nombre_editorial}</td>
-                <td>${row.descripcion}</td>
                 <td>
                     <a href="#" onclick="modalUpdate(${row.id_editorial})" class="blue-text tooltipped" data-tooltip="Modificar"><i class="material-icons">mode_edit</i></a>
                     <a href="#" onclick="confirmDelete(${row.id_editorial})" class="red-text tooltipped" data-tooltip="Eliminar"><i class="material-icons">delete</i></a>
@@ -115,7 +114,7 @@ function modalUpdate(id)
                 $('#form-update')[0].reset();
                 $('#id_editorial').val(result.dataset.id_editorial);    
                 $('#nombre_editorial').val(result.dataset.nombre_editorial);
-                $('#update_nombre').val(result.dataset.nombre_editorial);
+                $('#update_editorial').val(result.dataset.nombre_editorial);
                 M.updateTextFields();
                 $('#modal-update').modal('open');
             } else {

@@ -3,8 +3,7 @@ class Editoriales extends Validator
 {
 	//Declaración de propiedades
 	private $id = null;
-	private $nombre = null;
-	private $descripcion = null;
+	private $nombre_editorial = null;
 
 	//Métodos para sobrecarga de propiedades
 	public function setId($value)
@@ -13,7 +12,7 @@ class Editoriales extends Validator
 			$this->id = $value;
 			return true;
 		} else {
-			return false;z
+			return false;
 		}
 	}
 
@@ -22,39 +21,19 @@ class Editoriales extends Validator
 		return $this->id;
 	}
 
-	public function setNombre($value)
+	public function setNombreEditorial($value)
 	{
-		if($this->validateAlphanumeric($value, 1, 50)) {
-			$this->nombre = $value;
+		if($this->validateAlphanumeric($value, 1, 100)) {
+			$this->nombre_editorial = $value;
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	public function getNombre()
+	public function getNombreEditorial()
 	{
-		return $this->nombre;
-	}
-
-	public function setDescripcion($value)
-	{
-		if ($value) {
-			if ($this->validateAlphanumeric($value, 1, 200)) {
-				$this->descripcion = $value;
-				return true;
-			} else {
-				return false;
-			}
-		} else {
-			$this->descripcion = null;
-			return true;
-		}
-	}
-
-	public function getDescripcion()
-	{
-		return $this->descripcion;
+		return $this->nombre_editorial;
 	}
 
 	//Metodos para el manejo del CRUD
@@ -75,7 +54,7 @@ class Editoriales extends Validator
 	public function createEditorial()
 	{
 		$sql = 'INSERT INTO editoriales(nombre_editorial) VALUES(?)';
-		$params = array($this->nombre);
+		$params = array($this->nombre_editorial);
 		return Database::executeRow($sql, $params);
 	}
 

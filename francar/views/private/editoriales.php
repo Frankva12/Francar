@@ -41,6 +41,21 @@
         </div>
     </nav>
     <br>
+    <div class="row">
+    <!-- Formulario de búsqueda -->
+    <nav>
+    <div class="nav-wrapper #eeeeee grey lighten-3">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+</div>
+    
     <!--Se hace una tabla con el nombre de cada editorial-->
     <div class="container" id="myTable">
         <table class="highlight">
@@ -50,10 +65,11 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-
-            <tbody>
+            <tbody id="tbody-read">
             </tbody>
         </table>
+
+        
         <!-- Botón para abrir ventana de nuevo registro -->
         <div class="input-field center-align col s12 m4">
             <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
@@ -62,8 +78,7 @@
     </div>
     </div>
 
-
-    <!-- Ventana para crear un nuevo registro -->
+    <!--Ventana para crear un nuevo registro-->
     <div id="modal-create" class="modal">
         <div class="modal-content">
             <h4 class="center-align">Crear editorial</h4>
@@ -72,8 +87,8 @@
 
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
-                        <input id="create_nombre" type="text" name="create_nombre" class="validate" required />
-                        <label for="create_nombre">Editorial</label>
+                        <input id="create_editorial" type="text" name="create_editorial" class="validate" required />
+                        <label for="create_editorial">Editorial</label>
                     </div>
                 </div>
                 <div class="row center-align">
@@ -92,7 +107,7 @@
     <!-- Ventana para modificar un registro existente -->
 <div id="modal-update" class="modal">
     <div class="modal-content">
-        <h4 class="center-align">Modificar categoría</h4>
+        <h4 class="center-align">Modificar editorial</h4>
         <form method="post" id="form-update" enctype="multipart/form-data">
             <div class="row">
                 <div class="input-field col s12 m6">
@@ -110,12 +125,16 @@
         </div>
     </div>
     </div>
+
+
+
+
     <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
     <?php
         require("../../resources/pages/footer.php");
         Footer::foot();
         ?>
-
+        
     <!--Se importan lo que son los archivos de JavaScript-->
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
     <script src="../../resources/js/materialize.min.js"></script>
@@ -128,5 +147,4 @@
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/tabla.js"></script>
 </body>
-
 </html>
