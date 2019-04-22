@@ -122,11 +122,10 @@
                     <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Modificar"><i
                             class="material-icons">save</i></button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-    </div>
-
+</div>
 
 
 
@@ -146,8 +145,9 @@
     <script src="../../resources/js/combo.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/tabla.js"></script>
-    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
 
+    
+    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
     <script src="../../core/controllers/dashboard/editoriales.js"></script>
     <script src="../../core/helpers/functions.js"></script>
 </body>

@@ -57,7 +57,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 					case 'update':
 						$_POST = $editorial->validateForm($_POST);
 						if ($editorial->setId($_POST['id_editorial'])) {
-							if ($editorial->getNombreEditorial()) {
+							if ($editorial->getEditorial()) {
 								if ($editorial->setNombreEditorial($_POST['update_editorial'])) {
 								} else {
 									$result['exception'] = 'Nombre incorrecto';

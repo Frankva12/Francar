@@ -148,10 +148,9 @@ function modalUpdate(id)
             if (result.status) {
                 $('#form-update')[0].reset();
                 $('#id_categoria').val(result.dataset.id_categoria);    
-                $('#nombre_categoria').val(result.dataset.nombre_categoria);
-                $('#descripcion_categoria').val(result.dataset.descripcion_categoria);
-                $('#update_nombre').val(result.dataset.nombre_categoria);
-                $('#update_descripcion_categoria').val(result.dataset.descripcion_categoria);
+                $('#imagen_categoria').val(result.dataset.imagen_categoria);
+                $('#update_categoria').val(result.dataset.nombre_categoria);
+                $('#update_descripcion').val(result.dataset.descripcion_categoria);
                 M.updateTextFields();
                 $('#modal-update').modal('open');
             } else {
