@@ -9,8 +9,9 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
     $producto = new Productos;
     $result = array('status' => 0, 'exception' => '');
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-	if (isset($_SESSION['idUsuario']) && $_GET['site'] == 'dashboard') {
+	if ($_GET['site'] == 'private') {
         switch ($_GET['action']) {
+
             case 'readProductos':
                 if ($result['dataset'] = $producto->readProductos()) {
                     $result['status'] = 1;
@@ -18,6 +19,8 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                     $result['exception'] = 'No hay libros registrados';
                 }
                 break;
+
+
             case 'readCategorias':
                 if ($result['dataset'] = $producto->readCategorias()) {
                     $result['status'] = 1;
@@ -25,6 +28,17 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                     $result['exception'] = 'No hay categorías registradas';
                 }
                 break;
+
+            case 'readEditoriales': 
+            if ($result['dataset'] = $editorial->readEditoriales()) {
+                $result['status'] = 1;
+            } else {
+                $result['exception'] = 'No hay editoriales registradas';
+            }
+            break;
+
+
+
             case 'create':
                 $_POST = $producto->validateForm($_POST);
                 if ($producto->setNombre($_POST['create_nombre'])) {
@@ -38,7 +52,9 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                                 if ($producto->setImagen($_FILES['create_archivo'], null)) {
                                                     if ($producto->createProducto()) {
                                                         if ($producto->saveFile($_FILES['create_archivo'], $producto->getRuta(), $producto->getImagen())) {
-                                                            $result['status'] = 1;
+                                                            if($editorial->createProducto()){
+                                                                $result['status']=1;
+                                                        }
                                                         } else {
                                                             $result['status'] = 2;
                                                             $result['exception'] = 'No se guardó el archivo';
@@ -71,6 +87,10 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                         $result['exception'] = 'Nombre incorrecto';
                     }
                 break;
+
+
+
+                
             case 'get':
                 if ($producto->setId($_POST['id_producto'])) {
                     if ($result['dataset'] = $producto->getProducto()) {

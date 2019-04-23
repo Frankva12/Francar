@@ -33,13 +33,15 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 break;
 			case 'create':
 				$_POST = $categoria->validateForm($_POST);
-        		if ($categoria->setNombre($_POST['create_nombre'])) {
+        		if ($categoria->setNombre($_POST['create_categoria'])) {
 					if ($categoria->setDescripcion($_POST['create_descripcion'])) {
 						if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
 							if ($categoria->setImagen($_FILES['create_archivo'], null)) {
 								if ($categoria->createCategoria()) {
 									if ($categoria->saveFile($_FILES['create_archivo'], $categoria->getRuta(), $categoria->getImagen())) {
-										$result['status'] = 1;
+										if($categoria->createCategoria()){
+											$result['status'] = 1;
+										}						
 									} else {
 										$result['status'] = 2;
 										$result['exception'] = 'No se guardó el archivo';
@@ -59,7 +61,9 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 				} else {
 					$result['exception'] = 'Nombre incorrecto';
 				}
-            	break;
+				break;
+				
+				
             case 'get':
                 if ($categoria->setId($_POST['id_categoria'])) {
                     if ($result['dataset'] = $categoria->getCategoria()) {

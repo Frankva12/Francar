@@ -63,14 +63,14 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 						if ($editorial->setId($_POST['id_editorial'])) {
 							if ($editorial->getEditorial()) {
 								if ($editorial->setNombreEditorial($_POST['update_editorial'])) {
-								} else {
-									$result['exception'] = 'Nombre incorrecto';
+										if($editorial->updateEditorial()){
+											$result['status']=1;
+										} else {
+										$result['status']=2;
+										$result['exception'] = 'Nombre incorrecto';
+										}
 								}
-							} else {
-								$result['exception'] = 'Editorial inexistente';
 							}
-						} else {
-							$result['exception'] = 'Editorial incorrecta';
 						}
 						break;
 
