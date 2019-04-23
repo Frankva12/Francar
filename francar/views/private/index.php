@@ -40,12 +40,6 @@
               <label for="contraseña">Contraseña</label>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s12 m12 l12  login-text">
-              <input type="checkbox" id="remember-me" />
-              <span>Recuerdame</span>
-            </div>
-          </div>
 
           <div class="row">
             <div class="input-field col s12">
