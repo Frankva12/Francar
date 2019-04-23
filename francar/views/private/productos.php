@@ -43,6 +43,20 @@
     </div>
   </nav>
   <br>
+  <div class="row">
+    <!-- Formulario de búsqueda -->
+    <form method="post" id="form-search">
+        <div class="input-field col s6 m4">
+            <i class="material-icons prefix">search</i>
+            <input id="buscar" type="text" name="busqueda"/>
+            <label for="buscar">Buscador</label>
+        </div>
+        <div class="input-field col s6 m4">
+            <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>
+        </div>
+    </form>
+    
+</div>
   <!--Tabla donde se muestran los libros que hay en la tienda donde se puede modificar, eliminar y agregar-->
   <div class="container">
     <table class="display example">
@@ -58,7 +72,6 @@
         </tr>
       </thead>
       <tbody id="tbody-read">
-
       </tbody>
     </table>
     <!-- Botón para abrir ventana de nuevo registro -->
@@ -221,75 +234,6 @@
     </div>
   </div>
 
-  <!--
-  //Se hace el modal de editar prouductos//
-  <div id="modal2" class="modal">
-    <h4 align="center">EDITAR PRODUCTOS
-      <a class="btn-floating black pulse">
-        <i class="material-icons">add_circle</i></a>
-    </h4>
-
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s11">
-            <i class="material-icons prefix">book</i>
-            <input id="text" type="text" class="validate">
-            <label for="text">Producto</label>
-          </div>
-        </div>
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s11">
-                <i class="material-icons prefix">edit</i>
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Descripcion</label>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">assignment</i>
-          <select>
-            <option value="" disabled selected>Escoge tu categoria</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">attach_money</i>
-          <input id="number" type="number" class="validate">
-          <label for="number">Precio</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">bookmark</i>
-        
-          <select>
-            <option value="" disabled selected>Escoge tu editorial</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-        </div>
-        <form action="#">
-          <div class="file-field input-field col 6">
-            <div class="btn">
-              <span>Imagen</span>
-              <input type="file">
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text">
-            </div>
-          </div>
-        </form>
-    </div>
-    <br>
-    </form>
-  </div>
--->
-
 
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
@@ -306,8 +250,6 @@
   <script src="../../resources/js/modal.js"></script>
   <script src="../../resources/js/search.js"></script>
   <script src="../../resources/js/combo.js"></script>
-  <script src="../../resources/js/datatables.min.js"></script>
-  <script src="../../resources/js/tabla.js"></script>
 
   <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
 

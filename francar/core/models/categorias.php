@@ -86,6 +86,13 @@ class Categorias extends Validator
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
+	
+	public function searchCategoria($value)
+	{
+		$sql = 'SELECT * FROM categoria WHERE nombre_categoria LIKE ? OR descripcion_categoria LIKE ? ORDER BY nombre_categoria';
+		$params = array("%$value%", "%$value%");
+		return Database::getRows($sql, $params);
+	}
 
 	public function createCategoria()
 	{

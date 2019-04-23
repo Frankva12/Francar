@@ -42,21 +42,35 @@
     </div>
   </nav>
   <br>
+  <div class="row">
+    <!-- Formulario de búsqueda -->
+    <form method="post" id="form-search">
+        <div class="input-field col s6 m4">
+            <i class="material-icons prefix">search</i>
+            <input id="buscar" type="text" name="busqueda"/>
+            <label for="buscar">Buscador</label>
+        </div>
+        <div class="input-field col s6 m4">
+            <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>
+        </div>
+    </form>
+    
+</div>
   <!--Se hace tabla donde muestran los diferentes usuarios que hay-->
   <div class="container">
-    <table class="display example">
+    <table class="highlight">
       <thead>
         <tr>
           <th>Nombre</th>
           <th>Apellido</th>
-          <th>Direccion</th>
+          <th>Alias</th>
           <th>Telefono</th>
           <th>Correo</th>
           <th>Acciones</th>
         </tr>
       </thead>
 
-      <tbody>
+      <tbody id="tbody-read">
       </tbody>
     </table>
     <!-- Botón para abrir ventana de nuevo registro -->
@@ -138,12 +152,12 @@
         <div class="row">
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="update_nombre" type="text" name="update_nombre" class="validate" required />
+            <input id="update_nombre_administrador" type="text" name="update_nombre" class="validate" required />
             <label for="update_nombre">Nombre</label>
           </div>
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="update_apellido" type="text" name="update_apellido" class="validate" required />
+            <input id="update_apellido_administrador" type="text" name="update_apellido" class="validate" required />
             <label for="update_apellido">Apellido</label>
           </div>
 
@@ -198,9 +212,6 @@ Footer::foot();
   <script src="../../resources/js/modal.js"></script>
   <script src="../../resources/js/search.js"></script>
   <script src="../../resources/js/combo.js"></script>
-  <script src="../../resources/js/datatables.min.js"></script>
-  <script src="../../resources/js/tabla.js"></script>
-
   <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
 
   <script src="../../core/controllers/dashboard/usuarios.js"></script>

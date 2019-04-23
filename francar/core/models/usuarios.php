@@ -173,7 +173,7 @@ class Usuarios extends Validator
 
 	public function searchUsuarios($value)
 	{
-		$sql = 'SELECT nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo FROM administrador WHERE nombre_administrador LIKE ? ORDER BY nombre_administrador';
+		$sql = 'SELECT nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo FROM administrador WHERE nombre_administrador LIKE ? OR apellido_administrador LIKE ? ORDER BY nombre_administrador';
 		$params = array("%$value%", "%$value%");
 		return Database::getRows($sql, $params);
 	}
@@ -182,7 +182,7 @@ class Usuarios extends Validator
 	{
 		$hash = password_hash($this->clave, PASSWORD_DEFAULT);
 		$sql = 'INSERT INTO usuarios(nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo) VALUES(?, ?, ?, ?, ?, ?)';
-		$params = array($this->nombre, $this->apellido, $this-->alias, $this->direccion, $this->telefono, $this->correo);
+		$params = array($this->nombre, $this->apellido, $this->alias, $this->direccion, $this->telefono, $this->correo);
 		return Database::executeRow($sql, $params);
 	}
 
@@ -196,7 +196,7 @@ class Usuarios extends Validator
 	public function updateUsuario()
 	{
 		$sql = 'UPDATE administrador SET nombre_administrador = ?, apellido_administrador = ?, alias_usuario = ?, direccion = ?, telefono = ?, correo = ? WHERE id_administrador = ?';
-		$params = array($this->nombre, $this->apellido, $this-->alias, $this->direccion, $this->telefono, $this->correo, $this->id);
+		$params = array($this->nombre, $this->apellido, $this->alias, $this->direccion, $this->telefono, $this->correo, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 
