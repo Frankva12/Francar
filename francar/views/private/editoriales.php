@@ -64,6 +64,7 @@
                 <tr>
                     <th>Editoriales</th>
                     <th>Acciones</th>
+                    <th>HOLA</th>
                 </tr>
             </thead>
             <tbody id="tbody-read">
