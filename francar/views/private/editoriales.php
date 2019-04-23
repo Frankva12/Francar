@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../../resources/css/icon.css" rel="stylesheet">
-    <link href="../../resources/css/tablas.css" rel="stylesheet">
     <link rel="icon" type="ico" href="../../resources/img/icono.ico">
     <link href="../../resources/css/tablas.css" rel="stylesheet">
+    <link href="../../resources/css/material.min.css" rel="stylesheet">
+    <link href="../../resources/css/dataTables.material.min.css" rel="stylesheet">
     <!--Importa el css de materialize-->
     <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
     <!--Deja que la pagina web sea responsive-->
@@ -59,12 +60,11 @@
 </div>
     <!--Se hace una tabla con el nombre de cada editorial-->
     <div class="container"> 
-  <table class="highlight">
+  <table class="highlight" id="tablaEditorial">
             <thead>
                 <tr>
                     <th>Editoriales</th>
                     <th>Acciones</th>
-                    <th>HOLA</th>
                 </tr>
             </thead>
             <tbody id="tbody-read">
@@ -145,6 +145,7 @@
     <script src="../../resources/js/modal.js"></script>
     <script src="../../resources/js/combo.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
+    <script src="../../resources/js/dataTables.material.min.js"></script>
     <script src="../../resources/js/tabla.js"></script>
 
     
