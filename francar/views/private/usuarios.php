@@ -197,7 +197,6 @@ Footer::foot();
     <script src="../../resources/js/materialize.min.js"></script>
     <script src="../../resources/js/carousel.js"></script>
     <script src="../../resources/js/parallax.js"></script>
-    <script src="../../resources/js/images.js"></script>
     <script src="../../resources/js/modal.js"></script>
     <script src="../../resources/js/combo.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>

@@ -9,6 +9,8 @@
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="icon" type="ico" href="../../resources/img/icono.ico">
+  <link href="../../resources/css/material.min.css" rel="stylesheet">
+  <link href="../../resources/css/dataTables.material.min.css" rel="stylesheet">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
