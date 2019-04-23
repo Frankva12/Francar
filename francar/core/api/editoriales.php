@@ -24,8 +24,12 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 					case 'create':
 						$_POST = $editorial->validateForm($_POST);
 						if ($editorial->setNombreEditorial($_POST['create_editorial'])) {
-						} else {
+							if($editorial->createEditorial()){
+								$result['status']=1;
+							}else {
+							$result['status']=2;
 							$result['exception'] = 'Nombre incorrecto';
+							}
 						}
 						break;
 

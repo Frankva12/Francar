@@ -1,7 +1,6 @@
 $(document).ready(function()
 {
     showTable();
-    showSelectCategorias('create_categoria', null);
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API

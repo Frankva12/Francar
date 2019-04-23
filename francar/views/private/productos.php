@@ -58,13 +58,7 @@
         </tr>
       </thead>
       <tbody id="tbody-read">
-        <td>jidsojfds</td>
-        <td>jidsojfds</td>
-        <td>jidsojfds</td>
-        <td>jidsojfds</td>
-        <td>jidsojfds</td>
-        <td>jidsojfds</td>
-        <td>jidsojfds</td>
+
       </tbody>
     </table>
     <!-- Botón para abrir ventana de nuevo registro -->
