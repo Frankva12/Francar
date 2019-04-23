@@ -21,7 +21,7 @@ function checkUsuarios()
             const dataset = JSON.parse(response);
             //Se comprueba que no hay usuarios registrados para redireccionar al registro del primer usuario
             if (dataset.status == 2) {
-                sweetAlert(3, dataset.exception, 'register.php');
+                sweetAlert(3, dataset.exception, 'index.php');
             }
         } else {
             console.log(response);
@@ -49,7 +49,7 @@ $('#form-sesion').submit(function()
             const dataset = JSON.parse(response);
             //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
             if (dataset.status) {
-                sweetAlert(1, 'Autenticación correcta', 'main.php');
+                sweetAlert(1, 'Autenticación correcta', 'private.php');
             } else {
                 sweetAlert(2, dataset.exception, null);
             }

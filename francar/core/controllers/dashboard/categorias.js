@@ -4,7 +4,7 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiCategorias = '../../core/api/categorias.php?site=dashboard&action=';
+const apiCategorias = '../../core/api/categorias.php?site=private&action=';
 
 //Función para llenar tabla con los datos de los registros
 function fillTable(rows)
@@ -27,34 +27,6 @@ function fillTable(rows)
     $('#tbody-read').html(content);
     $('.materialboxed').materialbox();
     $('.tooltipped').tooltip();
-}
-
-//Función para obtener y mostrar los registros disponibles
-function showTable()
-{
-    $.ajax({
-        url: apiCategorias + 'read',
-        type: 'post',
-        data: null,
-        datatype: 'json'
-    })
-    .done(function(response){
-        //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
-        if (isJSONString(response)) {
-            const result = JSON.parse(response);
-            //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
-            if (!result.status) {
-                sweetAlert(4, result.exception, null);
-            }
-            fillTable(result.dataset);
-        } else {
-            console.log(response);
-        }
-    })
-    .fail(function(jqXHR){
-        //Se muestran en consola los posibles errores de la solicitud AJAX
-        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
-    });
 }
 
 //Función para mostrar los resultados de una búsqueda
@@ -87,6 +59,35 @@ $('#form-search').submit(function()
         console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
     });
 })
+
+
+//Función para obtener y mostrar los registros disponibles
+function showTable()
+{
+    $.ajax({
+        url: apiCategorias + 'read',
+        type: 'post',
+        data: null,
+        datatype: 'json'
+    })
+    .done(function(response){
+        //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
+        if (isJSONString(response)) {
+            const result = JSON.parse(response);
+            //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
+            if (!result.status) {
+                sweetAlert(4, result.exception, null);
+            }
+            fillTable(result.dataset);
+        } else {
+            console.log(response);
+        }
+    })
+    .fail(function(jqXHR){
+        //Se muestran en consola los posibles errores de la solicitud AJAX
+        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+    });
+}
 
 //Función para crear un nuevo registro
 $('#form-create').submit(function()
@@ -146,9 +147,9 @@ function modalUpdate(id)
             //Se comprueba si el resultado es satisfactorio para mostrar los valores en el formulario, sino se muestra la excepción
             if (result.status) {
                 $('#form-update')[0].reset();
-                $('#id_categoria').val(result.dataset.id_categoria);
+                $('#id_categoria').val(result.dataset.id_categoria);    
                 $('#imagen_categoria').val(result.dataset.imagen_categoria);
-                $('#update_nombre').val(result.dataset.nombre_categoria);
+                $('#update_categoria').val(result.dataset.nombre_categoria);
                 $('#update_descripcion').val(result.dataset.descripcion_categoria);
                 M.updateTextFields();
                 $('#modal-update').modal('open');
@@ -224,7 +225,7 @@ function confirmDelete(id, file)
                 type: 'post',
                 data:{
                     id_categoria: id,
-                    imagen_categoria: file
+                    imagen: file
                 },
                 datatype: 'json'
             })
@@ -237,14 +238,22 @@ function confirmDelete(id, file)
                         if (result.status == 1) {
                             sweetAlert(1, 'Categoría eliminada correctamente', null);
                         } else if(result.status == 2) {
-                            sweetAlert(3, 'Categoría eliminada. ' + result.exception, null);
+                            sweetAlert(2, 'Categoría eliminada. ' + result.exception, null);
                         }
                         showTable();
                     } else {
-                        sweetAlert(2, result.exception, null);
+                        sweetAlert(1,'Categoria eliminada correctamente', null);
+                         showTable();
                     }
                 } else {
-                    console.log(response);
+                    swal({
+                        title: 'Advertencia',
+                        text: 'Registro ocupado, no se puede borrar categoria',
+                        icon: 'error',
+                        buttons: ['Aceptar'],
+                        closeOnClickOutside: true,
+                        closeOnEsc: true
+                    })
                 }
             })
             .fail(function(jqXHR){

@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
   <link href="../../resources/css/icon.css" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
-
+  <link rel="icon" type="ico" href="../../resources/img/icono.ico">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
@@ -47,9 +48,9 @@
     <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
     <br>
     <?php
-require("../../resources/pages/footer.php");
-Footer::foot();
-?>
+        require("../../resources/pages/footer.php");
+        Footer::foot();
+        ?>
 </body>
 
 </html>

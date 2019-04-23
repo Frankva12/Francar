@@ -8,7 +8,7 @@
   <link href="../../resources/css/icon.css" rel="stylesheet">
   <!--Con esta etiqueta de link se importa lo que es materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
-
+  <link rel="icon" type="ico" href="../../resources/img/icono.ico">
   <!--Esta etiqueta de meta permite que la pagina web sea responsive, o sea que segun el dispositivo en el cual se navegue la pagina se adecua perfectamente el diseño-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Libreria Francar</title>
@@ -34,92 +34,93 @@
             </li>
             <li>
               <a class="waves-effect waves-light btn modal-trigger black" href="#modal1">¿Quiénes somos?</a>
-              <li>
-                <a class="waves-effect waves-light btn modal-trigger black" href="libros.php">LIBROS DISPONIBLES</a>
-                <li>
-                  <a class="waves-effect waves-light btn modal-trigger black" href="carrito.php">
-                    <i class="material-icons prefix">shopping_cart</i>
-                  </a>
+            <li>
+              <a class="waves-effect waves-light btn modal-trigger black" href="libros.php">LIBROS DISPONIBLES</a>
+            <li>
+              <a class="waves-effect waves-light btn modal-trigger black" href="carrito.php">
+                <i class="material-icons prefix">shopping_cart</i>
+              </a>
 
 
-                  <!--Con este div se crea lo que es un modal que significa que dentro de la misma pagina web va a salir uun recuadro con todo lo que 
+              <!--Con este div se crea lo que es un modal que significa que dentro de la misma pagina web va a salir uun recuadro con todo lo que 
       nosotros le queramos poner para que le de un estilo Ajax a la pagina web en este caso seria en la opcion de ¿Quiénes somos?-->
-            <div id="modal1" class="modal">
-              <div class="modal-content black-text">
-                <div class="section white">
-                  <div class="row container">
-                    <h2 align="center">¿Quiénes somos?</h2>
-                    <hr>
-                    <blockquote>
-                      <h3 class="header">Misión
-                        <a class="btn-floating black pulse">
-                          <i class="material-icons">group</i>
-                        </a>
-                      </h3>
-                    </blockquote>
-                    <p align="left">Somos una empresa que busca fomentar la lectura en los jóvenes, apoyados de la ayuda de la tecnología,
-                      para obtenerlos de manera más efectiva virtualmente.</p>
+              <div id="modal1" class="modal">
+                <div class="modal-content black-text">
+                  <div class="section white">
+                    <div class="row container">
+                      <h2 align="center">¿Quiénes somos?</h2>
+                      <hr>
+                      <blockquote>
+                        <h3 class="header">Misión
+                          <a class="btn-floating black pulse">
+                            <i class="material-icons">group</i>
+                          </a>
+                        </h3>
+                      </blockquote>
+                      <p align="left">Somos una empresa que busca fomentar la lectura en los jóvenes, apoyados de la
+                        ayuda de la tecnología,
+                        para obtenerlos de manera más efectiva virtualmente.</p>
 
-                    <blockquote>
-                      <h3 class="header">Visión
-                        <a class="btn-floating black   pulse">
-                          <i class="material-icons">lightbulb_outline</i>
-                        </a>
-                      </h3>
-                    </blockquote>
-                    <p align="left">Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Este es otro modal pero ahora en la opcion de contáctanos donde aparecera un formulario que automaticamente una persona deja ir un mensjae, al instante nos cae en nuestro correo electronico-->
-            <div id="modal2" class="modal">
-              <div class="modal-content black-text">
-                <div class="section white">
-                  <div class="row container">
-                    <h2 align="center">CONTÁCTENOS</h2>
-                    <hr>
-                    <div class="row">
-                      <form class="col s12">
-                        <div class="row">
-                          <div class="input-field col s6">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="icon_prefix" type="tel" class="validate">
-                            <label for="icon_prefix">Nombre</label>
-                          </div>
-                          <br>
-                          <br>
-                          <div class="input-field col s6">
-                            <i class="material-icons prefix">phone</i>
-                            <input id="icon_telephone" type="number" class="validate">
-                            <label for="icon_telephone">Telefono</label>
-                          </div>
-                          <br>
-                          <br>
-                          <div class="input-field col s12">
-                            <i class="material-icons prefix">mail</i>
-                            <textarea id="textarea2" type="email" class="materialize-textarea"></textarea>
-                            <label for="textarea2">Correo</label>
-                          </div>
-                          <br>
-                          <br>
-                          <div class="input-field col s12">
-                            <i class="material-icons prefix">edit</i>
-                            <textarea id="textarea1" class="materialize-textarea"></textarea>
-                            <label for="textarea1">Escribe tu mensaje</label>
-                          </div>
-
-                          <p class="center-align">
-                            <a class="waves-effect waves-light btn-large">Enviar</a>
-                          </p>
-                        </div>
-                      </form>
+                      <blockquote>
+                        <h3 class="header">Visión
+                          <a class="btn-floating black   pulse">
+                            <i class="material-icons">lightbulb_outline</i>
+                          </a>
+                        </h3>
+                      </blockquote>
+                      <p align="left">Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.</p>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+
+              <!-- Este es otro modal pero ahora en la opcion de contáctanos donde aparecera un formulario que automaticamente una persona deja ir un mensjae, al instante nos cae en nuestro correo electronico-->
+              <div id="modal2" class="modal">
+                <div class="modal-content black-text">
+                  <div class="section white">
+                    <div class="row container">
+                      <h2 align="center">CONTÁCTENOS</h2>
+                      <hr>
+                      <div class="row">
+                        <form class="col s12">
+                          <div class="row">
+                            <div class="input-field col s6">
+                              <i class="material-icons prefix">account_circle</i>
+                              <input id="icon_prefix" type="tel" class="validate">
+                              <label for="icon_prefix">Nombre</label>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="input-field col s6">
+                              <i class="material-icons prefix">phone</i>
+                              <input id="icon_telephone" type="number" class="validate">
+                              <label for="icon_telephone">Telefono</label>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">mail</i>
+                              <textarea id="textarea2" type="email" class="materialize-textarea"></textarea>
+                              <label for="textarea2">Correo</label>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="input-field col s12">
+                              <i class="material-icons prefix">edit</i>
+                              <textarea id="textarea1" class="materialize-textarea"></textarea>
+                              <label for="textarea1">Escribe tu mensaje</label>
+                            </div>
+
+                            <p class="center-align">
+                              <a class="waves-effect waves-light btn-large">Enviar</a>
+                            </p>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </ul>
         </div>
       </div>
@@ -157,9 +158,12 @@
         </div>
         <div class="card-content">
           <h3 align="center">Sintesis</h3>
-          <p>Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra más inquieto
-            que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está sucediendo en Hogwarts.
-            En efecto, cuando por fin comienza otro curso en el famoso colegio de magia y hechicería, sus temores se vuelven
+          <p>Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra más
+            inquieto
+            que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está sucediendo en
+            Hogwarts.
+            En efecto, cuando por fin comienza otro curso en el famoso colegio de magia y hechicería, sus temores se
+            vuelven
             realidad. </p>
           <br>
           <br>
@@ -178,8 +182,10 @@
         </div>
         <div class="card-content">
           <h3 align="center">Sintesis</h3>
-          <p>Con dieciséis años cumplidos, Harry Potter inicia el sexto curso en Hogwarts en medio de terribles acontecimientos
-            que asolan Inglaterra. Elegido capitán del equipo de Quidditch, los entrenamientos, los exámenes y las chicas
+          <p>Con dieciséis años cumplidos, Harry Potter inicia el sexto curso en Hogwarts en medio de terribles
+            acontecimientos
+            que asolan Inglaterra. Elegido capitán del equipo de Quidditch, los entrenamientos, los exámenes y las
+            chicas
             ocupan todo su tiempo, pero la tranquilidad dura poco.</p>
           <br>
           <br>
@@ -199,7 +205,8 @@
         </div>
         <div class="card-content">
           <h3 align="center">Sintesis</h3>
-          <p>La fecha crucial se acerca. Cuando cumpla diecisiete años, Harry perderá el encantamiento protector que lo mantiene
+          <p>La fecha crucial se acerca. Cuando cumpla diecisiete años, Harry perderá el encantamiento protector que lo
+            mantiene
             a salvo. El anunciado enfrentamiento a muerte con lord Voldemort es inminente, y la casi imposible misión de
             encontrar y destruir los restantes Horrocruxes más urgente que nunca. </p>
           <br>
@@ -235,8 +242,10 @@
         </div>
         <div class="card-content">
           <h3 align="center">Misterio</h3>
-          <p>El término novela de misterio a menudo es utilizado como sinónimo de novela de detective o novela de crimen, es
-            decir, una novela o cuento en la cual un detective (profesional o aficionado) investiga y resuelve un misterio
+          <p>El término novela de misterio a menudo es utilizado como sinónimo de novela de detective o novela de
+            crimen, es
+            decir, una novela o cuento en la cual un detective (profesional o aficionado) investiga y resuelve un
+            misterio
             criminal. </p>
           <br>
           <br>
@@ -255,9 +264,12 @@
         </div>
         <div class="card-content">
           <h3 align="center">Aventura</h3>
-          <p>Se considera que los orígenes del género de aventuras se encuentran en La Odisea y en La Ilíada de Homero (siglo
-            VIII a. d C.) y, por ende, en la épica clásica. En la primera, el héroe Ulises lucha por volver a su hogar en
-            Ítaca tras la Guerra de Troya. He aquí el viaje iniciático del protagonista que será la base para las futuras
+          <p>Se considera que los orígenes del género de aventuras se encuentran en La Odisea y en La Ilíada de Homero
+            (siglo
+            VIII a. d C.) y, por ende, en la épica clásica. En la primera, el héroe Ulises lucha por volver a su hogar
+            en
+            Ítaca tras la Guerra de Troya. He aquí el viaje iniciático del protagonista que será la base para las
+            futuras
             aventuras narrativas. </p>
         </div>
       </div>
@@ -274,7 +286,8 @@
         </div>
         <div class="card-content">
           <h3 align="center">Terror</h3>
-          <p>La Literatura de terror es un género de ficción literario que pretende o tiene la capacidad de asustar, causar
+          <p>La Literatura de terror es un género de ficción literario que pretende o tiene la capacidad de asustar,
+            causar
             miedo o aterrorizar sus lectores o espectadores en inducir sentimientos de horror y terror. </p>
           <br>
           <br>
@@ -285,15 +298,17 @@
   </div>
   <!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
   <?php
-        require("../../resources/pages/footer.php");
-        Footer::foot();
-         ?>
+  require("../../resources/pages/footer.php");
+  Footer::foot();
+  ?>
 
-    <!--Se importan lo que son los archivos de JavaScript-->
-    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/initialize.js"></script>
+  <!--Se importan lo que son los archivos de JavaScript-->
+  <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+  <script src="../../resources/js/carousel.js"></script>
+  <script src="../../resources/js/parallax.js"></script>
+  <script src="../../resources/js/images.js"></script>
+  <script src="../../resources/js/modal.js"></script>
 </body>
 
 </html>
