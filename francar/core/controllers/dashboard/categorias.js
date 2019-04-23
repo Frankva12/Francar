@@ -25,7 +25,8 @@ function fillTable(rows)
         `;
     });
     $('#tbody-read').html(content);
-    var table = $('tabla-categorias').DataTable();
+    initTable('tablaCategorias');
+    $('select').formSelect();
     $('.materialboxed').materialbox();
     $('.tooltipped').tooltip();
 }

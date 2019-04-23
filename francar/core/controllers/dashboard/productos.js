@@ -30,6 +30,8 @@ function fillTable(rows)
         `;
     });
     $('#tbody-read').html(content);
+    initTable('tablaProductos');
+    $('select').formSelect();
     $('.materialboxed').materialbox();
     $('.tooltipped').tooltip();
 }

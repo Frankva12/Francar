@@ -25,6 +25,8 @@ function fillTable(rows) {
         `;
     });
     $('#tbody-read').html(content);
+    initTable('tablaUsuarios');
+    $('select').formSelect();
     $('.tooltipped').tooltip();
 
 }

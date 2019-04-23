@@ -8,10 +8,11 @@
     <link href="../../resources/css/icon.css" rel="stylesheet">
     <link rel="icon" type="ico" href="../../resources/img/icono.ico">
     <link href="../../resources/css/tablas.css" rel="stylesheet">
-    <link href="../../resources/css/material.min.css" rel="stylesheet">
-    <link href="../../resources/css/dataTables.material.min.css" rel="stylesheet">
     <!--Importa el css de materialize-->
     <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
+    
+    <link href="../../resources/css/material.min.css" rel="stylesheet">
+    <link href="../../resources/css/dataTables.material.min.css" rel="stylesheet">
     <!--Deja que la pagina web sea responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
@@ -45,19 +46,6 @@
     <br>
 
     <div class="row">
-    <!-- Formulario de búsqueda -->
-    <form method="post" id="form-search">
-        <div class="input-field col s6 m4">
-            <i class="material-icons prefix">search</i>
-            <input id="buscar" type="text" name="busqueda"/>
-            <label for="buscar">Buscador</label>
-        </div>
-        <div class="input-field col s6 m4">
-            <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>
-        </div>
-    </form>
-    
-</div>
     <!--Se hace una tabla con el nombre de cada editorial-->
     <div class="container"> 
   <table class="highlight" id="tablaEditorial">

@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="../../resources/css/icon.css" rel="stylesheet">
   <link href="../../resources/css/tablas.css" rel="stylesheet">
+  <link href="../../resources/css/material.min.css" rel="stylesheet">
+  <link href="../../resources/css/dataTables.material.min.css" rel="stylesheet">
   <!--Se importa el css de materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="icon" type="ico" href="../../resources/img/icono.ico">
@@ -42,23 +44,10 @@
     </div>
   </nav>
   <br>
-  <div class="row">
-    <!-- Formulario de búsqueda -->
-    <form method="post" id="form-search">
-        <div class="input-field col s6 m4">
-            <i class="material-icons prefix">search</i>
-            <input id="buscar" type="text" name="busqueda"/>
-            <label for="buscar">Buscador</label>
-        </div>
-        <div class="input-field col s6 m4">
-            <button type="submit" class="btn waves-effect green tooltipped" data-tooltip="Buscar"><i class="material-icons">check_circle</i></button>
-        </div>
-    </form>
-    
-</div>
+  
   <!--Se hace tabla donde muestran los diferentes usuarios que hay-->
   <div class="container">
-    <table class="highlight">
+   <table class="highlight" id="tablaUsuarios">
       <thead>
         <tr>
           <th>Nombre</th>
@@ -205,13 +194,16 @@ Footer::foot();
 ?>
   <!--Se importan lo que son los archivos de JavaScript-->
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-  <script src="../../resources/js/materialize.min.js"></script>
-  <script src="../../resources/js/carousel.js"></script>
-  <script src="../../resources/js/parallax.js"></script>
-  <script src="../../resources/js/images.js"></script>
-  <script src="../../resources/js/modal.js"></script>
-  <script src="../../resources/js/search.js"></script>
-  <script src="../../resources/js/combo.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+    <script src="../../resources/js/carousel.js"></script>
+    <script src="../../resources/js/parallax.js"></script>
+    <script src="../../resources/js/images.js"></script>
+    <script src="../../resources/js/modal.js"></script>
+    <script src="../../resources/js/combo.js"></script>
+    <script src="../../resources/js/datatables.min.js"></script>
+    <script src="../../resources/js/dataTables.material.min.js"></script>
+    <script src="../../resources/js/tabla.js"></script>
+
   <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
 
   <script src="../../core/controllers/dashboard/usuarios.js"></script>
