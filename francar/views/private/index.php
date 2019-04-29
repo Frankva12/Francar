@@ -30,20 +30,20 @@
             <div class="input-field col s12">
               <i class="material-icons prefix">mail_outline</i>
               <input class="validate"  type="text">
-              <label for="alias" data-error="wrong" data-success="right">Correo</label>
+              <label for="alias_usuario" data-error="wrong" data-success="right">Correo</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">lock_outline</i>
-              <input id="password" type="password">
-              <label for="contraseña">Contraseña</label>
+              <input id="contrasenia" type="password">
+              <label for="contrasenia">Contraseña</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s12">
-            <a href="private.php" class="btn waves-effect grey darken-4 col s12">Iniciar Sesion</a>
+            <a type="submit" class="btn waves-effect grey darken-4 col s12">Iniciar Sesion</a>
             </div>
           </div>
           <div class="row">
@@ -63,7 +63,7 @@
                   <div class="input-field col s12">
                     <i class="material-icons prefix">mail_outline</i>
                     <input class="validate"  type="email">
-                    <label for="email" data-error="wrong" data-success="right">Correo</label>
+                    <label for="correo" data-error="wrong" data-success="right">Correo</label>
                   </div>
                   <p class="center-align">
                     <a class="waves-effect waves-light btn-large ">Recuperar</a>
@@ -83,6 +83,12 @@
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/materialize.min.js"></script>
 <script src="../../resources/js/modal.js"></script>
+
+
+
+<script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
+    <script src="../../core/controllers/dashboard/editoriales.js"></script>
+    <script src="../../core/helpers/functions.js"></script>
 </body>
 
 </html>

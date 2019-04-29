@@ -139,7 +139,7 @@ class Usuarios extends Validator
 	//Métodos para manejar la sesión del usuario
 	public function checkNombre()
 	{
-		$sql = 'SELECT id_administrador FROM administrador WHERE nombre_administrador = ?';
+		$sql = 'SELECT id_administrador FROM administrador WHERE alias_usuario = ?';
 		$params = array($this->alias);
 		$data = Database::getRow($sql, $params);
 		if ($data) {
