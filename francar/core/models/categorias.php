@@ -26,7 +26,7 @@ class Categorias extends Validator
 
 	public function setNombre($value)
 	{
-		if($this->validateAlphanumeric($value, 1, 255)) {
+		if($this->validateAlphanumeric($value, 1, 80)) {
 			$this->nombre = $value;
 			return true;
 		} else {
@@ -62,7 +62,7 @@ class Categorias extends Validator
 	public function setDescripcion($value)
 	{
 		if ($value) {
-			if ($this->validateAlphanumeric($value, 1, 200)) {
+			if ($this->validateAlphanumeric($value, 1, 255)) {
 				$this->descripcion = $value;
 				return true;
 			} else {
@@ -96,7 +96,7 @@ class Categorias extends Validator
 
 	public function createCategoria()
 	{
-		$sql = 'INSERT INTO categoria(nombre_categoria, descripcion, imagen_categoria) VALUES(?, ?, ?)';
+		$sql = 'INSERT INTO categoria(nombre_categoria, descripcion_categoria, imagen_categoria) VALUES(?, ?, ?)';
 		$params = array($this->nombre, $this->descripcion, $this->imagen);
 		return Database::executeRow($sql, $params);
 	}
