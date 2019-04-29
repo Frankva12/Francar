@@ -239,6 +239,7 @@ function confirmDelete(id, file)
                         showTable();
                     } else {
                         sweetAlert(1, 'Editorial eliminada correctamente', result.exception, null);
+                        showTable();
                     }
                 } else {
                     swal({

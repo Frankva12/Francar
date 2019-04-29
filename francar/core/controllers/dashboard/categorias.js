@@ -244,12 +244,13 @@ function confirmDelete(id, file)
                         }
                         showTable();
                     } else {
-                        sweetAlert(1, 'Editorial eliminada correctamente', null);
+                        sweetAlert(1,'Categoria eliminada correctamente', null);
+                         showTable();
                     }
                 } else {
                     swal({
                         title: 'Advertencia',
-                        text: 'Registro ocupado, no se puede borrar editorial',
+                        text: 'Registro ocupado, no se puede borrar categoria',
                         icon: 'error',
                         buttons: ['Aceptar'],
                         closeOnClickOutside: true,
