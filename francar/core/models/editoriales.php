@@ -44,7 +44,7 @@ class Editoriales extends Validator
 		return Database::getRows($sql, $params);
 	}
 
-	public function searchEditoriales($value)
+	public function searchEditoriales($value)	
 	{
 		$sql = 'SELECT * FROM editoriales WHERE nombre_editorial LIKE ?  ORDER BY nombre_editorial';
 		$params = array("%$value%");
