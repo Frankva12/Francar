@@ -4,7 +4,7 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiEditoriales = '../../core/api/editoriales.php?site=private&action=';
+const apiEditoriales = '../../api/editoriales.php?site=private&action=';
 
 //Función para llenar tabla con los datos de los registros
 function fillTable(rows)

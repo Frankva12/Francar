@@ -1,25 +1,25 @@
 <?php
-require_once('../../core/helpers/database.php');
-require_once('../../core/helpers/validator.php');
-require_once('../../core/models/usuarios.php');
+require_once('../../helpers/database.php');
+require_once('../../helpers/validator.php');
+require_once('../../models/usuarios.php');
 
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
-if (isset($_GET['site']) && isset($_GET['action'])) {
+if (isset($_GET['action'])) {
     session_start();
     $usuario = new Usuarios;
     $result = array('status' => 0, 'exception' => '');
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-    if ($_GET['site'] == 'private') {
+    if (isset($_SESSION['id_usuario'])) {
         switch ($_GET['action']) {
             case 'logout':
                 if (session_destroy()) {
-                    header('location: ../../views/dashboard/');
+                    header('location: ../../views/private/index.php');
                 } else {
-                    header('location: ../../views/dashboard/main.php');
+                    header('location: ../../views/private/private.php');
                 }
                 break;
             case 'readProfile':
-                if ($usuario->setId($_SESSION['idUsuario'])) {
+                if ($usuario->setId($_SESSION['id_usuario'])) {
                     if ($result['dataset'] = $usuario->getUsuario()) {
                         $result['status'] = 1;
                     } else {
@@ -30,7 +30,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 }
                 break;
             case 'editProfile':
-                if ($usuario->setId($_SESSION['idUsuario'])) {
+                if ($usuario->setId($_SESSION['id_usuario'])) {
                     if ($usuario->getUsuario()) {
                         $_POST = $usuario->validateForm($_POST);
                         if ($usuario->setNombres($_POST['profile_nombres'])) {
@@ -63,7 +63,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 }
                 break;
             case 'password':
-                if ($usuario->setId($_SESSION['idUsuario'])) {
+                if ($usuario->setId($_SESSION['id_usuario'])) {
                     $_POST = $usuario->validateForm($_POST);
                     if ($_POST['clave_actual_1'] == $_POST['clave_actual_2']) {
                         if ($usuario->setClave($_POST['clave_actual_1'])) {
@@ -211,7 +211,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             default:
                 exit('Acción no disponible');
         }
-    } else if ($_GET['site'] == 'private') {
+    } else {
         switch ($_GET['action']) {
             case 'read':
                 if ($usuario->readUsuarios()) {
@@ -256,12 +256,12 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 break;
             case 'login':
                 $_POST = $usuario->validateForm($_POST);
-                if ($usuario->setAlias($_POST['alias'])) {
+                if ($usuario->setAlias($_POST['alias_usuario'])) {
                     if ($usuario->checkAlias()) {
-                        if ($usuario->setClave($_POST['clave'])) {
+                        if ($usuario->setContrasenia($_POST['contrasenia'])) {
                             if ($usuario->checkPassword()) {
-                                $_SESSION['idUsuario'] = $usuario->getId();
-                                $_SESSION['aliasUsuario'] = $usuario->getAlias();
+                                $_SESSION['id_usuario'] = $usuario->getId();
+                                $_SESSION['alias_usuario'] = $usuario->getAlias();
                                 $result['status'] = 1;
                             } else {
                                 $result['exception'] = 'Clave inexistente';
@@ -279,8 +279,6 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             default:
                 exit('Acción no disponible');
         }
-    } else {
-        exit('Acceso no disponible');
     }
 	print(json_encode($result));
 } else {

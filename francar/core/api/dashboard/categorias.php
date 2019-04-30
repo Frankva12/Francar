@@ -1,10 +1,10 @@
 <?php
-require_once('../../core/helpers/database.php');
-require_once('../../core/helpers/validator.php');
-require_once('../../core/models/categorias.php');
+require_once('../../helpers/database.php');
+require_once('../../helpers/validator.php');
+require_once('../../models/categorias.php');
 
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
-if (isset($_GET['site']) && isset($_GET['action'])) {
+if (isset($_GET['action'])) {
 	session_start();
 	$categoria = new Categorias;
 	$result = array('status' => 0, 'exception' => '');

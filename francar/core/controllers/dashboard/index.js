@@ -4,7 +4,7 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiSesion = '../../core/api/usuarios.php?site=dashboard&action=';
+const apiSesion = '../../core/api/dashboard/usuarios.php?action=';
 
 //Función para verificar si existen usuarios en el sitio privado
 function checkUsuarios()
@@ -21,7 +21,7 @@ function checkUsuarios()
             const dataset = JSON.parse(response);
             //Se comprueba que no hay usuarios registrados para redireccionar al registro del primer usuario
             if (dataset.status == 2) {
-                sweetAlert(3, dataset.exception, 'index.php');
+                sweetAlert(3, dataset.exception, 'private.php');
             }
         } else {
             console.log(response);

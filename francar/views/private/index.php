@@ -17,7 +17,7 @@
   <body background="../../resources/img/login_imagen.jpg">
     <div id="login-page" class="row center-align">
       <div class="col s12 m12 l12 z-depth-6 card-panel center-align">
-        <form class="login-form">
+      <form method="post" id="form-sesion">
           <div class="row teal lime grey lighten-1">
             <br>
             <h4 align="center"> Bienvenidos.
@@ -29,23 +29,22 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">mail_outline</i>
-              <input class="validate"  type="text">
-              <label for="alias_usuario" data-error="wrong" data-success="right">Correo</label>
+              <input id="alias_usuario" type="text" name="alias_usuario" class="validate" required/>
+              <label for="alias_usuario">Usuario</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">lock_outline</i>
-              <input id="contrasenia" type="password">
-              <label for="contrasenia">Contraseña</label>
+              <input id="contrasenia" type="password" name="contrasenia" class=" " required/>
+                <label for="contrasenia">Contraseña</label>
             </div>
           </div>
 
-          <div class="row">
-            <div class="input-field col s12">
-            <a type="submit" class="btn waves-effect grey darken-4 col s12">Iniciar Sesion</a>
+          
+          <div class="col s12 center-align">
+                <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i class="material-icons">send</i></button>
             </div>
-          </div>
           <div class="row">
             <div class="input-field col s6 m6 l6">
             </div>
@@ -56,7 +55,7 @@
                   contraseña?
                 </a>
               </p>
-              <!-- Modal Structure -->
+              <!-- Modal Structure --> 
               <div id="modal1" class="modal">
                 <div class="modal-content">
                   <h4 align='center'>¿Olvidaste tu contraseña?</h4>
@@ -83,12 +82,8 @@
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/materialize.min.js"></script>
 <script src="../../resources/js/modal.js"></script>
-
-
-
-<script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
-    <script src="../../core/controllers/dashboard/editoriales.js"></script>
-    <script src="../../core/helpers/functions.js"></script>
+<script src="../../resources/js/sweetalert.min.js"></script>
+<script src="../../core/helpers/functions.js"></script>
+<script src="../../core/controllers/dashboard/index.js"></script>
 </body>
-
 </html>

@@ -4,7 +4,7 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiProductos = '../../core/api/productos.php?site=dashboard&action=';
+const apiProductos = '../../api/productos.php?site=dashboard&action=';
 
 //Función para llenar tabla con los datos de los registros
 function fillTable(rows)

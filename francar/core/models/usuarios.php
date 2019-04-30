@@ -137,7 +137,7 @@ class Usuarios extends Validator
 
 
 	//Métodos para manejar la sesión del usuario
-	public function checkNombre()
+	public function checkAlias()
 	{
 		$sql = 'SELECT id_administrador FROM administrador WHERE alias_usuario = ?';
 		$params = array($this->alias);
@@ -152,14 +152,20 @@ class Usuarios extends Validator
 
 	public function checkPassword()
 	{
-		$sql = 'SELECT contrasenia FROM administrador WHERE id_administrador = ?';
-		$params = array($this->id);
+		$sql = 'SELECT correo FROM administrador WHERE contrasenia = ?';
+		$params = array($this->contrasenia);
 		$data = Database::getRow($sql, $params);
-		if (password_verify($this->clave, $data['contrasenia'])) {
+		if ($data) {
+			$this->correo = $data['correo'];
 			return true;
 		} else {
 			return false;
 		}
+		/*if (password_verify($this->clave, $data['contrasenia'])) {
+			return true;
+		} else {
+			return false;
+		}*/
 	}
 
 

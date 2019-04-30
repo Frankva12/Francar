@@ -178,9 +178,9 @@
     <script src="../../resources/js/dataTables.material.min.js"></script>
     <script src="../../resources/js/tabla.js"></script>
 
-    <script type="text/javascript" src="../../resources/js/sweetalert.min.js"></script>
-    <script src="../../core/controllers/dashboard/categorias.js"></script>
-    <script src="../../core/helpers/functions.js"></script>
+    <script src="../../resources/js/sweetalert.min.js"></script>
+<script src="../../core/helpers/functions.js"></script>
+<script src="../../core/controllers/dashboard/categorias.js"></script>
 </body>
 
 </html>
