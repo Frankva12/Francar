@@ -21,7 +21,7 @@ function checkUsuarios()
             const dataset = JSON.parse(response);
             //Se comprueba que no hay usuarios registrados para redireccionar al registro del primer usuario
             if (dataset.status == 2) {
-                sweetAlert(3, dataset.exception, 'register.php');
+                sweetAlert(3, dataset.exception, 'private.php');
             }
         } else {
             console.log(response);

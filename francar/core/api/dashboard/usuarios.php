@@ -9,7 +9,7 @@ if (isset($_GET['action'])) {
     $usuario = new Usuarios;
     $result = array('status' => 0, 'exception' => '');
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-    if (isset($_SESSION['id_administrador'])) {
+    if (isset($_SESSION['id_usuario'])) {
         switch ($_GET['action']) {
             case 'logout':
                 if (session_destroy()) {
@@ -260,7 +260,7 @@ if (isset($_GET['action'])) {
                     if ($usuario->checkAlias()) {
                         if ($usuario->setContrasenia($_POST['contrasenia'])) {
                             if ($usuario->checkPassword()) {
-                                $_SESSION['id_administrador'] = $usuario->getId();
+                                $_SESSION['id_usuario'] = $usuario->getId();
                                 $_SESSION['alias_usuario'] = $usuario->getAlias();
                                 $result['status'] = 1;
                             } else {
