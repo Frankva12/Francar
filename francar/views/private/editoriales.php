@@ -140,7 +140,7 @@
 
     <script src="../../resources/js/sweetalert.min.js"></script>
 <script src="../../core/helpers/functions.js"></script>
-<script src="../../core/controllers/dashboard/index.js"></script>
+<script src="../../core/controllers/dashboard/editoriales.js"></script>
 </body>
 
 </html>
