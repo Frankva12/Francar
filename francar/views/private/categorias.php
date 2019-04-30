@@ -9,9 +9,10 @@
     <link href="../../resources/css/tablas.css" rel="stylesheet">
     <!--Se importa el css de materialize-->
     <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
-    <link rel="icon" type="ico" href="../../resources/img/icono.ico">  
+    <link rel="icon" type="ico" href="../../resources/img/icono.ico">
     <link type="text/css" rel="stylesheet" href="../../resources/css/material.min.css" media="screen,projection">
-    <link type="text/css" rel="stylesheet" href="../../resources/css/dataTables.material.min.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="../../resources/css/dataTables.material.min.css"
+        media="screen,projection">
     <!--Deja que la pagina web sea responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
@@ -69,7 +70,8 @@
 
         <!-- Botón para abrir ventana de nuevo registro -->
         <div class="input-field center-align col s12 m4">
-            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Categorias</a>
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
+                data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Categorias</a>
         </div>
 
     </div>
@@ -105,12 +107,14 @@
                             <input type="text" class="file-path validate" placeholder="Seleccione una imagen" />
                         </div>
 
-                    </div>    
+                    </div>
                 </div>
 
                 <div class="row center-align">
-                    <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
-                    <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i class="material-icons">save</i></button>
+                    <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
+                            class="material-icons">cancel</i></a>
+                    <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i
+                            class="material-icons">save</i></button>
                 </div>
 
             </form>
@@ -154,15 +158,17 @@
                 </div>
 
                 <div class="row center-align">
-                    <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i class="material-icons">cancel</i></a>
-                    <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Modificar"><i class="material-icons">save</i></button>
+                    <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
+                            class="material-icons">cancel</i></a>
+                    <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Modificar"><i
+                            class="material-icons">save</i></button>
                 </div>
 
             </form>
         </div>
     </div>
 
-    
+
     <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
     <?php
         require("../../resources/pages/footer.php");
@@ -181,6 +187,5 @@
     <script src="../../resources/js/sweetalert.min.js"></script>
 <script src="../../core/helpers/functions.js"></script>
 <script src="../../core/controllers/dashboard/categorias.js"></script>
-</body>
 
 </html>
