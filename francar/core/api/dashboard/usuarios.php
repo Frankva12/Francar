@@ -1,7 +1,7 @@
 <?php
 require_once('../../helpers/database.php');
 require_once('../../helpers/validator.php');
-require_once('../../models/usuarios.php');
+require_once('../../models/dashboard/usuarios.php');
 
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
 if (isset($_GET['action'])) {
@@ -13,9 +13,9 @@ if (isset($_GET['action'])) {
         switch ($_GET['action']) {
             case 'logout':
                 if (session_destroy()) {
-                    header('location: ../../views/private/index.php');
+                    header('location: ../../../views/private/index.php');
                 } else {
-                    header('location: ../../views/private/private.php');
+                    header('location: ../../../views/private/private.php');
                 }
                 break;
             case 'readProfile':
