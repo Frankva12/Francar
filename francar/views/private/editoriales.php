@@ -102,7 +102,6 @@
             <form method="post" id="form-update" enctype="multipart/form-data">
                 <div class="row">
                     <div class="input-field col s12 m6">
-                        <input id="id_editorial" type="hidden" name="id_editorial" required />
                         <i class="material-icons prefix">description</i>
                         <input id="update_editorial" type="text" name="update_editorial" class="validate" required />
                         <label for="update_editorial">Nombre editorial</label>
