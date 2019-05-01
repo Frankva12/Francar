@@ -185,7 +185,7 @@
     <script src="../../resources/js/tabla.js"></script>
 
     <script src="../../resources/js/sweetalert.min.js"></script>
-    <script src="../../core/helpers/functions.js"></script>
-    <script src="../../core/controllers/dashboard/categorias.js"></script>
+<script src="../../core/helpers/functions.js"></script>
+<script src="../../core/controllers/dashboard/categorias.js"></script>
 
 </html>
