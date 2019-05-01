@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$(document).ready(function()
+{
     showTable();
 })
 
@@ -9,7 +10,7 @@ const apiUsuarios = '../../core/api/usuarios.php?site=private&action=';
 function fillTable(rows) {
     let content = '';
     //Se recorren las filas para armar el cuerpo de la tabla y se utiliza comilla invertida para escapar los caracteres especiales
-    rows.forEach(function (row) {
+    rows.forEach(function(row) {
         content += `
             <tr>
                 <td>${row.nombre_administrador}</td>
