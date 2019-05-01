@@ -44,10 +44,10 @@
     </div>
   </nav>
   <br>
-  
+
   <!--Se hace tabla donde muestran los diferentes usuarios que hay-->
   <div class="container">
-   <table class="highlight" id="tablaUsuarios">
+    <table class="highlight" id="tablaUsuarios">
       <thead>
         <tr>
           <th>Nombre</th>
@@ -194,18 +194,18 @@ Footer::foot();
 ?>
   <!--Se importan lo que son los archivos de JavaScript-->
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/parallax.js"></script>
-    <script src="../../resources/js/modal.js"></script>
-    <script src="../../resources/js/combo.js"></script>
-    <script src="../../resources/js/datatables.min.js"></script>
-    <script src="../../resources/js/dataTables.material.min.js"></script>
-    <script src="../../resources/js/tabla.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+  <script src="../../resources/js/carousel.js"></script>
+  <script src="../../resources/js/parallax.js"></script>
+  <script src="../../resources/js/modal.js"></script>
+  <script src="../../resources/js/combo.js"></script>
+  <script src="../../resources/js/datatables.min.js"></script>
+  <script src="../../resources/js/dataTables.material.min.js"></script>
+  <script src="../../resources/js/tabla.js"></script>
 
-    <script src="../../resources/js/sweetalert.min.js"></script>
-<script src="../../core/helpers/functions.js"></script>
-<script src="../../core/controllers/dashboard/usuarios.js"></script>
+  <script src="../../resources/js/sweetalert.min.js"></script>
+  <script src="../../core/helpers/functions.js"></script>
+  <script src="../../core/controllers/dashboard/usuarios.js"></script>
 </body>
 
 </html>
