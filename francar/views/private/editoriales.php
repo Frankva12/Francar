@@ -45,7 +45,6 @@
     </nav>
     <br>
 
-    <div class="row">
         <!--Se hace una tabla con el nombre de cada editorial-->
         <div class="container">
             <table class="highlight" id="tablaEditorial">
@@ -64,7 +63,7 @@
             <div class="input-field center-align col s12 m4">
                 <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
                     data-tooltip="Agregar">
-                    <i class="material-icons"></i>Agregar Editorial</a>
+                    <i align="center" class="material-icons"></i>Agregar Editorial</a>
             </div>
         </div>
     </div>
@@ -102,7 +101,6 @@
             <form method="post" id="form-update" enctype="multipart/form-data">
                 <div class="row">
                     <div class="input-field col s12 m6">
-                        <input id="id_editorial" type="hidden" name="id_editorial" required />
                         <i class="material-icons prefix">description</i>
                         <input id="update_editorial" type="text" name="update_editorial" class="validate" required />
                         <label for="update_editorial">Nombre editorial</label>
@@ -140,8 +138,8 @@
 
 
     <script src="../../resources/js/sweetalert.min.js"></script>
-    <script src="../../core/helpers/functions.js"></script>
-    <script src="../../core/controllers/dashboard/editoriales.js"></script>
+<script src="../../core/helpers/functions.js"></script>
+<script src="../../core/controllers/dashboard/editoriales.js"></script>
 </body>
 
 </html>
