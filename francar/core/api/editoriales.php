@@ -59,9 +59,9 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 
 
 					case 'update':
-						$_POST = $editorial->validateForm($_POST);
-						if ($editorial->setId($_POST['id_editorial'])) {
-							if ($editorial->getEditorial()) {
+					$_POST = $editorial->validateForm($_POST);
+					if ($editorial->setId($_POST['id_editorial'])) {
+							if ($editorial->updateEditorial()) {
 								if ($editorial->setNombreEditorial($_POST['update_editorial'])) {
 										if($editorial->updateEditorial()){
 											$result['status']=1;
