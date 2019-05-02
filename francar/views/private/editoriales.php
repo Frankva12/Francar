@@ -47,7 +47,7 @@
 
         <!--Se hace una tabla con el nombre de cada editorial-->
         <div class="container">
-            <table class="highlight" id="tablaEditorial">
+            <table id="tablaEditorial" class="highlight">
                 <thead>
                     <tr>
                         <th>Editoriales</th>
@@ -128,14 +128,10 @@
     <!--Se importan lo que son los archivos de JavaScript-->
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
     <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/parallax.js"></script>
-    <script src="../../resources/js/images.js"></script>
     <script src="../../resources/js/modal.js"></script>
     <script src="../../resources/js/combo.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/dataTables.material.min.js"></script>
-    <script src="../../resources/js/tabla.js"></script>
 
 
     <script src="../../resources/js/sweetalert.min.js"></script>
