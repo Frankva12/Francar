@@ -47,7 +47,7 @@
 
         <!--Se hace una tabla con el nombre de cada editorial-->
         <div class="container">
-            <table id="tablaEditorial" class="highlight">
+            <table  class="highlight" id="tablaEditorial">
                 <thead>
                     <tr>
                         <th>Editoriales</th>
@@ -130,6 +130,8 @@
     <script src="../../resources/js/materialize.min.js"></script>
     <script src="../../resources/js/modal.js"></script>
     <script src="../../resources/js/combo.js"></script>
+    
+    <script src="../../resources/js/tabla.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/dataTables.material.min.js"></script>
 
