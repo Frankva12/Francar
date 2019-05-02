@@ -45,7 +45,6 @@
     </nav>
     <br>
 
-    <div class="row">
         <!--Se hace una tabla con el nombre de cada editorial-->
         <div class="container">
             <table class="highlight" id="tablaEditorial">
