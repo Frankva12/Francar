@@ -51,7 +51,7 @@
 
     <!--Se hace una tabla donde iran las categorias de los libros que se poseen-->
     <div class="container">
-        <table class="highlight" id="tablaCat">
+        <table class="highlight" id="tablaCategorias">
             <thead>
                 <tr>
                     <th>Imagen</th>

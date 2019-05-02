@@ -103,12 +103,6 @@
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">lock</i>
-            <input id="create_contrasenia" type="text" name="create_contrasenia" class="validate" />
-            <label for="create_contrasenia">Confirmar contraseña</label>
-          </div>
-
-          <div class="input-field col s12 m6">
             <i class="material-icons prefix">place</i>
             <input id="create_direccion" type="text" name="create_direccion" class="validate" />
             <label for="create_direccion">Direccion</label>
