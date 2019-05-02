@@ -45,27 +45,27 @@
     </nav>
     <br>
 
-        <!--Se hace una tabla con el nombre de cada editorial-->
-        <div class="container">
-            <table class="highlight" id="tablaEditorial">
-                <thead>
-                    <tr>
-                        <th>Editoriales</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody-read">
-                </tbody>
-            </table>
+    <!--Se hace una tabla con el nombre de cada editorial-->
+    <div class="container">
+        <table class="highlight" id="tablaEditorial">
+            <thead>
+                <tr>
+                    <th>Editoriales</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-read">
+            </tbody>
+        </table>
 
 
-            <!-- Botón para abrir ventana de nuevo registro -->
-            <div class="input-field center-align col s12 m4">
-                <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
-                    data-tooltip="Agregar">
-                    <i align="center" class="material-icons"></i>Agregar Editorial</a>
-            </div>
+        <!-- Botón para abrir ventana de nuevo registro -->
+        <div class="input-field center-align col s12 m4">
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
+                data-tooltip="Agregar">
+                <i align="center" class="material-icons"></i>Agregar Editorial</a>
         </div>
+    </div>
     </div>
 
     <!--Ventana para crear un nuevo registro-->
@@ -134,12 +134,11 @@
     <script src="../../resources/js/combo.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/dataTables.material.min.js"></script>
-    <script src="../../resources/js/tabla.js"></script>
 
 
     <script src="../../resources/js/sweetalert.min.js"></script>
-<script src="../../core/helpers/functions.js"></script>
-<script src="../../core/controllers/dashboard/editoriales.js"></script>
+    <script src="../../core/helpers/functions.js"></script>
+    <script src="../../core/controllers/dashboard/editoriales.js"></script>
 </body>
 
 </html>

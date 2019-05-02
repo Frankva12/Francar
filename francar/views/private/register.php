@@ -29,51 +29,51 @@
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="create_nombre" type="text" name="create_nombre" class="validate" required />
-            <label for="create_nombre">Nombre</label>
+            <input id="nombres" type="text" name="nombres" class="validate" required />
+            <label for="nombres">Nombre</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="create_apellido" type="text" name="create_apellido" class="validate" />
-            <label for="create_apellido">Apellido</label>
+            <input id="apellidos" type="text" name="apellidos" class="validate" />
+            <label for="apellidos">Apellido</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="create_alias" type="text" name="create_alias" class="validate" />
-            <label for="create_alias">Alias</label>
-          </div>
-
-          <div class="input-field col s12 m6">
-            <i class="material-icons prefix">lock</i>
-            <input id="create_contrasenia" type="text" name="create_contrasenia" class="validate" />
-            <label for="create_contrasenia">Contraseña</label>
+            <input id="alias" type="text" name="alias" class="validate" />
+            <label for="alias">Alias</label>
           </div>
 
           
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">lock</i>
-            <input id="create_contrasenia" type="text" name="create_contrasenia" class="validate" />
-            <label for="create_contrasenia">Confirmar contraseña</label>
+            <i class="material-icons prefix">place</i>
+            <input id="direccion" type="text" name="direccion" class="validate" />
+            <label for="direccion">Direccion</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">place</i>
-            <input id="create_direccion" type="text" name="create_direccion" class="validate" />
-            <label for="create_direccion">Direccion</label>
+            <i class="material-icons prefix">lock</i>
+            <input id="clave1" type="password" name="clave1" class="validate" />
+            <label for="clave1">Contraseña</label>
+          </div>
+
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">lock</i>
+            <input id="clave2" type="password" name="clave2" class="validate" />
+            <label for="clave2">Confirmar contraseña</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">phone</i>
-            <input id="create_telefono" type="text" name="create_telefono" class="validate" />
-            <label for="create_telefono">Telefono</label>
+            <input id="telefono" type="text" name="telefono" class="validate" />
+            <label for="telefono">Telefono</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">mail</i>
-            <input id="create_correo" type="text" name="create_correo" class="validate" />
-            <label for="create_correo">Correo</label>
+            <input id="correo" type="text" name="correo" class="validate" />
+            <label for="correo">Correo</label>
           </div>
 
         </div>
@@ -94,11 +94,10 @@ Footer::foot();
     <script src="../../resources/js/combo.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/dataTables.material.min.js"></script>
-    <script src="../../resources/js/tabla.js"></script>
-
     <script src="../../resources/js/sweetalert.min.js"></script>
-<script src="../../core/helpers/functions.js"></script>
-<script src="../../core/controllers/dashboard/usuarios.js"></script>
+        
+    <script src="../../core/helpers/functions.js"></script>
+    <script src="../../core/controllers/dashboard/register.js"></script>
 </body>
 
 </html>
