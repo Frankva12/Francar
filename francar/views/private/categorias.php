@@ -133,8 +133,8 @@
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">note_add</i>
-                        <input id="update_categoria" type="text" name="update_categoria" class="validate" required />
-                        <label for="update_categoria">Categoria</label>
+                        <input id="update_nombre" type="text" name="update_nombre" class="validate" required />
+                        <label for="update_nombre">Categoria</label>
                     </div>
 
                     <div class="input-field col s12 m6">

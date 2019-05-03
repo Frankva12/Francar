@@ -14,7 +14,7 @@ function fillTable(rows)
     rows.forEach(function(row){
         content += `
             <tr>
-                <td><img src="../../resources/img/categorias/${row.imagen_categoria}" class="materialboxed" height="100"></td>
+                <td><img src="../../resources/img/categorias/${row.imagen}" class="materialboxed" height="100"></td>
                 <td>${row.nombre_categoria}</td>
                 <td>${row.descripcion_categoria}</td>
                 <td>
@@ -151,7 +151,7 @@ function modalUpdate(id)
                 $('#form-update')[0].reset();
                 $('#id_categoria').val(result.dataset.id_categoria);    
                 $('#imagen_categoria').val(result.dataset.imagen_categoria);
-                $('#update_categoria').val(result.dataset.nombre_categoria);
+                $('#update_nombre').val(result.dataset.nombre_categoria);
                 $('#update_descripcion').val(result.dataset.descripcion_categoria);
                 M.updateTextFields();
                 $('#modal-update').modal('open');
