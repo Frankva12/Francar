@@ -2,7 +2,7 @@
   class inicio{
       public static function navigate(){
             echo('
-            <div class="navbar-fixed">
+            <div class="navbar-fixed col s6 m12 l12"">
             <nav>
               <div class="nav-wrapper black">
                 <div class="container">

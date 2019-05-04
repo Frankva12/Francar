@@ -169,10 +169,10 @@ function modalUpdate(id) {
                 //Se comprueba si el resultado es satisfactorio para mostrar los valores en el formulario, sino se muestra la excepción
                 if (result.status) {
                     $('#id_administrador').val(result.dataset.id_administrador);
-                    $('#update_nombre_administrador').val(result.dataset.nombre);
-                    $('#update_apellido_administrador').val(result.dataset.apellido);
+                    $('#update_nombre_administrador').val(result.dataset.nombre_administrador);
+                    $('#update_apellido_administrador').val(result.dataset.apellido_administrador);
                     $('#update_correo').val(result.dataset.correo);
-                    $('#update_alias').val(result.dataset.alias);
+                    $('#update_alias').val(result.dataset.alias_usuario);
                     $('#update_direccion').val(result.dataset.direccion);
                     $('#update_telefono').val(result.dataset.telefono);
                     M.updateTextFields();

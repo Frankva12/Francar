@@ -151,13 +151,13 @@
             <label for="update_nombre_administrador">Nombre</label>
           </div>
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">account_circle</i>
+            <i class="material-icons prefix">assignment_ind</i>
             <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate" required />
             <label for="update_apellido_administrador">Apellido</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <i class="material-icons prefix">account_circle</i>
+            <i class="material-icons prefix">fingerprint</i>
             <input id="update_alias" type="text" name="update_alias" class="validate" required />
             <label for="update_alias">Alias</label>
           </div>
