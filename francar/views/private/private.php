@@ -25,7 +25,7 @@
 <body background="../../resources/img/fondo_private.jpg">
   <?php
     require("../../resources/pages/menu.php");
-    inicio::navigate();
+    inicio::navigate('Administrar categorías');
   ?>
 
   <div class="container white">

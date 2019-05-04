@@ -186,9 +186,9 @@ class Usuarios extends Validator
 
 	public function createUsuario()
 	{
-		$hash = password_hash($this->clave, PASSWORD_DEFAULT);
-		$sql = 'INSERT INTO usuarios(nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo) VALUES(?, ?, ?, ?, ?, ?)';
-		$params = array($this->nombre, $this->apellido, $this->alias, $this->direccion, $this->telefono, $this->correo);
+		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
+		$sql = 'INSERT INTO administrador(nombre_administrador, apellido_administrador, alias_usuario, contrasenia, direccion, telefono, correo) VALUES(?, ?, ?, ?, ?, ?, ?)';
+		$params = array($this->nombre, $this->apellido, $this->alias, $this->contrasenia, $this->direccion, $this->telefono, $this->correo);
 		return Database::executeRow($sql, $params);
 	}
 

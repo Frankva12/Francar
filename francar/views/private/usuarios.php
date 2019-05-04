@@ -78,16 +78,16 @@
       <form method="post" id="form-create" enctype="multipart/form-data">
         <div class="row">
 
-          <div class="input-field col s12 m6">
+        <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="create_nombre" type="text" name="create_nombre" class="validate" required />
-            <label for="create_nombre">Nombre</label>
+            <input id="create_nombres" type="text" name="create_nombres" class="validate" required />
+            <label for="create_nombres">Nombre</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="create_apellido" type="text" name="create_apellido" class="validate" />
-            <label for="create_apellido">Apellido</label>
+            <input id="create_apellidos" type="text" name="create_apellidos" class="validate" />
+            <label for="create_apellidos">Apellido</label>
           </div>
 
           <div class="input-field col s12 m6">
@@ -96,16 +96,23 @@
             <label for="create_alias">Alias</label>
           </div>
 
-          <div class="input-field col s12 m6">
-            <i class="material-icons prefix">lock</i>
-            <input id="create_contrasenia" type="text" name="create_contrasenia" class="validate" />
-            <label for="create_contrasenia">Contraseña</label>
-          </div>
-
+          
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">place</i>
             <input id="create_direccion" type="text" name="create_direccion" class="validate" />
             <label for="create_direccion">Direccion</label>
+          </div>
+
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">lock</i>
+            <input id="create_clave1" type="password" name="create_clave1" class="validate" />
+            <label for="create_clave1">Contraseña</label>
+          </div>
+
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">lock</i>
+            <input id="create_clave2" type="password" name="create_clave2" class="validate" />
+            <label for="create_clave2">Confirmar contraseña</label>
           </div>
 
           <div class="input-field col s12 m6">
@@ -119,7 +126,6 @@
             <input id="create_correo" type="text" name="create_correo" class="validate" />
             <label for="create_correo">Correo</label>
           </div>
-
         </div>
         <div class="row center-align">
           <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
@@ -137,17 +143,17 @@
     <div class="modal-content">
       <h4 class="center-align">Modificar usuario</h4>
       <form method="post" id="form-update">
-        <input type="hidden" id="id_usuario" name="id_usuario" />
+        <input type="hidden" id="id_administrador" name="id_administrador" />
         <div class="row">
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="update_nombre_administrador" type="text" name="update_nombre" class="validate" required />
-            <label for="update_nombre">Nombre</label>
+            <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate" required />
+            <label for="update_nombre_administrador">Nombre</label>
           </div>
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="update_apellido_administrador" type="text" name="update_apellido" class="validate" required />
-            <label for="update_apellido">Apellido</label>
+            <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate" required />
+            <label for="update_apellido_administrador">Apellido</label>
           </div>
 
           <div class="input-field col s12 m6">

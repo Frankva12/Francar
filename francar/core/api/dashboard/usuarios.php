@@ -11,6 +11,8 @@ if (isset($_GET['action'])) {
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
     if (isset($_SESSION['id_administrador'])) {
         switch ($_GET['action']) {
+
+
             case 'logout':
                 if (session_destroy()) {
                     header('location: ../../views/private/index.php');
@@ -18,6 +20,8 @@ if (isset($_GET['action'])) {
                     header('location: ../../views/private/private.php');
                 }
                 break;
+
+
             case 'readProfile':
                 if ($usuario->setId($_SESSION['id_usuario'])) {
                     if ($result['dataset'] = $usuario->getUsuario()) {
@@ -29,6 +33,8 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Usuario incorrecto';
                 }
                 break;
+
+
             case 'editProfile':
                 if ($usuario->setId($_SESSION['id_usuario'])) {
                     if ($usuario->getUsuario()) {
@@ -62,6 +68,8 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Usuario incorrecto';
                 }
                 break;
+
+
             case 'password':
                 if ($usuario->setId($_SESSION['id_usuario'])) {
                     $_POST = $usuario->validateForm($_POST);
@@ -94,6 +102,8 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Usuario incorrecto';
                 }
                 break;
+
+                
             case 'read':
                 if ($result['dataset'] = $usuario->readUsuarios()) {
                     $result['status'] = 1;
@@ -101,27 +111,18 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'No hay usuarios registrados';
                 }
                 break;
-            case 'search':
-                $_POST = $usuario->validateForm($_POST);
-                if ($_POST['busqueda'] != '') {
-                    if ($result['dataset'] = $usuario->searchUsuarios($_POST['busqueda'])) {
-                        $result['status'] = 1;
-                    } else {
-                        $result['exception'] = 'No hay coincidencias';
-                    }
-                } else {
-                    $result['exception'] = 'Ingrese un valor para buscar';
-                }
-                break;
-                
+
+
             case 'create':
                 $_POST = $usuario->validateForm($_POST);
-                if ($usuario->setNombres($_POST['create_nombres'])) {
-                    if ($usuario->setApellidos($_POST['create_apellidos'])) {
+                if ($usuario->setNombre($_POST['create_nombres'])) {
+                    if ($usuario->setApellido($_POST['create_apellidos'])) {
                         if ($usuario->setCorreo($_POST['create_correo'])) {
+                            if ($usuario->setTelefono($_POST['create_telefono'])) {
+                            if ($usuario->setDireccion($_POST['create_direccion'])) {
                             if ($usuario->setAlias($_POST['create_alias'])) {
                                 if ($_POST['create_clave1'] == $_POST['create_clave2']) {
-                                    if ($usuario->setClave($_POST['create_clave1'])) {
+                                    if ($usuario->setContrasenia($_POST['create_clave1'])) {
                                         if ($usuario->createUsuario()) {
                                             $result['status'] = 1;
                                         } else {
@@ -134,8 +135,16 @@ if (isset($_GET['action'])) {
                                     $result['exception'] = 'Claves diferentes';
                                 }
                             } else {
-                                $result['exception'] = 'Alias incorrecto';
+                                $result['exception'] = 'Telefono incorrecto';
                             }
+                            
+                        } else {
+                            $result['exception'] = 'Direccion incorrecta';
+                        }
+                        } else {
+                            $result['exception'] = 'Alias incorrecto';
+
+                        }
                         } else {
                             $result['exception'] = 'Correo incorrecto';
                         }
@@ -146,6 +155,8 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Nombres incorrectos';
                 }
                 break;
+
+
             case 'get':
                 if ($usuario->setId($_POST['id_administrador'])) {
                     if ($result['dataset'] = $usuario->getUsuario()) {
@@ -157,19 +168,30 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Usuario incorrecto';
                 }
                 break;
+
+
             case 'update':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setId($_POST['id_administrador'])) {
                     if ($usuario->getUsuario()) {
-                        if ($usuario->setNombres($_POST['update_nombre_administrador'])) {
-                            if ($usuario->setApellidos($_POST['update_apellido_administrador'])) {
+                        if ($usuario->setNombre($_POST['update_nombre_administrador'])) {
+                            if ($usuario->setApellido($_POST['update_apellido_administrador'])) {
                                 if ($usuario->setCorreo($_POST['update_correo'])) {
+                                    if ($usuario->setTelefono($_POST['update_telefono'])) {
+                                    if ($usuario->setDireccion($_POST['update_direccion'])) {
                                     if ($usuario->setAlias($_POST['update_alias'])) {
                                         if ($usuario->updateUsuario()) {
                                             $result['status'] = 1;
                                         } else {
                                             $result['exception'] = 'Operación fallida';
                                         }
+                                    } else {
+                                        $result['exception'] = 'Telefono incorrecto';
+                                    }
+                                    
+                                } else {
+                                    $result['exception'] = 'Direccion incorrecta';
+                                }
                                     } else {
                                         $result['exception'] = 'Alias incorrecto';
                                     }
@@ -189,6 +211,8 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Usuario incorrecto';
                 }
                 break;
+
+
             case 'delete':
                 if ($_POST['id_administrador'] != $_SESSION['id_:administrador']) {
                     if ($usuario->setId($_POST['id_adminitrador'])) {
@@ -222,6 +246,8 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'No existen usuarios registrados';
                 }
                 break;
+
+
             case 'register':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setNombres($_POST['nombres'])) {
@@ -254,6 +280,8 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Nombres incorrectos';
                 }
                 break;
+
+
             case 'login':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setAlias($_POST['alias_usuario'])) {
