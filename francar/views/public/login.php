@@ -14,11 +14,11 @@
 <!--Se hace un contenedor donde se le pone lo que es el login para el administrador-->
 <div class="container1">
 
-  <body background="../../resources/img/login_imagen.jpg">
+  <body background="../../resources/img/fondo_public.jpg">
     <div id="login-page" class="row center-align">
       <div class="col s12 m12 l12 z-depth-6 card-panel center-align">
       <form method="post" id="form-sesion">
-          <div class="row teal lime grey lighten-1">
+          <div class="row  brown lighten-1">
             <br>
             <h4 align="center"> Bienvenidos.
               <br>
@@ -28,9 +28,9 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <i class="material-icons prefix">mail_outline</i>
-              <input id="alias_usuario" type="text" name="alias_cliente" class="validate" required/>
-              <label for="alias_usuario">Usuario</label>
+              <i class="material-icons prefix">assignment_ind</i>
+              <input id="alias_cliente" type="text" name="alias_cliente" class="validate" required/>
+              <label for="alias_cliente">Alias</label>
             </div>
           </div>
           <div class="row">
@@ -84,6 +84,6 @@
 <script src="../../resources/js/modal.js"></script>
 <script src="../../resources/js/sweetalert.min.js"></script>
 <script src="../../core/helpers/functions.js"></script>
-<script src="../../core/controllers/dashboard/index.js"></script>
+<script src="../../core/controllers/public/index.js"></script>
 </body>
 </html>

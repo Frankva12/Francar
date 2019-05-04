@@ -4,7 +4,7 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiSesion = '../../core/api/dashboard/index.php?action=';
+const apiSesion = '../../core/api/public/index.php?action=';
 
 //Función para verificar si existen usuarios en el sitio privado
 function checkUsuarios()
@@ -21,7 +21,7 @@ function checkUsuarios()
             const dataset = JSON.parse(response);
             //Se comprueba que no hay usuarios registrados para redireccionar al registro del primer usuario
             if (dataset.status == 2) {
-                sweetAlert(3, dataset.exception, 'index.php');
+                sweetAlert(3, dataset.exception, 'resgistrar.php');
             }
         } else {
             console.log(response);
@@ -49,7 +49,7 @@ $('#form-sesion').submit(function()
             const dataset = JSON.parse(response);
             //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
             if (dataset.status) {
-                sweetAlert(1, 'Autenticación correcta', 'private.php');
+                sweetAlert(1, 'Autenticación correcta', 'index.php');
             } else {
                 sweetAlert(2, dataset.exception, null);
             }

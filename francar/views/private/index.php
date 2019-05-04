@@ -28,9 +28,9 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <i class="material-icons prefix">mail_outline</i>
+              <i class="material-icons prefix">assignment_ind</i>
               <input id="alias_usuario" type="text" name="alias_usuario" class="validate" required/>
-              <label for="alias_usuario">Usuario</label>
+              <label for="alias_usuario">Alias</label>
             </div>
           </div>
           <div class="row">

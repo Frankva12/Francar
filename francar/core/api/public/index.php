@@ -1,7 +1,7 @@
 <?php
 require_once('../../helpers/database.php');
 require_once('../../helpers/validator.php');
-require_once('../../models/usuarios.php');
+require_once('../../models/public/login.php');
 
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
 if (isset($_GET['action'])) {
@@ -15,9 +15,9 @@ if (isset($_GET['action'])) {
 
             case 'logout':
                 if (session_destroy()) {
-                    header('location: ../../views/private/index.php');
+                    header('location: ../../views/public/index.php');
                 } else {
-                    header('location: ../../views/private/private.php');
+                    header('location: ../../views/public/index.php');
                 }
                 break;
 
@@ -284,12 +284,12 @@ if (isset($_GET['action'])) {
 
             case 'login':
                 $_POST = $usuario->validateForm($_POST);
-                if ($usuario->setAlias($_POST['alias_usuario'])) {
+                if ($usuario->setAlias($_POST['alias_cliente'])) {
                     if ($usuario->checkAlias()) {
                         if ($usuario->setContrasenia($_POST['contrasenia'])) {
                             if ($usuario->checkPassword()) {
                                 $_SESSION['id_administrador'] = $usuario->getId();
-                                $_SESSION['alias_usuario'] = $usuario->getAlias();
+                                $_SESSION['alias_cliente'] = $usuario->getAlias();
                                 $result['status'] = 1;
                             } else {
                                 $result['exception'] = 'Clave inexistente';
