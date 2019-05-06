@@ -14,7 +14,11 @@ if (isset($_GET['action'])) {
 			case 'read':
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				if ($result['dataset'] = $categoria -> readCategorias()) {
+=======
+				if ($result['dataset'] = $categoria->readCategorias()) {
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 				if ($result['dataset'] = $categoria->readCategorias()) {
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -27,6 +31,7 @@ if (isset($_GET['action'])) {
 				}
 				break;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 			case 'search':
@@ -87,11 +92,33 @@ if (isset($_GET['action'])) {
 					if ($categoria->setDescripcion($_POST['create_descripcion'])) {
 						if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
+				case 'search':
+                $_POST = $categoria->validateForm($_POST);
+                if ($_POST['busqueda'] != '') {
+                    if ($result['dataset'] = $categoria->searchCategoria($_POST['busqueda'])) {
+                        $result['status'] = 1;
+                    } else {
+                        $result['exception'] = 'No hay coincidencias';
+                    }
+                } else {
+                    $result['exception'] = 'Ingrese un valor para buscar';
+                }
+                break;
+			case 'create':
+				$_POST = $categoria->validateForm($_POST);
+        		if ($categoria->setNombre($_POST['create_categoria'])) {
+					if ($categoria->setDescripcion($_POST['create_descripcion'])) {
+						if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 							if ($categoria->setImagen($_FILES['create_archivo'], null)) {
 								if ($categoria->createCategoria()) {
 									if ($categoria->saveFile($_FILES['create_archivo'], $categoria->getRuta(), $categoria->getImagen())) {
 										if($categoria->createCategoria()){
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -107,7 +134,11 @@ if (isset($_GET['action'])) {
 							} else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 								$result['exception'] = $categoria -> getImageError();
+=======
+								$result['exception'] = $categoria->getImageError();
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 								$result['exception'] = $categoria->getImageError();
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -125,6 +156,7 @@ if (isset($_GET['action'])) {
 					$result['exception'] = 'Nombre incorrecto';
 				}
 				break;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -218,6 +250,22 @@ if (isset($_GET['action'])) {
                 }
             	break;
 			case 'update':
+=======
+				
+				
+            case 'get':
+                if ($categoria->setId($_POST['id_categoria'])) {
+                    if ($result['dataset'] = $categoria->getCategoria()) {
+                        $result['status'] = 1;
+                    } else {
+                        $result['exception'] = 'Categoría inexistente';
+                    }
+                } else {
+                    $result['exception'] = 'Categoría incorrecta';
+                }
+            	break;
+			case 'update':
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 				$_POST = $categoria->validateForm($_POST);
 				if ($categoria->setId($_POST['id_categoria'])) {
 					if ($categoria->getCategoria()) {
@@ -241,6 +289,9 @@ if (isset($_GET['action'])) {
 								if ($categoria->updateCategoria()) {
 									if ($archivo) {
 										if ($categoria->saveFile($_FILES['update_archivo'], $categoria->getRuta(), $categoria->getImagen())) {
+<<<<<<< HEAD
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 											$result['status'] = 1;
 										} else {
@@ -267,6 +318,7 @@ if (isset($_GET['action'])) {
 				}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				break;
 			case 'delete':
 				if ($categoria -> setId($_POST['id_categoria'])) {
@@ -276,6 +328,8 @@ if (isset($_GET['action'])) {
 =======
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
             	break;
             case 'delete':
 				if ($categoria->setId($_POST['id_categoria'])) {
@@ -283,6 +337,9 @@ if (isset($_GET['action'])) {
 						if ($categoria->deleteCategoria()) {
 							if ($categoria->deleteFile($categoria->getRuta(), $_POST['imagen_categoria'])) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
