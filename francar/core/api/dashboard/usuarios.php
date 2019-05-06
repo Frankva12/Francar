@@ -9,9 +9,8 @@ if (isset($_GET['action'])) {
     $usuario = new Usuarios;
     $result = array('status' => 0, 'exception' => '');
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-    if (isset($_SESSION['id_administrador'])) {
+    if (isset($_SESSION['id_administrador'])&& $_GET['site'] == 'private'){
         switch ($_GET['action']) {
-
 
             case 'logout':
                 if (session_destroy()) {

@@ -152,8 +152,8 @@ class Usuarios extends Validator
 
 	public function checkPassword()
 	{
-		$sql = 'SELECT correo FROM administrador WHERE contrasenia = ?';
-		$params = array($this->contrasenia);
+		$sql = 'SELECT correo FROM administrador WHERE alias_usuario = ? and contrasenia = ?';
+		$params = array($this->alias, $this->contrasenia);
 		$data = Database::getRow($sql, $params);
 		if ($data) {
 			$this->correo = $data['correo'];
