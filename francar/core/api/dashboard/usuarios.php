@@ -28,8 +28,13 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if ($usuario -> setId($_SESSION['id_usuario'])) {
                     if ($result['dataset'] = $usuario -> getUsuario()) {
+=======
+                if ($usuario->setId($_SESSION['id_usuario'])) {
+                    if ($result['dataset'] = $usuario->getUsuario()) {
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
                 if ($usuario->setId($_SESSION['id_usuario'])) {
                     if ($result['dataset'] = $usuario->getUsuario()) {
@@ -66,6 +71,7 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if ($usuario -> setId($_SESSION['id_usuario'])) {
                     if ($usuario -> getUsuario()) {
                         $_POST = $usuario -> validateForm($_POST);
@@ -75,6 +81,8 @@ if (isset($_GET['action'])) {
                                     if ($usuario -> setAlias($_POST['profile_alias'])) {
                                         if ($usuario -> updateUsuario()) {
 =======
+=======
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
@@ -95,6 +103,9 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -136,6 +147,7 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if ($usuario -> setId($_SESSION['id_usuario'])) {
                     $_POST = $usuario -> validateForm($_POST);
                     if ($_POST['clave_actual_1'] == $_POST['clave_actual_2']) {
@@ -144,6 +156,16 @@ if (isset($_GET['action'])) {
                                 if ($_POST['clave_nueva_1'] == $_POST['clave_nueva_2']) {
                                     if ($usuario -> setClave($_POST['clave_nueva_1'])) {
                                         if ($usuario -> changePassword()) {
+=======
+                if ($usuario->setId($_SESSION['id_usuario'])) {
+                    $_POST = $usuario->validateForm($_POST);
+                    if ($_POST['clave_actual_1'] == $_POST['clave_actual_2']) {
+                        if ($usuario->setClave($_POST['clave_actual_1'])) {
+                            if ($usuario->checkPassword()) {
+                                if ($_POST['clave_nueva_1'] == $_POST['clave_nueva_2']) {
+                                    if ($usuario->setClave($_POST['clave_nueva_1'])) {
+                                        if ($usuario->changePassword()) {
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
                 if ($usuario->setId($_SESSION['id_usuario'])) {
                     $_POST = $usuario->validateForm($_POST);
@@ -225,7 +247,11 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if ($result['dataset'] = $usuario -> readUsuarios()) {
+=======
+                if ($result['dataset'] = $usuario->readUsuarios()) {
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
                 if ($result['dataset'] = $usuario->readUsuarios()) {
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -249,6 +275,7 @@ if (isset($_GET['action'])) {
 
 
             case 'create':
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -280,6 +307,8 @@ if (isset($_GET['action'])) {
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setNombre($_POST['create_nombres'])) {
                     if ($usuario->setApellido($_POST['create_apellidos'])) {
@@ -295,6 +324,9 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -342,8 +374,13 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if ($usuario -> setId($_POST['id_administrador'])) {
                     if ($result['dataset'] = $usuario -> getUsuario()) {
+=======
+                if ($usuario->setId($_POST['id_administrador'])) {
+                    if ($result['dataset'] = $usuario->getUsuario()) {
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
                 if ($usuario->setId($_POST['id_administrador'])) {
                     if ($result['dataset'] = $usuario->getUsuario()) {
@@ -380,6 +417,7 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 $_POST = $usuario -> validateForm($_POST);
                 if ($usuario -> setId($_POST['id_administrador'])) {
                     if ($usuario -> getUsuario()) {
@@ -407,6 +445,8 @@ if (isset($_GET['action'])) {
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setId($_POST['id_administrador'])) {
                     if ($usuario->getUsuario()) {
@@ -422,6 +462,9 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -469,9 +512,15 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if ($usuario -> setId($_POST['id_adminitrador'])) {
                         if ($usuario -> getUsuario()) {
                             if ($usuario -> deleteUsuario()) {
+=======
+                    if ($usuario->setId($_POST['id_adminitrador'])) {
+                        if ($usuario->getUsuario()) {
+                            if ($usuario->deleteUsuario()) {
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
                     if ($usuario->setId($_POST['id_adminitrador'])) {
                         if ($usuario->getUsuario()) {
@@ -522,7 +571,11 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if ($usuario -> readUsuarios()) {
+=======
+                if ($usuario->readUsuarios()) {
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
                 if ($usuario->readUsuarios()) {
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -553,6 +606,7 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 $_POST = $usuario -> validateForm($_POST);
                 if ($usuario -> setNombres($_POST['nombres'])) {
                     if ($usuario -> setApellidos($_POST['apellidos'])) {
@@ -562,6 +616,8 @@ if (isset($_GET['action'])) {
                                     if ($usuario -> setClave($_POST['clave1'])) {
                                         if ($usuario -> createUsuario()) {
 =======
+=======
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
@@ -582,6 +638,9 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -622,6 +681,7 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 $_POST = $usuario -> validateForm($_POST);
                 if ($usuario -> setAlias($_POST['alias_usuario'])) {
                     if ($usuario -> checkAlias()) {
@@ -630,6 +690,8 @@ if (isset($_GET['action'])) {
                                 $_SESSION['id_administrador'] = $usuario -> getId();
                                 $_SESSION['alias_usuario'] = $usuario -> getAlias();
 =======
+=======
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
@@ -649,6 +711,9 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -683,9 +748,15 @@ if (isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     exit('Recurso denegado');
 } 
 ?>
+=======
+	exit('Recurso denegado');
+}
+?>
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 	exit('Recurso denegado');
 }
