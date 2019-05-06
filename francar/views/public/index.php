@@ -57,40 +57,40 @@
       <h4 class="center-align">Contactanos</h4>
       <form method="post" id="form-update">
 
-        <div class="input-field col s6 m6 l12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate"
-            required />
-          <label for="update_nombre_administrador">Nombre</label>
+          <div class="input-field col s6 m6 l12">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate"
+              required />
+            <label for="update_nombre_administrador">Nombre</label>
+          </div>
+
+
+          <div class="input-field col s6 m6 l12">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate"
+              required />
+            <label for="update_apellido_administrador">Apellido</label>
+          </div>
+
+          <div class="input-field col s6 m6 l12">
+            <i class="material-icons prefix">phone</i>
+            <input id="update_telefono" type="tel" name="update_telefono" class="validate" required />
+            <label for="update_telefono">telefono</label>
+          </div>
+
+          <div class="input-field col s6 m6 l12">
+            <i class="material-icons prefix">mail</i>
+            <input id="update_correo" type="email" name="update_correo" class="validate" required />
+            <label for="update_correo">Correo</label>
+          </div>
+
         </div>
-
-
-        <div class="input-field col s6 m6 l12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate"
-            required />
-          <label for="update_apellido_administrador">Apellido</label>
+        <div class="row center-align">
+          <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Modificar"><i
+              class="material-icons">send</i></button>
         </div>
-
-        <div class="input-field col s6 m6 l12">
-          <i class="material-icons prefix">phone</i>
-          <input id="update_telefono" type="tel" name="update_telefono" class="validate" required />
-          <label for="update_telefono">telefono</label>
-        </div>
-
-        <div class="input-field col s6 m6 l12">
-          <i class="material-icons prefix">mail</i>
-          <input id="update_correo" type="email" name="update_correo" class="validate" required />
-          <label for="update_correo">Correo</label>
-        </div>
-
+      </form>
     </div>
-    <div class="row center-align">
-      <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Modificar"><i
-          class="material-icons">send</i></button>
-    </div>
-    </form>
-  </div>
   </div>
   </div>
 
@@ -98,30 +98,30 @@
       nosotros le queramos poner para que le de un estilo Ajax a la pagina web en este caso seria en la opcion de ¿Quiénes somos?-->
   <div id="modal2" class="modal">
     <div class="modal-content">
-      <div class="row container">
-        <h2 align="center">¿Quiénes somos?</h2>
-        <hr>
-        <blockquote>
-          <h3 class="header">Misión
-            <a class="btn-floating black pulse">
-              <i class="material-icons">group</i>
-            </a>
-          </h3>
-        </blockquote>
-        <p align="left">Somos una empresa que busca fomentar la lectura en los jóvenes, apoyados de la
-          ayuda de la tecnología,
-          para obtenerlos de manera más efectiva virtualmente.</p>
+        <div class="row container">
+          <h2 align="center">¿Quiénes somos?</h2>
+          <hr>
+          <blockquote>
+            <h3 class="header">Misión
+              <a class="btn-floating black pulse">
+                <i class="material-icons">group</i>
+              </a>
+            </h3>
+          </blockquote>
+          <p align="left">Somos una empresa que busca fomentar la lectura en los jóvenes, apoyados de la
+            ayuda de la tecnología,
+            para obtenerlos de manera más efectiva virtualmente.</p>
 
-        <blockquote>
-          <h3 class="header">Visión
-            <a class="btn-floating black   pulse">
-              <i class="material-icons">lightbulb_outline</i>
-            </a>
-          </h3>
-        </blockquote>
-        <p align="left">Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.</p>
+          <blockquote>
+            <h3 class="header">Visión
+              <a class="btn-floating black   pulse">
+                <i class="material-icons">lightbulb_outline</i>
+              </a>
+            </h3>
+          </blockquote>
+          <p align="left">Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.</p>
+        </div>
       </div>
-    </div>
   </div>
 
 
@@ -294,17 +294,19 @@
       </div>
     </div>
   </div>
-</body>
-<!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
-<?php
+  </body>
+  <!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
+  <?php
   require("../../resources/pages/footer.php");
   Footer::foot();
   ?>
 
-<!--Se importan lo que son los archivos de JavaScript-->
-<script src="../../resources/js/jquery-3.3.1.min.js"></script>
-<script src="../../resources/js/materialize.min.js"></script>
-<script src="../../resources/js/carousel.js"></script>
-<script src="../../resources/js/parallax.js"></script>
-<script src="../../resources/js/modal.js"></script>
+  <!--Se importan lo que son los archivos de JavaScript-->
+  <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+  <script src="../../resources/js/carousel.js"></script>
+  <script src="../../resources/js/parallax.js"></script>
+  <script src="../../resources/js/modal.js"></script>
+
+
 </html>

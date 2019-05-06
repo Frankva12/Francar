@@ -91,33 +91,34 @@ $('#form-search').submit(function () {
 
 
 //Función para mostrar los resultados de una búsqueda
-$('#form-search').submit(function () {
+$('#form-search').submit(function()
+{
     event.preventDefault();
     $.ajax({
-            url: apiUsuarios + 'search',
-            type: 'post',
-            data: $('#form-search').serialize(),
-            datatype: 'json'
-        })
-        .done(function (response) {
-            //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
-            if (isJSONString(response)) {
-                const result = JSON.parse(response);
-                //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
-                if (result.status) {
-                    sweetAlert(4, 'Coincidencias: ' + result.dataset.length, null);
-                    fillTable(result.dataset);
-                } else {
-                    sweetAlert(3, result.exception, null);
-                }
+        url: apiUsuarios + 'search',
+        type: 'post',
+        data: $('#form-search').serialize(),
+        datatype: 'json'
+    })
+    .done(function(response){
+        //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
+        if (isJSONString(response)) {
+            const result = JSON.parse(response);
+            //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
+            if (result.status) {
+                sweetAlert(4, 'Coincidencias: ' + result.dataset.length, null);
+                fillTable(result.dataset);
             } else {
-                console.log(response);
+                sweetAlert(3, result.exception, null);
             }
-        })
-        .fail(function (jqXHR) {
-            //Se muestran en consola los posibles errores de la solicitud AJAX
-            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
-        });
+        } else {
+            console.log(response);
+        }
+    })
+    .fail(function(jqXHR){
+        //Se muestran en consola los posibles errores de la solicitud AJAX
+        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+    });
 })
 
 //Función para crear un nuevo registro
@@ -260,7 +261,7 @@ function confirmDelete(id) {
                                 buttons: ['Aceptar'],
                                 closeOnClickOutside: true,
                                 closeOnEsc: true
-                            })
+                            })                        
                         }
                     })
                     .fail(function (jqXHR) {
