@@ -45,27 +45,27 @@
     </nav>
     <br>
 
-        <!--Se hace una tabla con el nombre de cada editorial-->
-        <div class="container">
-            <table  class="highlight" id="tablaEditorial">
-                <thead>
-                    <tr>
-                        <th>Editoriales</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody-read">
-                </tbody>
-            </table>
+    <!--Se hace una tabla con el nombre de cada editorial-->
+    <div class="container">
+        <table class="highlight" id="tablaEditorial">
+            <thead>
+                <tr>
+                    <th>Editoriales</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-read">
+            </tbody>
+        </table>
 
 
-            <!-- Botón para abrir ventana de nuevo registro -->
-            <div class="input-field center-align col s12 m4">
-                <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
-                    data-tooltip="Agregar">
-                    <i class="material-icons"></i>Agregar Editorial</a>
-            </div>
+        <!-- Botón para abrir ventana de nuevo registro -->
+        <div class="input-field center-align col s12 m4">
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
+                data-tooltip="Agregar">
+                <i class="material-icons"></i>Agregar Editorial</a>
         </div>
+    </div>
     </div>
 
     <!--Ventana para crear un nuevo registro-->
@@ -103,7 +103,8 @@
                     <div class="input-field col s12 m6">
                         <input id="id_editorial" type="hidden" name="id_editorial" required />
                         <i class="material-icons prefix">description</i>
-                        <input id="update_editorial" type="text" name="update_editorial" class="validate" minlength="5" maxlength="80" required  />
+                        <input id="update_editorial" type="text" name="update_editorial" class="validate" minlength="5"
+                            maxlength="80" required />
                         <label for="update_editorial">Nombre editorial</label>
                     </div>
                     <div class="row center-align">
@@ -130,7 +131,7 @@
     <script src="../../resources/js/materialize.min.js"></script>
     <script src="../../resources/js/modal.js"></script>
     <script src="../../resources/js/combo.js"></script>
-    
+
     <script src="../../resources/js/tabla.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/dataTables.material.min.js"></script>
