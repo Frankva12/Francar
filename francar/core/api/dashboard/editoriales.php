@@ -16,6 +16,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			case 'read':
 				if ($result['dataset'] = $editorial -> readEditoriales()) {
 					$result['status'] = 1;
@@ -220,6 +221,44 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 						if ($editorial->setId($_POST['id_editorial'])) {
 							if ($result['dataset'] = $editorial->getEditorial()) {
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
+					case 'read': 
+						if ($result['dataset'] = $editorial->readEditoriales()) {
+							$result['status'] = 1;
+						} else {
+							$result['exception'] = 'No hay editoriales registradas';
+						}
+						break;
+
+						case 'search':
+                $_POST = $editorial->validateForm($_POST);
+                if ($_POST['busqueda'] != '') {
+                    if ($result['dataset'] = $editorial->searchEditoriales($_POST['busqueda'])) {
+                        $result['status'] = 1;
+                    } else {
+                        $result['exception'] = 'No hay coincidencias';
+                    }
+                } else {
+                    $result['exception'] = 'Ingrese un valor para buscar';
+                }
+                break;
+					case 'create':
+						$_POST = $editorial->validateForm($_POST);
+						if ($editorial->setNombreEditorial($_POST['create_editorial'])) {
+							if($editorial->createEditorial()){
+								$result['status']=1;
+							}else {
+							$result['status']=2;
+							$result['exception'] = 'Nombre incorrecto';
+							}
+						}
+						break;
+
+
+					case 'get':
+						if ($editorial->setId($_POST['id_editorial'])) {
+							if ($result['dataset'] = $editorial->getEditorial()) {
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 								$result['status'] = 1;
 							} else {
 								$result['exception'] = 'Editorial inexistente';
@@ -234,12 +273,15 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			case 'delete':
 				if ($editorial -> setId($_POST['id_editorial'])) {
 					if ($editorial -> getEditorial()) {
 						if ($editorial -> deleteEditorial()) {} else {
 							$result['exception'] = 'Editorial inexistente';
 =======
+=======
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
@@ -262,6 +304,9 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
+=======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
@@ -293,9 +338,13 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		print(json_encode($result));
 	}
 } 
+=======
+}
+>>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
 =======
 }
 >>>>>>> parent of e869098... Ordene codigo, elimine archivos (Dios nos socorra)
