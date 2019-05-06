@@ -29,14 +29,14 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">assignment_ind</i>
-              <input id="alias_usuario" type="text" name="alias_usuario" class="validate" required/>
+              <input id="alias_usuario" type="text" name="alias_usuario class="validate" minlength="5" maxlength="40"  required/>
               <label for="alias_usuario">Alias</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">lock_outline</i>
-              <input id="contrasenia" type="password" name="contrasenia" class=" " required/>
+              <input id="contrasenia" type="password" name="contrasenia" class="validate" minlength="6" maxlength="40" required/>
                 <label for="contrasenia">Contraseña</label>
             </div>
           </div>

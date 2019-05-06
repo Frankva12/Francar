@@ -86,13 +86,13 @@
 
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">note_add</i>
-                        <input id="create_categoria" type="text" name="create_categoria" class="validate" required />
+                        <input id="create_categoria" type="text" name="create_categoria" class="validate" minlength="5" required />
                         <label for="create_categoria">Categoria</label>
                     </div>
 
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
-                        <input id="create_descripcion" type="text" name="create_descripcion" class="validate" />
+                        <input id="create_descripcion" type="text" name="create_descripcion" class="validate" minlength="5" />
                         <label for="create_descripcion">Descripción</label>
                     </div>
 
