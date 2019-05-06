@@ -6,7 +6,8 @@ $(document).ready(function () {
 const apiUsuarios = '../../core/api/dashboard/usuarios.php?site=private&action=';
 
 //Función para llenar tabla con los datos de los registros
-function fillTable(rows) {
+function fillTable(rows) 
+{
     let content = '';
     //Se recorren las filas para armar el cuerpo de la tabla y se utiliza comilla invertida para escapar los caracteres especiales
     rows.forEach(function (row) {

@@ -1,4 +1,4 @@
-< ? php
+<?php
 require_once('../../helpers/database.php');
 require_once('../../helpers/validator.php');
 require_once('../../models/dashboard/editoriales.php');
@@ -13,7 +13,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 		switch ($_GET['action']) {
 
 			case 'read':
-				if ($result['dataset'] = $editorial - > readEditoriales()) {
+				if ($result['dataset'] = $editorial -> readEditoriales()) {
 					$result['status'] = 1;
 				} else {
 					$result['exception'] = 'No hay editoriales registradas';
@@ -21,9 +21,9 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 				break;
 
 			case 'search':
-				$_POST = $editorial - > validateForm($_POST);
+				$_POST = $editorial -> validateForm($_POST);
 				if ($_POST['busqueda'] != '') {
-					if ($result['dataset'] = $editorial - > searchEditoriales($_POST['busqueda'])) {
+					if ($result['dataset'] = $editorial -> searchEditoriales($_POST['busqueda'])) {
 						$result['status'] = 1;
 					} else {
 						$result['exception'] = 'No hay coincidencias';
@@ -33,9 +33,9 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 				}
 				break;
 			case 'create':
-				$_POST = $editorial - > validateForm($_POST);
-				if ($editorial - > setNombreEditorial($_POST['create_editorial'])) {
-					if ($editorial - > createEditorial()) {
+				$_POST = $editorial -> validateForm($_POST);
+				if ($editorial -> setNombreEditorial($_POST['create_editorial'])) {
+					if ($editorial -> createEditorial()) {
 						$result['status'] = 1;
 					} else {
 						$result['status'] = 2;
@@ -46,8 +46,8 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 
 
 			case 'get':
-				if ($editorial - > setId($_POST['id_editorial'])) {
-					if ($result['dataset'] = $editorial - > getEditorial()) {
+				if ($editorial -> setId($_POST['id_editorial'])) {
+					if ($result['dataset'] = $editorial -> getEditorial()) {
 						$result['status'] = 1;
 					} else {
 						$result['exception'] = 'Editorial inexistente';
@@ -59,11 +59,11 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 
 
 			case 'update':
-				$_POST = $editorial - > validateForm($_POST);
-				if ($editorial - > setId($_POST['id_editorial'])) {
-					if ($editorial - > updateEditorial()) {
-						if ($editorial - > setNombreEditorial($_POST['update_editorial'])) {
-							if ($editorial - > updateEditorial()) {
+				$_POST = $editorial -> validateForm($_POST);
+				if ($editorial -> setId($_POST['id_editorial'])) {
+					if ($editorial -> updateEditorial()) {
+						if ($editorial -> setNombreEditorial($_POST['update_editorial'])) {
+							if ($editorial -> updateEditorial()) {
 								$result['status'] = 1;
 							} else {
 								$result['status'] = 2;
@@ -76,9 +76,9 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 
 
 			case 'delete':
-				if ($editorial - > setId($_POST['id_editorial'])) {
-					if ($editorial - > getEditorial()) {
-						if ($editorial - > deleteEditorial()) {} else {
+				if ($editorial -> setId($_POST['id_editorial'])) {
+					if ($editorial -> getEditorial()) {
+						if ($editorial -> deleteEditorial()) {} else {
 							$result['exception'] = 'Editorial inexistente';
 						}
 					} else {
@@ -90,5 +90,5 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
 		}
 		print(json_encode($result));
 	}
-} ?
->
+} 
+?>
