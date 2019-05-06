@@ -44,10 +44,10 @@
     </div>
   </nav>
   <br>
-  
+
   <!--Se hace tabla donde muestran los diferentes usuarios que hay-->
   <div class="container">
-   <table class="highlight" id="tablaUsuarios">
+    <table class="highlight" id="tablaUsuarios">
       <thead>
         <tr>
           <th>Nombre</th>
@@ -78,7 +78,7 @@
       <form method="post" id="form-create" enctype="multipart/form-data">
         <div class="row">
 
-        <div class="input-field col s12 m6">
+          <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
             <input id="create_nombres" type="text" name="create_nombres" class="validate" required />
             <label for="create_nombres">Nombre</label>
@@ -96,7 +96,7 @@
             <label for="create_alias">Alias</label>
           </div>
 
-          
+
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">place</i>
             <input id="create_direccion" type="text" name="create_direccion" class="validate" />
@@ -147,12 +147,14 @@
         <div class="row">
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate" required />
+            <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate"
+              required />
             <label for="update_nombre_administrador">Nombre</label>
           </div>
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">assignment_ind</i>
-            <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate" required />
+            <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate"
+              required />
             <label for="update_apellido_administrador">Apellido</label>
           </div>
 
@@ -180,8 +182,6 @@
             <label for="update_correo">Correo</label>
           </div>
 
-
-
         </div>
         <div class="row center-align">
           <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
@@ -200,18 +200,18 @@ Footer::foot();
 ?>
   <!--Se importan lo que son los archivos de JavaScript-->
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/parallax.js"></script>
-    <script src="../../resources/js/modal.js"></script>
-    <script src="../../resources/js/combo.js"></script>
-    <script src="../../resources/js/datatables.min.js"></script>
-    <script src="../../resources/js/dataTables.material.min.js"></script>
-    <script src="../../resources/js/tabla.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+  <script src="../../resources/js/carousel.js"></script>
+  <script src="../../resources/js/parallax.js"></script>
+  <script src="../../resources/js/modal.js"></script>
+  <script src="../../resources/js/combo.js"></script>
+  <script src="../../resources/js/datatables.min.js"></script>
+  <script src="../../resources/js/dataTables.material.min.js"></script>
+  <script src="../../resources/js/tabla.js"></script>
 
-    <script src="../../resources/js/sweetalert.min.js"></script>
-<script src="../../core/helpers/functions.js"></script>
-<script src="../../core/controllers/dashboard/usuarios.js"></script>
+  <script src="../../resources/js/sweetalert.min.js"></script>
+  <script src="../../core/helpers/functions.js"></script>
+  <script src="../../core/controllers/dashboard/usuarios.js"></script>
 </body>
 
 </html>

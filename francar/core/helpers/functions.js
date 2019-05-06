@@ -1,6 +1,5 @@
 //Función para comprobar si una cadena tiene formato JSON
-function isJSONString(string)
-{
+function isJSONString(string) {
     try {
         if (string != "[]") {
             JSON.parse(string);
@@ -8,14 +7,13 @@ function isJSONString(string)
         } else {
             return false;
         }
-    } catch(error) {
+    } catch (error) {
         return false;
     }
 }
 
 //Función para manejar los mensajes de notificación al usuario
-function sweetAlert(type, text, url)
-{
+function sweetAlert(type, text, url) {
     switch (type) {
         case 1:
             title = "Éxito";
@@ -35,17 +33,17 @@ function sweetAlert(type, text, url)
     }
     if (url) {
         swal({
-            title: title,
-            text: text,
-            icon: icon,
-            button: 'Aceptar',
-            closeOnClickOutside: false,
-            closeOnEsc: false
-        })
-        .then(function(value){
-            console.log(value);
-            location.href = url
-        });
+                title: title,
+                text: text,
+                icon: icon,
+                button: 'Aceptar',
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+            .then(function (value) {
+                console.log(value);
+                location.href = url
+            });
     } else {
         swal({
             title: title,

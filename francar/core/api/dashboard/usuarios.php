@@ -1,4 +1,4 @@
-<?php
+< ? php
 require_once('../../helpers/database.php');
 require_once('../../helpers/validator.php');
 require_once('../../models/dashboard/usuarios.php');
@@ -23,8 +23,8 @@ if (isset($_GET['action'])) {
 
 
             case 'readProfile':
-                if ($usuario->setId($_SESSION['id_usuario'])) {
-                    if ($result['dataset'] = $usuario->getUsuario()) {
+                if ($usuario - > setId($_SESSION['id_usuario'])) {
+                    if ($result['dataset'] = $usuario - > getUsuario()) {
                         $result['status'] = 1;
                     } else {
                         $result['exception'] = 'Usuario inexistente';
@@ -36,14 +36,14 @@ if (isset($_GET['action'])) {
 
 
             case 'editProfile':
-                if ($usuario->setId($_SESSION['id_usuario'])) {
-                    if ($usuario->getUsuario()) {
-                        $_POST = $usuario->validateForm($_POST);
-                        if ($usuario->setNombres($_POST['profile_nombres'])) {
-                            if ($usuario->setApellidos($_POST['profile_apellidos'])) {
-                                if ($usuario->setCorreo($_POST['profile_correo'])) {
-                                    if ($usuario->setAlias($_POST['profile_alias'])) {
-                                        if ($usuario->updateUsuario()) {
+                if ($usuario - > setId($_SESSION['id_usuario'])) {
+                    if ($usuario - > getUsuario()) {
+                        $_POST = $usuario - > validateForm($_POST);
+                        if ($usuario - > setNombres($_POST['profile_nombres'])) {
+                            if ($usuario - > setApellidos($_POST['profile_apellidos'])) {
+                                if ($usuario - > setCorreo($_POST['profile_correo'])) {
+                                    if ($usuario - > setAlias($_POST['profile_alias'])) {
+                                        if ($usuario - > updateUsuario()) {
                                             $_SESSION['aliasUsuario'] = $_POST['profile_alias'];
                                             $result['status'] = 1;
                                         } else {
@@ -71,14 +71,14 @@ if (isset($_GET['action'])) {
 
 
             case 'password':
-                if ($usuario->setId($_SESSION['id_usuario'])) {
-                    $_POST = $usuario->validateForm($_POST);
+                if ($usuario - > setId($_SESSION['id_usuario'])) {
+                    $_POST = $usuario - > validateForm($_POST);
                     if ($_POST['clave_actual_1'] == $_POST['clave_actual_2']) {
-                        if ($usuario->setClave($_POST['clave_actual_1'])) {
-                            if ($usuario->checkPassword()) {
+                        if ($usuario - > setClave($_POST['clave_actual_1'])) {
+                            if ($usuario - > checkPassword()) {
                                 if ($_POST['clave_nueva_1'] == $_POST['clave_nueva_2']) {
-                                    if ($usuario->setClave($_POST['clave_nueva_1'])) {
-                                        if ($usuario->changePassword()) {
+                                    if ($usuario - > setClave($_POST['clave_nueva_1'])) {
+                                        if ($usuario - > changePassword()) {
                                             $result['status'] = 1;
                                         } else {
                                             $result['exception'] = 'Operación fallida';
@@ -103,9 +103,9 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-                
+
             case 'read':
-                if ($result['dataset'] = $usuario->readUsuarios()) {
+                if ($result['dataset'] = $usuario - > readUsuarios()) {
                     $result['status'] = 1;
                 } else {
                     $result['exception'] = 'No hay usuarios registrados';
@@ -114,37 +114,37 @@ if (isset($_GET['action'])) {
 
 
             case 'create':
-                $_POST = $usuario->validateForm($_POST);
-                if ($usuario->setNombre($_POST['create_nombres'])) {
-                    if ($usuario->setApellido($_POST['create_apellidos'])) {
-                        if ($usuario->setCorreo($_POST['create_correo'])) {
-                            if ($usuario->setTelefono($_POST['create_telefono'])) {
-                            if ($usuario->setDireccion($_POST['create_direccion'])) {
-                            if ($usuario->setAlias($_POST['create_alias'])) {
-                                if ($_POST['create_clave1'] == $_POST['create_clave2']) {
-                                    if ($usuario->setContrasenia($_POST['create_clave1'])) {
-                                        if ($usuario->createUsuario()) {
-                                            $result['status'] = 1;
+                $_POST = $usuario - > validateForm($_POST);
+                if ($usuario - > setNombre($_POST['create_nombres'])) {
+                    if ($usuario - > setApellido($_POST['create_apellidos'])) {
+                        if ($usuario - > setCorreo($_POST['create_correo'])) {
+                            if ($usuario - > setTelefono($_POST['create_telefono'])) {
+                                if ($usuario - > setDireccion($_POST['create_direccion'])) {
+                                    if ($usuario - > setAlias($_POST['create_alias'])) {
+                                        if ($_POST['create_clave1'] == $_POST['create_clave2']) {
+                                            if ($usuario - > setContrasenia($_POST['create_clave1'])) {
+                                                if ($usuario - > createUsuario()) {
+                                                    $result['status'] = 1;
+                                                } else {
+                                                    $result['exception'] = 'Operación fallida';
+                                                }
+                                            } else {
+                                                $result['exception'] = 'Clave menor a 6 caracteres';
+                                            }
                                         } else {
-                                            $result['exception'] = 'Operación fallida';
+                                            $result['exception'] = 'Claves diferentes';
                                         }
                                     } else {
-                                        $result['exception'] = 'Clave menor a 6 caracteres';
+                                        $result['exception'] = 'Telefono incorrecto';
                                     }
+
                                 } else {
-                                    $result['exception'] = 'Claves diferentes';
+                                    $result['exception'] = 'Direccion incorrecta';
                                 }
                             } else {
-                                $result['exception'] = 'Telefono incorrecto';
-                            }
-                            
-                        } else {
-                            $result['exception'] = 'Direccion incorrecta';
-                        }
-                        } else {
-                            $result['exception'] = 'Alias incorrecto';
+                                $result['exception'] = 'Alias incorrecto';
 
-                        }
+                            }
                         } else {
                             $result['exception'] = 'Correo incorrecto';
                         }
@@ -158,8 +158,8 @@ if (isset($_GET['action'])) {
 
 
             case 'get':
-                if ($usuario->setId($_POST['id_administrador'])) {
-                    if ($result['dataset'] = $usuario->getUsuario()) {
+                if ($usuario - > setId($_POST['id_administrador'])) {
+                    if ($result['dataset'] = $usuario - > getUsuario()) {
                         $result['status'] = 1;
                     } else {
                         $result['exception'] = 'Usuario inexistente';
@@ -171,27 +171,27 @@ if (isset($_GET['action'])) {
 
 
             case 'update':
-                $_POST = $usuario->validateForm($_POST);
-                if ($usuario->setId($_POST['id_administrador'])) {
-                    if ($usuario->getUsuario()) {
-                        if ($usuario->setNombre($_POST['update_nombre_administrador'])) {
-                            if ($usuario->setApellido($_POST['update_apellido_administrador'])) {
-                                if ($usuario->setCorreo($_POST['update_correo'])) {
-                                    if ($usuario->setTelefono($_POST['update_telefono'])) {
-                                    if ($usuario->setDireccion($_POST['update_direccion'])) {
-                                    if ($usuario->setAlias($_POST['update_alias'])) {
-                                        if ($usuario->updateUsuario()) {
-                                            $result['status'] = 1;
+                $_POST = $usuario - > validateForm($_POST);
+                if ($usuario - > setId($_POST['id_administrador'])) {
+                    if ($usuario - > getUsuario()) {
+                        if ($usuario - > setNombre($_POST['update_nombre_administrador'])) {
+                            if ($usuario - > setApellido($_POST['update_apellido_administrador'])) {
+                                if ($usuario - > setCorreo($_POST['update_correo'])) {
+                                    if ($usuario - > setTelefono($_POST['update_telefono'])) {
+                                        if ($usuario - > setDireccion($_POST['update_direccion'])) {
+                                            if ($usuario - > setAlias($_POST['update_alias'])) {
+                                                if ($usuario - > updateUsuario()) {
+                                                    $result['status'] = 1;
+                                                } else {
+                                                    $result['exception'] = 'Operación fallida';
+                                                }
+                                            } else {
+                                                $result['exception'] = 'Alias incorrecto';
+                                            }
+
                                         } else {
-                                            $result['exception'] = 'Operación fallida';
+                                            $result['exception'] = 'Direccion incorrecta';
                                         }
-                                    } else {
-                                        $result['exception'] = 'Alias incorrecto';
-                                    }
-                                    
-                                } else {
-                                    $result['exception'] = 'Direccion incorrecta';
-                                }
                                     } else {
                                         $result['exception'] = 'Telefono incorrecto';
                                     }
@@ -215,9 +215,9 @@ if (isset($_GET['action'])) {
 
             case 'delete':
                 if ($_POST['id_administrador'] != $_SESSION['id_:administrador']) {
-                    if ($usuario->setId($_POST['id_adminitrador'])) {
-                        if ($usuario->getUsuario()) {
-                            if ($usuario->deleteUsuario()) {
+                    if ($usuario - > setId($_POST['id_adminitrador'])) {
+                        if ($usuario - > getUsuario()) {
+                            if ($usuario - > deleteUsuario()) {
                                 $result['status'] = 1;
                             } else {
                                 $result['exception'] = 'Operación fallida';
@@ -238,7 +238,7 @@ if (isset($_GET['action'])) {
     } else {
         switch ($_GET['action']) {
             case 'read':
-                if ($usuario->readUsuarios()) {
+                if ($usuario - > readUsuarios()) {
                     $result['status'] = 1;
                     $result['exception'] = 'Existe al menos un usuario registrado';
                 } else {
@@ -249,14 +249,14 @@ if (isset($_GET['action'])) {
 
 
             case 'register':
-                $_POST = $usuario->validateForm($_POST);
-                if ($usuario->setNombres($_POST['nombres'])) {
-                    if ($usuario->setApellidos($_POST['apellidos'])) {
-                        if ($usuario->setCorreo($_POST['correo'])) {
-                            if ($usuario->setAlias($_POST['alias'])) {
+                $_POST = $usuario - > validateForm($_POST);
+                if ($usuario - > setNombres($_POST['nombres'])) {
+                    if ($usuario - > setApellidos($_POST['apellidos'])) {
+                        if ($usuario - > setCorreo($_POST['correo'])) {
+                            if ($usuario - > setAlias($_POST['alias'])) {
                                 if ($_POST['clave1'] == $_POST['clave2']) {
-                                    if ($usuario->setClave($_POST['clave1'])) {
-                                        if ($usuario->createUsuario()) {
+                                    if ($usuario - > setClave($_POST['clave1'])) {
+                                        if ($usuario - > createUsuario()) {
                                             $result['status'] = 1;
                                         } else {
                                             $result['exception'] = 'Operación fallida';
@@ -283,13 +283,13 @@ if (isset($_GET['action'])) {
 
 
             case 'login':
-                $_POST = $usuario->validateForm($_POST);
-                if ($usuario->setAlias($_POST['alias_usuario'])) {
-                    if ($usuario->checkAlias()) {
-                        if ($usuario->setContrasenia($_POST['contrasenia'])) {
-                            if ($usuario->checkPassword()) {
-                                $_SESSION['id_administrador'] = $usuario->getId();
-                                $_SESSION['alias_usuario'] = $usuario->getAlias();
+                $_POST = $usuario - > validateForm($_POST);
+                if ($usuario - > setAlias($_POST['alias_usuario'])) {
+                    if ($usuario - > checkAlias()) {
+                        if ($usuario - > setContrasenia($_POST['contrasenia'])) {
+                            if ($usuario - > checkPassword()) {
+                                $_SESSION['id_administrador'] = $usuario - > getId();
+                                $_SESSION['alias_usuario'] = $usuario - > getAlias();
                                 $result['status'] = 1;
                             } else {
                                 $result['exception'] = 'Clave inexistente';
@@ -308,8 +308,8 @@ if (isset($_GET['action'])) {
                 exit('Acción no disponible');
         }
     }
-	print(json_encode($result));
+    print(json_encode($result));
 } else {
-	exit('Recurso denegado');
-}
-?>
+    exit('Recurso denegado');
+} ?
+>

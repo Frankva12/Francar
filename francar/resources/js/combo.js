@@ -1,6 +1,3 @@
-// Or with jQuery
-
-$(document).ready(function(){
-    $('select').formSelect();
-  });
-        
+$(document).ready(function () {
+  $('select').formSelect();
+});
