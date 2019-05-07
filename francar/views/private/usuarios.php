@@ -165,7 +165,7 @@
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">fingerprint</i>
-            <input id="update_alias" type="text" name="update_alias" class="validate" minlength="5" maxlength="40"
+            <input id="update_alias" type="text" name="update_alias" class="validate" minlength="4" maxlength="40"
               required />
             <label for="update_alias">Alias</label>
           </div>
