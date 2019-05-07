@@ -14,9 +14,9 @@ if (isset($_GET['action'])) {
 
             case 'logout':
                 if (session_destroy()) {
-                    header('location: ../../views/private/index.php');
+                    header('location: ../../../views/private/');
                 } else {
-                    header('location: ../../views/private/private.php');
+                    header('location: ../../../views/private/private.php');
                 }
                 break;
 

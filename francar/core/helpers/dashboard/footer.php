@@ -27,7 +27,9 @@
                 <p class="white-text text-lighten-4">© 2019 Copyright</p>
                 </div>
               </div>
-          </footer>');
+          </footer>
+          
+          ');
       }
   }
 ?>

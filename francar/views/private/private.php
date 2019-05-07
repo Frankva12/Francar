@@ -24,8 +24,8 @@
 
 <body background="../../resources/img/fondo_private.jpg">
   <?php
-    require("../../resources/pages/menu.php");
-    inicio::navigate('Administrar categorías');
+    require("../../core/helpers/dashboard/menu.php");
+    inicio::navigate();
   ?>
 
   <div class="container white">
@@ -44,15 +44,23 @@
     </nav>
     <br>
     <?php
-      require("../../resources/pages/grafica.php");
+      require("../../core/helpers/dashboard/grafica.php");
       Graficas::grafica();
     ?>
     <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
     <br>
     <?php
-        require("../../resources/pages/footer.php");
+        require("../../core/helpers/dashboard/footer.php");
         Footer::foot();
         ?>
+
+
 </body>
+
+
+<script src="../../resources/js/sweetalert.min.js"></script>
+<script src="../../core/controllers/dashboard/account.js"></script>
+<script src="../../core/helpers/functions.js"></script>
+<script src="../../core/controllers/dashboard/usuarios.js"></script>
 
 </html>

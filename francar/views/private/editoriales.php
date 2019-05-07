@@ -24,7 +24,7 @@
 
 <body>
     <?php
-    require("../../resources/pages/menu.php");
+    require("../../core/helpers/dashboard/menu.php");
     inicio::navigate();
   ?>
 
@@ -103,20 +103,8 @@
                     <div class="input-field col s12 m6">
                         <input id="id_editorial" type="hidden" name="id_editorial" required />
                         <i class="material-icons prefix">description</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <input id="update_editorial" type="text" name="update_editorial" class="validate" minlength="5"
                             maxlength="80" required />
-=======
-                        <input id="update_editorial" type="text" name="update_editorial" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-                        <input id="update_editorial" type="text" name="update_editorial" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-                        <input id="update_editorial" type="text" name="update_editorial" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
                         <label for="update_editorial">Nombre editorial</label>
                     </div>
                     <div class="row center-align">
@@ -134,7 +122,7 @@
 
     <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
     <?php
-        require("../../resources/pages/footer.php");
+       require("../../core/helpers/dashboard/footer.php");
         Footer::foot();
         ?>
 
@@ -148,7 +136,7 @@
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/dataTables.material.min.js"></script>
 
-
+    <script src="../../core/controllers/dashboard/account.js"></script>
     <script src="../../resources/js/sweetalert.min.js"></script>
     <script src="../../core/helpers/functions.js"></script>
     <script src="../../core/controllers/dashboard/editoriales.js"></script>

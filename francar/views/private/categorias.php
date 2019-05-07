@@ -23,7 +23,7 @@
 
 <body background="">
     <?php
-  require("../../resources/pages/menu.php");
+  require("../../core/helpers/dashboard/menu.php");
   inicio::navigate();
   ?>
 
@@ -172,7 +172,7 @@
 
     <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
     <?php
-        require("../../resources/pages/footer.php");
+        require("../../core/helpers/dashboard/footer.php");
         Footer::foot();
         ?>
 
@@ -185,6 +185,7 @@
     <script src="../../resources/js/dataTables.material.min.js"></script>
     <script src="../../resources/js/tabla.js"></script>
 
+    <script src="../../core/controllers/dashboard/account.js"></script>
     <script src="../../resources/js/sweetalert.min.js"></script>
     <script src="../../core/helpers/functions.js"></script>
     <script src="../../core/controllers/dashboard/categorias.js"></script>
