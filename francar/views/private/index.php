@@ -29,44 +29,16 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">assignment_ind</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-              <input id="alias_usuario" type="text" name="alias_usuario class=" validate" minlength="5" maxlength="40"
-                required />
-=======
-              <input id="alias_usuario" type="text" name="alias_usuario" class="validate" required/>
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-              <input id="alias_usuario" type="text" name="alias_usuario" class="validate" required/>
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-              <input id="alias_usuario" type="text" name="alias_usuario" class="validate" required/>
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-              <label for="alias_usuario">Alias</label>
+              <input id="alias_usuario" type="text" name="alias_usuario" class="validate" required/><label for="alias_usuario">Alias</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">lock_outline</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-              <input id="contrasenia" type="password" name="contrasenia" class="validate" minlength="6" maxlength="40"
-                required />
-              <label for="contrasenia">Contraseña</label>
-=======
-=======
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
->>>>>>> parent of 9baa730... validacion por el lado de usuario
               <input id="contrasenia" type="password" name="contrasenia" class=" " required/>
                 <label for="contrasenia">Contraseña</label>
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             </div>
           </div>
-
-
           <div class="col s12 center-align">
             <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
                 class="material-icons">send</i></button>
