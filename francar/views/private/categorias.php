@@ -87,8 +87,12 @@
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">note_add</i>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <input id="create_categoria" type="text" name="create_categoria" class="validate" minlength="5"
                             required />
+=======
+                        <input id="create_categoria" type="text" name="create_categoria" class="validate" required />
+>>>>>>> parent of 9baa730... validacion por el lado de usuario
 =======
                         <input id="create_categoria" type="text" name="create_categoria" class="validate" required />
 >>>>>>> parent of 9baa730... validacion por el lado de usuario
@@ -98,8 +102,12 @@
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <input id="create_descripcion" type="text" name="create_descripcion" class="validate"
                             minlength="5" />
+=======
+                        <input id="create_descripcion" type="text" name="create_descripcion" class="validate" />
+>>>>>>> parent of 9baa730... validacion por el lado de usuario
 =======
                         <input id="create_descripcion" type="text" name="create_descripcion" class="validate" />
 >>>>>>> parent of 9baa730... validacion por el lado de usuario
