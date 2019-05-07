@@ -103,8 +103,12 @@
                     <div class="input-field col s12 m6">
                         <input id="id_editorial" type="hidden" name="id_editorial" required />
                         <i class="material-icons prefix">description</i>
+<<<<<<< HEAD
                         <input id="update_editorial" type="text" name="update_editorial" class="validate" minlength="5"
                             maxlength="80" required />
+=======
+                        <input id="update_editorial" type="text" name="update_editorial" class="validate" required />
+>>>>>>> parent of 9baa730... validacion por el lado de usuario
                         <label for="update_editorial">Nombre editorial</label>
                     </div>
                     <div class="row center-align">
