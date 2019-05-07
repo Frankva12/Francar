@@ -20,26 +20,26 @@
 
 <body>
 
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper black">
-        <div class="container">
-          <a href="#" class="brand-logo">Libreria Francar</a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA
-                PRINCIPAL</a>
-            </li>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-  <h3 align="center">CARRITO
-    <a class="btn-floating black pulse">
-      <i class="material-icons">shopping_cart</i>
-    </a>
-  </h3>
+<div class="navbar-fixed">
+		<nav>
+		  <div class="nav-wrapper black">
+			<div class="container">
+			  <a href="#" class="brand-logo">Libreria Francar</a>
+			  <ul class="right hide-on-med-and-down">
+				<li>
+				  <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA
+					PRINCIPAL</a>
+				</li>
+			</div>
+		  </div>
+		</nav>
+	  </div>
+	
+	  <h3 align="center">CARRITO
+		<a class="btn-floating black pulse">
+		  <i class="material-icons">shopping_cart</i>
+		</a>
+	  </h3>
   <!--Se hace una tabla donde iran los productos que la persona pide, el costo de cada articulo, la cantidad y el total al pagar cuando llegue su pedido-->
   <table class="responsive-table">
     <thead>
@@ -108,7 +108,7 @@
   <br>
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
-  require("../../resources/pages/footer.php");
+  require("../../core/helpers/dashboard/footer.php");
   Footer::foot();
   ?>
 

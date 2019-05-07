@@ -83,9 +83,9 @@
       </div>
     </form>
     <?php
-require("../../resources/pages/footer.php");
-Footer::foot();
-?>
+  require("../../core/helpers/dashboard/footer.php");
+  Footer::foot();
+  ?>
     <!--Se importan lo que son los archivos de JavaScript-->
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
     <script src="../../resources/js/materialize.min.js"></script>

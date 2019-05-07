@@ -131,7 +131,7 @@
   </div>
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
-  require("../../resources/pages/footer.php");
+  require("../../core/helpers/dashboard/footer.php");
   Footer::foot();
   ?>
 

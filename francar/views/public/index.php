@@ -297,7 +297,7 @@
 </body>
 <!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
 <?php
-  require("../../resources/pages/footer.php");
+  require("../../core/helpers/dashboard/footer.php");
   Footer::foot();
   ?>
 
