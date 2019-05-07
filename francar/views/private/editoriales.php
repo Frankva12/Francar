@@ -105,8 +105,12 @@
                         <i class="material-icons prefix">description</i>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <input id="update_editorial" type="text" name="update_editorial" class="validate" minlength="5"
                             maxlength="80" required />
+=======
+                        <input id="update_editorial" type="text" name="update_editorial" class="validate" required />
+>>>>>>> parent of 9baa730... validacion por el lado de usuario
 =======
                         <input id="update_editorial" type="text" name="update_editorial" class="validate" required />
 >>>>>>> parent of 9baa730... validacion por el lado de usuario

@@ -31,8 +31,12 @@
               <i class="material-icons prefix">assignment_ind</i>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <input id="alias_usuario" type="text" name="alias_usuario class=" validate" minlength="5" maxlength="40"
                 required />
+=======
+              <input id="alias_usuario" type="text" name="alias_usuario" class="validate" required/>
+>>>>>>> parent of 9baa730... validacion por el lado de usuario
 =======
               <input id="alias_usuario" type="text" name="alias_usuario" class="validate" required/>
 >>>>>>> parent of 9baa730... validacion por el lado de usuario
@@ -47,10 +51,13 @@
               <i class="material-icons prefix">lock_outline</i>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               <input id="contrasenia" type="password" name="contrasenia" class="validate" minlength="6" maxlength="40"
                 required />
               <label for="contrasenia">Contraseña</label>
 =======
+=======
+>>>>>>> parent of 9baa730... validacion por el lado de usuario
 =======
 >>>>>>> parent of 9baa730... validacion por el lado de usuario
               <input id="contrasenia" type="password" name="contrasenia" class=" " required/>
