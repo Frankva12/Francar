@@ -80,39 +80,14 @@
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="create_nombres" type="text" name="create_nombres" class="validate" minlength="5" maxlength="80"
               required />
-=======
-            <input id="create_nombres" type="text" name="create_nombres" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_nombres" type="text" name="create_nombres" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_nombres" type="text" name="create_nombres" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-            <label for="create_nombres">Nombre</label>
+              <label for="create_apellidos">Nombre</label>
           </div>
-
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="create_apellidos" type="text" name="create_apellidos" minlength="5" maxlength="80"
               class="validate" />
-=======
-            <input id="create_apellidos" type="text" name="create_apellidos" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_apellidos" type="text" name="create_apellidos" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_apellidos" type="text" name="create_apellidos" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="create_apellidos">Apellido</label>
           </div>
 
@@ -122,99 +97,38 @@
             <label for="create_alias">Alias</label>
           </div>
 
-
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">place</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="create_direccion" type="text" name="create_direccion" minlength="5" maxlength="80"
               class="validate" />
-=======
-            <input id="create_direccion" type="text" name="create_direccion" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_direccion" type="text" name="create_direccion" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_direccion" type="text" name="create_direccion" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-            <label for="create_direccion">Direccion</label>
+              <label for="create_apellidos">Direccion</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">lock</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="create_clave1" type="password" name="create_clave1" minlength="6" maxlength="30"
               class="validate" />
-=======
-            <input id="create_clave1" type="password" name="create_clave1" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_clave1" type="password" name="create_clave1" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_clave1" type="password" name="create_clave1" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="create_clave1">Contraseña</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">lock</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="create_clave2" type="password" name="create_clave2" minlength="6" maxlength="30"
               class="validate" />
-=======
-            <input id="create_clave2" type="password" name="create_clave2" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_clave2" type="password" name="create_clave2" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_clave2" type="password" name="create_clave2" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-            <label for="create_clave2">Confirmar contraseña</label>
+              <label for="create_clave1">Confirmar contraseña</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">phone</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="create_telefono" type="text" name="create_telefono" minlength="8" maxlength="10"
               class="validate" />
-=======
-            <input id="create_telefono" type="text" name="create_telefono" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_telefono" type="text" name="create_telefono" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_telefono" type="text" name="create_telefono" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="create_telefono">Telefono</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">mail</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="create_correo" type="email" name="create_correo" minlength="15" maxlength="80"
               class="validate" />
-=======
-            <input id="create_correo" type="text" name="create_correo" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_correo" type="text" name="create_correo" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="create_correo" type="text" name="create_correo" class="validate" />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="create_correo">Correo</label>
           </div>
         </div>
@@ -238,114 +152,42 @@
         <div class="row">
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate"
               minlength="5" maxlength="80" required />
-=======
-            <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="update_nombre_administrador">Nombre</label>
           </div>
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">assignment_ind</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate"
               minlength="5" maxlength="80" required />
-=======
-            <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="update_apellido_administrador">Apellido</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">fingerprint</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="update_alias" type="text" name="update_alias" class="validate" minlength="5" maxlength="40"
               required />
-=======
-            <input id="update_alias" type="text" name="update_alias" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_alias" type="text" name="update_alias" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_alias" type="text" name="update_alias" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="update_alias">Alias</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">place</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="update_direccion" type="text" name="update_direccion" class="validate" minlength="5"
               maxlength="80" required />
-=======
-            <input id="update_direccion" type="text" name="update_direccion" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_direccion" type="text" name="update_direccion" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_direccion" type="text" name="update_direccion" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="update_direccion">direccion</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">phone</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="update_telefono" type="text" name="update_telefono" class="validate" minlength="8" maxlength="10"
               required />
-=======
-            <input id="update_telefono" type="text" name="update_telefono" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_telefono" type="text" name="update_telefono" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_telefono" type="text" name="update_telefono" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="update_telefono">telefono</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">mail</i>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             <input id="update_correo" type="email" name="update_correo" class="validate" minlength="15" maxlength="80"
               required />
-=======
-            <input id="update_correo" type="email" name="update_correo" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_correo" type="email" name="update_correo" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
-=======
-            <input id="update_correo" type="email" name="update_correo" class="validate" required />
->>>>>>> parent of 9baa730... validacion por el lado de usuario
             <label for="update_correo">Correo</label>
           </div>
 
