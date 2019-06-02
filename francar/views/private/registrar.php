@@ -12,93 +12,62 @@
   <!--Se importa el css de materialize-->
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="icon" type="ico" href="../../resources/img/icono.ico">
-  <link href="../../resources/css/tablas.css" rel="stylesheet">
   <!--Deja que la pagina web sea responsive-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-  <script src="../../resources/js/highcharts.js"></script>
-  <script src="../../resources/js/modules.js"></script>
+
 
   <title>Libreria Francar</title>
 </head>
-<form method="post" id="form-register">
-  <div class="modal-content">
-    <h4 class="center-align">Registrarse</h4>
-    <form method="post" id="form-create" enctype="multipart/form-data">
+</body>
+
+<div class="row">
+    <h1 align="center">Registrarse</h1>
+    <hr>
+    <form class="col s12" id="form-register">
       <div class="row">
-
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="nombres" type="text" name="nombres" class="validate" required />
-          <label for="nombres">Nombre</label>
+        <div class="input-field col s6">
+          <input placeholder="Nombres" id="nombres" name="nombres" type="text" class="validate">
+          <label for="nombres"></label>
         </div>
-
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="apellidos" type="text" name="apellidos" class="validate" />
-          <label for="apellidos">Apellido</label>
+        <div class="input-field col s6">
+          <input placeholder="Apellidos" id="apellidos" name="apellidos" type="text" class="validate">
+          <label for="apellidos"></label>
         </div>
-
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="alias" type="text" name="alias" class="validate" />
-          <label for="alias">Alias</label>
-        </div>
-
-
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">place</i>
-          <input id="direccion" type="text" name="direccion" class="validate" />
-          <label for="direccion">Direccion</label>
-        </div>
-
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">lock</i>
-          <input id="clave1" type="password" name="clave1" class="validate" />
-          <label for="clave1">Contraseña</label>
-        </div>
-
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">lock</i>
-          <input id="clave2" type="password" name="clave2" class="validate" />
-          <label for="clave2">Confirmar contraseña</label>
-        </div>
-
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">phone</i>
-          <input id="telefono" type="text" name="telefono" class="validate" />
+      </div>
+        <div class="input-field col s6">
+          <input placeholder="Alias" id="alias" name="alias" type="text" class="validate">
+          <label for="alias"></label>
+      </div>
+        <div class="input-field col s6">
+          <input placeholder="Contraseña" id="clave1" name="clave1" type="password" class="validate">
+          <label for="clave1"></label>
+      </div>
+        <div class="input-field col s6">
+          <input placeholder="Confirme su contraseña" id="clave2" name="clave2" type="password" class="validate">
+          <label for="clave2"></label>
+      </div>
+        <div class="input-field col s6">
+          <input placeholder="Direccion" id="direccion" name="direccion" type="text" class="validate">
+          <label for="direccion"></label>
+      </div>
+        <div class="input-field col s6">
+          <input id="telefono" name="telefono" type="tel" class="validate">
           <label for="telefono">Telefono</label>
         </div>
-
-        <div class="input-field col s12 m6">
-          <i class="material-icons prefix">mail</i>
-          <input id="correo" type="text" name="correo" class="validate" />
+        <div class="input-field col s6">
+          <input id="correo" name="correo" type="email" class="validate">
           <label for="correo">Correo</label>
-        </div>
-
-      </div>
-      <div class="row center-align">
-        <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Registrar"><i
-            class="material-icons">send</i></button>
-      </div>
+      </div>                     
+      <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>
     </form>
-    <?php
-require("../../resources/pages/footer.php");
-Footer::foot();
-?>
-    <!--Se importan lo que son los archivos de JavaScript-->
-    <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/carousel.js"></script>
-    <script src="../../resources/js/parallax.js"></script>
-    <script src="../../resources/js/modal.js"></script>
-    <script src="../../resources/js/combo.js"></script>
-    <script src="../../resources/js/datatables.min.js"></script>
-    <script src="../../resources/js/dataTables.material.min.js"></script>
-    <script src="../../resources/js/sweetalert.min.js"></script>
-
-    <script src="../../core/helpers/functions.js"></script>
-    <script src="../../core/controllers/dashboard/register.js"></script>
-    </body>
+  </div>  
+  
+  <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+  <script src="../../resources/js/sweetalert.min.js"></script>
+  <script src="../../resources/js/highcharts.js"></script>
+  <script src="../../resources/js/modules.js"></script>
+  <script type="text/javascript" src="../../core/helpers/functions.js"></script>
+  <script type="text/javascript" src="../../core/controllers/dashboard/account.js"></script>
+  <script type="text/javascript" src="../../core/controllers/dashboard/register.js"></script>
 
 </html>

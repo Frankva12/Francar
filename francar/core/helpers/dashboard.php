@@ -84,6 +84,7 @@ class Dashboard
 		}
 	}
 
+	
 	public static function footerTemplate($controller)
 	{
 		print('

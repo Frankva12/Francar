@@ -18,30 +18,15 @@ if (isset($_GET['action'])) {
 					$result['exception'] = 'No hay categorías registradas';
 				}
 				break;
-
-				case 'search':
-                $_POST = $categoria->validateForm($_POST);
-                if ($_POST['busqueda'] != '') {
-                    if ($result['dataset'] = $categoria->searchCategoria($_POST['busqueda'])) {
-                        $result['status'] = 1;
-                    } else {
-                        $result['exception'] = 'No hay coincidencias';
-                    }
-                } else {
-                    $result['exception'] = 'Ingrese un valor para buscar';
-                }
-                break;
 			case 'create':
 				$_POST = $categoria->validateForm($_POST);
         		if ($categoria->setNombre($_POST['create_categoria'])) {
 					if ($categoria->setDescripcion($_POST['create_descripcion'])) {
-						if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
-							if ($categoria->setImagen($_FILES['create_archivo'], null)) {
-								if ($categoria->createCategoria()) {
-									if ($categoria->saveFile($_FILES['create_archivo'], $categoria->getRuta(), $categoria->getImagen())) {
-										if($categoria->createCategoria()){
-											$result['status'] = 1;
-										}						
+						if (is_uploaded_file($_FILES['create_imagen']['tmp_name'])) {
+							if ($categoria->setImagen($_FILES['create_imagen'], null)) {
+									if ($categoria->saveFile($_FILES['create_imagen'], $categoria->getRuta(), $categoria->getImagen())) {
+										if ($categoria->createCategoria()) {
+										$result['status'] = 1;
 									} else {
 										$result['status'] = 2;
 										$result['exception'] = 'No se guardó el archivo';
@@ -74,7 +59,8 @@ if (isset($_GET['action'])) {
                 } else {
                     $result['exception'] = 'Categoría incorrecta';
                 }
-            	break;
+				break;
+				
 			case 'update':
 				$_POST = $categoria->validateForm($_POST);
 				if ($categoria->setId($_POST['id_categoria'])) {

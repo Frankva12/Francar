@@ -6,7 +6,7 @@ class Categorias extends Validator
 	private $nombre = null;
 	private $imagen = null;
 	private $descripcion = null;
-	private $ruta = '../../resources/img/categorias/';
+	private $ruta = '../../../resources/img/categorias/';
 
 	//Métodos para sobrecarga de propiedades
 	public function setId($value)

@@ -152,20 +152,14 @@ class Usuarios extends Validator
 
 	public function checkPassword()
 	{
-		$sql = 'SELECT correo FROM administrador WHERE alias_usuario = ? and contrasenia = ?';
-		$params = array($this->alias, $this->contrasenia);
+		$sql = 'SELECT contrasenia FROM administrador WHERE id_administrador = ?';
+		$params = array($this->id);
 		$data = Database::getRow($sql, $params);
-		if ($data) {
-			$this->correo = $data['correo'];
+		if (password_verify($this->contrasenia, $data['contrasenia'])) {
 			return true;
 		} else {
 			return false;
 		}
-		/*if (password_verify($this->clave, $data['contrasenia'])) {
-			return true;
-		} else {
-			return false;
-		}*/
 	}
 
 
@@ -188,7 +182,7 @@ class Usuarios extends Validator
 	{
 		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
 		$sql = 'INSERT INTO administrador(nombre_administrador, apellido_administrador, alias_usuario, contrasenia, direccion, telefono, correo) VALUES(?, ?, ?, ?, ?, ?, ?)';
-		$params = array($this->nombre, $this->apellido, $this->alias, $this->contrasenia, $this->direccion, $this->telefono, $this->correo);
+		$params = array($this->nombre, $this->apellido, $this->alias, $hash, $this->direccion, $this->telefono, $this->correo);
 		return Database::executeRow($sql, $params);
 	}
 

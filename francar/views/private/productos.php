@@ -54,10 +54,11 @@
       <thead>
         <tr>
           <th>Imagen</th>
-          <th>Libro</th>
-          <th>Descripcion</th>
-          <th>Categoria</th>
+          <th>Nombre</th>
           <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Categoria</th>
+          <th>Editorial</th>
           <th>Estado</th>
           <th>Acciones</th>
         </tr>
@@ -85,6 +86,15 @@
             <input id="create_nombre_libro" type="text" name="create_nombre_libro" class="validate" required />
             <label for="create_nombre_libro">Nombre del libro</label>
           </div>
+
+
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">add_circle_outline</i>
+            <input id="create_precio" type="number" name="create_precio" class="validate" max="999.99" min="0.01"
+              step="any" required />
+            <label for="create_precio">Cantidad</label>
+          </div>
+
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">attach_money</i>
@@ -159,43 +169,52 @@
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">note_add</i>
-            <input id="update_nombre_libro" type="text" name="update_nombre_libro" class="validate" required />
-            <label for="update_nombre_libro">Nombre del libro</label>
+            <input id="create_nombre_libro" type="text" name="create_nombre_libro" class="validate" required />
+            <label for="create_nombre_libro">Nombre del libro</label>
           </div>
+
+
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">add_circle_outline</i>
+            <input id="create_precio" type="number" name="create_precio" class="validate" max="999.99" min="0.01"
+              step="any" required />
+            <label for="create_precio">Cantidad</label>
+          </div>
+
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">attach_money</i>
-            <input id="update_precio" type="number" name="update_precio" class="validate" min="0.01" max="999.99"
+            <input id="create_precio" type="number" name="create_precio" class="validate" max="999.99" min="0.01"
               step="any" required />
-            <label for="update_precio">Precio USD($)</label>
+            <label for="create_precio">Precio USD($)</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">description</i>
-            <input id="update_descripcion" type="text" name="update_descripcion" class="validate" required />
-            <label for="update_descripcion">Descripción</label>
+            <input id="create_descripcion" type="text" name="create_descripcion" class="validate" required />
+            <label for="create_descripcion">Descripción</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="update_autor" type="text" name="update_autor" class="validate" required />
-            <label for="update_autor">Autor</label>
+            <input id="create_autor" type="text" name="create_autor" class="validate" required />
+            <label for="create_autor">Autor</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <select id="update_categoria" name="update_categoria">
+            <select id="create_categoria" name="create_categoria">
             </select>
           </div>
 
           <div class="input-field col s12 m6">
-            <select id="update_editorial" name="update_editorial">
+            <select id="create_editorial" name="create_editorial">
             </select>
           </div>
 
           <div class="file-field input-field col s12 m6">
             <div class="btn waves-effect">
               <span><i class="material-icons">image</i></span>
-              <input id="update_archivo" type="file" name="update_archivo" />
+              <input id="create_archivo" type="file" name="create_archivo" required />
             </div>
             <div class="file-path-wrapper">
               <input type="text" class="file-path validate" placeholder="Seleccione una imagen" />
@@ -207,7 +226,7 @@
                 <span>Estado:</span>
                 <label>
                   <i class="material-icons">visibility_off</i>
-                  <input id="update_estado" type="checkbox" name="update_estado" />
+                  <input id="create_estado" type="checkbox" name="create_estado" checked />
                   <span class="lever"></span>
                   <i class="material-icons">visibility</i>
                 </label>
@@ -218,7 +237,7 @@
         <div class="row center-align">
           <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
               class="material-icons">cancel</i></a>
-          <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Modificar"><i
+          <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Crear"><i
               class="material-icons">save</i></button>
         </div>
       </form>
