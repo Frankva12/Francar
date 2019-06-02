@@ -101,7 +101,7 @@
 
                         <div class="btn waves-effect">
                             <span><i class="material-icons">image</i></span>
-                            <input id="create_archivo" type="file" name="create_archivo" required />
+                            <input id="create_imagen" type="file" name="create_imagen" required />
                         </div>
 
                         <div class="file-path-wrapper">

@@ -249,15 +249,18 @@ if (isset($_GET['action'])) {
 
             case 'register':
                 $_POST = $usuario->validateForm($_POST);
-                if ($usuario->setNombres($_POST['nombres'])) {
-                    if ($usuario->setApellidos($_POST['apellidos'])) {
-                        if ($usuario->setCorreo($_POST['correo'])) {
-                            if ($usuario->setAlias($_POST['alias'])) {
-                                if ($_POST['clave1'] == $_POST['clave2']) {
-                                    if ($usuario->setClave($_POST['clave1'])) {
-                                        if ($usuario->createUsuario()) {
-                                            $result['status'] = 1;
-                                        } else {
+                if ($usuario->setNombre($_POST['nombres'])) {
+                    if ($usuario->setApellido($_POST['apellidos'])) {
+                        if ($usuario->setAlias($_POST['alias'])) {
+                            if ($usuario->setContrasenia($_POST['clave1'])) {
+                                if ($usuario->setDireccion($_POST['direccion'])) {
+                                    if ($usuario->setTelefono($_POST['telefono'])) {
+                                        if ($usuario->setCorreo($_POST['correo'])) {
+                                            if ($_POST['clave1'] == $_POST['clave2']) {
+                                                if ($usuario->setContrasenia($_POST['clave1'])) {
+                                                    if ($usuario->createUsuario()) {
+                                                    $result['status'] = 1;
+                                                } else {
                                             $result['exception'] = 'Operación fallida';
                                         }
                                     } else {
@@ -267,18 +270,27 @@ if (isset($_GET['action'])) {
                                     $result['exception'] = 'Claves diferentes';
                                 }
                             } else {
-                                $result['exception'] = 'Alias incorrecto';
+                                $result['exception'] = 'Correo incorrecto';
                             }
                         } else {
-                            $result['exception'] = 'Correo incorrecto';
+                            $result['exception'] = 'Telefono incorrecto';
                         }
                     } else {
-                        $result['exception'] = 'Apellidos incorrectos';
+                        $result['exception'] = 'Direccion incorrecta';
                     }
                 } else {
-                    $result['exception'] = 'Nombres incorrectos';
+                    $result['exception'] = 'Clave incorrecta';
                 }
-                break;
+                } else {
+                $result['exception'] = 'Alias incorrecto';
+            }
+             } else {
+            $result['exception'] = 'Apellidos incorrectos';
+        }
+        } else {
+        $result['exception'] = 'Nombres incorrectos';
+    }
+    break;
 
 
             case 'login':

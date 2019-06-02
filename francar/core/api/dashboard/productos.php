@@ -64,10 +64,13 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                                         }
                                                     } else {
                                                         $result['exception'] = $producto->getImageError();
+                                                    }
                                                 }else {
-                                                    $result['exception'] = 'Autor incorrecto'
+                                                    $result['exception'] = 'Autor incorrecto';
+                                                }
                                             } else {
                                                 $result['exception'] = 'Seleccione una imagen';
+                                            }
                                         }else {
                                             $result['exception'] = 'Seleccione un editorial';
                                         }
@@ -144,6 +147,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                             }
                                         } else {
                                             $result['exception'] = 'Autor incorrecto';
+                                        }
                                         } else {
                                             $result['exception'] = 'Estado incorrecto';
                                         }
@@ -155,6 +159,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                 }
                             } else {
                                 $result['exception'] = 'Editorial incorrecta';
+                            }
                             } else {
                                 $result['exception'] = 'Descripción incorrecta';
                             }
