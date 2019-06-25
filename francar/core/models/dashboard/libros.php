@@ -1,5 +1,5 @@
 <?php
-class Productos extends Validator
+class Libros extends Validator
 {
 	//Declaración de propiedades
 	private $id = null;
@@ -172,9 +172,9 @@ class Productos extends Validator
 		return Database::getRows($sql, $params);
 	}
 
-	public function readProductos()
+	public function readLibros()
 	{
-		$sql = 'SELECT id_libro, nombre_libro, descripcion, imagen_libro, autor, precio, nombre_categoria, nombre_editorial, estado FROM libros INNER JOIN categorias and editoriales USING(id_categoria) and (id_editorial) WHERE id_categoria = ? AND id_editorial = ?  ORDER BY nombre_libro';
+		$sql = 'SELECT id_libro, nombre_libro, descripcion, imagen_libro, autor, precio, categoria.nombre_categoria, editoriales.nombre_editorial, estado FROM libros INNER JOIN categoria USING(id_categoria) INNER JOIN editoriales USING(id_editorial) ORDER BY nombre_libro';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}

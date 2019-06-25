@@ -50,14 +50,14 @@
 
   <!--Tabla donde se muestran los libros que hay en la tienda donde se puede modificar, eliminar y agregar-->
   <div class="container">
-    <table class="highlight" id="tablaProductos">
+    <table class="highlight" id="tabla_libros">
       <thead>
         <tr>
           <th>Imagen</th>
           <th>Nombre</th>
           <th>Precio</th>
           <th>Cantidad</th>
-          <th>Categoria</th>
+          <th>Categoría</th>
           <th>Editorial</th>
           <th>Estado</th>
           <th>Acciones</th>
@@ -266,6 +266,6 @@
   <script src="../../core/controllers/dashboard/account.js"></script>
   <script src="../../resources/js/sweetalert.min.js"></script>
   <script src="../../core/helpers/functions.js"></script>
-  <script src="../../core/controllers/dashboard/productos.js"></script>
+  <script src="../../core/controllers/dashboard/libros.js"></script>
 
 </html>

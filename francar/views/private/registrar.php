@@ -51,12 +51,12 @@
           <label for="direccion"></label>
       </div>
         <div class="input-field col s6">
-          <input id="telefono" name="telefono" type="tel" class="validate">
-          <label for="telefono">Telefono</label>
+          <input placeholder="Telefono" id="telefono" name="telefono" type="tel" class="validate">
+          <label for="telefono"></label>
         </div>
         <div class="input-field col s6">
-          <input id="correo" name="correo" type="email" class="validate">
-          <label for="correo">Correo</label>
+          <input placeholder="Correo" id="correo" name="correo" type="email" class="validate">
+          <label for="correo"></label>
       </div>                     
       <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>
     </form>

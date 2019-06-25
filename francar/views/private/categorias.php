@@ -18,7 +18,7 @@
     <script src="../../resources/js/jquery-3.3.1.min.js"></script>
     <script src="../../resources/js/highcharts.js"></script>
     <script src="../../resources/js/modules.js"></script>
-    <title>Libreria Francar</title>
+    <title>Librería Francar</title>
 </head>
 
 <body background="">
