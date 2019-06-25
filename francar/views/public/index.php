@@ -148,7 +148,7 @@
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image responsive-img">
-          <img src="../../resources/img/hp5.jpg" width="300" height="300">
+          <img src="../../resources/img/hp5.jpg" width="200" height="300">
           <span class="card-title"></span>
           <a class="btn-floating halfway-fab waves-effect waves-light red" href="carrito.php">
             <i class="material-icons">add_shopping_cart</i>
@@ -172,7 +172,7 @@
     <div class="col s12 m4">
       <div class="card ">
         <div class="card-image responsive-img">
-          <img src="../../resources/img/hp6.jpg" width="300" height="300">
+          <img src="../../resources/img/hp6.jpg" width="200" height="300">
           <span class="card-title"></span>
           <a class="btn-floating halfway-fab waves-effect waves-light red" href="carrito.php">
             <i class="material-icons">add_shopping_cart</i>
@@ -195,7 +195,7 @@
     <div class="col s12 m4">
       <div class="card ">
         <div class="card-image responsive-img">
-          <img src="../../resources/img/hp7.jpg" width="300" height="300">
+          <img src="../../resources/img/hp7.jpg" width="200" height="300">
           <span class="card-title"></span>
           <a class="btn-floating halfway-fab waves-effect waves-light red" href="carrito.php">
             <i class="material-icons">add_shopping_cart</i>
@@ -228,6 +228,7 @@
       <i class="material-icons">book</i>
     </a>
   </h2>
+  <!--
   <div class="row">
     <div class="col s12 m4">
       <div class="card">
@@ -289,11 +290,15 @@
             miedo o aterrorizar sus lectores o espectadores en inducir sentimientos de horror y terror. </p>
           <br>
           <br>
-          <br>
         </div>
       </div>
     </div>
+  </div>-->
+  <div class="container">
+    <h4 class="center blue-text" id="title"></h4>
+    <div class="row" id="catalogo"></div>
   </div>
+  
 </body>
 <!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
 <?php

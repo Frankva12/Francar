@@ -24,7 +24,7 @@
 		<nav>
 		  <div class="nav-wrapper black">
 			<div class="container">
-			  <a href="#" class="brand-logo">Libreria Francar</a>
+			  <a href="index.php" class="brand-logo">Libreria Francar</a>
 			  <ul class="right hide-on-med-and-down">
 				<li>
 				  <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA
