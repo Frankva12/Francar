@@ -31,7 +31,7 @@ class Dashboard
 									<a href="main.php" class="brand-logo"><img src="../../resources/img/logo.png" height="60"></a>
 									<a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 									<ul class="right hide-on-med-and-down">
-										<li><a href="productos.php"><i class="material-icons left">shop</i>Productos</a></li>
+										<li><a href="libross.php"><i class="material-icons left">shop</i>libross</a></li>
 										<li><a href="categorias.php"><i class="material-icons left">shop_two</i>Categorías</a></li>
 										<li><a href="usuarios.php"><i class="material-icons left">group</i>Usuarios</a></li>
 										<li><a href="#" class="dropdown-trigger" data-target="dropdown"><i class="material-icons left">verified_user</i>Cuenta: <b>'.$_SESSION['aliasUsuario'].'</b></a></li>
@@ -45,7 +45,7 @@ class Dashboard
 							</nav>
 						</div>
 						<ul class="sidenav" id="mobile">
-							<li><a href="productos.php"><i class="material-icons">shop</i>Productos</a></li>
+							<li><a href="libross.php"><i class="material-icons">shop</i>libross</a></li>
 							<li><a href="categorias.php"><i class="material-icons">shop_two</i>Categorías</a></li>
 							<li><a href="usuarios.php"><i class="material-icons">group</i>Usuarios</a></li>
 							<li><a class="dropdown-trigger" href="#" data-target="dropdown-mobile"><i class="material-icons">verified_user</i>Cuenta: <b>'.$_SESSION['aliasUsuario'].'</b></a></li>
