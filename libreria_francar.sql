@@ -96,7 +96,7 @@ CREATE TABLE `categoria` (
   `id_categoria` int(11) NOT NULL,
   `nombre_categoria` varchar(80) NOT NULL,
   `descripcion_categoria` varchar(255) NOT NULL,
-  `imagen_categoria` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `imagen_categoria` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -191,6 +191,7 @@ CREATE TABLE `libros` (
   `imagen_libro` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `autor` varchar(50) NOT NULL,
   `precio` decimal(5,2) NOT NULL,
+   `cantidad` float(12) NOT NULL
   `id_categoria` int(11) NOT NULL,
   `id_editorial` int(11) NOT NULL,
   `estado` tinyint(1) NOT NULL

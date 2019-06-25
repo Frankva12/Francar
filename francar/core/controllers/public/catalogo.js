@@ -5,9 +5,9 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiCatalogo = '../../core/api/productos.php?site=commerce&action=';
+const apiCatalogo = '../../core/api/libross.php?site=commerce&action=';
 
-//Función para obtener y mostrar las categorías de productos
+//Función para obtener y mostrar las categorías de libross
 function readCategorias()
 {
     $.ajax({
@@ -32,7 +32,7 @@ function readCategorias()
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">${row.nombre_categoria}<i class="material-icons right">more_vert</i></span>
-                                    <p class="center"><a href="#" onclick="readProductosCategoria(${row.id_categoria}, '${row.nombre_categoria}')" class="tooltipped" data-tooltip="Ver más"><i class="material-icons small">local_cafe</i></a></p>
+                                    <p class="center"><a href="#" onclick="readlibrossCategoria(${row.id_categoria}, '${row.nombre_categoria}')" class="tooltipped" data-tooltip="Ver más"><i class="material-icons small">local_cafe</i></a></p>
                                 </div>
                                 <div class="card-reveal">
                                     <span class="card-title grey-text text-darken-4">${row.nombre_categoria}<i class="material-icons right">close</i></span>
@@ -58,12 +58,12 @@ function readCategorias()
     });
 }
 
-//Función para obtener y mostrar los productos de acuerdo a la categoría seleccionada
-function readProductosCategoria(id, categoria)
+//Función para obtener y mostrar los libross de acuerdo a la categoría seleccionada
+function readlibrossCategoria(id, categoria)
 {
     $('#slider').hide();
     $.ajax({
-        url: apiCatalogo + 'readProductos',
+        url: apiCatalogo + 'readlibross',
         type: 'post',
         data:{
             id_categoria: id
@@ -82,12 +82,12 @@ function readProductosCategoria(id, categoria)
                         <div class="col s12 m6 l4">
                             <div class="card hoverable">
                                 <div class="card-image">
-                                    <img src="../../resources/img/productos/${row.imagen_producto}" class="materialboxed">
-                                    <a href="#" onclick="getProducto(${row.id_producto})" class="btn-floating halfway-fab waves-effect waves-light red tooltipped" data-tooltip="Ver detalle"><i class="material-icons">add</i></a>
+                                    <img src="../../resources/img/libross/${row.imagen_libros}" class="materialboxed">
+                                    <a href="#" onclick="getlibros(${row.id_libros})" class="btn-floating halfway-fab waves-effect waves-light red tooltipped" data-tooltip="Ver detalle"><i class="material-icons">add</i></a>
                                 </div>
                                 <div class="card-content">
-                                    <span class="card-title">${row.nombre_producto}</span>
-                                    <p>Precio(US$) ${row.precio_producto}</p>
+                                    <span class="card-title">${row.nombre_libros}</span>
+                                    <p>Precio(US$) ${row.precio_libros}</p>
                                 </div>
                             </div>
                         </div>
@@ -110,14 +110,14 @@ function readProductosCategoria(id, categoria)
     });
 }
 
-//Función para obtener y mostrar los datos del producto seleccionado
-function getProducto(id)
+//Función para obtener y mostrar los datos del libros seleccionado
+function getlibros(id)
 {
     $.ajax({
-        url: apiCatalogo + 'detailProducto',
+        url: apiCatalogo + 'detaillibros',
         type: 'post',
         data:{
-            id_producto: id
+            id_libros: id
         },
         datatype: 'json'
     })
@@ -130,13 +130,13 @@ function getProducto(id)
                 let content = `
                     <div class="card horizontal">
                         <div class="card-image">
-                            <img src="../../resources/img/productos/${result.dataset.imagen_producto}">
+                            <img src="../../resources/img/libross/${result.dataset.imagen_libros}">
                         </div>
                         <div class="card-stacked">
                             <div class="card-content">
-                                <h3 class="header">${result.dataset.nombre_producto}</h3>
-                                <p>${result.dataset.descripcion_producto}</p>
-                                <p><b>Precio(US$) ${result.dataset.precio_producto}</b></p>
+                                <h3 class="header">${result.dataset.nombre_libros}</h3>
+                                <p>${result.dataset.descripcion_libros}</p>
+                                <p><b>Precio(US$) ${result.dataset.precio_libros}</b></p>
                             </div>
                             <div class="card-action">
                                 <form method="post" id="form-cantidad">
@@ -155,7 +155,7 @@ function getProducto(id)
                         </div>
                     </div>
                 `;
-                $('#title').text('Detalles del producto');
+                $('#title').text('Detalles del libros');
                 $('#catalogo').html(content);
                 $('.tooltipped').tooltip();
             } else {

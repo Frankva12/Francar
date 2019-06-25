@@ -16,9 +16,10 @@ function fillTable(rows){
             <tr>
                 <td><img src="../../resources/img/libros/${row.imagen_libro}" class="materialboxed" height="100"></td>
                 <td>${row.nombre_libro}</td>
-                <td>${row.descripcion}</td>
                 <td>${row.precio}</td>
+                <td>${row.cantidad}</td>
                 <td>${row.nombre_categoria}</td>
+                <td>${row.nombre_editorial}</td>
                 <td><i class="material-icons">${icon}</i></td>
                 <td>
                     <a href="#" onclick="modalUpdate(${row.id_libro})" class="blue-text tooltipped" data-tooltip="Modificar"><i class="material-icons">mode_edit</i></a>
@@ -83,7 +84,7 @@ function showSelectCategorias(idSelect, value)
                 }
                 result.dataset.forEach(function(row){
                     if (row.id_libro != value) {
-                        content += `<option value="${row.id_libro}">${row.nombre_libro}</option>`;
+                        content += `<option value="${row.id_categoria}">${row.nombre_categoria}</option>`;
                     } else {
                         content += `<option value="${row.id_libro}" selected>${row.nombre_libro}</option>`;
                     }
@@ -108,7 +109,7 @@ $('#form-create').submit(function()
 {
     event.preventDefault();
     $.ajax({
-        url: apilibros + 'create',
+        url: apiLibros + 'create',
         type: 'post',
         data: new FormData($('#form-create')[0]),
         datatype: 'json',
@@ -147,7 +148,7 @@ $('#form-create').submit(function()
 function modalUpdate(id)
 {
     $.ajax({
-        url: apilibros + 'get',
+        url: apiLibros + 'get',
         type: 'post',
         data:{
             id_libro: id

@@ -6,7 +6,7 @@ class Libros extends Validator
 	private $libro = null;
 	private $descripcion = null;
 	private $imagen = null;
-	private $ruta = '../../resources/img/productos/';
+	private $ruta = '../../resources/img/libros/';
 	private $autor = null;
 	private $precio = null;
 	private $categoria = null;
@@ -174,12 +174,12 @@ class Libros extends Validator
 
 	public function readLibros()
 	{
-		$sql = 'SELECT id_libro, nombre_libro, descripcion, imagen_libro, autor, precio, categoria.nombre_categoria, editoriales.nombre_editorial, estado FROM libros INNER JOIN categoria USING(id_categoria) INNER JOIN editoriales USING(id_editorial) ORDER BY nombre_libro';
+		$sql = 'SELECT id_libro, nombre_libro, descripcion, imagen_libro, autor, precio, cantidad, categoria.nombre_categoria, editoriales.nombre_editorial, estado FROM libros INNER JOIN categoria USING(id_categoria) INNER JOIN editoriales USING(id_editorial) ORDER BY nombre_libro';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
 
-	public function searchProductos($value)
+	public function searchlibross($value)
 	{
 		$sql = 'SELECT id_libro, imagen_libro, nombre_libro, descripcion, precio, autor, nombre_categoria, nombre_editorial, estado FROM libros INNER JOIN categorias and editoriales USING(id_categoria) and (id_editorial) WHERE nombre_libro LIKE ?  ORDER BY nombre_libro';
 		$params = array("%$value%", "%$value%","%$value%", "%$value%","%$value%", "%$value%","%$value%", "%$value%","%$value%");
@@ -200,28 +200,28 @@ class Libros extends Validator
 		return Database::getRows($sql, $params);
 	}
 
-	public function createProducto()
+	public function createlibros()
 	{
 		$sql = 'INSERT INTO libros(nombre_libro, descripcion, imagen_libro, autor, precio, id_categoria, id_editorial, estado) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
 		$params = array($this->libro, $this->descripcion, $this->imagen, $this->autor, $this->precio, $this->categoria, $this->editorial, $this->estado);
 		return Database::executeRow($sql, $params);
 	}
 
-	public function getProducto()
+	public function getlibros()
 	{
 		$sql = 'SELECT id_libro, nombre_libro, descripcion, imagen_libro, autor, precio, id_categoria, id_editorial, estado FROM libros WHERE id_libro = ?';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
 
-	public function updateProducto()
+	public function updatelibros()
 	{
 		$sql = 'UPDATE libros SET nombre_libro = ?, descripcion = ?, imagen_libro = ?, autor = ?, precio = ?, id_categoria = ?, id_editorial = ?, estado = ?WHERE id_libro = ?';
 		$params = array($this->libro, $this->descripcion, $this->imagen, $this->autor, $this->precio, $this->categoria, $this->editorial, $this->estado, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 
-	public function deleteProducto()
+	public function deletelibros()
 	{
 		$sql = 'DELETE FROM libros WHERE id_libro = ?';
 		$params = array($this->id);

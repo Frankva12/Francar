@@ -45,7 +45,7 @@
                     },
                     {
                       type: 'spline',
-                      name: 'Productos existentes',
+                      name: 'libross existentes',
                       data: [50, 40, 80]
                     },
                     {

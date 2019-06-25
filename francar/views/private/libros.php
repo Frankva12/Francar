@@ -31,7 +31,7 @@
      require("../../core/helpers/dashboard/menu.php");
     inicio::navigate();
   ?>
-  <h3 align="center">Productos
+  <h3 align="center">libros
     <a class="btn-floating black pulse">
       <i class="material-icons">book</i>
     </a>
@@ -42,7 +42,7 @@
       <div class="col s12">
         <a href="#!" class="breadcrumb"></a>
         <a href="private.php" class="breadcrumb">Estadisticas</a>
-        <a href="productos.php" class="breadcrumb">Productos</a>
+        <a href="libros.php" class="breadcrumb">libros</a>
       </div>
     </div>
   </nav>
@@ -69,7 +69,7 @@
     <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
       <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i
-          align="center" class="material-icons"></i>Agregar Libros</a>
+           class="material-icons"></i>Agregar Libros</a>
     </div>
   </div>
   </div>
@@ -77,7 +77,7 @@
   <!-- Ventana para crear un nuevo registro -->
   <div id="modal-create" class="modal">
     <div class="modal-content">
-      <h4 class="center-align">Crear producto</h4>
+      <h4 class="center-align">Crear libros</h4>
       <form method="post" id="form-create" enctype="multipart/form-data">
         <div class="row">
 
@@ -161,7 +161,7 @@
   <!-- Ventana para modificar un registro existente -->
   <div id="modal-update" class="modal">
     <div class="modal-content">
-      <h4 class="center-align">Modificar producto</h4>
+      <h4 class="center-align">Modificar libros</h4>
       <form method="post" id="form-update" enctype="multipart/form-data">
         <input type="hidden" id="id_libro" name="id_libro" />
         <input type="hidden" id="imagen_libro" name="imagen_libro" />

@@ -40,7 +40,7 @@
 		  <i class="material-icons">shopping_cart</i>
 		</a>
 	  </h3>
-  <!--Se hace una tabla donde iran los productos que la persona pide, el costo de cada articulo, la cantidad y el total al pagar cuando llegue su pedido-->
+  <!--Se hace una tabla donde iran los libross que la persona pide, el costo de cada articulo, la cantidad y el total al pagar cuando llegue su pedido-->
   <table class="responsive-table">
     <thead>
       <tr>
@@ -52,7 +52,7 @@
         <th></th>
       </tr>
     </thead>
-    <!--Este es un ejemplo de como se verian los productos-->
+    <!--Este es un ejemplo de como se verian los libross-->
     <tbody>
       <tr>
         <td width="20%">
