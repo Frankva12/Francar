@@ -14,7 +14,7 @@ function fillTable(rows)
     rows.forEach(function(row){
         content += `
             <tr>
-                <td><img src="../../resources/img/categorias/${row.imagen}" class="materialboxed" height="100"></td>
+                <td><img src="../../resources/img/categorias/${row.imagen_categoria}" class="materialboxed" height="100"></td>
                 <td>${row.nombre_categoria}</td>
                 <td>${row.descripcion_categoria}</td>
                 <td>
@@ -30,37 +30,6 @@ function fillTable(rows)
     $('.materialboxed').materialbox();
     $('.tooltipped').tooltip();
 }
-
-//Función para mostrar los resultados de una búsqueda
-$('#form-search').submit(function()
-{
-    event.preventDefault();
-    $.ajax({
-        url: apiCategorias + 'search',
-        type: 'post',
-        data: $('#form-search').serialize(),
-        datatype: 'json'
-    })
-    .done(function(response){
-        //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
-        if (isJSONString(response)) {
-            const result = JSON.parse(response);
-            //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
-            if (result.status) {
-                sweetAlert(4, 'Coincidencias: ' + result.dataset.length, null);
-                fillTable(result.dataset);
-            } else {
-                sweetAlert(3, result.exception, null);
-            }
-        } else {
-            console.log(response);
-        }
-    })
-    .fail(function(jqXHR){
-        //Se muestran en consola los posibles errores de la solicitud AJAX
-        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
-    });
-})
 
 
 //Función para obtener y mostrar los registros disponibles
@@ -190,6 +159,7 @@ $('#form-update').submit(function()
                 $('#modal-update').modal('close');
                 if (result.status == 1) {
                     sweetAlert(1, 'Categoría modificada correctamente', null);
+                destroy('#tablaCategorias');
                 } else if(result.status == 2) {
                     sweetAlert(3, 'Categoría modificada. ' + result.exception, null);
                 } else if(result.status == 3) {
@@ -227,7 +197,7 @@ function confirmDelete(id, file)
                 type: 'post',
                 data:{
                     id_categoria: id,
-                    imagen: file
+                    imagen_categoria: file
                 },
                 datatype: 'json'
             })
@@ -245,6 +215,7 @@ function confirmDelete(id, file)
                         showTable();
                     } else {
                         sweetAlert(1,'Categoria eliminada correctamente', null);
+                        destroy('#tablaCategorias');
                          showTable();
                     }
                 } else {
