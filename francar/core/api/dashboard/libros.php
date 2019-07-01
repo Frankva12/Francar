@@ -24,17 +24,18 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 if ($libro->setNombre($_POST['create_nombre'])) {
                     if ($libro->setDescripcion($_POST['create_descripcion'])) {
                         if ($libro->setAutor($_POST['create_autor'])) {
+                            if ($libro->setCantidad($_POST['create_cantidad'])) {
                             if ($libro->setPrecio($_POST['create_precio'])) {
                                 if ($libro->setCategoria($_POST['create_categoria'])) {
                                     if ($libro->setEditorial($_POST['create_editorial'])) {
                                         if ($libro->setEstado(isset($_POST['create_estado']) ? 1 : 0)) {
                                             if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
                                                 if ($libro->setImagen($_FILES['create_archivo'], null)) {
-                                                    if ($libro->createlibro()) {
+                                                    if ($libro->createlibros()) {
                                                         if ($libro->saveFile($_FILES['create_archivo'], $libro->getRuta(), $libro->getImagen())) {
-                                                            if($editorial->createlibro()){
+                                                            
                                                                 $result['status']=1;
-                                                        }
+                                                        
                                                         } else {
                                                             $result['status'] = 2;
                                                             $result['exception'] = 'No se guardó el archivo';
@@ -46,22 +47,26 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                                         $result['exception'] = $libro->getImageError();
                                                     }
                                                 }else {
-                                                    $result['exception'] = 'Autor incorrecto';
+                                                    $result['exception'] = 'Imagen incorrecta';
                                                 }
                                             } else {
-                                                $result['exception'] = 'Seleccione una imagen';
+                                                $result['exception'] = 'Estado incorrecto';
                                             }
                                         }else {
                                             $result['exception'] = 'Seleccione un editorial';
                                         }
                                     } else {
-                                        $result['exception'] = 'Estado incorrecto';
+                                        $result['exception'] = 'Seleccione una categoria';
                                     }
                                 } else {
-                                    $result['exception'] = 'Seleccione una categoría';
+                                    $result['exception'] = 'Precio incorrecto';
                                 }
+                             } 
+                             else {
+                                    $result['exception'] = 'Cantidad incorrecta';
+                             }
                             } else {
-                                $result['exception'] = 'Precio incorrecto';
+                                $result['exception'] = 'Autor incorrecto';
                             }
                         } else {
                             $result['exception'] = 'Descripción incorrecta';
@@ -171,10 +176,29 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                     $result['exception'] = 'libro incorrecto';
                 }
                 break;
+                //Operación para mostrar los tipos de categorias en la tabla
+            case 'readCategoria':
+            if ($result['dataset'] = $libro->readLibroCategoria()) {
+                $result['status'] = 1;
+            } else {
+                $result['exception'] = 'Contenido no disponible';
+            }
+            break;
+            //Operacion para mostrar los tipos de receta en el tabla
+        case 'readEditorial':
+            if ($result['dataset'] = $libro->readLibroEditorial()) {
+                $result['status'] = 1;
+            } else {
+                $result['exception'] = 'Contenido no disponible';
+            }
+            break;
+            
             default:
                 exit('Acción no disponible');
         }
+        
     }
+    
 	print(json_encode($result));
 } else {
 	exit('Recurso denegado');
