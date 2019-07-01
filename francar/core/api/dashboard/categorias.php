@@ -22,11 +22,13 @@ if (isset($_GET['action'])) {
 				$_POST = $categoria->validateForm($_POST);
         		if ($categoria->setNombre($_POST['create_categoria'])) {
 					if ($categoria->setDescripcion($_POST['create_descripcion'])) {
-						if (is_uploaded_file($_FILES['create_imagen']['tmp_name'])) {
-							if ($categoria->setImagen($_FILES['create_imagen'], null)) {
-									if ($categoria->saveFile($_FILES['create_imagen'], $categoria->getRuta(), $categoria->getImagen())) {
-										if ($categoria->createCategoria()) {
-										$result['status'] = 1;
+						if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
+							if ($categoria->setImagen($_FILES['create_archivo'], null)) {
+								if ($categoria->createCategoria()) {
+									if ($categoria->saveFile($_FILES['create_archivo'], $categoria->getRuta(), $categoria->getImagen())) {
+										if($categoria->createCategoria()){
+											$result['status'] = 1;
+										}						
 									} else {
 										$result['status'] = 2;
 										$result['exception'] = 'No se guardó el archivo';
@@ -131,18 +133,9 @@ if (isset($_GET['action'])) {
             	break;
 			default:
 				exit('Acción no disponible');
-			case 'readCategorias':
-            if ($result['dataset'] = $categoria->readCategorias()) {
-                $result['status'] = 1;
-            } else {
-                $result['exception'] = 'Contenido no disponible';
-            }
-			break;
 		}
-		print(json_encode($result));
 	} else {
 		exit('Acceso no disponible');
-		exit('Recurso denegado'); 
 	}
 	print(json_encode($result));
 } else {
