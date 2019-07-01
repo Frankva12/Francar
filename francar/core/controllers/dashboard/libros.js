@@ -244,14 +244,13 @@ $('#form-update').submit(function () {
                     $('#modal-update').modal('close');
                     if (result.status == 1) {
                         sweetAlert(1, 'libro modificado correctamente', null);
-                        destroy('#tabla_libros');
                     } else if (result.status == 2) {
                         sweetAlert(3, 'libro modificado. ' + result.exception, null);
-                        destroy('#tabla_libros');
                     } else if (result.status == 3) {
                         sweetAlert(1, 'libro modificado. ' + result.exception, null);
-                        destroy('#tabla_libros');
                     }
+
+                    destroy('#tabla_libros');
                     showTable();
                 } else {
                     sweetAlert(2, result.exception, null);
@@ -279,7 +278,7 @@ function confirmDelete(id, file) {
         .then(function (value) {
             if (value) {
                 $.ajax({
-                        url: apilibros + 'delete',
+                        url: apiLibros + 'delete',
                         type: 'post',
                         data: {
                             id_libro: id,
@@ -298,6 +297,7 @@ function confirmDelete(id, file) {
                                 } else if (result.status == 2) {
                                     sweetAlert(3, 'libro eliminado. ' + result.exception, null);
                                 }
+
                                 destroy('#tabla_libros');
                                 showTable();
                             } else {

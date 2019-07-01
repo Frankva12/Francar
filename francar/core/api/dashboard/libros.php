@@ -158,8 +158,8 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 break;
             case 'delete':
                 if ($libro->setId($_POST['id_libro'])) {
-                    if ($libro->getlibro()) {
-                        if ($libro->deletelibro()) {
+                    if ($libro->getlibros()) {
+                        if ($libro->deletelibros()) {
                             if ($libro->deleteFile($libro->getRuta(), $_POST['imagen_libro'])) {
                                 $result['status'] = 1;
                             } else {
