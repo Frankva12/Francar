@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-07-2019 a las 01:56:54
+-- Tiempo de generación: 02-07-2019 a las 02:57:45
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 5.6.33
 
@@ -61,8 +61,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apellido_administrador`, `alias_usuario`, `contrasenia`, `direccion`, `telefono`, `correo`) VALUES
-(1, 'Carolina', 'Cabrera', 'Caro', '123456', 'Colonia Escalon', 75963201, 'marcia@gmail.com'),
-(2, 'Francisco', 'Vasconcelos', 'Frank', '1234567', 'Avenida Aguilares, San Salvador', 76504010, 'frank@gmail.com');
+(3, 'Francisco', 'Vasconcelos', 'Frank', '$2y$10$f/wabde.WuZBQFbr14IWTupPEOd0ll1M1Cn4tUE8MpWX8uz8cYBae', 'hoal', 77932797, 'stanleyvasconcelos0@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -84,7 +83,20 @@ CREATE TABLE `bitacora` (
 INSERT INTO `bitacora` (`id_bitacora`, `texto`, `fecha`, `accion`) VALUES
 (1, 'francar', '2019-04-20 21:19:30', 'libro insertado'),
 (2, 'francar', '2019-04-20 21:19:48', 'libro modificado'),
-(3, 'francar', '2019-04-20 21:21:10', 'libro insertado');
+(3, 'francar', '2019-04-20 21:21:10', 'libro insertado'),
+(4, 'francar', '2019-07-01 17:56:04', 'libro insertado'),
+(5, 'francar', '2019-07-01 18:04:12', 'libro insertado'),
+(6, 'francar', '2019-07-01 18:14:47', 'libro modificado'),
+(7, 'francar', '2019-07-01 18:15:22', 'libro modificado'),
+(8, 'francar', '2019-07-01 18:15:41', 'libro modificado'),
+(9, 'francar', '2019-07-01 18:16:45', 'libro modificado'),
+(10, 'francar', '2019-07-01 18:17:07', 'libro modificado'),
+(11, 'francar', '2019-07-01 18:19:53', 'libro modificado'),
+(12, 'francar', '2019-07-01 18:20:24', 'libro modificado'),
+(13, 'francar', '2019-07-01 18:20:44', 'libro modificado'),
+(14, 'francar', '2019-07-01 18:24:07', 'libro modificado'),
+(15, 'francar', '2019-07-01 18:29:37', 'libro modificado'),
+(16, 'francar', '2019-07-01 18:29:49', 'libro modificado');
 
 -- --------------------------------------------------------
 
@@ -104,9 +116,7 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `imagen_categoria`) VALUES
-(1, 'Comedia', 'Prueba 1, esta es una categoria', ''),
-(2, 'Fantasia', 'Prueba 2, esta es una categoria', ''),
-(3, 'Romantica', 'Prueba 3, esta es una categoria', '');
+(2, 'Fantasia', 'Prueba 2', '5d1aaa9fef485.png');
 
 -- --------------------------------------------------------
 
@@ -202,8 +212,7 @@ CREATE TABLE `libros` (
 --
 
 INSERT INTO `libros` (`id_libro`, `nombre_libro`, `descripcion`, `imagen_libro`, `autor`, `precio`, `id_categoria`, `id_editorial`, `estado`, `cantidad`) VALUES
-(1, 'Harry Potter y la piedra filosofal', 'Esta es la descripcion 1', '', 'JK.Rowling', '25.00', 2, 1, 1, 0),
-(2, 'Bajo la misma estrella', 'Esta es la descripcion 2', '', 'John Green', '25.00', 3, 2, 1, 0);
+(4, 'dhiofhdfsio', 'Holii', '5d1a9f7c8d13f.png', 'Gerardo', '14.00', 2, 1, 1, 5);
 
 --
 -- Disparadores `libros`
@@ -280,13 +289,13 @@ ALTER TABLE `libros`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
@@ -322,7 +331,7 @@ ALTER TABLE `editoriales`
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
