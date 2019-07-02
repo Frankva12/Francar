@@ -9,7 +9,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
     $libro = new Libros;
     $result = array('status' => 0, 'exception' => '');
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-	if ($_GET['site'] == 'dashboard') {
+	if ($_GET['site'] == 'private') {
         switch ($_GET['action']) {
             case 'read':
                 if ($result['dataset'] = $libro->readLibros()) {
@@ -198,15 +198,11 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             break;
             
             case 'graficar':
-            if ($libro->setId($_POST['id_editorial'])) {
                if($result['dataset'] = $libro->cantidad_libros_editoriales()) {
                 $result['status'] = 1;
             } else {
                 $result['exception'] = 'No hay libros';
             }
-        }else{
-            $result['exception'] = 'Libros inexistentes';
-        }
         break;
 
 

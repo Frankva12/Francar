@@ -58,14 +58,12 @@ function sweetAlert(type, text, url) {
 }
 
 function grafiquita(id, xAxis, yAxis, legend) {
-
-
-    $('#'+id).highcharts({
+    $('#' + id).highcharts({
         title: {
             text: 'Grafica global'
         },
         xAxis: {
-            categories: [xAxis]
+            categories: xAxis
         },
         yAxis: {
             title: 'Porcentaje %',
@@ -86,26 +84,8 @@ function grafiquita(id, xAxis, yAxis, legend) {
         },
         series: [{
                 type: 'column',
-                name: [legend],
-                data: [yAxis]
-            },
-            {
-                name: 'Editorial favorita',
-                data: [300, 230, 180]
-            },
-            {
-                type: 'column',
-                name: 'Finanzas semanales',
-                data: [190, 170, 110]
-            },
-            {
-                type: 'spline',
-                name: 'libross existentes',
-                data: [50, 40, 80]
-            },
-            {
-                name: 'Ventas',
-                data: [30, 10, 50]
+                name: legend,
+                data: yAxis
             }
         ],
         plotOptions: {

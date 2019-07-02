@@ -1,3 +1,6 @@
+$(document).ready(function () {
+    grafica_global();
+})
 //Constante para establecer la ruta y parámetros de comunicación con la API
 const apiAccount = '../../core/api/dashboard/usuarios.php?site=private&action=';
 const apiLibros2 = '../../core/api/dashboard/libros.php?site=private&action=';
@@ -132,19 +135,15 @@ function grafica_global() {
             data: null,
             datatype: 'json'
         })
-        .done((data) => {
-
+        .done(response => {
             var nombre = [];
             var cantidad = [];
-            console.log(nombre);
-            const result = data;
-            
-            result.dataset.forEach(holi => {
-                nombre.push(holi.nombre_editorial);
-                cantidad.push(holi.cantidad)
+            const result = JSON.parse(response);
+            result.dataset.forEach(row => {
+                nombre.push(row.nombre_editorial);
+                cantidad.push(parseInt(row.cantidad));
             });
-
-            grafiquita("grafica", nombre,cantidad, "Cantidad de libros por editorial")
+            grafiquita("grafica", nombre, cantidad, "Cantidad de libros por editorial")
         })
         .fail(function (jqXHR) {
             //Se muestran en consola los posibles errores de la solicitud AJAX
