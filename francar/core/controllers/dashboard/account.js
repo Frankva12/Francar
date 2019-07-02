@@ -1,5 +1,6 @@
 //Constante para establecer la ruta y parámetros de comunicación con la API
 const apiAccount = '../../core/api/dashboard/usuarios.php?site=private&action=';
+const apiLibros2 = '../../core/api/dashboard/libros.php?site=private&action=';
 
 //Función para cerrar la sesión del usuario
 function signOff()
@@ -122,80 +123,31 @@ $('#form-password').submit(function () {
         });
 })
 
-/* 
 
-$(function ($) {
+
+function grafica_global() {
     $.ajax({
-        url: apiLibros + 'graficar',
-        type: 'post',
-        data: null,
-        datatype: 'json'
-    })
-    .done(function (response) {
-        let colors = [];
-    for (i = 0; i < xAxis.length; i++) {
-        colors.push('#' + (Math.random().toString(16)).substring(2, 8));
-        } 
-    })
-    .fail(function (jqXHR) {
-        //Se muestran en consola los posibles errores de la solicitud AJAX
-        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
-    });
+            url: apiLibros2 + 'graficar',
+            type: 'post',
+            data: null,
+            datatype: 'json'
+        })
+        .done((data) => {
 
-    $('#grafica').highcharts({
-        title: {
-            text: 'Grafica global'
-        },
-        xAxis: {
-            categories: ['Santillana', 'Educame', 'Accion y aventura']
-        },
-        yAxis: {
-            title: 'Porcentaje %',
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            valueSuffix: ' unidades'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-                type: 'column',
-                name: 'Libros más vendidos por categoria',
-                data: [60, 20, 20]
-            },
-            {
-                name: 'Editorial favorita',
-                data: [300, 230, 180]
-            },
-            {
-                type: 'column',
-                name: 'Finanzas semanales',
-                data: [190, 170, 110]
-            },
-            {
-                type: 'spline',
-                name: 'libross existentes',
-                data: [50, 40, 80]
-            },
-            {
-                name: 'Ventas',
-                data: [30, 10, 50]
-            }
-        ],
-        plotOptions: {
-            line: {
-                dataLabels: {
-                    enabled: true
-                }
-            }
-        } 
-    });
-});*/
+            var nombre = [];
+            var cantidad = [];
+            console.log(nombre);
+            const result = data;
+            
+            result.dataset.forEach(holi => {
+                nombre.push(holi.nombre_editorial);
+                cantidad.push(holi.cantidad)
+            });
+
+            grafiquita("grafica", nombre,cantidad, "Cantidad de libros por editorial")
+        })
+        .fail(function (jqXHR) {
+            //Se muestran en consola los posibles errores de la solicitud AJAX
+            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+        });
+}

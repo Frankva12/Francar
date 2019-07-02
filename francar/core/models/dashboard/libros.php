@@ -3,6 +3,7 @@ class Libros extends Validator
 {
 	//Declaración de propiedades
 	private $id = null;
+	private $id_ed = null;
 	private $nombre = null;
 	private $descripcion = null;
 	private $imagen = null;
@@ -27,6 +28,21 @@ class Libros extends Validator
 	}
 
 	public function getId()
+	{
+		return $this->id;
+	}
+
+	public function setId_ed($value)
+	{
+		if ($this->validateId($value)) {
+			$this->id = $value;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function getId_ed()
 	{
 		return $this->id;
 	}
@@ -227,8 +243,8 @@ class Libros extends Validator
 	
 	public function cantidad_libros_editoriales()
 	{
-		$sql = 'SELECT SUM(cantidad) as cantidad, nombre_editorial from libros INNER JOIN editoriales USING (id_editorial)';
-		$params = array($this->id);
+		$sql = 'SELECT SUM(cantidad) as cantidad, nombre_editorial from libros INNER JOIN editoriales USING (id_editorial) where id_editorial = ?';
+		$params = array($this->id_ed);
 		return Database::executeRow($sql, $params);
 	}
 }
