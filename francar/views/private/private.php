@@ -44,10 +44,17 @@
     </nav>
     <br>
     <div class="col s12 m6">
-      <div id='grafica' class='container'>
+      <div id='grafica_categoria' class='container'>
       </div>
     <br>
     </div>
+    <br>
+    <div class="col s12 m6">
+      <div id='grafica_editorial' class='container'>
+      </div>
+    <br>
+    </div>
+
         <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
 <?php
 

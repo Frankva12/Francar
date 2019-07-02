@@ -197,7 +197,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             }
             break;
             
-            case 'graficar':
+            case 'graficar_editorial':
                if($result['dataset'] = $libro->cantidad_libros_editoriales()) {
                 $result['status'] = 1;
             } else {
@@ -205,6 +205,13 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             }
         break;
 
+        case 'graficar_categoria':
+               if($result['dataset'] = $libro->cantidad_libros_categorias()) {
+                $result['status'] = 1;
+            } else {
+                $result['exception'] = 'No hay libros';
+            }
+        break;
 
             default:
                 exit('Acción no disponible');

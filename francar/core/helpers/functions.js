@@ -57,10 +57,56 @@ function sweetAlert(type, text, url) {
 
 }
 
-function grafiquita(id, xAxis, yAxis, legend) {
+function grafica_editorial(id, xAxis, yAxis, legend) {
     $('#' + id).highcharts({
         title: {
-            text: 'Grafica global'
+            text: 'Existencia de libros por editorial'
+        },
+        subtitle: {
+            text: 'La existencia de los libros dependiendo de la editorial a la que pertenece cada uno.'
+        },
+        xAxis: {
+            categories: xAxis
+        },
+        yAxis: {
+            title: 'Porcentaje %',
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' unidades'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0,
+            reversed:true
+        },
+        series: [{
+                type: 'column',
+                name: legend,
+                data: yAxis
+            }
+        ],
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+    });
+}
+
+function grafica_categoria(id, xAxis, yAxis, legend) {
+    $('#' + id).highcharts({
+        title: {
+            text: 'Existencia de libros por categoria'
+        },
+        subtitle: {
+            text: 'La existencia de los libros dependiendo de la categoria a la que pertenece cada uno.'
         },
         xAxis: {
             categories: xAxis
@@ -83,10 +129,10 @@ function grafiquita(id, xAxis, yAxis, legend) {
             borderWidth: 0
         },
         series: [{
-                type: 'column',
-                name: legend,
-                data: yAxis
-            }
+            type: 'area',
+            name : legend,
+            data : yAxis
+        }
         ],
         plotOptions: {
             line: {

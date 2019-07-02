@@ -5,7 +5,7 @@ $(document).ready(function () {
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiLibros = '../../core/api/dashboard/libros.php?site=dashboard&action=';
+const apiLibros = '../../core/api/dashboard/libros.php?site=private&action=';
 
 //Función para llenar tabla con los datos de los registros
 function fillTable(rows) {

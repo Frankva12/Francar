@@ -1,9 +1,11 @@
 $(document).ready(function () {
-    grafica_global();
+    graficar_categoria();
+    graficar_editorial();
 })
 //Constante para establecer la ruta y parámetros de comunicación con la API
 const apiAccount = '../../core/api/dashboard/usuarios.php?site=private&action=';
 const apiLibros2 = '../../core/api/dashboard/libros.php?site=private&action=';
+
 
 //Función para cerrar la sesión del usuario
 function signOff()
@@ -128,25 +130,52 @@ $('#form-password').submit(function () {
 
 
 
-function grafica_global() {
+function graficar_editorial() {
+    var nombre = [];
+    var cantidad = [];
     $.ajax({
-            url: apiLibros2 + 'graficar',
+            url: apiLibros2 + 'graficar_editorial',
             type: 'post',
             data: null,
             datatype: 'json'
         })
         .done(response => {
-            var nombre = [];
-            var cantidad = [];
             const result = JSON.parse(response);
             result.dataset.forEach(row => {
                 nombre.push(row.nombre_editorial);
                 cantidad.push(parseInt(row.cantidad));
             });
-            grafiquita("grafica", nombre, cantidad, "Cantidad de libros por editorial")
+            grafica_editorial("grafica_editorial", nombre, cantidad, "Existencia de libros por editorial")
         })
+       
         .fail(function (jqXHR) {
             //Se muestran en consola los posibles errores de la solicitud AJAX
             console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
         });
+        
+}
+
+function graficar_categoria() {
+    $.ajax({
+            url: apiLibros2 + 'graficar_categoria',
+            type: 'post',
+            data: null,
+            datatype: 'json'
+        })
+        .done(response => {
+            var nombre1 = [];
+            var cantidad1 = [];
+            const result = JSON.parse(response);
+            result.dataset.forEach(row => {
+                nombre1.push(row.nombre_categoria);
+                cantidad1.push(parseInt(row.cantidad));
+            });
+            grafica_categoria("grafica_categoria", nombre1, cantidad1, "Existencia de libros por categoria")
+        })
+       
+        .fail(function (jqXHR) {
+            //Se muestran en consola los posibles errores de la solicitud AJAX
+            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+        });
+        
 }
