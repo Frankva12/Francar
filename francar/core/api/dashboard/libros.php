@@ -1,60 +1,41 @@
 <?php
 require_once('../../helpers/database.php');
 require_once('../../helpers/validator.php');
-require_once('../../models/dashboard/productos.php');
+require_once('../../models/dashboard/libros.php');
 
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
 if (isset($_GET['site']) && isset($_GET['action'])) {
     session_start();
-    $producto = new Productos;
+    $libro = new Libros;
     $result = array('status' => 0, 'exception' => '');
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-	if ($_GET['site'] == 'private') {
+	if ($_GET['site'] == 'dashboard') {
         switch ($_GET['action']) {
-
-            case 'readProductos':
-                if ($result['dataset'] = $producto->readProductos()) {
+            case 'read':
+                if ($result['dataset'] = $libro->readLibros()) {
                     $result['status'] = 1;
                 } else {
                     $result['exception'] = 'No hay libros registrados';
                 }
                 break;
 
-
-            case 'readCategorias':
-                if ($result['dataset'] = $producto->readCategorias()) {
-                    $result['status'] = 1;
-                } else {
-                    $result['exception'] = 'No hay categorías registradas';
-                }
-                break;
-
-            case 'readEditoriales': 
-            if ($result['dataset'] = $editorial->readEditoriales()) {
-                $result['status'] = 1;
-            } else {
-                $result['exception'] = 'No hay editoriales registradas';
-            }
-            break;
-
-
-
             case 'create':
-                $_POST = $producto->validateForm($_POST);
-                if ($producto->setNombre($_POST['create_nombre'])) {
-                    if ($producto->setDescripcion($_POST['create_descripcion'])) {
-                        if ($producto->setAutor($_POST['create_autor'])) {
-                            if ($producto->setPrecio($_POST['create_precio'])) {
-                                if ($producto->setCategoria($_POST['create_categoria'])) {
-                                    if ($producto->setEditorial($_POST['create_editorial'])) {
-                                        if ($producto->setEstado(isset($_POST['create_estado']) ? 1 : 0)) {
+                $_POST = $libro->validateForm($_POST);
+                if ($libro->setNombre($_POST['create_nombre'])) {
+                    if ($libro->setDescripcion($_POST['create_descripcion'])) {
+                        if ($libro->setAutor($_POST['create_autor'])) {
+                            if ($libro->setCantidad($_POST['create_cantidad'])) {
+                            if ($libro->setPrecio($_POST['create_precio'])) {
+                                if ($libro->setCategoria($_POST['create_categoria'])) {
+                                    if ($libro->setEditorial($_POST['create_editorial'])) {
+                                        if ($libro->setEstado(isset($_POST['create_estado']) ? 1 : 0)) {
                                             if (is_uploaded_file($_FILES['create_archivo']['tmp_name'])) {
-                                                if ($producto->setImagen($_FILES['create_archivo'], null)) {
-                                                    if ($producto->createProducto()) {
-                                                        if ($producto->saveFile($_FILES['create_archivo'], $producto->getRuta(), $producto->getImagen())) {
-                                                            if($editorial->createProducto()){
+                                                if ($libro->setImagen($_FILES['create_archivo'], null)) {
+                                                    if ($libro->createlibros()) {
+                                                        if ($libro->saveFile($_FILES['create_archivo'], $libro->getRuta(), $libro->getImagen())) {
+                                                            
                                                                 $result['status']=1;
-                                                        }
+                                                        
                                                         } else {
                                                             $result['status'] = 2;
                                                             $result['exception'] = 'No se guardó el archivo';
@@ -75,13 +56,17 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                             $result['exception'] = 'Seleccione un editorial';
                                         }
                                     } else {
-                                        $result['exception'] = 'Estado incorrecto';
+                                        $result['exception'] = 'Seleccione una categoria';
                                     }
                                 } else {
-                                    $result['exception'] = 'Seleccione una categoría';
+                                    $result['exception'] = 'Precio incorrecto';
                                 }
+                             } 
+                             else {
+                                    $result['exception'] = 'Cantidad incorrecta';
+                             }
                             } else {
-                                $result['exception'] = 'Precio incorrecto';
+                                $result['exception'] = 'Autor incorrecto';
                             }
                         } else {
                             $result['exception'] = 'Descripción incorrecta';
@@ -90,50 +75,48 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                         $result['exception'] = 'Nombre incorrecto';
                     }
                 break;
-
-
-
                 
             case 'get':
-                if ($producto->setId($_POST['id_producto'])) {
-                    if ($result['dataset'] = $producto->getProducto()) {
+                if ($libro->setId($_POST['id_libro'])) {
+                    if ($result['dataset'] = $libro->getlibro()) {
                         $result['status'] = 1;
                     } else {
-                        $result['exception'] = 'Producto inexistente';
+                        $result['exception'] = 'libro inexistente';
                     }
                 } else {
-                    $result['exception'] = 'Producto incorrecto';
+                    $result['exception'] = 'libro incorrecto';
                 }
                 break;
+
             case 'update':
-                $_POST = $producto->validateForm($_POST);
-                if ($producto->setId($_POST['id_producto'])) {
-                    if ($producto->getProducto()) {
-                        if ($producto->setNombre($_POST['update_nombre'])) {
-                            if ($producto->setDescripcion($_POST['update_descripcion'])) {
-                                if ($producto->setAutor($_POST['update_autor'])) {
-                                    if ($producto->setPrecio($_POST['update_precio'])) {
-                                        if ($producto->setCategoria($_POST['update_categoria'])) {
-                                            if ($producto->setEditorial($_POST['update_editorial'])) {
-                                                if ($producto->setEstado(isset($_POST['update_estado']) ? 1 : 0)) {
+                $_POST = $libro->validateForm($_POST);
+                if ($libro->setId($_POST['id_libro'])) {
+                    if ($libro->getlibro()) {
+                        if ($libro->setNombre($_POST['update_nombre'])) {
+                            if ($libro->setDescripcion($_POST['update_descripcion'])) {
+                                if ($libro->setAutor($_POST['update_autor'])) {
+                                    if ($libro->setPrecio($_POST['update_precio'])) {
+                                        if ($libro->setCategoria($_POST['update_categoria'])) {
+                                            if ($libro->setEditorial($_POST['update_editorial'])) {
+                                                if ($libro->setEstado(isset($_POST['update_estado']) ? 1 : 0)) {
                                                     if (is_uploaded_file($_FILES['update_archivo']['tmp_name'])) {
-                                                        if ($producto->setImagen($_FILES['update_archivo'], $_POST['imagen_producto'])) {
+                                                        if ($libro->setImagen($_FILES['update_archivo'], $_POST['imagen_libro'])) {
                                                             $archivo = true;
                                                 } else {
-                                                    $result['exception'] = $producto->getImageError();
+                                                    $result['exception'] = $libro->getImageError();
                                                     $archivo = false;
                                                 }
                                             } else {
-                                                if ($producto->setImagen(null, $_POST['imagen_producto'])) {
+                                                if ($libro->setImagen(null, $_POST['imagen_libro'])) {
                                                     $result['exception'] = 'No se subió ningún archivo';
                                                 } else {
-                                                    $result['exception'] = $producto->getImageError();
+                                                    $result['exception'] = $libro->getImageError();
                                                 }
                                                 $archivo = false;
                                             }
-                                            if ($producto->updateProducto()) {
+                                            if ($libro->updatelibro()) {
                                                 if ($archivo) {
-                                                    if ($producto->saveFile($_FILES['update_archivo'], $producto->getRuta(), $producto->getImagen())) {
+                                                    if ($libro->saveFile($_FILES['update_archivo'], $libro->getRuta(), $libro->getImagen())) {
                                                         $result['status'] = 1;
                                                     } else {
                                                         $result['status'] = 2;
@@ -167,17 +150,17 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                             $result['exception'] = 'Nombre incorrecto';
                         }
                     } else {
-                        $result['exception'] = 'Producto inexistente';
+                        $result['exception'] = 'libro inexistente';
                     }
                 } else {
-                    $result['exception'] = 'Producto incorrecto';
+                    $result['exception'] = 'libro incorrecto';
                 }
                 break;
             case 'delete':
-                if ($producto->setId($_POST['id_producto'])) {
-                    if ($producto->getProducto()) {
-                        if ($producto->deleteProducto()) {
-                            if ($producto->deleteFile($producto->getRuta(), $_POST['imagen_producto'])) {
+                if ($libro->setId($_POST['id_libro'])) {
+                    if ($libro->getlibros()) {
+                        if ($libro->deletelibros()) {
+                            if ($libro->deleteFile($libro->getRuta(), $_POST['imagen_libro'])) {
                                 $result['status'] = 1;
                             } else {
                                 $result['status'] = 2;
@@ -187,52 +170,35 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                             $result['exception'] = 'Operación fallida';
                         }
                     } else {
-                        $result['exception'] = 'Producto inexistente';
+                        $result['exception'] = 'libro inexistente';
                     }
                 } else {
-                    $result['exception'] = 'Producto incorrecto';
+                    $result['exception'] = 'libro incorrecto';
                 }
                 break;
+                //Operación para mostrar los tipos de categorias en la tabla
+            case 'readCategoria':
+            if ($result['dataset'] = $libro->readLibroCategoria()) {
+                $result['status'] = 1;
+            } else {
+                $result['exception'] = 'Contenido no disponible';
+            }
+            break;
+            //Operacion para mostrar los tipos de receta en el tabla
+        case 'readEditorial':
+            if ($result['dataset'] = $libro->readLibroEditorial()) {
+                $result['status'] = 1;
+            } else {
+                $result['exception'] = 'Contenido no disponible';
+            }
+            break;
+            
             default:
                 exit('Acción no disponible');
         }
-    } else if ($_GET['site'] == 'commerce') {
-        switch ($_GET['action']) {
-            case 'readCategorias':
-                if ($result['dataset'] = $producto->readCategorias()) {
-                    $result['status'] = 1;
-                } else {
-                    $result['exception'] = 'Contenido no disponible';
-                }
-                break;
-            case 'readProductos':
-                if ($producto->setCategoria($_POST['id_categoria'])) {
-                    if ($result['dataset'] = $producto->readProductosCategoria()) {
-                        $result['status'] = 1;
-                    } else {
-                        $result['exception'] = 'Contenido no disponible';
-                    }
-                } else {
-                    $result['exception'] = 'Categoría incorrecta';
-                }
-                break;
-            case 'detailProducto':
-                if ($producto->setId($_POST['id_producto'])) {
-                    if ($result['dataset'] = $producto->getProducto()) {
-                        $result['status'] = 1;
-                    } else {
-                        $result['exception'] = 'Contenido no disponible';
-                    }
-                } else {
-                    $result['exception'] = 'Producto incorrecto';
-                }
-                break;
-            default:
-                exit('Acción no disponible');
-    	}
-    } else {
-        exit('Acceso no disponible');
+        
     }
+    
 	print(json_encode($result));
 } else {
 	exit('Recurso denegado');

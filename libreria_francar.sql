@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-04-2019 a las 05:22:28
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.3
+-- Tiempo de generación: 01-07-2019 a las 01:56:54
+-- Versión del servidor: 10.1.30-MariaDB
+-- Versión de PHP: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -193,16 +193,17 @@ CREATE TABLE `libros` (
   `precio` decimal(5,2) NOT NULL,
   `id_categoria` int(11) NOT NULL,
   `id_editorial` int(11) NOT NULL,
-  `estado` tinyint(1) NOT NULL
+  `estado` tinyint(1) NOT NULL,
+  `cantidad` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `libros`
 --
 
-INSERT INTO `libros` (`id_libro`, `nombre_libro`, `descripcion`, `imagen_libro`, `autor`, `precio`, `id_categoria`, `id_editorial`, `estado`) VALUES
-(1, 'Harry Potter y la piedra filosofal', 'Esta es la descripcion 1', '', 'JK.Rowling', '25.00', 2, 1, 1),
-(2, 'Bajo la misma estrella', 'Esta es la descripcion 2', '', 'John Green', '25.00', 3, 2, 1);
+INSERT INTO `libros` (`id_libro`, `nombre_libro`, `descripcion`, `imagen_libro`, `autor`, `precio`, `id_categoria`, `id_editorial`, `estado`, `cantidad`) VALUES
+(1, 'Harry Potter y la piedra filosofal', 'Esta es la descripcion 1', '', 'JK.Rowling', '25.00', 2, 1, 1, 0),
+(2, 'Bajo la misma estrella', 'Esta es la descripcion 2', '', 'John Green', '25.00', 3, 2, 1, 0);
 
 --
 -- Disparadores `libros`
