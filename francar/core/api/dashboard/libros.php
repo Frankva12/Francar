@@ -197,6 +197,14 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             }
             break;
             
+            case 'graficar':
+            if ($result['dataset'] = $usuario->cantidad_libros_editoriales()) {
+                $result['status'] = 1;
+            } else {
+                $result['exception'] = 'No hay libros';
+            }
+            break;
+            
             default:
                 exit('Acción no disponible');
         }

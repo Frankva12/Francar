@@ -43,24 +43,22 @@
       </div>
     </nav>
     <br>
-    <?php
-      require("../../core/helpers/dashboard/grafica.php");
-      Graficas::grafica();
-    ?>
-    <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
+    <div class="col s12 m6">
+      <div id='grafica' class='container'>
+      </div>
     <br>
-    <?php
-        require("../../core/helpers/dashboard/footer.php");
-        Footer::foot();
-        ?>
+    </div>
+        <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
+<?php
 
-
-</body>
+require("../../core/helpers/dashboard/footer.php");
+Footer::foot();
+?>
 
 
 <script src="../../resources/js/sweetalert.min.js"></script>
 <script src="../../core/controllers/dashboard/account.js"></script>
 <script src="../../core/helpers/functions.js"></script>
-<script src="../../core/controllers/dashboard/usuarios.js"></script>
 
+</body>
 </html>

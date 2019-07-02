@@ -112,6 +112,7 @@ if (isset($_GET['action'])) {
                 break;
 
 
+
             case 'create':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setNombre($_POST['create_nombres'])) {
@@ -291,6 +292,51 @@ if (isset($_GET['action'])) {
         $result['exception'] = 'Nombres incorrectos';
     }
     break;
+
+    case 'register':
+    $_POST = $usuario->validateForm($_POST);
+    if ($usuario->setNombre($_POST['nombres'])) {
+        if ($usuario->setApellido($_POST['apellidos'])) {
+            if ($usuario->setAlias($_POST['alias'])) {
+                if ($usuario->setContrasenia($_POST['clave1'])) {
+                    if ($usuario->setDireccion($_POST['direccion'])) {
+                        if ($usuario->setTelefono($_POST['telefono'])) {
+                            if ($usuario->setCorreo($_POST['correo'])) {
+                                if ($_POST['clave1'] == $_POST['clave2']) {
+                                    if ($usuario->setContrasenia($_POST['clave1'])) {
+                                        if ($usuario->createUsuario()) {
+                                        $result['status'] = 1;
+                                    } else {
+                                $result['exception'] = 'Operación fallida';
+                            }
+                        } else {
+                            $result['exception'] = 'Clave menor a 6 caracteres';
+                        }
+                    } else {
+                        $result['exception'] = 'Claves diferentes';
+                    }
+                } else {
+                    $result['exception'] = 'Correo incorrecto';
+                }
+            } else {
+                $result['exception'] = 'Telefono incorrecto';
+            }
+        } else {
+            $result['exception'] = 'Direccion incorrecta';
+        }
+    } else {
+        $result['exception'] = 'Clave incorrecta';
+    }
+    } else {
+    $result['exception'] = 'Alias incorrecto';
+}
+ } else {
+$result['exception'] = 'Apellidos incorrectos';
+}
+} else {
+$result['exception'] = 'Nombres incorrectos';
+}
+break;
 
 
             case 'login':

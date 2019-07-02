@@ -121,3 +121,81 @@ $('#form-password').submit(function () {
             console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
         });
 })
+
+/* 
+
+$(function ($) {
+    $.ajax({
+        url: apiLibros + 'graficar',
+        type: 'post',
+        data: null,
+        datatype: 'json'
+    })
+    .done(function (response) {
+        let colors = [];
+    for (i = 0; i < xAxis.length; i++) {
+        colors.push('#' + (Math.random().toString(16)).substring(2, 8));
+        } 
+    })
+    .fail(function (jqXHR) {
+        //Se muestran en consola los posibles errores de la solicitud AJAX
+        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+    });
+
+    $('#grafica').highcharts({
+        title: {
+            text: 'Grafica global'
+        },
+        xAxis: {
+            categories: ['Santillana', 'Educame', 'Accion y aventura']
+        },
+        yAxis: {
+            title: 'Porcentaje %',
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' unidades'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+                type: 'column',
+                name: 'Libros más vendidos por categoria',
+                data: [60, 20, 20]
+            },
+            {
+                name: 'Editorial favorita',
+                data: [300, 230, 180]
+            },
+            {
+                type: 'column',
+                name: 'Finanzas semanales',
+                data: [190, 170, 110]
+            },
+            {
+                type: 'spline',
+                name: 'libross existentes',
+                data: [50, 40, 80]
+            },
+            {
+                name: 'Ventas',
+                data: [30, 10, 50]
+            }
+        ],
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        } 
+    });
+});*/

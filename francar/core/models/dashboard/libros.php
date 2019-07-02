@@ -224,5 +224,12 @@ class Libros extends Validator
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+	
+	public function cantidad_libros_editoriales()
+	{
+		$sql = 'SELECT SUM(cantidad) as cantidad, nombre_editorial from libros INNER JOIN editoriales USING (id_editorial)';
+		$params = array($this->id);
+		return Database::executeRow($sql, $params);
+	}
 }
 ?>
