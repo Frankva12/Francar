@@ -76,6 +76,8 @@ $('#form-create').submit(function () {
                     $('#form-create')[0].reset();
                     $('#modal-create').modal('close');
                     sweetAlert(1, 'Usuario creado correctamente', null);
+
+                    destroy('#tablaUsuarios');
                     showTable();
                 } else {
                     sweetAlert(2, result.exception, null);
@@ -145,6 +147,8 @@ $('#form-update').submit(function () {
                 if (result.status) {
                     $('#modal-update').modal('close');
                     sweetAlert(1, 'Usuario modificado correctamente', null);
+
+                    destroy('#tablaUsuarios');
                     showTable();
                 } else {
                     sweetAlert(2, result.exception, null);
@@ -186,6 +190,8 @@ function confirmDelete(id) {
                             //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
                             if (result.status) {
                                 sweetAlert(1, 'Usuario eliminado correctamente', null);
+
+                                destroy('#tablaUsuarios');
                                 showTable();
                             } else {
                                 sweetAlert(2, result.exception, null);
@@ -198,7 +204,7 @@ function confirmDelete(id) {
                                 buttons: ['Aceptar'],
                                 closeOnClickOutside: true,
                                 closeOnEsc: true
-                            })                        
+                            })
                         }
                     })
                     .fail(function (jqXHR) {

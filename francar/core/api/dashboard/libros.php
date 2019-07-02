@@ -78,7 +78,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 
             case 'get':
                 if ($libro->setId($_POST['id_libro'])) {
-                    if ($result['dataset'] = $libro->getlibro()) {
+                    if ($result['dataset'] = $libro->getlibros()) {
                         $result['status'] = 1;
                     } else {
                         $result['exception'] = 'libro inexistente';
@@ -91,13 +91,14 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             case 'update':
                 $_POST = $libro->validateForm($_POST);
                 if ($libro->setId($_POST['id_libro'])) {
-                    if ($libro->getlibro()) {
+                    if ($libro->getlibros()) {
                         if ($libro->setNombre($_POST['update_nombre'])) {
                             if ($libro->setDescripcion($_POST['update_descripcion'])) {
                                 if ($libro->setAutor($_POST['update_autor'])) {
                                     if ($libro->setPrecio($_POST['update_precio'])) {
                                         if ($libro->setCategoria($_POST['update_categoria'])) {
                                             if ($libro->setEditorial($_POST['update_editorial'])) {
+                                                if ($libro->setCantidad($_POST['update_cantidad'])) {
                                                 if ($libro->setEstado(isset($_POST['update_estado']) ? 1 : 0)) {
                                                     if (is_uploaded_file($_FILES['update_archivo']['tmp_name'])) {
                                                         if ($libro->setImagen($_FILES['update_archivo'], $_POST['imagen_libro'])) {
@@ -114,7 +115,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                                 }
                                                 $archivo = false;
                                             }
-                                            if ($libro->updatelibro()) {
+                                            if ($libro->updatelibros()) {
                                                 if ($archivo) {
                                                     if ($libro->saveFile($_FILES['update_archivo'], $libro->getRuta(), $libro->getImagen())) {
                                                         $result['status'] = 1;
@@ -130,6 +131,9 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                             }
                                         } else {
                                             $result['exception'] = 'Autor incorrecto';
+                                        }
+                                        } else {
+                                            $result['exception'] = 'Cantidad incorrecta';
                                         }
                                         } else {
                                             $result['exception'] = 'Estado incorrecto';

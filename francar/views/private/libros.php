@@ -87,15 +87,6 @@
             <label for="create_nombre">Nombre del libro</label>
           </div>
 
-
-          <div class="input-field col s12 m6">
-            <i class="material-icons prefix">add_circle_outline</i>
-            <input id="create_precio" type="number" name="create_precio" class="validate" max="999.99" min="0.01"
-              step="any" required />
-            <label for="create_precio">Cantidad</label>
-          </div>
-
-
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="create_cantidad" type="number" name="create_cantidad" class="validate" max="999.99" min="0.00"
@@ -179,37 +170,43 @@
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">note_add</i>
-            <input id="create_nombre_libro" type="text" name="create_nombre_libro" class="validate" required />
-            <label for="create_nombre_libro">Nombre del libro</label>
+            <input id="update_nombre" type="text" name="update_nombre" class="validate" required />
+            <label for="update_nombre">Nombre del libro</label>
           </div>
 
+          <div class="input-field col s12 m6">
+            <i class="material-icons prefix">add_circle_outline</i>
+            <input id="update_cantidad" type="number" name="update_cantidad" class="validate" max="999" min="0"
+              step="any" required />
+            <label for="update_cantidad">Cantidad</label>
+          </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="update_precio" type="number" name="update_precio" class="validate" max="999.99" min="0.01"
               step="any" required />
-            <label for="update_precio">Cantidad</label>
+            <label for="update_precio">Precio</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">description</i>
-            <input id="create_descripcion" type="text" name="create_descripcion" class="validate" required />
-            <label for="create_descripcion">Descripción</label>
+            <input id="update_descripcion" type="text" name="update_descripcion" class="validate" required />
+            <label for="update_descripcion">Descripción</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="create_autor" type="text" name="create_autor" class="validate" required />
-            <label for="create_autor">Autor</label>
+            <input id="update_autor" type="text" name="update_autor" class="validate" required />
+            <label for="update_autor">Autor</label>
           </div>
 
           <div class="input-field col s12 m6">
-            <select id="create_categoria" name="create_categoria">
+            <select id="update_categoria" name="update_categoria">
             </select>
           </div>
 
           <div class="input-field col s12 m6">
-            <select id="create_editorial" name="create_editorial">
+            <select id="update_editorial" name="update_editorial">
             </select>
           </div>
 

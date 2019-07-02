@@ -12,6 +12,8 @@ class Libros extends Validator
 	private $categoria = null;
 	private $editorial = null;
 	private $estado = null;
+	private $libro = null;
+	private $cantidad = null;
 
 	//Métodos para sobrecarga de propiedades
 	public function setId($value)
@@ -212,7 +214,7 @@ class Libros extends Validator
 	public function updatelibros()
 	{
 		$sql = 'UPDATE libros SET nombre_libro = ?, descripcion = ?, imagen_libro = ?, autor = ?, precio = ?, id_categoria = ?, id_editorial = ?, estado = ?, cantidad = ? WHERE id_libro = ?';
-		$params = array($this->libro, $this->descripcion, $this->imagen, $this->autor, $this->precio, $this->categoria, $this->editorial, $this->estado, $this->id);
+		$params = array($this->libro, $this->descripcion, $this->imagen, $this->autor, $this->precio, $this->categoria, $this->editorial, $this->estado, $this->cantidad, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 

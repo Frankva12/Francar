@@ -204,10 +204,13 @@ function modalUpdate(id) {
                     $('#id_libro').val(result.dataset.id_libro);
                     $('#imagen_libro').val(result.dataset.imagen_libro);
                     $('#update_nombre').val(result.dataset.nombre_libro);
-                    $('#update_precio').val(result.dataset.precio_libro);
-                    $('#update_descripcion').val(result.dataset.descripcion_libro);
-                    (result.dataset.estado_libro == 1) ? $('#update_estado').prop('checked', true): $('#update_estado').prop('checked', false);
+                    $('#update_cantidad').val(result.dataset.cantidad);
+                    $('#update_precio').val(result.dataset.precio);
+                    $('#update_descripcion').val(result.dataset.descripcion);
+                    $('#update_autor').val(result.dataset.autor);
+                    (result.dataset.estado == 1) ? $('#update_estado').prop('checked', true): $('#update_estado').prop('checked', false);
                     showSelectCategorias('update_categoria', result.dataset.id_categoria);
+                    ShowSelectEditorial('update_editorial', result.dataset.id_editorial);
                     M.updateTextFields();
                     $('#modal-update').modal('open');
                 } else {
@@ -227,7 +230,7 @@ function modalUpdate(id) {
 $('#form-update').submit(function () {
     event.preventDefault();
     $.ajax({
-            url: apilibros + 'update',
+            url: apiLibros + 'update',
             type: 'post',
             data: new FormData($('#form-update')[0]),
             datatype: 'json',
@@ -249,8 +252,6 @@ $('#form-update').submit(function () {
                     } else if (result.status == 3) {
                         sweetAlert(1, 'libro modificado. ' + result.exception, null);
                     }
-
-                    destroy('#tabla_libros');
                     showTable();
                 } else {
                     sweetAlert(2, result.exception, null);
