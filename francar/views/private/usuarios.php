@@ -77,11 +77,9 @@
       <h4 class="center-align">Crear usuario</h4>
       <form method="post" id="form-create" enctype="multipart/form-data">
         <div class="row">
-
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="create_nombres" type="text" name="create_nombres" class="validate" minlength="5" maxlength="80"
-              required />
+            <input id="create_nombres" type="text" name="create_nombres" minlength="5" maxlength="80"/>
               <label for="create_apellidos">Nombre</label>
           </div>
           <div class="input-field col s12 m6">

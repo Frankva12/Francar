@@ -116,11 +116,12 @@ function grafica_categoria(id, xAxis, yAxis, legend) {
             plotLines: [{
                 value: 0,
                 width: 1,
-                color: '#808080'
+                color: '#003399'
             }]
         },
+        
         tooltip: {
-            valueSuffix: ' unidades'
+            valueSuffix: ' libros'
         },
         legend: {
             layout: 'vertical',
@@ -131,7 +132,7 @@ function grafica_categoria(id, xAxis, yAxis, legend) {
         series: [{
             type: 'area',
             name : legend,
-            data : yAxis
+            data : yAxis,
         }
         ],
         plotOptions: {
@@ -140,6 +141,13 @@ function grafica_categoria(id, xAxis, yAxis, legend) {
                     enabled: true
                 }
             }
+        },
+        color: {
+            linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+            stops: [
+                [0, '#003399'],
+                [1, '#3366AA']
+            ]
         }
     });
 }

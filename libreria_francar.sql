@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2019 a las 02:57:45
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 5.6.33
+-- Tiempo de generación: 03-07-2019 a las 19:39:05
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -61,7 +61,8 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apellido_administrador`, `alias_usuario`, `contrasenia`, `direccion`, `telefono`, `correo`) VALUES
-(3, 'Francisco', 'Vasconcelos', 'Frank', '$2y$10$f/wabde.WuZBQFbr14IWTupPEOd0ll1M1Cn4tUE8MpWX8uz8cYBae', 'hoal', 77932797, 'stanleyvasconcelos0@gmail.com');
+(1, 'Frank', 'Vasconcelos', 'Frank', '$2y$10$QRvV3iZiRmjkJh7yXXwOH.TolNCq.azIXR8c/AGk6Kw4niwpftbpy', 'Mi casita', 77932797, 'stanleyvasconcelos0@gmail.com'),
+(2, 'Carolina', 'Marcia', 'Caro', '$2y$10$P2T13gQOZFQkieZ7v0cKweShQRQsFz3EYvLsJP9QISihM.o6xEA.W', 'Su casita', 71463889, 'carolinamarcia@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -81,22 +82,16 @@ CREATE TABLE `bitacora` (
 --
 
 INSERT INTO `bitacora` (`id_bitacora`, `texto`, `fecha`, `accion`) VALUES
-(1, 'francar', '2019-04-20 21:19:30', 'libro insertado'),
-(2, 'francar', '2019-04-20 21:19:48', 'libro modificado'),
-(3, 'francar', '2019-04-20 21:21:10', 'libro insertado'),
-(4, 'francar', '2019-07-01 17:56:04', 'libro insertado'),
-(5, 'francar', '2019-07-01 18:04:12', 'libro insertado'),
-(6, 'francar', '2019-07-01 18:14:47', 'libro modificado'),
-(7, 'francar', '2019-07-01 18:15:22', 'libro modificado'),
-(8, 'francar', '2019-07-01 18:15:41', 'libro modificado'),
-(9, 'francar', '2019-07-01 18:16:45', 'libro modificado'),
-(10, 'francar', '2019-07-01 18:17:07', 'libro modificado'),
-(11, 'francar', '2019-07-01 18:19:53', 'libro modificado'),
-(12, 'francar', '2019-07-01 18:20:24', 'libro modificado'),
-(13, 'francar', '2019-07-01 18:20:44', 'libro modificado'),
-(14, 'francar', '2019-07-01 18:24:07', 'libro modificado'),
-(15, 'francar', '2019-07-01 18:29:37', 'libro modificado'),
-(16, 'francar', '2019-07-01 18:29:49', 'libro modificado');
+(1, 'francar', '2019-07-03 11:10:15', 'libro insertado'),
+(2, 'francar', '2019-07-03 11:11:35', 'libro insertado'),
+(3, 'francar', '2019-07-03 11:13:33', 'libro insertado'),
+(4, 'francar', '2019-07-03 11:15:26', 'libro insertado'),
+(5, 'francar', '2019-07-03 11:16:34', 'libro insertado'),
+(6, 'francar', '2019-07-03 11:18:31', 'libro insertado'),
+(7, 'francar', '2019-07-03 11:20:20', 'libro insertado'),
+(8, 'francar', '2019-07-03 11:21:14', 'libro modificado'),
+(9, 'francar', '2019-07-03 11:21:16', 'libro modificado'),
+(10, 'francar', '2019-07-03 11:21:37', 'libro modificado');
 
 -- --------------------------------------------------------
 
@@ -116,7 +111,11 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `imagen_categoria`) VALUES
-(2, 'Fantasia', 'Prueba 2', '5d1aaa9fef485.png');
+(7, 'Terror', 'Miedo sin igual', '5d1ce0723d216.jpg'),
+(8, 'Drama', 'Drama de carito', '5d1ce0bdec21a.jpg'),
+(9, 'comedia', 'Chistes', '5d1ce0f558775.jpeg'),
+(10, 'Ficcion', 'Ficcion', '5d1ce104d4699.png'),
+(11, 'Tradicional', 'La tradicion de las cosaas', '5d1ce119d94b9.jpg');
 
 -- --------------------------------------------------------
 
@@ -133,14 +132,6 @@ CREATE TABLE `clientes` (
   `telefono` int(8) NOT NULL,
   `contrasenia` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `alias_cliente`, `direccion`, `telefono`, `contrasenia`) VALUES
-(1, 'Maria', 'Campos', 'Majo', 'San Jacinto, El Salvador', 75948562, '123456'),
-(2, 'Bryan', 'Amaya', 'BryanBosco', 'San Jacinto, El Salvador', 76958201, '1234567');
 
 -- --------------------------------------------------------
 
@@ -185,8 +176,11 @@ CREATE TABLE `editoriales` (
 --
 
 INSERT INTO `editoriales` (`id_editorial`, `nombre_editorial`) VALUES
-(1, 'Salamandra'),
-(2, 'Nube de tinta');
+(6, 'Santillana'),
+(7, 'Aprende tu'),
+(8, 'Cadejo'),
+(9, 'Milenarios'),
+(10, 'Cuida los libros');
 
 -- --------------------------------------------------------
 
@@ -212,7 +206,12 @@ CREATE TABLE `libros` (
 --
 
 INSERT INTO `libros` (`id_libro`, `nombre_libro`, `descripcion`, `imagen_libro`, `autor`, `precio`, `id_categoria`, `id_editorial`, `estado`, `cantidad`) VALUES
-(4, 'dhiofhdfsio', 'Holii', '5d1a9f7c8d13f.png', 'Gerardo', '14.00', 2, 1, 1, 5);
+(1, 'Los cuentos de Frank', 'Los cuentos de frank la mejor cosa del mundo', '5d1ce1775797b.jpg', 'Frank', '6.00', 9, 9, 1, 11),
+(2, 'Las cosas que conte', 'Como nunca lo has visto', '5d1ce1c75a392.jpg', 'Carito', '4.00', 8, 10, 0, 18),
+(3, 'Los tres tristes tigres', 'Comen trigo en un trigal', '5d1ce23d735bb.jpg', 'Tigres', '7.00', 11, 6, 1, 10),
+(4, 'Trabajo de buenos', 'La buena vida', '5d1ce2ae5e85c.jpg', 'Trabajadores', '5.00', 10, 8, 0, 2),
+(5, 'Tadeo y sus amigos', 'Trabajo y duelo', '5d1ce2f2dff22.png', 'Hello', '20.00', 7, 7, 1, 22),
+(6, 'Trato', 'Y turco', '5d1ce3673fff7.jpg', 'Tadeo Hernandez', '4.00', 11, 8, 1, 9);
 
 --
 -- Disparadores `libros`
@@ -289,25 +288,25 @@ ALTER TABLE `libros`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `compra`
@@ -325,13 +324,13 @@ ALTER TABLE `detalle_compra`
 -- AUTO_INCREMENT de la tabla `editoriales`
 --
 ALTER TABLE `editoriales`
-  MODIFY `id_editorial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_editorial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
