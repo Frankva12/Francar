@@ -36,7 +36,7 @@
     </h3>
     <nav>
       <div class="nav-wrapper blue">
-        <div class="col s12">
+        <div class="col s12 m6">
           <a href="#!" class="breadcrumb"></a>
           <a href="#!" class="breadcrumb">Estadisticas</a>
         </div>
@@ -46,26 +46,53 @@
     <div class="col s12 m6">
       <div id='grafica_categoria' class='container'>
       </div>
-    <br>
+      <br>
+      <hr>
     </div>
-    <br>
     <div class="col s12 m6">
       <div id='grafica_editorial' class='container'>
       </div>
-    <br>
+      <br>
+      <hr>
     </div>
 
-        <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
-<?php
+    <div class="col s12 m6">
+      <div id='cantidad_libros_vendidos' class='container'>
+      </div>
+      <br>
+      <hr>
+    </div>
+
+    <div class="col s12 m6">
+      <div id='cantidad_ganancias_libros' class='container'>
+      </div>
+      <br>
+      <hr>
+    </div>
+
+    <div class="col s12 m6">
+      <div id='venta_categoria' class='container'>
+      </div>
+      <br>
+      <hr>
+
+    <div class="col s12 m6">
+      <div id='venta_editorial' class='container'>
+      </div>
+    </div>
+
+    <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
+    <?php
 
 require("../../core/helpers/dashboard/footer.php");
 Footer::foot();
 ?>
 
 
-<script src="../../resources/js/sweetalert.min.js"></script>
-<script src="../../core/controllers/dashboard/account.js"></script>
-<script src="../../core/helpers/functions.js"></script>
+    <script src="../../resources/js/sweetalert.min.js"></script>
+    <script src="../../core/controllers/dashboard/account.js"></script>
+    <script src="../../core/helpers/functions.js"></script>
 
 </body>
+
 </html>

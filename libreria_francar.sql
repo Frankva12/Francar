@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 03-07-2019 a las 19:39:05
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.4
+-- Host: 127.0.0.1
+-- Generation Time: Jul 08, 2019 at 01:13 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,12 +19,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `libreria_francar`
+-- Database: `libreria_francar`
 --
 
 DELIMITER $$
 --
--- Procedimientos
+-- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `agregar_editoriales` (IN `id_editorial` INT, IN `nombre_editorial` VARCHAR(100))  BEGIN
 
@@ -42,7 +42,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `administrador`
+-- Table structure for table `administrador`
 --
 
 CREATE TABLE `administrador` (
@@ -57,7 +57,7 @@ CREATE TABLE `administrador` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `administrador`
+-- Dumping data for table `administrador`
 --
 
 INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apellido_administrador`, `alias_usuario`, `contrasenia`, `direccion`, `telefono`, `correo`) VALUES
@@ -67,7 +67,7 @@ INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apelli
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `bitacora`
+-- Table structure for table `bitacora`
 --
 
 CREATE TABLE `bitacora` (
@@ -78,7 +78,7 @@ CREATE TABLE `bitacora` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `bitacora`
+-- Dumping data for table `bitacora`
 --
 
 INSERT INTO `bitacora` (`id_bitacora`, `texto`, `fecha`, `accion`) VALUES
@@ -91,12 +91,16 @@ INSERT INTO `bitacora` (`id_bitacora`, `texto`, `fecha`, `accion`) VALUES
 (7, 'francar', '2019-07-03 11:20:20', 'libro insertado'),
 (8, 'francar', '2019-07-03 11:21:14', 'libro modificado'),
 (9, 'francar', '2019-07-03 11:21:16', 'libro modificado'),
-(10, 'francar', '2019-07-03 11:21:37', 'libro modificado');
+(10, 'francar', '2019-07-03 11:21:37', 'libro modificado'),
+(11, 'francar', '2019-07-07 14:00:43', 'libro modificado'),
+(12, 'francar', '2019-07-07 14:00:56', 'libro modificado'),
+(13, 'francar', '2019-07-07 14:01:06', 'libro modificado'),
+(14, 'francar', '2019-07-07 14:01:20', 'libro modificado');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoria`
+-- Table structure for table `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -107,7 +111,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `categoria`
+-- Dumping data for table `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `imagen_categoria`) VALUES
@@ -120,7 +124,7 @@ INSERT INTO `categoria` (`id_categoria`, `nombre_categoria`, `descripcion_catego
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clientes`
+-- Table structure for table `clientes`
 --
 
 CREATE TABLE `clientes` (
@@ -133,24 +137,18 @@ CREATE TABLE `clientes` (
   `contrasenia` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `compra`
+-- Dumping data for table `clientes`
 --
 
-CREATE TABLE `compra` (
-  `id_compra` int(11) NOT NULL,
-  `id_libro` int(11) NOT NULL,
-  `id_cliente` int(11) NOT NULL,
-  `cantidad` int(11) NOT NULL,
-  `precio` double(5,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `alias_cliente`, `direccion`, `telefono`, `contrasenia`) VALUES
+(2, 'Raul ', 'Meana', 'Raul123', 'mi casa', 7894578, '123456'),
+(3, 'Arturo', 'Galileo', 'Arthur', 'su casa', 798563, '123456');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detalle_compra`
+-- Table structure for table `detalle_compra`
 --
 
 CREATE TABLE `detalle_compra` (
@@ -160,10 +158,18 @@ CREATE TABLE `detalle_compra` (
   `precio` double(5,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `detalle_compra`
+--
+
+INSERT INTO `detalle_compra` (`id_detalle`, `id_compra`, `cantidad`, `precio`) VALUES
+(1, 1, 12, 25.00),
+(2, 2, 12, 159.00);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `editoriales`
+-- Table structure for table `editoriales`
 --
 
 CREATE TABLE `editoriales` (
@@ -172,7 +178,7 @@ CREATE TABLE `editoriales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `editoriales`
+-- Dumping data for table `editoriales`
 --
 
 INSERT INTO `editoriales` (`id_editorial`, `nombre_editorial`) VALUES
@@ -185,7 +191,7 @@ INSERT INTO `editoriales` (`id_editorial`, `nombre_editorial`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `libros`
+-- Table structure for table `libros`
 --
 
 CREATE TABLE `libros` (
@@ -202,19 +208,19 @@ CREATE TABLE `libros` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `libros`
+-- Dumping data for table `libros`
 --
 
 INSERT INTO `libros` (`id_libro`, `nombre_libro`, `descripcion`, `imagen_libro`, `autor`, `precio`, `id_categoria`, `id_editorial`, `estado`, `cantidad`) VALUES
 (1, 'Los cuentos de Frank', 'Los cuentos de frank la mejor cosa del mundo', '5d1ce1775797b.jpg', 'Frank', '6.00', 9, 9, 1, 11),
-(2, 'Las cosas que conte', 'Como nunca lo has visto', '5d1ce1c75a392.jpg', 'Carito', '4.00', 8, 10, 0, 18),
+(2, 'Las cosas que conte', 'Como nunca lo has visto', '5d1ce1c75a392.jpg', 'Carito', '4.00', 8, 10, 1, 18),
 (3, 'Los tres tristes tigres', 'Comen trigo en un trigal', '5d1ce23d735bb.jpg', 'Tigres', '7.00', 11, 6, 1, 10),
-(4, 'Trabajo de buenos', 'La buena vida', '5d1ce2ae5e85c.jpg', 'Trabajadores', '5.00', 10, 8, 0, 2),
+(4, 'Trabajo de buenos', 'La buena vida', '5d1ce2ae5e85c.jpg', 'Trabajadores', '5.00', 10, 8, 1, 2),
 (5, 'Tadeo y sus amigos', 'Trabajo y duelo', '5d1ce2f2dff22.png', 'Hello', '20.00', 7, 7, 1, 22),
 (6, 'Trato', 'Y turco', '5d1ce3673fff7.jpg', 'Tadeo Hernandez', '4.00', 11, 8, 1, 9);
 
 --
--- Disparadores `libros`
+-- Triggers `libros`
 --
 DELIMITER $$
 CREATE TRIGGER `llenar` AFTER INSERT ON `libros` FOR EACH ROW insert into bitacora values (null, 'francar', NOW(), 'libro insertado')
@@ -226,54 +232,48 @@ $$
 DELIMITER ;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `administrador`
+-- Indexes for table `administrador`
 --
 ALTER TABLE `administrador`
   ADD PRIMARY KEY (`id_administrador`);
 
 --
--- Indices de la tabla `bitacora`
+-- Indexes for table `bitacora`
 --
 ALTER TABLE `bitacora`
   ADD PRIMARY KEY (`id_bitacora`);
 
 --
--- Indices de la tabla `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Indices de la tabla `clientes`
+-- Indexes for table `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Indices de la tabla `compra`
---
-ALTER TABLE `compra`
-  ADD PRIMARY KEY (`id_compra`);
-
---
--- Indices de la tabla `detalle_compra`
+-- Indexes for table `detalle_compra`
 --
 ALTER TABLE `detalle_compra`
   ADD PRIMARY KEY (`id_detalle`),
   ADD KEY `id_compra` (`id_compra`);
 
 --
--- Indices de la tabla `editoriales`
+-- Indexes for table `editoriales`
 --
 ALTER TABLE `editoriales`
   ADD PRIMARY KEY (`id_editorial`);
 
 --
--- Indices de la tabla `libros`
+-- Indexes for table `libros`
 --
 ALTER TABLE `libros`
   ADD PRIMARY KEY (`id_libro`),
@@ -281,69 +281,63 @@ ALTER TABLE `libros`
   ADD KEY `id_categoria` (`id_categoria`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `administrador`
+-- AUTO_INCREMENT for table `administrador`
 --
 ALTER TABLE `administrador`
   MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `bitacora`
+-- AUTO_INCREMENT for table `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_bitacora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT de la tabla `categoria`
+-- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT de la tabla `clientes`
+-- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `compra`
---
-ALTER TABLE `compra`
-  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `detalle_compra`
+-- AUTO_INCREMENT for table `detalle_compra`
 --
 ALTER TABLE `detalle_compra`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `editoriales`
+-- AUTO_INCREMENT for table `editoriales`
 --
 ALTER TABLE `editoriales`
   MODIFY `id_editorial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de la tabla `libros`
+-- AUTO_INCREMENT for table `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `detalle_compra`
+-- Constraints for table `detalle_compra`
 --
 ALTER TABLE `detalle_compra`
   ADD CONSTRAINT `detalle_compra_ibfk_1` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id_compra`);
 
 --
--- Filtros para la tabla `libros`
+-- Constraints for table `libros`
 --
 ALTER TABLE `libros`
   ADD CONSTRAINT `libros_ibfk_1` FOREIGN KEY (`id_editorial`) REFERENCES `editoriales` (`id_editorial`),

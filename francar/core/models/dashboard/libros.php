@@ -254,5 +254,34 @@ class Libros extends Validator
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
+	
+	public function cantidad_de_libros()
+	{
+		$sql = 'SELECT sum(compra.cantidad) as cantidad, nombre_libro from compra INNER JOIN libros USING (id_libro) GROUP BY nombre_libro';
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+
+	
+	public function cantidad_de_dinero()
+	{
+		$sql = 'SELECT sum(compra.precio) as precio, nombre_libro from compra INNER JOIN libros USING (id_libro) GROUP BY nombre_libro';
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+
+	public function cantidad_ventas_categoria()
+	{
+		$sql = 'SELECT sum(compra.precio) as precio, nombre_categoria from compra INNER JOIN libros USING (id_libro) INNER JOIN categoria USING (id_categoria) GROUP BY nombre_categoria';
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+
+	public function cantidad_ventas_editorial()
+	{
+		$sql = 'SELECT sum(compra.precio) as precio, nombre_editorial from compra INNER JOIN libros USING (id_libro) INNER JOIN editoriales USING (id_editorial) GROUP BY nombre_editorial';
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
 }
 ?>

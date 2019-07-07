@@ -213,6 +213,41 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             }
         break;
 
+         case 'libros_vendidos_cantidad':
+               if($result['dataset'] = $libro->cantidad_de_libros()) {
+                $result['status'] = 1;
+            } else {
+                $result['exception'] = 'No hay libros';
+            }
+        break;
+
+        
+        case 'libros_ventas_ganancias':
+        if($result['dataset'] = $libro->cantidad_de_dinero()) {
+         $result['status'] = 1;
+        } else {
+         $result['exception'] = 'No hay libros';
+        }
+        break;
+
+        
+        case 'ventas_categoria':
+        if($result['dataset'] = $libro->cantidad_ventas_categoria()) {
+         $result['status'] = 1;
+        } else {
+         $result['exception'] = 'No hay libros';
+        }
+        break;
+
+        case 'ventas_editoriales':
+        if($result['dataset'] = $libro->cantidad_ventas_editorial()) {
+         $result['status'] = 1;
+        } else {
+         $result['exception'] = 'No hay libros';
+        }
+        break;
+
+        
             default:
                 exit('Acción no disponible');
         }

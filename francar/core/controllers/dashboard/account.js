@@ -1,6 +1,11 @@
 $(document).ready(function () {
     graficar_categoria();
     graficar_editorial();
+    graficar_cantidad_libros_vendidos();
+    graficar_ventas_libros();
+    grafica_ventas_categorias();
+    ventas_por_categoria();
+    ventas_por_editoriales();
 })
 //Constante para establecer la ruta y parámetros de comunicación con la API
 const apiAccount = '../../core/api/dashboard/usuarios.php?site=private&action=';
@@ -179,3 +184,108 @@ function graficar_categoria() {
         });
         
 }
+
+
+
+function graficar_cantidad_libros_vendidos() {
+    $.ajax({
+            url: apiLibros2 + 'libros_vendidos_cantidad',
+            type: 'post',
+            data: null,
+            datatype: 'json'
+        })
+        .done(response => {
+            var nombre2 = [];
+            var cantidad2 = [];
+            const result = JSON.parse(response);
+            result.dataset.forEach(row => {
+                nombre2.push(row.nombre_libro);
+                cantidad2.push(parseInt(row.cantidad));
+            });
+            grafica_ventas("cantidad_libros_vendidos", nombre2, cantidad2, "Cantidad de libros vendidos.")
+        })
+       
+        .fail(function (jqXHR) {
+            //Se muestran en consola los posibles errores de la solicitud AJAX
+            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+        });
+        
+}
+
+
+function graficar_ventas_libros() {
+    $.ajax({
+            url: apiLibros2 + 'libros_ventas_ganancias',
+            type: 'post',
+            data: null,
+            datatype: 'json'
+        })
+        .done(response => {
+            var nombre2 = [];
+            var precio1 = [];
+            const result = JSON.parse(response);
+            result.dataset.forEach(row => {
+                nombre2.push(row.nombre_libro);
+                precio1.push(parseInt(row.precio));
+            });
+            grafica_cantidad_libros_vendidos("cantidad_ganancias_libros", nombre2, precio1, "Ventas de libros")
+        })
+       
+        .fail(function (jqXHR) {
+            //Se muestran en consola los posibles errores de la solicitud AJAX
+            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+        });
+        
+}
+
+function ventas_por_categoria() {
+    $.ajax({
+            url: apiLibros2 + 'ventas_categoria',
+            type: 'post',
+            data: null,
+            datatype: 'json'
+        })
+        .done(response => {
+            var nombre = [];
+            var precio = [];
+            const result = JSON.parse(response);
+            result.dataset.forEach(row => {
+                nombre.push(row.nombre_categoria);
+                precio.push(parseInt(row.precio));
+            });
+            grafica_ventas_categorias("venta_categoria", nombre, precio, "Cantidad de venta de libros por categorias")
+        })
+       
+        .fail(function (jqXHR) {
+            //Se muestran en consola los posibles errores de la solicitud AJAX
+            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+        });
+        
+}
+
+
+function ventas_por_editoriales() {
+    $.ajax({
+            url: apiLibros2 + 'ventas_editoriales',
+            type: 'post',
+            data: null,
+            datatype: 'json'
+        })
+        .done(response => {
+            var nombre = [];
+            var precio = [];
+            const result = JSON.parse(response);
+            result.dataset.forEach(row => {
+                nombre.push(row.nombre_editorial);
+                precio.push(parseInt(row.precio));
+            });
+            grafica_ventas_editoriales("venta_editorial", nombre, precio, "Ventas por editoriales")
+        })
+       
+        .fail(function (jqXHR) {
+            //Se muestran en consola los posibles errores de la solicitud AJAX
+            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+        });
+        
+}
+
