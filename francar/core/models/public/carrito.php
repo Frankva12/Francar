@@ -57,11 +57,10 @@ class Carrito extends Validator
 	public function getCliente()
 	{
 		return $this->cliente;
-    }
+	}
+	
+	
     
-
-
-
 	public function setCantidad($value)
 	{
 		if ($this->validateAlphanumeric($value, 1, 50)) {
