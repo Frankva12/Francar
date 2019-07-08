@@ -50,7 +50,6 @@
                     <th>ID</th>
                     <th>Libro</th>
                     <th>Cantidad</th>
-                    <th>Cliente</th>
                     <th>Precio</th>
                 </tr>
             </thead>

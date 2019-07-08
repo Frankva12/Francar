@@ -29,7 +29,7 @@
 
 
     <h3 align="center">Categorias
-        <a class="btn-floating black pulse">
+        <a class="btn-floating black pulse" href="../../core/report/ejemplo1.php">
             <i class="material-icons">book</i>
         </a>
     </h3>
