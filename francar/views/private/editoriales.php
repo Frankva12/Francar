@@ -77,7 +77,8 @@
 
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
-                        <input id="create_editorial" type="text" name="create_editorial" class="validate" minlength="5" maxlength="80" required/>
+                        <input id="create_editorial" type="text" name="create_editorial" class="validate" minlength="5"
+                            maxlength="80" required />
                         <label for="create_editorial">Editorial</label>
                     </div>
                 </div>

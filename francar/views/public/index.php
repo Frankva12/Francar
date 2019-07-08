@@ -298,7 +298,7 @@
     <h4 class="center blue-text" id="title"></h4>
     <div class="row" id="catalogo"></div>
   </div>
-  
+
 </body>
 <!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
 <?php

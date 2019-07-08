@@ -21,53 +21,53 @@
 </body>
 
 <div class="row">
-    <h1 align="center">Registrarse</h1>
-    <hr>
-    <form class="col s12" id="form-register">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Nombres" id="nombres" name="nombres" type="text" class="validate">
-          <label for="nombres"></label>
-        </div>
-        <div class="input-field col s6">
-          <input placeholder="Apellidos" id="apellidos" name="apellidos" type="text" class="validate">
-          <label for="apellidos"></label>
-        </div>
+  <h1 align="center">Registrarse</h1>
+  <hr>
+  <form class="col s12" id="form-register">
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="Nombres" id="nombres" name="nombres" type="text" class="validate">
+        <label for="nombres"></label>
       </div>
-        <div class="input-field col s6">
-          <input placeholder="Alias" id="alias" name="alias" type="text" class="validate">
-          <label for="alias"></label>
+      <div class="input-field col s6">
+        <input placeholder="Apellidos" id="apellidos" name="apellidos" type="text" class="validate">
+        <label for="apellidos"></label>
       </div>
-        <div class="input-field col s6">
-          <input placeholder="Contraseña" id="clave1" name="clave1" type="password" class="validate">
-          <label for="clave1"></label>
-      </div>
-        <div class="input-field col s6">
-          <input placeholder="Confirme su contraseña" id="clave2" name="clave2" type="password" class="validate">
-          <label for="clave2"></label>
-      </div>
-        <div class="input-field col s6">
-          <input placeholder="Direccion" id="direccion" name="direccion" type="text" class="validate">
-          <label for="direccion"></label>
-      </div>
-        <div class="input-field col s6">
-          <input placeholder="Telefono" id="telefono" name="telefono" type="tel" class="validate">
-          <label for="telefono"></label>
-        </div>
-        <div class="input-field col s6">
-          <input placeholder="Correo" id="correo" name="correo" type="email" class="validate">
-          <label for="correo"></label>
-      </div>                     
-      <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>
-    </form>
-  </div>  
-  
-  <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-  <script src="../../resources/js/sweetalert.min.js"></script>
-  <script src="../../resources/js/highcharts.js"></script>
-  <script src="../../resources/js/modules.js"></script>
-  <script type="text/javascript" src="../../core/helpers/functions.js"></script>
-  <script type="text/javascript" src="../../core/controllers/dashboard/account.js"></script>
-  <script type="text/javascript" src="../../core/controllers/dashboard/register.js"></script>
+    </div>
+    <div class="input-field col s6">
+      <input placeholder="Alias" id="alias" name="alias" type="text" class="validate">
+      <label for="alias"></label>
+    </div>
+    <div class="input-field col s6">
+      <input placeholder="Contraseña" id="clave1" name="clave1" type="password" class="validate">
+      <label for="clave1"></label>
+    </div>
+    <div class="input-field col s6">
+      <input placeholder="Confirme su contraseña" id="clave2" name="clave2" type="password" class="validate">
+      <label for="clave2"></label>
+    </div>
+    <div class="input-field col s6">
+      <input placeholder="Direccion" id="direccion" name="direccion" type="text" class="validate">
+      <label for="direccion"></label>
+    </div>
+    <div class="input-field col s6">
+      <input placeholder="Telefono" id="telefono" name="telefono" type="tel" class="validate">
+      <label for="telefono"></label>
+    </div>
+    <div class="input-field col s6">
+      <input placeholder="Correo" id="correo" name="correo" type="email" class="validate">
+      <label for="correo"></label>
+    </div>
+    <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>
+  </form>
+</div>
+
+<script src="../../resources/js/jquery-3.3.1.min.js"></script>
+<script src="../../resources/js/sweetalert.min.js"></script>
+<script src="../../resources/js/highcharts.js"></script>
+<script src="../../resources/js/modules.js"></script>
+<script type="text/javascript" src="../../core/helpers/functions.js"></script>
+<script type="text/javascript" src="../../core/controllers/dashboard/account.js"></script>
+<script type="text/javascript" src="../../core/controllers/dashboard/register.js"></script>
 
 </html>

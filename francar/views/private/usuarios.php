@@ -79,8 +79,8 @@
         <div class="row">
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="create_nombres" type="text" name="create_nombres" minlength="5" maxlength="80"/>
-              <label for="create_apellidos">Nombre</label>
+            <input id="create_nombres" type="text" name="create_nombres" minlength="5" maxlength="80" />
+            <label for="create_apellidos">Nombre</label>
           </div>
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
@@ -99,7 +99,7 @@
             <i class="material-icons prefix">place</i>
             <input id="create_direccion" type="text" name="create_direccion" minlength="5" maxlength="80"
               class="validate" />
-              <label for="create_apellidos">Direccion</label>
+            <label for="create_apellidos">Direccion</label>
           </div>
 
           <div class="input-field col s12 m6">
@@ -113,7 +113,7 @@
             <i class="material-icons prefix">lock</i>
             <input id="create_clave2" type="password" name="create_clave2" minlength="6" maxlength="30"
               class="validate" />
-              <label for="create_clave1">Confirmar contraseña</label>
+            <label for="create_clave1">Confirmar contraseña</label>
           </div>
 
           <div class="input-field col s12 m6">
@@ -217,12 +217,12 @@ Footer::foot();
   <script src="../../resources/js/datatables.min.js"></script>
   <script src="../../resources/js/dataTables.material.min.js"></script>
   <script src="../../resources/js/tabla.js"></script>
-  
+
 
   <script src="../../resources/js/sweetalert.min.js"></script>
   <script src="../../core/controllers/dashboard/account.js"></script>
-    <script src="../../core/helpers/functions.js"></script>
-    <script src="../../core/controllers/dashboard/usuarios.js"></script>
+  <script src="../../core/helpers/functions.js"></script>
+  <script src="../../core/controllers/dashboard/usuarios.js"></script>
 </body>
 
 </html>

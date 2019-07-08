@@ -196,7 +196,10 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                 $result['exception'] = 'Contenido no disponible';
             }
             break;
-            
+
+            /* casos para graficar
+            aqui se muestra el caso para graficar la existencia de los libros con respecto a las editoriales
+             */
             case 'graficar_editorial':
                if($result['dataset'] = $libro->cantidad_libros_editoriales()) {
                 $result['status'] = 1;
@@ -205,6 +208,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             }
         break;
 
+        //aqui se muestra el caso para graficar las existencias de los librso por categorias
         case 'graficar_categoria':
                if($result['dataset'] = $libro->cantidad_libros_categorias()) {
                 $result['status'] = 1;
@@ -213,6 +217,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             }
         break;
 
+        //aqui se muestra el caso de los libros vendidos por cantidad es decir cuantos libros se han vendido
          case 'libros_vendidos_cantidad':
                if($result['dataset'] = $libro->cantidad_de_libros()) {
                 $result['status'] = 1;
@@ -221,7 +226,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             }
         break;
 
-        
+        //aqui se muestra el caso del dinero que se ha obtenido con respecto a los libros vendidos 
         case 'libros_ventas_ganancias':
         if($result['dataset'] = $libro->cantidad_de_dinero()) {
          $result['status'] = 1;
@@ -230,7 +235,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
         }
         break;
 
-        
+        //aqui se muestra el caso de los libros vendidos con respecto a las categorias
         case 'ventas_categoria':
         if($result['dataset'] = $libro->cantidad_ventas_categoria()) {
          $result['status'] = 1;
@@ -239,6 +244,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
         }
         break;
 
+        //aqui se muestra el caso de los libros vendidos con respecto a las editoriales
         case 'ventas_editoriales':
         if($result['dataset'] = $libro->cantidad_ventas_editorial()) {
          $result['status'] = 1;
@@ -246,8 +252,6 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
          $result['exception'] = 'No hay libros';
         }
         break;
-
-        
             default:
                 exit('Acción no disponible');
         }

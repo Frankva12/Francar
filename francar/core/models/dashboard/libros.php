@@ -241,6 +241,7 @@ class Libros extends Validator
 		return Database::executeRow($sql, $params);
 	}
 	
+	//modelo para grafica de la cantidad de libros por editoriales donde solo se muestras aquellos con estado 1 es decir con estado activo
 	public function cantidad_libros_editoriales()
 	{
 		$sql = 'SELECT SUM(cantidad) as cantidad, nombre_editorial from libros INNER JOIN editoriales USING (id_editorial) where estado = 1 GROUP BY nombre_editorial';
@@ -248,6 +249,8 @@ class Libros extends Validator
 		return Database::getRows($sql, $params);
 	}
 
+	
+	//modelo para grafica de la cantidad de libros por categorias donde solo se muestras aquellos con estado 1 es decir con estado activo
 	public function cantidad_libros_categorias()
 	{
 		$sql = 'SELECT SUM(cantidad) as cantidad, nombre_categoria from libros INNER JOIN categoria USING (id_categoria) where estado = 1 GROUP BY nombre_categoria';
@@ -255,6 +258,8 @@ class Libros extends Validator
 		return Database::getRows($sql, $params);
 	}
 	
+	
+	//modelo para grafica de la cantidad de libros que se vendan
 	public function cantidad_de_libros()
 	{
 		$sql = 'SELECT sum(compra.cantidad) as cantidad, nombre_libro from compra INNER JOIN libros USING (id_libro) GROUP BY nombre_libro';
@@ -262,7 +267,7 @@ class Libros extends Validator
 		return Database::getRows($sql, $params);
 	}
 
-	
+	//modelo para la grafica que muestra la cantidad de dinero que s eha obtenido con respecto a los libros vendidos
 	public function cantidad_de_dinero()
 	{
 		$sql = 'SELECT sum(compra.precio) as precio, nombre_libro from compra INNER JOIN libros USING (id_libro) GROUP BY nombre_libro';
@@ -270,6 +275,7 @@ class Libros extends Validator
 		return Database::getRows($sql, $params);
 	}
 
+	//modelo para ver las ventas que se han realizado por categoria
 	public function cantidad_ventas_categoria()
 	{
 		$sql = 'SELECT sum(compra.precio) as precio, nombre_categoria from compra INNER JOIN libros USING (id_libro) INNER JOIN categoria USING (id_categoria) GROUP BY nombre_categoria';
@@ -277,6 +283,7 @@ class Libros extends Validator
 		return Database::getRows($sql, $params);
 	}
 
+	//modelo para ver las ventas que se han realizado por editorial
 	public function cantidad_ventas_editorial()
 	{
 		$sql = 'SELECT sum(compra.precio) as precio, nombre_editorial from compra INNER JOIN libros USING (id_libro) INNER JOIN editoriales USING (id_editorial) GROUP BY nombre_editorial';

@@ -20,44 +20,44 @@
 
 <body>
 
-<div class="navbar-fixed">
-		<nav>
-		  <div class="nav-wrapper black">
-			<div class="container">
-			  <a href="index.php" class="brand-logo">Libreria Francar</a>
-			  <ul class="right hide-on-med-and-down">
-				<li>
-				  <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA
-					PRINCIPAL</a>
-				</li>
-			</div>
-		  </div>
-		</nav>
-	  </div>
-	
-	  <h3 align="center">CARRITO
-		<a class="btn-floating black pulse">
-		  <i class="material-icons">shopping_cart</i>
-		</a>
-	  </h3>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper black">
+        <div class="container">
+          <a href="index.php" class="brand-logo">Libreria Francar</a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA
+                PRINCIPAL</a>
+            </li>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <h3 align="center">CARRITO
+    <a class="btn-floating black pulse">
+      <i class="material-icons">shopping_cart</i>
+    </a>
+  </h3>
 
   <!--Se hace una tabla donde iran los libross que la persona pide, el costo de cada articulo, la cantidad y el total al pagar cuando llegue su pedido-->
   <!--Se hace una tabla con el nombre de cada editorial-->
   <div class="container">
-        <table class="highlight" id="tablaCarrito">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Libro</th>
-                    <th>Cantidad</th>
-                    <th>Cliente</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-            <tbody id="tbody-read">
-            </tbody>
-        </table>
-    </div>
+    <table class="highlight" id="tablaCarrito">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Libro</th>
+          <th>Cantidad</th>
+          <th>Cliente</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody id="tbody-read">
+      </tbody>
+    </table>
+  </div>
   <br>
   <br>
   <br>
