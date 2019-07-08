@@ -66,7 +66,14 @@
     <div class="input-field center-align col s12 m4">
       <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i
           align="center" class="material-icons"></i>Agregar Usuarios</a>
+
+      <a href="../../core/report/reporteClientes.php" class="btn waves-effect indigo tooltipped modal-trigger green"><i
+          align="center" class="material-icons"></i>Reporte Clientes</a>
+
+      <a href="../../core/report/reporteBitacora.php" class="btn waves-effect indigo tooltipped modal-trigger green"><i
+          align="center" class="material-icons"></i>Reporte Bitacora</a>
     </div>
+
   </div>
   </div>
 

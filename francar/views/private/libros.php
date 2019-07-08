@@ -32,7 +32,7 @@
     inicio::navigate();
   ?>
   <h3 align="center">libros
-    <a class="btn-floating black pulse">
+    <a class="btn-floating black pulse" href="../../core/report/reporteLibrosVendidos.php">
       <i class="material-icons">book</i>
     </a>
   </h3>
@@ -69,8 +69,22 @@
     <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
       <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i
-          class="material-icons"></i>Agregar Libros</a>
+          class="material-icons" ></i>Agregar Libros</a>
+
+
+
+      <a class="btn waves-effect indigo tooltipped modal-trigger green" href="../../core/report/reporteLibrosVendidos.php"><i
+          class="material-icons" ></i>Reporte de ventas</a>
+
+
+      <a class="btn waves-effect indigo tooltipped modal-trigger green" href="../../core/report/reporteVentasporcat.php"><i
+          class="material-icons" ></i>Reporte de ventas por categoria</a>
+
+      <a class="btn waves-effect indigo tooltipped modal-trigger green" href="../../core/report/reporteVentasporedi.php"><i
+          class="material-icons" ></i>Reporte de ventas por editorial</a>
     </div>
+    </div>
+
   </div>
   </div>
 

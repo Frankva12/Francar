@@ -30,7 +30,7 @@
 
     <!--Se pone lo que es el titulo-->
     <h4 align="center">Editoriales
-        <a class="btn-floating black pulse">
+        <a class="btn-floating black pulse" href="../../core/report/reporteVentasporedi.php">
             <i class="material-icons">book</i>
         </a>
     </h4>
