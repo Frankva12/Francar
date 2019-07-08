@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2019 at 07:02 AM
+-- Generation Time: Jul 08, 2019 at 07:15 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -148,6 +148,33 @@ INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `ali
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `compra`
+--
+
+CREATE TABLE `compra` (
+  `id_compra` int(11) NOT NULL,
+  `id_libro` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `precio` double(5,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `compra`
+--
+
+INSERT INTO `compra` (`id_compra`, `id_libro`, `id_cliente`, `cantidad`, `precio`) VALUES
+(1, 1, 2, 12, 15.00),
+(2, 4, 2, 11, 17.00),
+(3, 2, 3, 2, 20.00),
+(4, 3, 3, 29, 120.00),
+(5, 4, 3, 36, 48.00),
+(6, 5, 3, 25, 14.00),
+(7, 6, 2, 7, 16.00);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `detalle_compra`
 --
 
@@ -260,6 +287,14 @@ ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
+-- Indexes for table `compra`
+--
+ALTER TABLE `compra`
+  ADD PRIMARY KEY (`id_compra`),
+  ADD KEY `id_cliente` (`id_cliente`),
+  ADD KEY `compra_ibfk_2` (`id_libro`);
+
+--
 -- Indexes for table `detalle_compra`
 --
 ALTER TABLE `detalle_compra`
@@ -309,6 +344,12 @@ ALTER TABLE `clientes`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `compra`
+--
+ALTER TABLE `compra`
+  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `detalle_compra`
 --
 ALTER TABLE `detalle_compra`
@@ -329,6 +370,13 @@ ALTER TABLE `libros`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `compra`
+--
+ALTER TABLE `compra`
+  ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`id_libro`) REFERENCES `libros` (`id_libro`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `detalle_compra`
