@@ -18,7 +18,7 @@
             $this->Image('../../resources/img/LogoLF.jpg', 15, 10, 50);
             $this->Cell(65, 13);
             $this->SetFont('Arial', 'B', 15);
-            $this->SetTextColor(255, 2555, 255);
+            $this->SetTextColor(255, 255, 255);
             $this->SetFillColor(36, 113, 163);
             $this->Cell(125,13, utf8_decode($this->title),0,0,'C', true);
             $this->Ln(15);
