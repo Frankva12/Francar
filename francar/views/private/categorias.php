@@ -87,13 +87,13 @@
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">note_add</i>
                         <input id="create_categoria" type="text" name="create_categoria" class="validate" minlength="5"
-                            required />
+                            autocomplete="off" required />
                         <label for="create_categoria">Categoria</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
                         <input id="create_descripcion" type="text" name="create_descripcion" class="validate"
-                            minlength="5" />
+                        autocomplete="off" minlength="5" />
                         <label for="create_descripcion">Descripción</label>
                     </div>
 
@@ -101,11 +101,11 @@
 
                         <div class="btn waves-effect">
                             <span><i class="material-icons">image</i></span>
-                            <input id="create_imagen" type="file" name="create_imagen" required />
+                            <input id="create_imagen" type="file" name="create_imagen" autocomplete="off" required />
                         </div>
 
                         <div class="file-path-wrapper">
-                            <input type="text" class="file-path validate" placeholder="Seleccione una imagen" />
+                            <input type="text" class="file-path validate" placeholder="Seleccione una imagen" autocomplete="off" />
                         </div>
 
                     </div>
@@ -128,19 +128,19 @@
             <h4 class="center-align">Modificar categoría</h4>
             <form method="post" id="form-update" enctype="multipart/form-data">
 
-                <input type="hidden" id="id_categoria" name="id_categoria" />
-                <input type="hidden" id="imagen_categoria" name="imagen_categoria" />
+                <input type="hidden" id="id_categoria" name="id_categoria" autocomplete="off" />
+                <input type="hidden" id="imagen_categoria" name="imagen_categoria"  autocomplete="off"/>
 
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">note_add</i>
-                        <input id="update_nombre" type="text" name="update_nombre" class="validate" required />
+                        <input id="update_nombre" type="text" name="update_nombre" class="validate" autocomplete="off" required />
                         <label for="update_nombre">Categoria</label>
                     </div>
 
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
-                        <input id="update_descripcion" type="text" name="update_descripcion" class="validate" />
+                        <input id="update_descripcion" type="text" name="update_descripcion" class="validate" autocomplete="off" />
                         <label for="update_descripcion">Descripción</label>
                     </div>
 
@@ -148,11 +148,11 @@
 
                         <div class="btn waves-effect">
                             <span><i class="material-icons">image</i></span>
-                            <input id="update_archivo" type="file" name="update_archivo" />
+                            <input id="update_archivo" type="file" name="update_archivo" autocomplete="off" />
                         </div>
 
                         <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Seleccione una imagen" />
+                            <input class="file-path validate" type="text" placeholder="Seleccione una imagen" autocomplete="off"/>
                         </div>
 
                     </div>

@@ -26,36 +26,36 @@
   <form class="col s12" id="form-register">
     <div class="row">
       <div class="input-field col s6">
-        <input placeholder="Nombres" id="nombres" name="nombres" type="text" class="validate">
+        <input placeholder="Nombres" id="nombres" name="nombres" type="text" class="validate" autocomplete="off">
         <label for="nombres"></label>
       </div>
       <div class="input-field col s6">
-        <input placeholder="Apellidos" id="apellidos" name="apellidos" type="text" class="validate">
+        <input placeholder="Apellidos" id="apellidos" name="apellidos" type="text" class="validate" autocomplete="off">
         <label for="apellidos"></label>
       </div>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Alias" id="alias" name="alias" type="text" class="validate">
+      <input placeholder="Alias" id="alias" name="alias" type="text" class="validate" autocomplete="off">
       <label for="alias"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Contraseña" id="clave1" name="clave1" type="password" class="validate">
+      <input placeholder="Contraseña" id="clave1" name="clave1" type="password" class="validate" autocomplete="off">
       <label for="clave1"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Confirme su contraseña" id="clave2" name="clave2" type="password" class="validate">
+      <input placeholder="Confirme su contraseña" id="clave2" name="clave2" type="password" class="validate" autocomplete="off">
       <label for="clave2"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Direccion" id="direccion" name="direccion" type="text" class="validate">
+      <input placeholder="Direccion" id="direccion" name="direccion" type="text" class="validate" autocomplete="off">
       <label for="direccion"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Telefono" id="telefono" name="telefono" type="tel" class="validate">
+      <input placeholder="Telefono" id="telefono" name="telefono" type="tel" class="validate" autocomplete="off">
       <label for="telefono"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Correo" id="correo" name="correo" type="email" class="validate">
+      <input placeholder="Correo" id="correo" name="correo" type="email" class="validate" autocomplete="off">
       <label for="correo"></label>
     </div>
     <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>

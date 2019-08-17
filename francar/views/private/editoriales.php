@@ -77,8 +77,8 @@
 
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
-                        <input id="create_editorial" type="text" name="create_editorial" class="validate" minlength="5"
-                            maxlength="80" required />
+                        <input id="create_editorial" type="text" name="create_editorial" class="validate" minlength="3"
+                            maxlength="80" autocomplete="off" required />
                         <label for="create_editorial">Editorial</label>
                     </div>
                 </div>
@@ -102,9 +102,9 @@
             <form method="post" id="form-update" enctype="multipart/form-data">
                 <div class="row">
                     <div class="input-field col s12 m6">
-                        <input id="id_editorial" type="hidden" name="id_editorial" required />
+                        <input id="id_editorial" type="hidden" name="id_editorial" autocomplete="off" required />
                         <i class="material-icons prefix">description</i>
-                        <input id="update_editorial" type="text" name="update_editorial" class="validate" minlength="5"
+                        <input id="update_editorial" type="text" name="update_editorial" class="validate" autocomplete="off" minlength="5"
                             maxlength="80" required />
                         <label for="update_editorial">Nombre editorial</label>
                     </div>

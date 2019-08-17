@@ -29,7 +29,7 @@
 
         <div class="input-field col s12 m6">
           <i class="material-icons prefix">account_circle</i>
-          <input id="nombres" type="text" name="nombres" class="validate" required />
+          <input id="nombres" type="text" name="nombres" class="validate" autocomplete="off" required />
           <label for="nombres">Nombre</label>
         </div>
 

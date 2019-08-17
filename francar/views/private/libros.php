@@ -97,33 +97,33 @@
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">note_add</i>
-            <input id="create_nombre" type="text" name="create_nombre" class="validate" required />
+            <input id="create_nombre" type="text" name="create_nombre" class="validate" autocomplete="off" required />
             <label for="create_nombre">Nombre del libro</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="create_cantidad" type="number" name="create_cantidad" class="validate" max="999.99" min="0.00"
-              step="any" required />
+              step="any" autocomplete="off" required />
             <label for="create_cantidad">Cantidad</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="create_precio" type="number" name="create_precio" class="validate" max="999.99" min="0.00"
-              step="any" required />
+              step="any" autocomplete="off" required />
             <label for="create_precio">Precio</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">description</i>
-            <input id="create_descripcion" type="text" name="create_descripcion" class="validate" required />
+            <input id="create_descripcion" type="text" name="create_descripcion" class="validate" autocomplete="off" required />
             <label for="create_descripcion">Descripción</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="create_autor" type="text" name="create_autor" class="validate" required />
+            <input id="create_autor" type="text" name="create_autor" class="validate" autocomplete="off" required />
             <label for="create_autor">Autor</label>
           </div>
 
@@ -140,11 +140,11 @@
           <div class="file-field input-field col s12 m6">
             <div class="btn waves-effect">
               <span><i class="material-icons">image</i></span>
-              <input id="create_archivo" type="file" name="create_archivo" required />
+              <input id="create_archivo" type="file" name="create_archivo" autocomplete="off" required />
             </div>
 
             <div class="file-path-wrapper">
-              <input type="text" class="file-path validate" placeholder="Seleccione una imagen" />
+              <input type="text" class="file-path validate" autocomplete="off" placeholder="Seleccione una imagen" />
             </div>
 
           </div>
@@ -155,7 +155,7 @@
               <span>Estado:</span>
               <label>
                 <i class="material-icons">visibility_off</i>
-                <input id="create_estado" type="checkbox" name="create_estado" checked />
+                <input id="create_estado" type="checkbox" name="create_estado" autocomplete="off" checked />
                 <span class="lever"></span>
                 <i class="material-icons">visibility</i>
               </label>
@@ -178,39 +178,39 @@
     <div class="modal-content">
       <h4 class="center-align">Modificar libros</h4>
       <form method="post" id="form-update" enctype="multipart/form-data">
-        <input type="hidden" id="id_libro" name="id_libro" />
-        <input type="hidden" id="imagen_libro" name="imagen_libro" />
+        <input type="hidden" id="id_libro" name="id_libro" autocomplete="off" />
+        <input type="hidden" id="imagen_libro" name="imagen_libro" autocomplete="off" />
         <div class="row">
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">note_add</i>
-            <input id="update_nombre" type="text" name="update_nombre" class="validate" required />
+            <input id="update_nombre" type="text" name="update_nombre" class="validate" autocomplete="off" required />
             <label for="update_nombre">Nombre del libro</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="update_cantidad" type="number" name="update_cantidad" class="validate" max="999" min="0"
-              step="any" required />
+              step="any" autocomplete="off" required />
             <label for="update_cantidad">Cantidad</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="update_precio" type="number" name="update_precio" class="validate" max="999.99" min="0.01"
-              step="any" required />
+              step="any" autocomplete="off" required />
             <label for="update_precio">Precio</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">description</i>
-            <input id="update_descripcion" type="text" name="update_descripcion" class="validate" required />
+            <input id="update_descripcion" type="text" name="update_descripcion" class="validate" autocomplete="off" required />
             <label for="update_descripcion">Descripción</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="update_autor" type="text" name="update_autor" class="validate" required />
+            <input id="update_autor" type="text" name="update_autor" class="validate" autocomplete="off" required />
             <label for="update_autor">Autor</label>
           </div>
 
@@ -227,10 +227,10 @@
           <div class="file-field input-field col s12 m6">
             <div class="btn waves-effect">
               <span><i class="material-icons">image</i></span>
-              <input id="update_archivo" type="file" name="update_archivo" required />
+              <input id="update_archivo" type="file" name="update_archivo" autocomplete="off" required />
             </div>
             <div class="file-path-wrapper">
-              <input type="text" class="file-path validate" placeholder="Seleccione una imagen" />
+              <input type="text" class="file-path validate" placeholder="Seleccione una imagen" autocomplete="off" />
             </div>
           </div>
           <div class="col s12 m6">
@@ -239,7 +239,7 @@
                 <span>Estado:</span>
                 <label>
                   <i class="material-icons">visibility_off</i>
-                  <input id="update_estado" type="checkbox" name="update_estado" checked />
+                  <input id="update_estado" type="checkbox" name="update_estado" autocomplete="off" checked />
                   <span class="lever"></span>
                   <i class="material-icons">visibility</i>
                 </label>

@@ -60,7 +60,7 @@
         <div class="input-field col s6 m6 l12">
           <i class="material-icons prefix">account_circle</i>
           <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate"
-            required />
+          autocomplete="off" required />
           <label for="update_nombre_administrador">Nombre</label>
         </div>
 
@@ -68,19 +68,19 @@
         <div class="input-field col s6 m6 l12">
           <i class="material-icons prefix">account_circle</i>
           <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate"
-            required />
+          autocomplete="off" required />
           <label for="update_apellido_administrador">Apellido</label>
         </div>
 
         <div class="input-field col s6 m6 l12">
           <i class="material-icons prefix">phone</i>
-          <input id="update_telefono" type="tel" name="update_telefono" class="validate" required />
+          <input id="update_telefono" type="tel" name="update_telefono" class="validate" autocomplete="off" required />
           <label for="update_telefono">telefono</label>
         </div>
 
         <div class="input-field col s6 m6 l12">
           <i class="material-icons prefix">mail</i>
-          <input id="update_correo" type="email" name="update_correo" class="validate" required />
+          <input id="update_correo" type="email" name="update_correo" class="validate" autocomplete="off" required />
           <label for="update_correo">Correo</label>
         </div>
 
