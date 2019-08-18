@@ -1,5 +1,6 @@
 <?php
 class Usuarios extends Validator
+
 {
 	//Declaración de propiedades
 	private $id = null;
@@ -139,7 +140,7 @@ class Usuarios extends Validator
 	//Métodos para manejar la sesión del usuario
 	public function checkAlias()
 	{
-		$sql = 'SELECT id_administrador FROM administrador WHERE alias_usuario = ?';
+		$sql ='SELECT id_administrador FROM administrador WHERE alias_usuario = ? and estado = 1';
 		$params = array($this->alias);
 		$data = Database::getRow($sql, $params);
 		if ($data) {
@@ -152,7 +153,7 @@ class Usuarios extends Validator
 
 	public function checkPassword()
 	{
-		$sql = 'SELECT contrasenia FROM administrador WHERE id_administrador = ?';
+		$sql = 'SELECT contrasenia FROM administrador WHERE id_administrador = ? ';
 		$params = array($this->id);
 		$data = Database::getRow($sql, $params);
 		if (password_verify($this->contrasenia, $data['contrasenia'])) {
@@ -171,10 +172,11 @@ class Usuarios extends Validator
 		return Database::getRows($sql, $params);
 	}
 
-	public function searchUsuarios($value)
+	//Metodos para manejar el CRUD
+	public function bloquearUsuario()
 	{
-		$sql = 'SELECT nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo FROM administrador WHERE nombre_administrador LIKE ? OR apellido_administrador LIKE ? ORDER BY nombre_administrador';
-		$params = array("%$value%", "%$value%");
+		$sql = 'UPDATE administrador SET estado = 0 WHERE alias_usuario = ?';
+		$params = array($this->alias);
 		return Database::getRows($sql, $params);
 	}
 

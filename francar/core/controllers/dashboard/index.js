@@ -6,6 +6,7 @@ $(document).ready(function () {
 const apiSesion = '../../core/api/dashboard/usuarios.php?action=';
 
 //Función para verificar si existen usuarios en el sitio privado
+
 function checkUsuarios() {
     $.ajax({
             url: apiSesion + 'read',
@@ -30,7 +31,7 @@ function checkUsuarios() {
             console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
         });
 }
-
+var i = 0;
 //Función para validar el usuario al momento de iniciar sesión
 $('#form-sesion').submit(function () {
     event.preventDefault();
@@ -47,8 +48,30 @@ $('#form-sesion').submit(function () {
                 //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
                 if (dataset.status) {
                     sweetAlert(1, 'Autenticación correcta', 'private.php');
-                } else {
-                    sweetAlert(2, dataset.exception, null);
+                    
+                } 
+                if (i >= 3) {
+                    $.ajax({
+                        url: apiSesion + 'bloquear',
+                        type: 'post',
+                        data: null,
+                        datatype: 'json'
+                    })
+                    .done(function (response){
+                        if (isJSONString(response)) {
+                            const dataset = JSON.parse(response);
+                            if (dataset.status) {
+                                sweetAlert(1, 'Su usuario ha sido bloqueado', 'index.php');
+                                console.log(response);
+                            }                            
+                        }
+                    })
+                }
+                else {
+                    i++
+                    sweetAlert(2, dataset.exception + ' intento numero ' + i, null);
+                    console.log(i);
+                    console.log(response);
                 }
             } else {
                 console.log(response);

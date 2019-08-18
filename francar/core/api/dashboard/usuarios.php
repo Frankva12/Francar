@@ -11,7 +11,6 @@ if (isset($_GET['action'])) {
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
     if (isset($_SESSION['id_administrador'])&& $_GET['site'] == 'private'){
         switch ($_GET['action']) {
-
             case 'logout':
                 if (session_destroy()) {
                     header('location: ../../../views/private/');
@@ -110,6 +109,21 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'No hay usuarios registrados';
                 }
                 break;
+
+            case 'bloquear':
+                $_POST = $usuario->validateForm($_POST);
+                if ($usuario->setAlias($_POST['alias_usuario'])) {
+                    if ($usuario->checkAlias()) {
+                        if ($usuario->bloquearUsuario()) {
+                            $result['status'] = 1;
+                        }
+                        else {
+                            $result['exception'] = 'No hay alias asociado a esta clave';
+                        }
+                    }
+                   
+                }
+                    break;
 
 
 
@@ -293,50 +307,6 @@ if (isset($_GET['action'])) {
     }
     break;
 
-    case 'register':
-    $_POST = $usuario->validateForm($_POST);
-    if ($usuario->setNombre($_POST['nombres'])) {
-        if ($usuario->setApellido($_POST['apellidos'])) {
-            if ($usuario->setAlias($_POST['alias'])) {
-                if ($usuario->setContrasenia($_POST['clave1'])) {
-                    if ($usuario->setDireccion($_POST['direccion'])) {
-                        if ($usuario->setTelefono($_POST['telefono'])) {
-                            if ($usuario->setCorreo($_POST['correo'])) {
-                                if ($_POST['clave1'] == $_POST['clave2']) {
-                                    if ($usuario->setContrasenia($_POST['clave1'])) {
-                                        if ($usuario->createUsuario()) {
-                                        $result['status'] = 1;
-                                    } else {
-                                $result['exception'] = 'Operación fallida';
-                            }
-                        } else {
-                            $result['exception'] = 'Clave menor a 6 caracteres';
-                        }
-                    } else {
-                        $result['exception'] = 'Claves diferentes';
-                    }
-                } else {
-                    $result['exception'] = 'Correo incorrecto';
-                }
-            } else {
-                $result['exception'] = 'Telefono incorrecto';
-            }
-        } else {
-            $result['exception'] = 'Direccion incorrecta';
-        }
-    } else {
-        $result['exception'] = 'Clave incorrecta';
-    }
-    } else {
-    $result['exception'] = 'Alias incorrecto';
-}
- } else {
-$result['exception'] = 'Apellidos incorrectos';
-}
-} else {
-$result['exception'] = 'Nombres incorrectos';
-}
-break;
 
 
             case 'login':
