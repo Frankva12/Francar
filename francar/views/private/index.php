@@ -10,6 +10,7 @@
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="text/css" href="../../resources/css/fondo.css">
   <link rel="icon" type="ico" href="../../resources/img/icono.ico">
+  
 </head>
 <!--Se hace un contenedor donde se le pone lo que es el login para el administrador-->
 <div class="container1">
@@ -41,15 +42,14 @@
               <label for="contrasenia">Contraseña</label>
             </div>
           </div>
-
-
+          <div class="row">
+            <div class="input-field col s12">
+             <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
+            </div>
           <div class="col s12 center-align">
             <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
                 class="material-icons">send</i></button>
-          </div>
-          <div class="row">
-            <div class="input-field col s6 m6 l6">
-            </div>
+          </div> 
 
             <div class="input-field col s6 m6 l6">
               <p align='right'>
@@ -75,11 +75,14 @@
                 </div>
               </div>
             </div>
+          </div>
         </form>
+        
       </div>
     </div>
 </div>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!--Se importan los archivos de JavaScript-->
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/materialize.min.js"></script>

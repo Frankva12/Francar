@@ -293,6 +293,7 @@ if (isset($_GET['action'])) {
         break;
             case 'login':
                 $_POST = $usuario->validateForm($_POST);
+                if ($_POST['g-recaptcha-response']) {
                 if ($usuario->setAlias($_POST['alias_usuario'])) {
                     if ($usuario->checkAlias()) {
                         if ($usuario->setContrasenia($_POST['contrasenia'])) {
@@ -300,18 +301,21 @@ if (isset($_GET['action'])) {
                                 $result['status'] = 1;       
                                 $_SESSION['id_administrador'] = $usuario->getId();
                                 $_SESSION['alias_usuario'] = $usuario->getAlias();
-                                                       
+                                }     
+                                else {
+                                    $result['exception'] = 'Clave inexistente';
+                                }             
                             } else {
-                                $result['exception'] = 'Clave inexistente';
+                                $result['exception'] = 'Clave menor a 6 caracteres';
                             }
                         } else {
-                            $result['exception'] = 'Clave menor a 6 caracteres';
+                            $result['exception'] = 'Alias inexistente';
                         }
                     } else {
-                        $result['exception'] = 'Alias inexistente';
+                        $result['exception'] = 'Alias incorrecto';
                     }
                 } else {
-                    $result['exception'] = 'Alias incorrecto';
+                    $result['exception'] = 'Complete formulario de no soy un robot';
                 }
                 break;
 
