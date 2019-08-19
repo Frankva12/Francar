@@ -3,7 +3,7 @@ $(document).ready(function () {
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiSesion = '../../core/api/dashboard/usuarios.php?action=';
+const apiSesion = '../../core/api/dashboard/usuarios.php?site=private&action=';
 
 //Función para verificar si existen usuarios en el sitio privado
 
@@ -44,12 +44,17 @@ $('#form-sesion').submit(function () {
         .done(function (response) {
             //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
             if (isJSONString(response)) {
-                const dataset = JSON.parse(response);
+                const result = JSON.parse(response);
                 //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
-                if (dataset.status) {
+                if (result.status == 1) {
                     sweetAlert(1, 'Autenticación correcta', 'private.php');
                     
-                } 
+                }  else {
+                    i++
+                    sweetAlert(2, result.exception + ' intento numero ' + i, null);
+                    console.log(i);
+                    console.log(response);
+                }
                 if (i >= 3) {
                     $.ajax({
                         url: apiSesion + 'bloquear',
@@ -67,12 +72,7 @@ $('#form-sesion').submit(function () {
                         }
                     })
                 }
-                else {
-                    i++
-                    sweetAlert(2, dataset.exception + ' intento numero ' + i, null);
-                    console.log(i);
-                    console.log(response);
-                }
+               
             } else {
                 console.log(response);
             }

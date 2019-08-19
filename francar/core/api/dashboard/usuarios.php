@@ -9,7 +9,7 @@ if (isset($_GET['action'])) {
     $usuario = new Usuarios;
     $result = array('status' => 0, 'exception' => '');
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
-    if (isset($_SESSION['id_administrador'])&& $_GET['site'] == 'private'){
+    if (isset($_SESSION['id_administrador'])){
         switch ($_GET['action']) {
             case 'logout':
                 if (session_destroy()) {
@@ -247,9 +247,9 @@ if (isset($_GET['action'])) {
                 }
                 break;
             default:
-                exit('Acción no disponible');
+                exit('Acción no disponible PO');
         }
-    } else {
+    } else  if($_GET['site'] == 'private'){
         switch ($_GET['action']) {
             case 'read':
                 if ($usuario->readUsuarios()) {
@@ -259,9 +259,7 @@ if (isset($_GET['action'])) {
                     $result['status'] = 2;
                     $result['exception'] = 'No existen usuarios registrados';
                 }
-                break;
-
-
+            break;
             case 'register':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setNombre($_POST['nombres'])) {
@@ -275,49 +273,47 @@ if (isset($_GET['action'])) {
                                                 if ($usuario->setContrasenia($_POST['clave1'])) {
                                                     if ($usuario->createUsuario()) {
                                                     $result['status'] = 1;
-                                                } else {
-                                            $result['exception'] = 'Operación fallida';
+                                                        } else {
+                                                    $result['exception'] = 'Operación fallida';
+                                                }
+                                            } else {
+                                                $result['exception'] = 'Clave menor a 6 caracteres';
+                                            }
+                                        } else {
+                                            $result['exception'] = 'Claves diferentes';
                                         }
                                     } else {
-                                        $result['exception'] = 'Clave menor a 6 caracteres';
+                                        $result['exception'] = 'Correo incorrecto';
                                     }
                                 } else {
-                                    $result['exception'] = 'Claves diferentes';
+                                    $result['exception'] = 'Telefono incorrecto';
                                 }
                             } else {
-                                $result['exception'] = 'Correo incorrecto';
+                                $result['exception'] = 'Direccion incorrecta';
                             }
                         } else {
-                            $result['exception'] = 'Telefono incorrecto';
+                            $result['exception'] = 'Clave incorrecta';
                         }
                     } else {
-                        $result['exception'] = 'Direccion incorrecta';
+                    $result['exception'] = 'Alias incorrecto';
+                    }       
+                } else {
+                    $result['exception'] = 'Apellidos incorrectos';
                     }
-                } else {
-                    $result['exception'] = 'Clave incorrecta';
-                }
-                } else {
-                $result['exception'] = 'Alias incorrecto';
+            } else {
+                $result['exception'] = 'Nombres incorrectos';
             }
-             } else {
-            $result['exception'] = 'Apellidos incorrectos';
-        }
-        } else {
-        $result['exception'] = 'Nombres incorrectos';
-    }
-    break;
-
-
-
+        break;
             case 'login':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setAlias($_POST['alias_usuario'])) {
                     if ($usuario->checkAlias()) {
                         if ($usuario->setContrasenia($_POST['contrasenia'])) {
                             if ($usuario->checkPassword()) {
+                                $result['status'] = 1;       
                                 $_SESSION['id_administrador'] = $usuario->getId();
                                 $_SESSION['alias_usuario'] = $usuario->getAlias();
-                                $result['status'] = 1;
+                                                       
                             } else {
                                 $result['exception'] = 'Clave inexistente';
                             }
@@ -332,7 +328,7 @@ if (isset($_GET['action'])) {
                 }
                 break;
             default:
-                exit('Acción no disponible');
+                exit('Acción no disponiblexd');
         }
     }
 	print(json_encode($result));
