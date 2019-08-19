@@ -167,7 +167,7 @@ class Usuarios extends Validator
 	//Metodos para manejar el CRUD
 	public function readUsuarios()
 	{
-		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo FROM administrador ORDER BY nombre_administrador';
+		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo, estado FROM administrador ORDER BY nombre_administrador';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}

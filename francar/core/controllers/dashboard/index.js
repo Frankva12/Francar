@@ -3,7 +3,7 @@ $(document).ready(function () {
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiSesion = '../../core/api/dashboard/usuarios.php?action=';
+const apiSesion = '../../core/api/dashboard/usuarios.php?site=private&action=';
 
 //Función para verificar si existen usuarios en el sitio privado
 
