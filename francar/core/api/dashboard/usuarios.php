@@ -249,6 +249,7 @@ if (isset($_GET['action'])) {
             break;
             case 'register':
                 $_POST = $usuario->validateForm($_POST);
+                if ($_POST['g-recaptcha-response']) {
                 if ($usuario->setNombre($_POST['nombres'])) {
                     if ($usuario->setApellido($_POST['apellidos'])) {
                         if ($usuario->setAlias($_POST['alias'])) {
@@ -290,6 +291,9 @@ if (isset($_GET['action'])) {
             } else {
                 $result['exception'] = 'Nombres incorrectos';
             }
+        } else {
+            $result['exception'] = 'Complete formulario de no soy un robot ';
+        }
         break;
             case 'login':
                 $_POST = $usuario->validateForm($_POST);
