@@ -140,7 +140,7 @@ class Usuarios extends Validator
 	//Métodos para manejar la sesión del usuario
 	public function checkAlias()
 	{
-		$sql ='SELECT id_administrador FROM administrador WHERE alias_usuario = ? and estado = 1';
+		$sql ='SELECT id_administrador FROM administrador WHERE alias_usuario = ?';
 		$params = array($this->alias);
 		$data = Database::getRow($sql, $params);
 		if ($data) {
@@ -153,7 +153,7 @@ class Usuarios extends Validator
 
 	public function checkPassword()
 	{
-		$sql = 'SELECT contrasenia FROM administrador WHERE id_administrador = ? ';
+		$sql = 'SELECT contrasenia FROM administrador WHERE id_administrador = ?  and estado = 1';
 		$params = array($this->id);
 		$data = Database::getRow($sql, $params);
 		if (password_verify($this->contrasenia, $data['contrasenia'])) {
@@ -167,7 +167,7 @@ class Usuarios extends Validator
 	//Metodos para manejar el CRUD
 	public function readUsuarios()
 	{
-		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo FROM administrador ORDER BY nombre_administrador';
+		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo, estado FROM administrador ORDER BY nombre_administrador';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
@@ -175,9 +175,9 @@ class Usuarios extends Validator
 	//Metodos para manejar el CRUD
 	public function bloquearUsuario()
 	{
-		$sql = 'UPDATE administrador SET estado = 0 WHERE alias_usuario = ?';
-		$params = array($this->alias);
-		return Database::getRows($sql, $params);
+		$sql = 'UPDATE administrador SET estado = ? WHERE alias_usuario = ?';
+		$params = array(0, $this->alias);
+		return Database::executeRow($sql, $params);
 	}
 
 	public function createUsuario()

@@ -110,20 +110,7 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-            case 'bloquear':
-                $_POST = $usuario->validateForm($_POST);
-                if ($usuario->setAlias($_POST['alias_usuario'])) {
-                    if ($usuario->checkAlias()) {
-                        if ($usuario->bloquearUsuario()) {
-                            $result['status'] = 1;
-                        }
-                        else {
-                            $result['exception'] = 'No hay alias asociado a esta clave';
-                        }
-                    }
-                   
-                }
-                    break;
+          
 
 
 
@@ -325,6 +312,18 @@ if (isset($_GET['action'])) {
                     }
                 } else {
                     $result['exception'] = 'Alias incorrecto';
+                }
+                break;
+
+                case 'bloquear':
+                $_POST = $usuario->validateForm($_POST);
+                if ($usuario->setAlias($_POST['alias'])) {
+                    if ($usuario->checkAlias()) {
+                        if ($usuario->bloquearUsuario()) {
+                            $result['status'] = 1;
+                            $result['message'] = 'Usuario bloqueado';                        
+                        }
+                    }
                 }
                 break;
             default:
