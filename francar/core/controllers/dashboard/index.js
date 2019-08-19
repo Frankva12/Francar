@@ -49,32 +49,6 @@ $('#form-sesion').submit(function () {
                 if (dataset.status) {
                     sweetAlert(1, 'Autenticación correcta', 'private.php');
                     
-<<<<<<< Updated upstream
-                } 
-                if (i >= 3) {
-                    $.ajax({
-                        url: apiSesion + 'bloquear',
-                        type: 'post',
-                        data: null,
-                        datatype: 'json'
-                    })
-                    .done(function (response){
-                        if (isJSONString(response)) {
-                            const dataset = JSON.parse(response);
-                            if (dataset.status) {
-                                sweetAlert(1, 'Su usuario ha sido bloqueado', 'index.php');
-                                console.log(response);
-                            }                            
-                        }
-                    })
-                }
-                else {
-                    i++
-                    sweetAlert(2, dataset.exception + ' intento numero ' + i, null);
-                    console.log(i);
-                    console.log(response);
-                }
-=======
                 } else{
                     if (i >= 3) {
                         $.ajax({
@@ -95,12 +69,11 @@ $('#form-sesion').submit(function () {
                     }
                     else {
                         i++
-                        sweetAlert(2, result.exception + ' intento numero ' + i, null);
-                        
+                        sweetAlert(2, dataset.exception + ' intento numero ' + i, null);
+                        console.log(i);
                         console.log(response);
                     }
                 } 
->>>>>>> Stashed changes
             } else {
                 console.log(response);
             }
