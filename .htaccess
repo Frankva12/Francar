@@ -3,8 +3,8 @@
 # ----------------------------------------------------------------------
 
 
-ErrorDocument 403 /francar/resources/pages/error403.html
-ErrorDocument 404 /francar/resources/pages/error404.html
+ErrorDocument 403 /Francar/francar/resources/pages/error403.html
+ErrorDocument 404 /Francar/francar/resources/pages/error404.html
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |
