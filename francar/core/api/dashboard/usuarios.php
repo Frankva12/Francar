@@ -123,14 +123,18 @@ if (isset($_GET['action'])) {
                             if ($usuario->setDireccion($_POST['create_direccion'])) {
                             if ($usuario->setAlias($_POST['create_alias'])) {
                                 if ($_POST['create_clave1'] == $_POST['create_clave2']) {
+                                    if ($usuario->setEstado(isset($_POST['create_estado']) ? 1 : 0)) {
                                     if ($usuario->setContrasenia($_POST['create_clave1'])) {
                                         if ($usuario->createUsuario()) {
                                             $result['status'] = 1;
+                                            } else {
+                                                $result['exception'] = 'Operación fallida';
+                                            }
                                         } else {
-                                            $result['exception'] = 'Operación fallida';
+                                            $result['exception'] = 'Clave menor a 6 caracteres';
                                         }
                                     } else {
-                                        $result['exception'] = 'Clave menor a 6 caracteres';
+                                        $result['exception'] = 'Estado incorrecto';
                                     }
                                 } else {
                                     $result['exception'] = 'Claves diferentes';
@@ -143,7 +147,7 @@ if (isset($_GET['action'])) {
                             $result['exception'] = 'Direccion incorrecta';
                         }
                         } else {
-                            $result['exception'] = 'Alias incorrecto';
+                            $result['exception'] = 'Alias incorrecto o alias repetido';
 
                         }
                         } else {
@@ -180,7 +184,8 @@ if (isset($_GET['action'])) {
                                 if ($usuario->setCorreo($_POST['update_correo'])) {
                                     if ($usuario->setTelefono($_POST['update_telefono'])) {
                                     if ($usuario->setDireccion($_POST['update_direccion'])) {
-                                    if ($usuario->setAlias($_POST['update_alias'])) {
+                                        if ($usuario->setEstado(isset($_POST['update_estado']) ? 1 : 0)) {
+                                        if ($usuario->setAlias($_POST['update_alias'])) {
                                         if ($usuario->updateUsuario()) {
                                             $result['status'] = 1;
                                         } else {
@@ -188,8 +193,10 @@ if (isset($_GET['action'])) {
                                         }
                                     } else {
                                         $result['exception'] = 'Alias incorrecto';
+                                    }                                    
+                                    } else {
+                                        $result['exception'] = 'Estado incorrecto';
                                     }
-                                    
                                 } else {
                                     $result['exception'] = 'Direccion incorrecta';
                                 }

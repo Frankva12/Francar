@@ -11,6 +11,7 @@ class Usuarios extends Validator
 	private $direccion = null;
 	private $telefono = null;
 	private $correo = null;
+	private $estado = null;
 	
 
 	//Métodos para sobrecarga de propiedades
@@ -27,6 +28,21 @@ class Usuarios extends Validator
 	public function getId()
 	{
 		return $this->id;
+	}
+
+	public function setEstado($value)
+	{
+		if ($value == '1' || $value == '0') {
+			$this->estado = $value;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public function getEstado()
+	{
+		return $this->estado;
 	}
 
 	public function setNombre($value)
@@ -183,22 +199,22 @@ class Usuarios extends Validator
 	public function createUsuario()
 	{
 		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
-		$sql = 'INSERT INTO administrador(nombre_administrador, apellido_administrador, alias_usuario, contrasenia, direccion, telefono, correo) VALUES(?, ?, ?, ?, ?, ?, ?)';
-		$params = array($this->nombre, $this->apellido, $this->alias, $hash, $this->direccion, $this->telefono, $this->correo);
+		$sql = 'INSERT INTO administrador(nombre_administrador, apellido_administrador, alias_usuario, contrasenia, direccion, telefono, correo, estado) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
+		$params = array($this->nombre, $this->apellido, $this->alias, $hash, $this->direccion, $this->telefono, $this->correo, $this->estado,);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function getUsuario()
 	{
-		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo FROM administrador WHERE id_administrador = ?';
+		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo, estado FROM administrador WHERE id_administrador = ?';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
 
 	public function updateUsuario()
 	{
-		$sql = 'UPDATE administrador SET nombre_administrador = ?, apellido_administrador = ?, alias_usuario = ?, direccion = ?, telefono = ?, correo = ? WHERE id_administrador = ?';
-		$params = array($this->nombre, $this->apellido, $this->alias, $this->direccion, $this->telefono, $this->correo, $this->id);
+		$sql = 'UPDATE administrador SET nombre_administrador = ?, apellido_administrador = ?, alias_usuario = ?, direccion = ?, telefono = ?, correo = ?, estado = ?  WHERE id_administrador = ?';
+		$params = array($this->nombre, $this->apellido, $this->alias, $this->direccion, $this->telefono, $this->correo, $this->estado, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 
