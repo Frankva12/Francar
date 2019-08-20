@@ -82,6 +82,7 @@
     </div>
 </div>
 
+
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!--Se importan los archivos de JavaScript-->
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
