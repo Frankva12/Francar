@@ -30,7 +30,7 @@
             <div class="input-field col s12">
               <i class="material-icons prefix">assignment_ind</i>
               <input id="alias_cliente" type="text" name="alias_cliente" class="validate" minlength="5" maxlength="40"
-              autocomplete="off" required />
+                autocomplete="off" required />
               <label for="alias_cliente">Alias</label>
             </div>
           </div>
@@ -38,7 +38,7 @@
             <div class="input-field col s12">
               <i class="material-icons prefix">lock_outline</i>
               <input id="contrasenia" type="password" name="contrasenia" class="validate" minlength="5" maxlength="80"
-              autocomplete="off" required />
+                autocomplete="off" required />
               <label for="contrasenia">Contraseña</label>
             </div>
           </div>
@@ -48,16 +48,17 @@
             <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
                 class="material-icons">send</i></button>
           </div>
-          <div class="row">
-            <div class="input-field col s6 m6 l6">
-            </div>
-
-            <div class="input-field col s6 m6 l6">
-              <p align='right'>
+            <div class="input-field col s12 m12 l12">
+              <p align='center'>
                 <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="#modal1">¿Olvidó su
                   contraseña?
                 </a>
               </p>
+              <p align='center'>
+                  <a class="waves-effect waves-light btn modal-trigger grey darken-4"
+                    href="registrar_cliente.php">Registrarse
+                  </a>
+                </p>
               <!-- Modal Structure -->
               <div id="modal1" class="modal">
                 <div class="modal-content">
@@ -80,6 +81,7 @@
       </div>
     </div>
 </div>
+
 
 <!--Se importan los archivos de JavaScript-->
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
