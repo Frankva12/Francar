@@ -156,11 +156,11 @@ class Usuarios extends Validator
 	//Métodos para manejar la sesión del usuario
 	public function checkAlias()
 	{
-		$sql ='SELECT id_administrador FROM administrador WHERE alias_usuario = ?';
+		$sql ='SELECT id_cliente FROM clientes WHERE alias_cliente = ?';
 		$params = array($this->alias);
 		$data = Database::getRow($sql, $params);
 		if ($data) {
-			$this->id = $data['id_administrador'];
+			$this->id = $data['id_cliente'];
 			return true;
 		} else {
 			return false;
@@ -169,7 +169,7 @@ class Usuarios extends Validator
 
 	public function checkPassword()
 	{
-		$sql = 'SELECT contrasenia FROM administrador WHERE id_administrador = ?  and estado = 1';
+		$sql = 'SELECT contrasenia FROM clientes WHERE id_cliente = ?  and estado = 1';
 		$params = array($this->id);
 		$data = Database::getRow($sql, $params);
 		if (password_verify($this->contrasenia, $data['contrasenia'])) {
@@ -183,7 +183,7 @@ class Usuarios extends Validator
 	//Metodos para manejar el CRUD
 	public function readUsuarios()
 	{
-		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo, estado FROM administrador ORDER BY nombre_administrador';
+		$sql = 'SELECT id_cliente, nombre_cliente, apellido_cliente, alias_cliente, direccion, telefono, estado FROM clientes ORDER BY nombre_cliente';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
@@ -191,7 +191,7 @@ class Usuarios extends Validator
 	//Metodos para manejar el CRUD
 	public function bloquearUsuario()
 	{
-		$sql = 'UPDATE administrador SET estado = ? WHERE alias_usuario = ?';
+		$sql = 'UPDATE clientes SET estado = ? WHERE alias_cliente = ?';
 		$params = array(0, $this->alias);
 		return Database::executeRow($sql, $params);
 	}
@@ -199,28 +199,29 @@ class Usuarios extends Validator
 	public function createUsuario()
 	{
 		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
-		$sql = 'INSERT INTO administrador(nombre_administrador, apellido_administrador, alias_usuario, contrasenia, direccion, telefono, correo, estado) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
-		$params = array($this->nombre, $this->apellido, $this->alias, $hash, $this->direccion, $this->telefono, $this->correo, $this->estado);
+		$sql = 'INSERT INTO clientes(nombre_cliente, apellido_cliente, alias_cliente, contrasenia, direccion, telefono, correo, estado) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
+		$params = array($this->nombre, $this->apellido, $this->alias, $hash, $this->direccion, $this->telefono, $this->correo, 1);
 		return Database::executeRow($sql, $params);
 	}
 
+
 	public function getUsuario()
 	{
-		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo, estado FROM administrador WHERE id_administrador = ?';
+		$sql = 'SELECT id_cliente, nombre_cliente, apellido_cliente, alias_cliente, contraseña, direccion, telefono, correo, estado FROM clientes WHERE id_cliente = ?';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
 
 	public function updateUsuario()
 	{
-		$sql = 'UPDATE administrador SET nombre_administrador = ?, apellido_administrador = ?, alias_usuario = ?, direccion = ?, telefono = ?, correo = ?, estado = ?  WHERE id_administrador = ?';
+		$sql = 'UPDATE cliente SET nombre_cliente = ?, apellido_cliente = ?, alias_cliente = ?, direccion = ?, telefono = ?, correo = ?, estado = ?  WHERE id_cliente = ?';
 		$params = array($this->nombre, $this->apellido, $this->alias, $this->direccion, $this->telefono, $this->correo, $this->estado, $this->id);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function deleteUsuario()
 	{
-		$sql = 'DELETE FROM administrador WHERE id_administrador = ?';
+		$sql = 'DELETE FROM cliente WHERE id_cliente = ?';
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}

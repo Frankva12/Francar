@@ -110,10 +110,6 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-          
-
-
-
             case 'create':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setNombre($_POST['create_nombres'])) {

@@ -299,6 +299,9 @@
     <div class="row" id="catalogo"></div>
   </div>
 
+  
+
+  
 </body>
 <!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
 <?php
@@ -306,6 +309,8 @@
   Footer::foot();
   ?>
 
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!--Se importan lo que son los archivos de JavaScript-->
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/materialize.min.js"></script>

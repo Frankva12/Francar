@@ -48,17 +48,22 @@
             <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
                 class="material-icons">send</i></button>
           </div>
-            <div class="input-field col s12 m12 l12">
+          <div class="input-field col s12 m12 l12">
+            <p align='center'>
+              <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="#modal1">¿Olvidó su
+                contraseña?
+              </a>
+            </p>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
+              </div>
               <p align='center'>
-                <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="#modal1">¿Olvidó su
-                  contraseña?
+                <a class="waves-effect waves-light btn modal-trigger grey darken-4"
+                  href="registrar_cliente.php">Registrarse
                 </a>
               </p>
-              <p align='center'>
-                  <a class="waves-effect waves-light btn modal-trigger grey darken-4"
-                    href="registrar_cliente.php">Registrarse
-                  </a>
-                </p>
               <!-- Modal Structure -->
               <div id="modal1" class="modal">
                 <div class="modal-content">
@@ -84,6 +89,9 @@
 
 
 <!--Se importan los archivos de JavaScript-->
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/materialize.min.js"></script>
 <script src="../../resources/js/modal.js"></script>
