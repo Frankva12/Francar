@@ -4,7 +4,7 @@ $(document).ready(function()
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiSesion = '../../core/api/public/index.php?action=';
+const apiSesion = '../../core/api/public/usuarios.php?site=public&action=';
 
 //Función para verificar si existen usuarios en el sitio privado
 function checkUsuarios()
