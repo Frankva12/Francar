@@ -261,7 +261,7 @@ if (isset($_GET['action'])) {
                                     if ($usuario->setTelefono($_POST['telefono'])) {
                                         if ($usuario->setCorreo($_POST['correo'])) {
                                             if ($_POST['clave1'] == $_POST['clave2']) {
-                                                if ($_POST['clave1'] == $_POST['alias']) {
+                                                if ($_POST['clave1'] != $_POST['alias']) {
                                                 if ($usuario->setContrasenia($_POST['clave1'])) {
                                                     if ($usuario->createUsuario()) {
                                                     $result['status'] = 1;
@@ -269,7 +269,7 @@ if (isset($_GET['action'])) {
                                                     $result['exception'] = 'Operación fallida';
                                                 }
                                                 } else {
-                                                    $result['exception'] = 'Clave menor a 6 caracteres';
+                                                    $result['exception'] = 'Clave menor a 8 caracteres';
                                                 }
                                             } else {
                                                 $result['exception'] = 'La clave no puede ser igual al alias';
@@ -294,7 +294,7 @@ if (isset($_GET['action'])) {
                     }       
                 } else {
                     $result['exception'] = 'Apellidos incorrectos';
-                    }
+                }
             } else {
                 $result['exception'] = 'Nombres incorrectos';
             }

@@ -42,13 +42,13 @@ class Validator
 				$error = 'Debe incluir al menos una minuscula';
 				break;
 			case 3:
-				$error = 'El tamaño de la imagen debe ser menor a 2MB';
+				$error = 'Debe incluir al menos una mayuscula';
 				break;
 			case 4:
-				$error = 'El archivo de la imagen no existe';
+				$error = 'Debe tener al menos 8 caracteres';
 				break;
 			default:
-				$error = 'Ocurrió un problema con la imagen';
+				$error = 'Debe tener menos de 12 caracteres';
 		}
 		return $error;
 	}
