@@ -154,32 +154,8 @@ class Validator
 	public function validatePassword($value)
 	{
 		if (strlen($value) > 5) {
-			if (strlen($value) < 12) {
-				if (!preg_match('`[a-z]`',$value)) {
-					if (!preg_match('`[A-Z]`',$value)) {
-						if (!preg_match('`[0-9]`',$value)) {				
-					return true;
-					}
-					else {			
-							$this->error_contra = 1;
-							return false;
-						}
-					}
-					else {
-						$error_contra = 2;
-						return false;
-					}
-				}
-				else {
-					$error_contra = 3;
-					return false;
-				}
-			}	else {
-				$error_contra = 4;
-				return false;
-			}
+			return true;
 		} else {
-			$error_contra = 5;
 			return false;
 		}
 	}
