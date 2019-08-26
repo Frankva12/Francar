@@ -330,6 +330,18 @@ if (isset($_GET['action'])) {
             $result['exception'] = 'Complete formulario de no soy un robot ';
         }
         break;
+
+        case 'bloquear':
+        $_POST = $usuario->validateForm($_POST);
+        if ($usuario->setAlias($_POST['alias'])) {
+            if ($usuario->checkAlias()) {
+                if ($usuario->bloquearUsuario()) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Usuario bloqueado';                        
+                }
+            }
+        }
+        break;
         
             default:
                 exit('Acción no disponiblexd');

@@ -31,6 +31,7 @@ function checkUsuarios() {
         });
 }
 
+var i = 0;
 //Función para validar el usuario al momento de iniciar sesión
 $('#form-sesion').submit(function () {
     event.preventDefault();
@@ -48,7 +49,30 @@ $('#form-sesion').submit(function () {
                 if (dataset.status) {
                     sweetAlert(1, 'Autenticación correcta', 'index.php');
                 } else {
-                    sweetAlert(2, dataset.exception, null);
+                    if (i >= 3) {
+                        $.ajax({
+                                url: apiSesion + 'bloquear',
+                                type: 'post',
+                                data: {
+                                    alias: $('#alias_cliente').val()
+                                },
+                                datatype: 'json'
+                            })
+                            .done(function (response) {
+                                if (isJSONString(response)) {
+                                    const result = JSON.parse(response);
+                                    if (result.status) {
+                                        sweetAlert(4, 'Su usuario ha sido bloqueado', 'index.php');
+                                        console.log(response);
+                                    }
+                                }
+                            })
+                    } else {
+                        i++
+                        sweetAlert(2, dataset.exception + ' intento numero ' + i, null);
+                        console.log(i);
+                        console.log(response);
+                    }
                 }
             } else {
                 console.log(response);
