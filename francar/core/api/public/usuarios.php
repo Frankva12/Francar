@@ -311,7 +311,7 @@ if (isset($_GET['action'])) {
                                 $result['exception'] = 'Direccion incorrecta';
                             }
                         } else {
-                            $result['exception'] = 'Clave incorrecta';
+                            $result['exception'] = 'Contraseña incorrecta, debe incluir una mayuscula, una minuscula y en un rango de 6 a 12 caracteres';
                         }
                     } else {
                     $result['exception'] = 'Alias incorrecto';

@@ -137,25 +137,23 @@ if (isset($_GET['action'])) {
                                 }
                             } else {
                                 $result['exception'] = 'Telefono incorrecto';
-                            }
-                            
+                            }  
                         } else {
                             $result['exception'] = 'Direccion incorrecta';
                         }
-                        } else {
-                            $result['exception'] = 'Alias incorrecto o alias repetido';
-
-                        }
-                        } else {
-                            $result['exception'] = 'Correo incorrecto';
-                        }
                     } else {
-                        $result['exception'] = 'Apellidos incorrectos';
-                    }
+                        $result['exception'] = 'Alias incorrecto o alias repetido';
+                     }
                 } else {
-                    $result['exception'] = 'Nombres incorrectos';
+                    $result['exception'] = 'Correo incorrecto';
                 }
-                break;
+            } else {
+                $result['exception'] = 'Apellidos incorrectos';
+            }
+        } else {
+            $result['exception'] = 'Nombres incorrectos';
+        }
+            break;
 
 
             case 'get':
@@ -285,7 +283,7 @@ if (isset($_GET['action'])) {
                                 $result['exception'] = 'Direccion incorrecta';
                             }
                         } else {
-                            $result['exception'] = 'Clave incorrecta';
+                            $result['exception'] = $usuario->validatePassword();
                         }
                     } else {
                     $result['exception'] = 'Alias incorrecto';
