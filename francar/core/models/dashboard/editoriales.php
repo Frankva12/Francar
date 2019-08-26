@@ -44,13 +44,6 @@ class Editoriales extends Validator
 		return Database::getRows($sql, $params);
 	}
 
-	public function searchEditoriales($value)	
-	{
-		$sql = 'SELECT * FROM editoriales WHERE nombre_editorial LIKE ?  ORDER BY nombre_editorial';
-		$params = array("%$value%");
-		return Database::getRows($sql, $params);
-	}
-
 	public function createEditorial()
 	{
 		$sql = 'INSERT INTO editoriales(nombre_editorial) VALUES(?)';
@@ -60,7 +53,7 @@ class Editoriales extends Validator
 
 	public function getEditorial()
 	{
-		$sql = 'SELECT id_editorial, nombre_editorial FROM editoriales WHERE id_editorial = ?';
+		$sql = 'SELECT id_editorial, nombre_editorial FROM editoriales WHERE id_editorial = ? LIMIT 1';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}

@@ -211,6 +211,7 @@
               autocomplete="off" required />
             <label for="update_correo">Correo</label>
           </div>
+
           <div class="switch">
             <span>Estado:</span>
             <label>
@@ -223,6 +224,7 @@
           </p>
         </div>
     </div>
+
     <div class="row center-align">
       <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
           class="material-icons">cancel</i></a>
@@ -233,25 +235,23 @@
   </div>
   </div>
 
+
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
 require("../../core/helpers/dashboard/footer.php");
 Footer::foot();
 ?>
   <!--Se importan lo que son los archivos de JavaScript-->
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
   <script src="../../resources/js/materialize.min.js"></script>
-  <script src="../../resources/js/carousel.js"></script>
-  <script src="../../resources/js/parallax.js"></script>
   <script src="../../resources/js/modal.js"></script>
   <script src="../../resources/js/combo.js"></script>
   <script src="../../resources/js/datatables.min.js"></script>
   <script src="../../resources/js/dataTables.material.min.js"></script>
   <script src="../../resources/js/tabla.js"></script>
-
-
   <script src="../../resources/js/sweetalert.min.js"></script>
-  <script src="../../core/controllers/dashboard/account.js"></script>
   <script src="../../core/helpers/functions.js"></script>
   <script src="../../core/controllers/dashboard/usuarios.js"></script>
 </body>

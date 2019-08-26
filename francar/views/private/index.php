@@ -10,7 +10,7 @@
   <link type="text/css" rel="stylesheet" href="../../resources/css/materialize.min.css" media="screen,projection" />
   <link rel="text/css" href="../../resources/css/fondo.css">
   <link rel="icon" type="ico" href="../../resources/img/icono.ico">
-  
+
 </head>
 <!--Se hace un contenedor donde se le pone lo que es el login para el administrador-->
 <div class="container1">
@@ -31,7 +31,7 @@
             <div class="input-field col s12">
               <i class="material-icons prefix">assignment_ind</i>
               <input id="alias_usuario" type="text" name="alias_usuario" class="validate" minlength="5" maxlength="40"
-              autocomplete="off" required />
+                autocomplete="off" required />
               <label for="alias_usuario">Alias</label>
             </div>
           </div>
@@ -44,12 +44,12 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-             <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
+              <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
             </div>
-          <div class="col s12 center-align">
-            <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
-                class="material-icons">send</i></button>
-          </div> 
+            <div class="col s12 center-align">
+              <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
+                  class="material-icons">send</i></button>
+            </div>
 
             <div class="input-field col s6 m6 l6">
               <p align='right'>
@@ -63,12 +63,11 @@
                   <h4 align='center'>¿Olvidaste tu contraseña?</h4>
                   <div class="input-field col s12">
                     <i class="material-icons prefix">mail_outline</i>
-                    <input class="validate" type="email" autocomplete="off">
-                    <label for="correo" data-error="wrong" data-success="right">Correo</label>
+                    <input id="recuperar_correo" class="validate" type="email" autocomplete="off">
+                    <label for="recuperar_correo" data-error="wrong" data-success="right">Correo</label>
                   </div>
-                  <p class="center-align">
-                    <a class="waves-effect waves-light btn-large ">Recuperar</a>
-                  </p>
+                  <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
+                      class="material-icons">send</i></button>
                 </div>
                 <div class="modal-footer">
                   <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
@@ -77,7 +76,6 @@
             </div>
           </div>
         </form>
-        
       </div>
     </div>
 </div>

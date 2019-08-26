@@ -43,7 +43,8 @@
       <label for="clave1"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Confirme su contraseña" id="clave2" name="clave2" type="password" class="validate" autocomplete="off">
+      <input placeholder="Confirme su contraseña" id="clave2" name="clave2" type="password" class="validate"
+        autocomplete="off">
       <label for="clave2"></label>
     </div>
     <div class="input-field col s6">
@@ -59,10 +60,10 @@
       <label for="correo"></label>
     </div>
     <div class="row">
-            <div class="input-field col s12">
-             <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
-            </div>
-    <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>
+      <div class="input-field col s12">
+        <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
+      </div>
+      <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>
   </form>
 </div>
 

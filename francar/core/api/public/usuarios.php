@@ -138,25 +138,22 @@ if (isset($_GET['action'])) {
                             } else {
                                 $result['exception'] = 'Telefono incorrecto';
                             }
-                            
                         } else {
                             $result['exception'] = 'Direccion incorrecta';
                         }
-                        } else {
-                            $result['exception'] = 'Alias incorrecto o alias repetido';
-
-                        }
-                        } else {
-                            $result['exception'] = 'Correo incorrecto';
-                        }
                     } else {
-                        $result['exception'] = 'Apellidos incorrectos';
+                        $result['exception'] = 'Alias incorrecto o alias repetido';
                     }
                 } else {
-                    $result['exception'] = 'Nombres incorrectos';
+                    $result['exception'] = 'Correo incorrecto';
                 }
-                break;
-
+            } else {
+                $result['exception'] = 'Apellidos incorrectos';
+            }
+        } else {
+            $result['exception'] = 'Nombres incorrectos';
+        }
+        break;
 
             case 'get':
                 if ($usuario->setId($_POST['id_cliente'])) {
@@ -190,31 +187,31 @@ if (isset($_GET['action'])) {
                                     } else {
                                         $result['exception'] = 'Alias incorrecto';
                                     }                                    
-                                    } else {
-                                        $result['exception'] = 'Estado incorrecto';
-                                    }
                                 } else {
-                                    $result['exception'] = 'Direccion incorrecta';
-                                }
-                                    } else {
-                                        $result['exception'] = 'Telefono incorrecto';
-                                    }
-                                } else {
-                                    $result['exception'] = 'Correo incorrecto';
+                                    $result['exception'] = 'Estado incorrecto';
                                 }
                             } else {
-                                $result['exception'] = 'Apellidos incorrectos';
+                                $result['exception'] = 'Direccion incorrecta';
                             }
                         } else {
-                            $result['exception'] = 'Nombres incorrectos';
+                            $result['exception'] = 'Telefono incorrecto';
                         }
                     } else {
-                        $result['exception'] = 'Usuario inexistente';
+                        $result['exception'] = 'Correo incorrecto';
                     }
                 } else {
-                    $result['exception'] = 'Usuario incorrecto';
+                    $result['exception'] = 'Apellidos incorrectos';
                 }
-                break;
+            } else {
+                $result['exception'] = 'Nombres incorrectos';
+            }
+        } else {
+            $result['exception'] = 'Usuario inexistente';
+        }
+    } else {
+        $result['exception'] = 'Usuario incorrecto';
+    }
+    break;
 
 
             case 'delete':
@@ -237,8 +234,10 @@ if (isset($_GET['action'])) {
                 }
                 break;
             default:
-                exit('Acción no disponible PO');
+                exit('Acción no disponible xd');
         }
+
+        
     } else  if($_GET['site'] == 'public'){
         switch ($_GET['action']) {
             case 'read':

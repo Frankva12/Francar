@@ -154,7 +154,7 @@ function grafica_categoria(id, xAxis, yAxis, legend) {
                 }
             }
         },
-        
+
         colors: ['teal'],
         color: {
             linearGradient: {
@@ -214,7 +214,7 @@ function grafica_ventas(id, xAxis, yAxis, legend) {
                 }
             }
         },
-        
+
         colors: ['skyblue'],
         color: {
             linearGradient: {
@@ -331,14 +331,14 @@ function grafica_ventas_categorias(id, xAxis, yAxis, legend) {
             valueSuffix: '$'
         },
         legend: {
-             //propiedades del legend en la grafica
+            //propiedades del legend en la grafica
             layout: 'vertical',
             align: 'right',
             verticalAlign: 'middle',
             borderWidth: 0
         },
         series: [{
-             //se especifica el tipo, los datos y los nombres
+            //se especifica el tipo, los datos y los nombres
             type: 'spline',
             name: legend,
             data: yAxis,
@@ -386,7 +386,7 @@ function grafica_ventas_editoriales(id, xAxis, yAxis, legend) {
             categories: xAxis
         },
         yAxis: {
-             //propiedades de los datos
+            //propiedades de los datos
             title: 'Porcentaje %',
             plotLines: [{
                 value: 0,
@@ -396,23 +396,23 @@ function grafica_ventas_editoriales(id, xAxis, yAxis, legend) {
         },
 
         tooltip: {
-             //como se representan los datos
+            //como se representan los datos
             valueSuffix: '$'
         },
         legend: {
-             //propiedades del legend en la grafica
+            //propiedades del legend en la grafica
             layout: 'vertical',
             align: 'right',
             verticalAlign: 'middle',
             borderWidth: 0
         },
         series: [{
-             //se especifica el tipo, los datos y los nombres
+            //se especifica el tipo, los datos y los nombres
             type: 'bar',
             name: legend,
             data: yAxis,
         }],
-         //propiedades adicionales de la grafica
+        //propiedades adicionales de la grafica
         plotOptions: {
             line: {
                 dataLabels: {
@@ -420,7 +420,7 @@ function grafica_ventas_editoriales(id, xAxis, yAxis, legend) {
                 }
             }
         },
-        
+
         //color de la grafica
         colors: ['midnightblue'],
         color: {

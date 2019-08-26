@@ -59,12 +59,12 @@
       <input placeholder="Correo" id="correo" name="correo" type="email" class="validate" autocomplete="off">
       <label for="correo"></label>
     </div>
-    
-<div class="row">
-  <div class="input-field col s12">
-    <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
-  </div>
-  <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
+      </div>
+      <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>
   </form>
 </div>
 
@@ -72,7 +72,6 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/sweetalert.min.js"></script>
-<script src="../../resources/js/highcharts.js"></script>
 <script src="../../resources/js/modules.js"></script>
 <script type="text/javascript" src="../../core/helpers/functions.js"></script>
 <script type="text/javascript" src="../../core/controllers/public/account.js"></script>

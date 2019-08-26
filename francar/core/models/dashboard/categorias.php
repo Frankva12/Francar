@@ -86,13 +86,6 @@ class Categorias extends Validator
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
-	
-	public function searchCategoria($value)
-	{
-		$sql = 'SELECT * FROM categoria WHERE nombre_categoria LIKE ? OR descripcion_categoria LIKE ? ORDER BY nombre_categoria';
-		$params = array("%$value%", "%$value%");
-		return Database::getRows($sql, $params);
-	}
 
 	public function createCategoria()
 	{
@@ -103,7 +96,7 @@ class Categorias extends Validator
 
 	public function getCategoria()
 	{
-		$sql = 'SELECT id_categoria, nombre_categoria, imagen_categoria, descripcion_categoria FROM categoria WHERE id_categoria = ?';
+		$sql = 'SELECT id_categoria, nombre_categoria, imagen_categoria, descripcion_categoria FROM categoria WHERE id_categoria = ? LIMIT 1';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}

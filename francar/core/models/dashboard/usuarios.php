@@ -188,6 +188,15 @@ class Usuarios extends Validator
 		return Database::getRows($sql, $params);
 	}
 
+	
+	//Metodos para manejar el CRUD
+	public function Correo_contra()
+	{
+		$sql = 'SELECT id_administrador FROM administrador where correo = ? LIMIT 1';
+		$params = array(null);
+		return Database::getRows($sql, $params);
+	}
+
 	//Metodos para manejar el CRUD
 	public function bloquearUsuario()
 	{
@@ -200,13 +209,13 @@ class Usuarios extends Validator
 	{
 		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
 		$sql = 'INSERT INTO administrador(nombre_administrador, apellido_administrador, alias_usuario, contrasenia, direccion, telefono, correo, estado) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
-		$params = array($this->nombre, $this->apellido, $this->alias, $hash, $this->direccion, $this->telefono, $this->correo, $this->estado);
+		$params = array($this->nombre, $this->apellido, $this->alias, $hash, $this->direccion, $this->telefono, $this->correo, 1);
 		return Database::executeRow($sql, $params);
 	}
 
 	public function getUsuario()
 	{
-		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo, estado FROM administrador WHERE id_administrador = ?';
+		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo, estado FROM administrador WHERE id_administrador = ? LIMIT 1';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
@@ -224,5 +233,6 @@ class Usuarios extends Validator
 		$params = array($this->id);
 		return Database::executeRow($sql, $params);
 	}
+
 }
 ?>

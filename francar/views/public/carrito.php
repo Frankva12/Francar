@@ -75,7 +75,6 @@
   <!--Se llaman todos los archivos JavaScript-->
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
   <script src="../../resources/js/materialize.min.js"></script>
-  <script src="../../resources/js/carousel.js"></script>
   <script src="../../resources/js/modal.js"></script>
 </body>
 

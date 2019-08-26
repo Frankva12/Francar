@@ -212,7 +212,6 @@ class Libros extends Validator
 		return Database::getRows($sql, $params);
 	}
 
-
 	public function createlibros()
 	{
 		$sql = 'INSERT INTO libros(nombre_libro, descripcion, imagen_libro, autor, precio, id_categoria, id_editorial, estado, cantidad) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)';
@@ -222,7 +221,7 @@ class Libros extends Validator
 
 	public function getlibros()
 	{
-		$sql = 'SELECT id_libro, nombre_libro, descripcion, imagen_libro, autor, precio, id_categoria, id_editorial, estado, cantidad FROM libros WHERE id_libro = ?';
+		$sql = 'SELECT id_libro, nombre_libro, descripcion, imagen_libro, autor, precio, id_categoria, id_editorial, estado, cantidad FROM libros WHERE id_libro = ? LIMIT 1';
 		$params = array($this->id);
 		return Database::getRow($sql, $params);
 	}
