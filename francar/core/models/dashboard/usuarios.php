@@ -179,6 +179,14 @@ class Usuarios extends Validator
 		}
 	}
 
+	public function changePassword()
+	{
+		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
+		$sql = 'UPDATE administrador SET contrasenia = ? WHERE id_administrador = ?';
+		$params = array($hash, $this->id);
+		return Database::executeRow($sql, $params);
+	}
+
 
 	//Metodos para manejar el CRUD
 	public function readUsuarios()
@@ -212,6 +220,7 @@ class Usuarios extends Validator
 		$params = array($this->nombre, $this->apellido, $this->alias, $hash, $this->direccion, $this->telefono, $this->correo, 1);
 		return Database::executeRow($sql, $params);
 	}
+
 
 	public function getUsuario()
 	{

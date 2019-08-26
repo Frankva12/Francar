@@ -53,6 +53,8 @@
               <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="#modal1">¿Olvidó su
                 contraseña?
               </a>
+              <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="../../views/private/contrasenia.php">Prueba
+                </a>
             </p>
 
             <div class="row">

@@ -71,11 +71,11 @@ if (isset($_GET['action'])) {
             case 'password':
                 if ($usuario->setId($_SESSION['id_usuario'])) {
                     $_POST = $usuario->validateForm($_POST);
-                    if ($_POST['clave_actual_1'] == $_POST['clave_actual_2']) {
-                        if ($usuario->setClave($_POST['clave_actual_1'])) {
+                    if ($_POST['actual1'] == $_POST['actual2']) {
+                        if ($usuario->setContrasenia($_POST['actual1'])) {
                             if ($usuario->checkPassword()) {
-                                if ($_POST['clave_nueva_1'] == $_POST['clave_nueva_2']) {
-                                    if ($usuario->setClave($_POST['clave_nueva_1'])) {
+                                if ($_POST['nueva1'] == $_POST['nueva2']) {
+                                    if ($usuario->setContrasenia($_POST['nueva1'])) {
                                         if ($usuario->changePassword()) {
                                             $result['status'] = 1;
                                         } else {
