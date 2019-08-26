@@ -180,14 +180,16 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                     $result['exception'] = 'libro incorrecto';
                 }
                 break;
-                //Operación para mostrar los tipos de categorias en la tabla
+
+            //Operación para mostrar los tipos de categorias en la tabla
             case 'readCategoria':
-            if ($result['dataset'] = $libro->readLibroCategoria()) {
-                $result['status'] = 1;
-            } else {
-                $result['exception'] = 'Contenido no disponible';
-            }
+                if ($result['dataset'] = $libro->readLibroCategoria()) {
+                    $result['status'] = 1;
+                } else {
+                    $result['exception'] = 'Contenido no disponible';
+                }
             break;
+
             //Operacion para mostrar los tipos de receta en el tabla
         case 'readEditorial':
             if ($result['dataset'] = $libro->readLibroEditorial()) {
@@ -200,13 +202,13 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             /* casos para graficar
             aqui se muestra el caso para graficar la existencia de los libros con respecto a las editoriales
              */
-            case 'graficar_editorial':
+        case 'graficar_editorial':
                if($result['dataset'] = $libro->cantidad_libros_editoriales()) {
                 $result['status'] = 1;
             } else {
                 $result['exception'] = 'No hay libros';
             }
-        break;
+            break;
 
         //aqui se muestra el caso para graficar las existencias de los librso por categorias
         case 'graficar_categoria':
@@ -215,7 +217,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             } else {
                 $result['exception'] = 'No hay libros';
             }
-        break;
+            break;
 
         //aqui se muestra el caso de los libros vendidos por cantidad es decir cuantos libros se han vendido
          case 'libros_vendidos_cantidad':
@@ -224,40 +226,39 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
             } else {
                 $result['exception'] = 'No hay libros';
             }
-        break;
+            break;
 
         //aqui se muestra el caso del dinero que se ha obtenido con respecto a los libros vendidos 
         case 'libros_ventas_ganancias':
-        if($result['dataset'] = $libro->cantidad_de_dinero()) {
-         $result['status'] = 1;
-        } else {
-         $result['exception'] = 'No hay libros';
-        }
-        break;
+            if($result['dataset'] = $libro->cantidad_de_dinero()) {
+            $result['status'] = 1;
+            } else {
+            $result['exception'] = 'No hay libros';
+            }
+            break;
 
         //aqui se muestra el caso de los libros vendidos con respecto a las categorias
         case 'ventas_categoria':
-        if($result['dataset'] = $libro->cantidad_ventas_categoria()) {
-         $result['status'] = 1;
-        } else {
-         $result['exception'] = 'No hay libros';
-        }
-        break;
+            if($result['dataset'] = $libro->cantidad_ventas_categoria()) {
+            $result['status'] = 1;
+            } else {
+            $result['exception'] = 'No hay libros';
+            }
+            break;
 
         //aqui se muestra el caso de los libros vendidos con respecto a las editoriales
         case 'ventas_editoriales':
-        if($result['dataset'] = $libro->cantidad_ventas_editorial()) {
-         $result['status'] = 1;
-        } else {
-         $result['exception'] = 'No hay libros';
-        }
-        break;
+            if($result['dataset'] = $libro->cantidad_ventas_editorial()) {
+            $result['status'] = 1;
+            } else {
+            $result['exception'] = 'No hay libros';
+            }
+            break;
+            
             default:
                 exit('Acción no disponible');
-        }
-        
+        }   
     }
-    
 	print(json_encode($result));
 } else {
 	exit('Recurso denegado');

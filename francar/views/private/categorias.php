@@ -93,7 +93,7 @@
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
                         <input id="create_descripcion" type="text" name="create_descripcion" class="validate"
-                        autocomplete="off" minlength="5" />
+                            autocomplete="off" minlength="5" />
                         <label for="create_descripcion">Descripción</label>
                     </div>
 
@@ -105,7 +105,8 @@
                         </div>
 
                         <div class="file-path-wrapper">
-                            <input type="text" class="file-path validate" placeholder="Seleccione una imagen" autocomplete="off" />
+                            <input type="text" class="file-path validate" placeholder="Seleccione una imagen"
+                                autocomplete="off" />
                         </div>
 
                     </div>
@@ -129,18 +130,20 @@
             <form method="post" id="form-update" enctype="multipart/form-data">
 
                 <input type="hidden" id="id_categoria" name="id_categoria" autocomplete="off" />
-                <input type="hidden" id="imagen_categoria" name="imagen_categoria"  autocomplete="off"/>
+                <input type="hidden" id="imagen_categoria" name="imagen_categoria" autocomplete="off" />
 
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">note_add</i>
-                        <input id="update_nombre" type="text" name="update_nombre" class="validate" autocomplete="off" required />
+                        <input id="update_nombre" type="text" name="update_nombre" class="validate" autocomplete="off"
+                            required />
                         <label for="update_nombre">Categoria</label>
                     </div>
 
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
-                        <input id="update_descripcion" type="text" name="update_descripcion" class="validate" autocomplete="off" />
+                        <input id="update_descripcion" type="text" name="update_descripcion" class="validate"
+                            autocomplete="off" />
                         <label for="update_descripcion">Descripción</label>
                     </div>
 
@@ -152,7 +155,8 @@
                         </div>
 
                         <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Seleccione una imagen" autocomplete="off"/>
+                            <input class="file-path validate" type="text" placeholder="Seleccione una imagen"
+                                autocomplete="off" />
                         </div>
 
                     </div>
@@ -184,7 +188,6 @@
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/dataTables.material.min.js"></script>
     <script src="../../resources/js/tabla.js"></script>
-
     <script src="../../core/controllers/dashboard/account.js"></script>
     <script src="../../resources/js/sweetalert.min.js"></script>
     <script src="../../core/helpers/functions.js"></script>

@@ -104,8 +104,8 @@
                     <div class="input-field col s12 m6">
                         <input id="id_editorial" type="hidden" name="id_editorial" autocomplete="off" required />
                         <i class="material-icons prefix">description</i>
-                        <input id="update_editorial" type="text" name="update_editorial" class="validate" autocomplete="off" minlength="5"
-                            maxlength="80" required />
+                        <input id="update_editorial" type="text" name="update_editorial" class="validate"
+                            autocomplete="off" minlength="5" maxlength="80" required />
                         <label for="update_editorial">Nombre editorial</label>
                     </div>
                     <div class="row center-align">
@@ -132,11 +132,9 @@
     <script src="../../resources/js/materialize.min.js"></script>
     <script src="../../resources/js/modal.js"></script>
     <script src="../../resources/js/combo.js"></script>
-
     <script src="../../resources/js/tabla.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/dataTables.material.min.js"></script>
-
     <script src="../../core/controllers/dashboard/account.js"></script>
     <script src="../../resources/js/sweetalert.min.js"></script>
     <script src="../../core/helpers/functions.js"></script>

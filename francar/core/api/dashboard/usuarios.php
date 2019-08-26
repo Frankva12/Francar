@@ -239,6 +239,7 @@ if (isset($_GET['action'])) {
             default:
                 exit('Acción no disponible PO');
         }
+
     } else  if($_GET['site'] == 'private'){
         switch ($_GET['action']) {
             case 'read':
@@ -250,6 +251,7 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'No existen usuarios registrados';
                 }
             break;
+            
             case 'register':
                 $_POST = $usuario->validateForm($_POST);
                 if ($_POST['g-recaptcha-response']) {
@@ -298,6 +300,7 @@ if (isset($_GET['action'])) {
             $result['exception'] = 'Complete formulario de no soy un robot ';
         }
         break;
+
             case 'login':
                 $_POST = $usuario->validateForm($_POST);
                 if ($_POST['g-recaptcha-response']) {

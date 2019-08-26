@@ -18,6 +18,7 @@ if (isset($_GET['action'])) {
 					$result['exception'] = 'No hay categorías registradas';
 				}
 				break;
+
 			case 'create':
 				$_POST = $categoria->validateForm($_POST);
         		if ($categoria->setNombre($_POST['create_categoria'])) {
@@ -47,7 +48,6 @@ if (isset($_GET['action'])) {
 					$result['exception'] = 'Nombre incorrecto';
 				}
 				break;
-				
 				
             case 'get':
                 if ($categoria->setId($_POST['id_categoria'])) {
@@ -108,7 +108,8 @@ if (isset($_GET['action'])) {
 				} else {
 					$result['exception'] = 'Categoría incorrecta';
 				}
-            	break;
+				break;
+				
             case 'delete':
 				if ($categoria->setId($_POST['id_categoria'])) {
 					if ($categoria->getCategoria()) {

@@ -11,8 +11,6 @@ if (isset($_GET['action'])) {
     //Se verifica si existe una sesión iniciada como administrador para realizar las operaciones correspondientes
     if (isset($_SESSION['id_administrador'])) {
         switch ($_GET['action']) {
-
-
             case 'logout':
                 if (session_destroy()) {
                     header('location: ../../views/public/index.php');
@@ -20,7 +18,6 @@ if (isset($_GET['action'])) {
                     header('location: ../../views/public/index.php');
                 }
                 break;
-
 
             case 'readProfile':
                 if ($usuario->setId($_SESSION['id_usuario'])) {
@@ -33,7 +30,6 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Usuario incorrecto';
                 }
                 break;
-
 
             case 'editProfile':
                 if ($usuario->setId($_SESSION['id_usuario'])) {
@@ -68,7 +64,6 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'Usuario incorrecto';
                 }
                 break;
-
 
             case 'password':
                 if ($usuario->setId($_SESSION['id_usuario'])) {
@@ -112,7 +107,6 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-
             case 'create':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setNombre($_POST['create_nombres'])) {
@@ -141,20 +135,20 @@ if (isset($_GET['action'])) {
                         } else {
                             $result['exception'] = 'Direccion incorrecta';
                         }
-                        } else {
-                            $result['exception'] = 'Alias incorrecto';
-
-                        }
-                        } else {
-                            $result['exception'] = 'Correo incorrecto';
-                        }
                     } else {
-                        $result['exception'] = 'Apellidos incorrectos';
+                        $result['exception'] = 'Alias incorrecto';
+
                     }
                 } else {
-                    $result['exception'] = 'Nombres incorrectos';
+                    $result['exception'] = 'Correo incorrecto';
                 }
-                break;
+            } else {
+                $result['exception'] = 'Apellidos incorrectos';
+            }
+        } else {
+            $result['exception'] = 'Nombres incorrectos';
+        }
+        break;
 
 
             case 'get':
@@ -188,29 +182,28 @@ if (isset($_GET['action'])) {
                                     } else {
                                         $result['exception'] = 'Alias incorrecto';
                                     }
-                                    
                                 } else {
                                     $result['exception'] = 'Direccion incorrecta';
                                 }
-                                    } else {
-                                        $result['exception'] = 'Telefono incorrecto';
-                                    }
-                                } else {
-                                    $result['exception'] = 'Correo incorrecto';
-                                }
                             } else {
-                                $result['exception'] = 'Apellidos incorrectos';
+                                $result['exception'] = 'Telefono incorrecto';
                             }
                         } else {
-                            $result['exception'] = 'Nombres incorrectos';
+                            $result['exception'] = 'Correo incorrecto';
                         }
                     } else {
-                        $result['exception'] = 'Usuario inexistente';
+                        $result['exception'] = 'Apellidos incorrectos';
                     }
                 } else {
-                    $result['exception'] = 'Usuario incorrecto';
+                    $result['exception'] = 'Nombres incorrectos';
                 }
-                break;
+            } else {
+                $result['exception'] = 'Usuario inexistente';
+            }
+        } else {
+            $result['exception'] = 'Usuario incorrecto';
+        }
+        break;
 
 
             case 'delete':
@@ -235,6 +228,7 @@ if (isset($_GET['action'])) {
             default:
                 exit('Acción no disponible');
         }
+
     } else {
         switch ($_GET['action']) {
             case 'read':
@@ -307,7 +301,7 @@ if (isset($_GET['action'])) {
             } else {
                 $result['exception'] = 'Por favor realice la verificación';
             }
-                break;
+            break;
                 
                 case 'bloquear':
                 $_POST = $usuario->validateForm($_POST);

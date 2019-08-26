@@ -60,7 +60,7 @@
         <div class="input-field col s6 m6 l12">
           <i class="material-icons prefix">account_circle</i>
           <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate"
-          autocomplete="off" required />
+            autocomplete="off" required />
           <label for="update_nombre_administrador">Nombre</label>
         </div>
 
@@ -68,7 +68,7 @@
         <div class="input-field col s6 m6 l12">
           <i class="material-icons prefix">account_circle</i>
           <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate"
-          autocomplete="off" required />
+            autocomplete="off" required />
           <label for="update_apellido_administrador">Apellido</label>
         </div>
 
@@ -299,16 +299,15 @@
     <div class="row" id="catalogo"></div>
   </div>
 
-  
 
-  
+
+
 </body>
 <!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
 <?php
   require("../../core/helpers/dashboard/footer.php");
   Footer::foot();
   ?>
-
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!--Se importan lo que son los archivos de JavaScript-->

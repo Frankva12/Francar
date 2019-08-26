@@ -1,9 +1,9 @@
 $(document).ready(function () {
-    checkUsuarios();
+
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
-const apiRegister = '../../core/api/dashboard/usuarios.php?site=dashboard&action=';
+const apiRegister = '../../core/api/dashboard/usuarios.php?site=private&action=';
 
 //Función para verificar si existen usuarios en el sitio privado
 function checkUsuarios() {

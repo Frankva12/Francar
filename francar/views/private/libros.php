@@ -69,21 +69,23 @@
     <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
       <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i
-          class="material-icons" ></i>Agregar Libros</a>
+          class="material-icons"></i>Agregar Libros</a>
 
 
 
-      <a class="btn waves-effect indigo tooltipped modal-trigger green" href="../../core/report/reporteLibrosVendidos.php"><i
-          class="material-icons" ></i>Reporte de ventas</a>
+      <a class="btn waves-effect indigo tooltipped modal-trigger green"
+        href="../../core/report/reporteLibrosVendidos.php"><i class="material-icons"></i>Reporte de ventas</a>
 
 
-      <a class="btn waves-effect indigo tooltipped modal-trigger green" href="../../core/report/reporteVentasporcat.php"><i
-          class="material-icons" ></i>Reporte de ventas por categoria</a>
+      <a class="btn waves-effect indigo tooltipped modal-trigger green"
+        href="../../core/report/reporteVentasporcat.php"><i class="material-icons"></i>Reporte de ventas por
+        categoria</a>
 
-      <a class="btn waves-effect indigo tooltipped modal-trigger green" href="../../core/report/reporteVentasporedi.php"><i
-          class="material-icons" ></i>Reporte de ventas por editorial</a>
+      <a class="btn waves-effect indigo tooltipped modal-trigger green"
+        href="../../core/report/reporteVentasporedi.php"><i class="material-icons"></i>Reporte de ventas por
+        editorial</a>
     </div>
-    </div>
+  </div>
 
   </div>
   </div>
@@ -117,7 +119,8 @@
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">description</i>
-            <input id="create_descripcion" type="text" name="create_descripcion" class="validate" autocomplete="off" required />
+            <input id="create_descripcion" type="text" name="create_descripcion" class="validate" autocomplete="off"
+              required />
             <label for="create_descripcion">Descripción</label>
           </div>
 
@@ -204,7 +207,8 @@
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">description</i>
-            <input id="update_descripcion" type="text" name="update_descripcion" class="validate" autocomplete="off" required />
+            <input id="update_descripcion" type="text" name="update_descripcion" class="validate" autocomplete="off"
+              required />
             <label for="update_descripcion">Descripción</label>
           </div>
 
@@ -267,15 +271,11 @@
   <!--Se importan lo que son los archivos de JavaScript-->
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
   <script src="../../resources/js/materialize.min.js"></script>
-  <script src="../../resources/js/carousel.js"></script>
-  <script src="../../resources/js/parallax.js"></script>
-  <script src="../../resources/js/images.js"></script>
   <script src="../../resources/js/modal.js"></script>
   <script src="../../resources/js/combo.js"></script>
   <script src="../../resources/js/datatables.min.js"></script>
   <script src="../../resources/js/dataTables.material.min.js"></script>
   <script src="../../resources/js/tabla.js"></script>
-
   <script src="../../core/controllers/dashboard/account.js"></script>
   <script src="../../resources/js/sweetalert.min.js"></script>
   <script src="../../core/helpers/functions.js"></script>

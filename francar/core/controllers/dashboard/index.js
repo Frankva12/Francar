@@ -48,32 +48,33 @@ $('#form-sesion').submit(function () {
                 //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
                 if (dataset.status == 1) {
                     sweetAlert(1, 'Autenticación correcta', 'private.php');
-                    
-                } else{
+
+                } else {
                     if (i >= 3) {
                         $.ajax({
-                            url: apiSesion + 'bloquear',
-                            type: 'post',
-                            data: {alias: $('#alias_usuario').val()},
-                            datatype: 'json'
-                        })
-                        .done(function (response){
-                            if (isJSONString(response)) {
-                                const result = JSON.parse(response);
-                                if (result.status) {
-                                    sweetAlert(4, 'Su usuario ha sido bloqueado', 'index.php');
-                                    console.log(response);
-                                }                            
-                            }
-                        })
-                    }
-                    else {
+                                url: apiSesion + 'bloquear',
+                                type: 'post',
+                                data: {
+                                    alias: $('#alias_usuario').val()
+                                },
+                                datatype: 'json'
+                            })
+                            .done(function (response) {
+                                if (isJSONString(response)) {
+                                    const result = JSON.parse(response);
+                                    if (result.status) {
+                                        sweetAlert(4, 'Su usuario ha sido bloqueado', 'index.php');
+                                        console.log(response);
+                                    }
+                                }
+                            })
+                    } else {
                         i++
                         sweetAlert(2, dataset.exception + ' intento numero ' + i, null);
                         console.log(i);
                         console.log(response);
                     }
-                } 
+                }
             } else {
                 console.log(response);
             }
