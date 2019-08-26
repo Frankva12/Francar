@@ -201,7 +201,7 @@ class Usuarios extends Validator
 	public function Correo_contra()
 	{
 		$sql = 'SELECT id_administrador FROM administrador where correo = ? LIMIT 1';
-		$params = array(null);
+		$params = array($this->correo);
 		return Database::getRows($sql, $params);
 	}
 

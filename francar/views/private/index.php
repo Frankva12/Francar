@@ -53,42 +53,20 @@
 
             <div class="input-field col s6 m6 l6">
               <p align='right'>
-                <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="#modal1">¿Olvidó su
+                <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="recuperar_contrasena.php">¿Olvidó su
                   contraseña?
                 </a>
-              </p>
-              <!-- Modal Structure -->
-              <div id="modal1" class="modal">
-                <div class="modal-content">
-                  <h4 align='center'>¿Olvidaste tu contraseña?</h4>
-                  <div class="input-field col s12">
-                    <i class="material-icons prefix">mail_outline</i>
-                    <input id="recuperar_correo" class="validate" type="email" autocomplete="off">
-                    <label for="recuperar_correo" data-error="wrong" data-success="right">Correo</label>
-                  </div>
-                  <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
-                      class="material-icons">send</i></button>
-                </div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-                </div>
-              </div>
-            </div>
-          </div>
         </form>
-      </div>
-    </div>
-</div>
+        </p>
 
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<!--Se importan los archivos de JavaScript-->
-<script src="../../resources/js/jquery-3.3.1.min.js"></script>
-<script src="../../resources/js/materialize.min.js"></script>
-<script src="../../resources/js/modal.js"></script>
-<script src="../../resources/js/sweetalert.min.js"></script>
-<script src="../../core/helpers/functions.js"></script>
-<script src="../../core/controllers/dashboard/index.js"></script>
-</body>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+            <!--Se importan los archivos de JavaScript-->
+            <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+            <script src="../../resources/js/materialize.min.js"></script>
+            <script src="../../resources/js/modal.js"></script>
+            <script src="../../resources/js/sweetalert.min.js"></script>
+            <script src="../../core/helpers/functions.js"></script>
+            <script src="../../core/controllers/dashboard/index.js"></script>
+  </body>
 
 </html>

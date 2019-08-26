@@ -3,6 +3,13 @@ require_once('../../helpers/database.php');
 require_once('../../helpers/validator.php');
 require_once('../../models/dashboard/usuarios.php');
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../../../core/libraries/PHPMailer-master/src/Exception.php';
+require '../../../core/libraries/PHPMailer-master/src/PHPMailer.php';
+require '../../../core/libraries/PHPMailer-master/src/SMTP.php';
+
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
 if (isset($_GET['action'])) {
     session_start();
@@ -247,6 +254,20 @@ if (isset($_GET['action'])) {
                 } else {
                     $result['status'] = 2;
                     $result['exception'] = 'No existen usuarios registrados';
+                }
+            break;
+
+            case 'Recuperacion':
+                $_POST = $usuario->validateForm($_POST);
+                if ($usuario->setCorreo($_POST['correo_usuario'])) {
+                    if ($usuario->Correo_contra()) {  
+                        $result['status'] = 1;
+                        echo('PEPITO');
+                    } else {
+                        $result['exception'] = 'Correo inexistente';
+                    }
+                } else {
+                    $result['exception'] = 'Correo invalido';
                 }
             break;
             
