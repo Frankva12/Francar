@@ -33,9 +33,7 @@ if (isset($_GET['site']) && isset($_GET['action'])) {
                                                 if ($libro->setImagen($_FILES['create_archivo'], null)) {
                                                     if ($libro->createlibros()) {
                                                         if ($libro->saveFile($_FILES['create_archivo'], $libro->getRuta(), $libro->getImagen())) {
-                                                            
                                                                 $result['status']=1;
-                                                        
                                                         } else {
                                                             $result['status'] = 2;
                                                             $result['exception'] = 'No se guardó el archivo';
