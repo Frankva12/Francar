@@ -250,6 +250,33 @@ if (isset($_GET['action'])) {
                 }
             break;
 
+                
+            case 'login':
+            $_POST = $usuario->validateForm($_POST);
+             if ($_POST['g-recaptcha-response']) {
+            if ($usuario->setAlias($_POST['alias_cliente'])) {
+                if ($usuario->checkAlias()) {
+                    if ($usuario->setContrasenia($_POST['contrasenia'])) {
+                        if ($usuario->checkPassword()) {
+                            $_SESSION['id_administrador'] = $usuario->getId();
+                            $_SESSION['alias_cliente'] = $usuario->getAlias();
+                            $result['status'] = 1;
+                        } else {
+                            $result['exception'] = 'Clave inexistente';
+                        }
+                    } else {
+                        $result['exception'] = 'Clave menor a 6 caracteres';
+                    }
+                } else {
+                    $result['exception'] = 'Alias inexistente';
+                }
+            } else {
+                $result['exception'] = 'Alias incorrecto';
+            }
+        } else {
+            $result['exception'] = 'Por favor realice la verificación';
+        }
+            break;
 
             case 'register':
                 $_POST = $usuario->validateForm($_POST);

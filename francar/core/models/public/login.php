@@ -119,7 +119,7 @@ class Usuarios extends Validator
 	}
 
 
-	/*public function setCorreo($value)
+	public function setCorreo($value)
 	{
 		if ($this->validateEmail($value)) {
 			$this->correo = $value;
@@ -132,7 +132,7 @@ class Usuarios extends Validator
 	public function getCorreo()
 	{
 		return $this->correo;
-	}*/
+	} 
 
 
 	//Métodos para manejar la sesión del usuario
@@ -149,24 +149,18 @@ class Usuarios extends Validator
 		}
 	}
 
+	
 	public function checkPassword()
 	{
-		$sql = 'SELECT direccion FROM clientes WHERE alias_cliente=? and contrasenia = ?';
-		$params = array($this->alias,$this->contrasenia);
+		$sql = 'SELECT contrasenia FROM clientes WHERE id_cliente = ?  and estado = 1';
+		$params = array($this->id);
 		$data = Database::getRow($sql, $params);
-		if ($data) {
-			$this->direccion = $data['direccion'];
+		if (password_verify($this->contrasenia, $data['contrasenia'])) {
 			return true;
 		} else {
 			return false;
 		}
-		/*if (password_verify($this->clave, $data['contrasenia'])) {
-			return true;
-		} else {
-			return false;
-		}*/
 	}
-
 
 	//Metodos para manejar el CRUD
 	public function readUsuarios()
