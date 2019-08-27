@@ -287,7 +287,7 @@ if (isset($_GET['action'])) {
 
                                     $mail->send();
                                     echo 'Su mensaje ha sido enviado correctamente';
-                                } catch (\Throwable $th) {
+                                } catch (Exception $e) {
                                     echo "Su mensaje no pudo enviarse'{$mail->ErrorInfo}'";
                                 }
                             } else {
