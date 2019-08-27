@@ -12,7 +12,7 @@ class Usuarios extends Validator
 	private $telefono = null;
 	private $correo = null;
 	private $estado = null;
-	
+	private $token = null;
 
 	//Métodos para sobrecarga de propiedades
 	public function setId($value)
@@ -28,6 +28,17 @@ class Usuarios extends Validator
 	public function getId()
 	{
 		return $this->id;
+	}
+
+	public function setToken($value)
+	{
+		$this->token = $value;
+		return true;
+	}
+
+	public function getToken()
+	{
+		return $this->token;
 	}
 
 	public function setEstado($value)
@@ -204,6 +215,14 @@ class Usuarios extends Validator
 		$params = array($this->correo);
 		return Database::getRows($sql, $params);
 	}
+
+	public function updateToken()
+	{
+		$sql = 'UPDATE administrador SET token_usuario = ? WHERE correo = ?';
+		$params = array($this->token, $this->correo);
+		return Database::executeRow($sql, $params);
+	}
+
 
 	//Metodos para manejar el CRUD
 	public function bloquearUsuario()

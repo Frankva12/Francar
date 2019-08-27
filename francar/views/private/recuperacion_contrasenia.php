@@ -29,14 +29,22 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <i class="material-icons prefix">assignment_ind</i>
-              <input id="correo_usuario" type="text" name="correo_usuario" class="validate" minlength="5" maxlength="80"
-                autocomplete="off" required />
-              <label for="correo_usuario">Correo</label>
+              <i class="material-icons prefix">lock</i>
+              <input id="contra_nueva1" type="password" name="contra_nueva1" class="validate" minlength="5"
+                maxlength="20" autocomplete="off" required />
+              <label for="contra_nueva1">Contraseña nueva</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">lock</i>
+              <input id="contra_nueva2" type="password" name="contra_nueva2" class="validate" minlength="5"
+                maxlength="20" autocomplete="off" required />
+              <label for="contra_nueva2">Confirmar contraseña</label>
             </div>
           </div>
           <div class="col s12 center-align">
-            <button type="submit" class="btn waves-effect black tooltipped" id="botonRecuperar"
+            <button type="submit" class="btn waves-effect black tooltipped" id="botonContraNueva"
               onclick="recuperarContra()" data-tooltip="Ingresar"><i class="material-icons">send</i></button>
             <br>
             <br>

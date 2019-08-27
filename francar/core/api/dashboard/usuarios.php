@@ -261,12 +261,48 @@ if (isset($_GET['action'])) {
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setCorreo($_POST['correo_usuario'])) {
                     if ($usuario->Correo_contra()) {  
-                        $result['status'] = 1;
-                        echo('PEPITO');
-                    } else {
-                        $result['exception'] = 'Correo inexistente';
+                        $token = uniqid();
+                        if ($usuario->setToken($token)) {
+                            if ($usuario->updateToken()) {
+                                if ($correousuario = $usuario->getCorreo()) {
+                                    $result['status'] = 1;
+                                   // echo('PEPITO');
+                                    $mail = new PHPMailer(true);
+                                try {
+                                    $mail->SMTPDebug = 2;
+                                    $mail->isSMTP();
+                                    $mail->Host = 'smtp.gmail.com';
+                                    $mail->Username = 'libreriafrancar@gmail.com';
+                                    $mail->Password = 'Hola!1234';
+                                    $mail->SMTPSecure = 'tls';
+                                    $mail->Port = 587;
+
+                                    $mail->setFrom('libreriafrancar@gmail.com');
+                                    $mail->addAddress($correousuario);
+
+                                    $mail->isHTML(true);
+                                    $mail->Subject = 'Recuperacion de su contraseña';
+                                    $mail->ody = 'Puede hacer click';
+                                    $mail->Body = '<a href="">holaaaaaaaaaaaaaaaaaaaaaaa</a>';
+
+                                    $mail->send();
+                                    echo 'Su mensaje ha sido enviado correctamente';
+                                } catch (\Throwable $th) {
+                                    echo "Su mensaje no pudo enviarse'{$mail->ErrorInfo}'";
+                                }
+                            } else {
+                                $result['exception'] = 'Correo inexistente';
+                            }
+                        } else {
+                            $result['exception'] = 'Correo invalido';
+                            }
+                        } else {
+                            $result['exception'] = 'Correo invalido';
+                        } 
+                    }else {
+                        $result['exception'] = 'Correo invalido';
                     }
-                } else {
+                }else {
                     $result['exception'] = 'Correo invalido';
                 }
             break;
