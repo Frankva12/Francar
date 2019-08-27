@@ -41,7 +41,7 @@
               <input id="contra_nueva2" type="password" name="contra_nueva2" class="validate" minlength="5"
                 maxlength="20" autocomplete="off" required />
               <label for="contra_nueva2">Confirmar contraseña</label>
-              <input type="text" id="token" name="token" value="">
+              <input type="hidden" id="token" name="token" value="">
             </div>
           </div>
           <div class="col s12 center-align">
