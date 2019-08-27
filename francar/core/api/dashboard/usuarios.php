@@ -398,6 +398,7 @@ if (isset($_GET['action'])) {
                                 $result['status'] = 1;       
                                 $_SESSION['id_administrador'] = $usuario->getId();
                                 $_SESSION['alias_usuario'] = $usuario->getAlias();
+                                $_SESSION['tiempo'] = time();
                                 }     
                                 else {
                                     $result['exception'] = 'Clave inexistente';
