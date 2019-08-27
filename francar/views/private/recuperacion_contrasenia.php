@@ -18,7 +18,7 @@
   <body background="../../resources/img/login_imagen.jpg">
     <div id="login-page" class="row center-align">
       <div class="col s12 m12 l12 z-depth-6 card-panel center-align">
-        <form method="post" id="form-recuperar">
+        <form method="post" id="form-nueva-contrasena">
           <div class="row teal lime grey lighten-1">
             <br>
             <h4>Bienvenidos.
@@ -45,7 +45,7 @@
           </div>
           <div class="col s12 center-align">
             <button type="submit" class="btn waves-effect black tooltipped" id="botonContraNueva"
-              onclick="recuperarContra()" data-tooltip="Ingresar"><i class="material-icons">send</i></button>
+               data-tooltip="Ingresar"><i class="material-icons">send</i></button>
             <br>
             <br>
           </div>

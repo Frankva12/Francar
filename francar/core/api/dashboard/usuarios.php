@@ -9,6 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 require '../../../core/libraries/PHPMailer-master/src/Exception.php';
 require '../../../core/libraries/PHPMailer-master/src/PHPMailer.php';
 require '../../../core/libraries/PHPMailer-master/src/SMTP.php';
+$mail->CharSet = "UTF-8";
 
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
 if (isset($_GET['action'])) {
@@ -284,7 +285,7 @@ if (isset($_GET['action'])) {
                                     $mail->isHTML(true);
                                     $mail->Subject = 'Recuperacion de su contraseña';
                                     $mail->ody = 'Puede hacer click';
-                                    $mail->Body = '<a href="">holaaaaaaaaaaaaaaaaaaaaaaa</a>';
+                                    $mail->Body = '<a href="http://localhost/Francar/francar/views/private/recuperacion_contrasenia.php?token='.$token.'">Haga click aqui para recuperar su contraseña</a>';
 
                                     $mail->send();
                                     echo 'Su mensaje ha sido enviado correctamente';
@@ -306,6 +307,31 @@ if (isset($_GET['action'])) {
                 }else {
                     $result['exception'] = 'Correo invalido';
                 }
+            break;
+
+            case 'RecuCambio':
+                $POST = $usuario->validateForm($_POST);
+                if ($usuario->setToken($_POST['token'])) {
+                    if ($usuario->getDatosToken()) {
+                        if ($_POST(['contra_nueva1']) == $_POST(['contra_nueva2'])) {
+                            if ($usuario->setContrasenia(['contra_nueva1'])) {
+                                if ($usuario->changePassword()) {
+                                $result['status'] = 1;
+                            }else {
+                                $result['exception'] = 'No se pudo ejecutar la peticion';
+                            }
+                        } else {
+                            $result['exception'] = 'Clave incorrecta';
+                        }
+                    } else {
+                        $result['exception'] = 'Contraseñas diferentes';
+                    }
+                } else {
+                    $result['exception'] = 'No se pudo ejecutar la peticion';
+                }
+            } else {
+                $result['exception'] = 'Token inexistente';
+            }
             break;
             
             case 'register':

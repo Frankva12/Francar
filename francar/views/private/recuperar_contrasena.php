@@ -37,7 +37,7 @@
           </div>
           <div class="col s12 center-align">
             <button type="submit" class="btn waves-effect black tooltipped" id="botonRecuperar"
-              onclick="recuperarContra()" data-tooltip="Ingresar"><i class="material-icons">send</i></button>
+              data-tooltip="Ingresar"><i class="material-icons">send</i></button>
             <br>
             <br>
           </div>
