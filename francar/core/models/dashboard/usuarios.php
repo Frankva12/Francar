@@ -85,7 +85,7 @@ class Usuarios extends Validator
 	{
 		return $this->apellido;
 	}
-	
+
 	public function setAlias($value)
 	{
 		if ($this->validateAlphanumeric($value, 1, 255)) {
@@ -207,7 +207,7 @@ class Usuarios extends Validator
 		return Database::getRows($sql, $params);
 	}
 
-	
+
 	//Metodos para manejar el CRUD
 	public function Correo_contra()
 	{
@@ -225,18 +225,18 @@ class Usuarios extends Validator
 
 	public function getDatosToken()
 	{
-		$sql = 'SELECT id_administrador FROM administrador WHERE token_usuario = ? LIMIT 1';
+		$sql = 'SELECT id_administrador FROM administrador WHERE token_usuario = ?';
 		$params = array($this->token);
 		$datos = Database::getRow($sql, $params);
-		if ($datos) {
-			$this->id = $datos['id_administrador'];
-			return true;
-		}
-		else {
-			return false;
-		}
 	}
 
+	public function tokenPass()
+	{
+		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
+		$sql = 'UPDATE administrador SET contrasenia = ? WHERE token_usuario = ?';
+		$params = array($hash, $this->token);
+		return Database::executeRow($sql, $params);
+	}
 
 	//Metodos para manejar el CRUD
 	public function bloquearUsuario()
