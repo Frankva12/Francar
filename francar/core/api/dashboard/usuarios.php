@@ -76,7 +76,7 @@ if (isset($_GET['action'])) {
 
 
             case 'password':
-                if ($usuario->setId($_SESSION['id_usuario'])) {
+                if ($usuario->setId($_SESSION['id_administrador'])) {
                     $_POST = $usuario->validateForm($_POST);
                     if ($_POST['actual1'] == $_POST['actual2']) {
                         if ($usuario->setContrasenia($_POST['actual1'])) {
