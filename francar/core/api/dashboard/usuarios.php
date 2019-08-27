@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 require '../../../core/libraries/PHPMailer-master/src/Exception.php';
 require '../../../core/libraries/PHPMailer-master/src/PHPMailer.php';
 require '../../../core/libraries/PHPMailer-master/src/SMTP.php';
-$mail->CharSet = "UTF-8";
+
 
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
 if (isset($_GET['action'])) {
@@ -269,6 +269,7 @@ if (isset($_GET['action'])) {
                                     $result['status'] = 1;
                                     echo('PEPITO');
                                     $mail = new PHPMailer(true);
+                                    $mail->CharSet = "UTF-8";
                                 try {
                                     $mail->SMTPDebug = 2;
                                     $mail->isSMTP();
