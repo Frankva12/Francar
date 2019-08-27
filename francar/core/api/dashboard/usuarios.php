@@ -314,12 +314,12 @@ if (isset($_GET['action'])) {
                 $POST = $usuario->validateForm($_POST);
                 if ($usuario->setToken($_POST['token'])) {
                     if ($usuario->getDatosToken()) {
-                        if ($_POST['contra_nueva1'] == $_POST['contra_nueva2']) {
-                            if ($usuario->setContrasenia(['contra_nueva1'])) {
+                        if ($_POST['contra_nuevita1'] == $_POST['contra_nuevita2']) {
+                            if ($usuario->setContrasenia(['contra_nuevita1'])) {
                                 if ($usuario->changePassword()) {
                                 $result['status'] = 1;
                             } else {
-                                $result['exception'] = 'No se pudo ejecutar la peticion';
+                                $result['exception'] = 'No se pudo ejecutar la peticion xdf';
                             }
                         } else {
                             $result['exception'] = 'Clave incorrecta';
@@ -328,7 +328,7 @@ if (isset($_GET['action'])) {
                         $result['exception'] = 'Contraseñas diferentes';
                     }
                 } else {
-                    $result['exception'] = 'No se pudo ejecutar la peticion';
+                    $result['exception'] = 'No se pudo ejecutar la peticion DFDS';
                 }
             } else {
                 $result['exception'] = 'Token inexistente';

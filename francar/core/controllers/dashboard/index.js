@@ -131,8 +131,8 @@ $('#form-nueva-contrasena').submit(function()
         type: 'post',
         data: {
             token: token,
-            contra_nueva1: password1,
-            contra_nueva2: password2
+            contra_nuevita1: password1,
+            contra_nuevita2: password2
         },
         datatype: 'json'
     })
