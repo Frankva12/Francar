@@ -114,33 +114,6 @@ function recuperarContra() {
 }
 
 
-function recuperarContra() {
-    event.preventDefault();
-    console.log("holaaaaaaa");
-    $.ajax({
-            url: apiSesion + 'Recuperacion',
-            type: 'post',
-            data: $('#form-recuperar').serialize(),
-            datatype: 'json'
-        })
-        .done(function (response) {
-            //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
-            if (isJSONString(response)) {
-                const dataset = JSON.parse(response);
-                //Se comprueba que no hay usuarios registrados para redireccionar al registro del primer usuario
-                if (dataset.status == 2) {
-                    sweetAlert(3, dataset.exception, 'registrar.php');
-                }
-            } else {
-                console.log(response);
-            }
-        })
-        .fail(function (jqXHR) {
-            //Se muestran en consola los posibles errores de la solicitud AJAX
-            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
-        });
-}
-
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),

@@ -314,11 +314,11 @@ if (isset($_GET['action'])) {
                 $POST = $usuario->validateForm($_POST);
                 if ($usuario->setToken($_POST['token'])) {
                     if ($usuario->getDatosToken()) {
-                        if ($_POST(['contra_nueva1']) == $_POST(['contra_nueva2'])) {
+                        if ($_POST['contra_nueva1'] == $_POST['contra_nueva2']) {
                             if ($usuario->setContrasenia(['contra_nueva1'])) {
                                 if ($usuario->changePassword()) {
                                 $result['status'] = 1;
-                            }else {
+                            } else {
                                 $result['exception'] = 'No se pudo ejecutar la peticion';
                             }
                         } else {
