@@ -12,7 +12,7 @@ class Usuarios extends Validator
 	private $telefono = null;
 	private $correo = null;
 	private $estado = null;
-	
+	private $token = null;
 
 	//Métodos para sobrecarga de propiedades
 	public function setId($value)
@@ -28,6 +28,17 @@ class Usuarios extends Validator
 	public function getId()
 	{
 		return $this->id;
+	}
+
+	public function setToken($value)
+	{
+		$this->token = $value;
+		return true;
+	}
+
+	public function getToken()
+	{
+		return $this->token;
 	}
 
 	public function setEstado($value)
@@ -179,11 +190,19 @@ class Usuarios extends Validator
 		}
 	}
 
+	public function changePassword()
+	{
+		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
+		$sql = 'UPDATE administrador SET contrasenia = ? WHERE id_administrador = ?';
+		$params = array($hash, $this->id);
+		return Database::executeRow($sql, $params);
+	}
+
 
 	//Metodos para manejar el CRUD
 	public function readUsuarios()
 	{
-		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo, estado FROM administrador ORDER BY nombre_administrador';
+		$sql = 'SELECT id_administrador, nombre_administrador, apellido_administrador, alias_usuario, direccion, telefono, correo, estado, token_usaurio FROM administrador ORDER BY nombre_administrador';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
@@ -193,9 +212,31 @@ class Usuarios extends Validator
 	public function Correo_contra()
 	{
 		$sql = 'SELECT id_administrador FROM administrador where correo = ? LIMIT 1';
-		$params = array(null);
+		$params = array($this->correo);
 		return Database::getRows($sql, $params);
 	}
+
+	public function updateToken()
+	{
+		$sql = 'UPDATE administrador SET token_usuario = ? WHERE correo = ?';
+		$params = array($this->token, $this->correo);
+		return Database::executeRow($sql, $params);
+	}
+
+	public function getDatosToken()
+	{
+		$sql = 'SELECT id_administrador FROM administrador WHERE token_usuario = ? LIMIT 1';
+		$params = array($this->token);
+		$datos = Database::getRow($sql, $params);
+		if ($datos) {
+			$this->id = $datos['id_administrador'];
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 
 	//Metodos para manejar el CRUD
 	public function bloquearUsuario()
@@ -212,6 +253,7 @@ class Usuarios extends Validator
 		$params = array($this->nombre, $this->apellido, $this->alias, $hash, $this->direccion, $this->telefono, $this->correo, 1);
 		return Database::executeRow($sql, $params);
 	}
+
 
 	public function getUsuario()
 	{

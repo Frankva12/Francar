@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 26, 2019 at 06:24 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 27-08-2019 a las 19:57:01
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,17 +37,18 @@ CREATE TABLE `administrador` (
   `direccion` varchar(255) NOT NULL,
   `telefono` int(8) NOT NULL,
   `correo` varchar(255) NOT NULL,
-  `estado` tinyint(1) NOT NULL DEFAULT '1'
+  `estado` tinyint(1) NOT NULL DEFAULT '1',
+  `token_usuario` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `administrador`
 --
 
-INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apellido_administrador`, `alias_usuario`, `contrasenia`, `direccion`, `telefono`, `correo`, `estado`) VALUES
-(1, 'Frank', 'Vasconcelos', 'Frank', '$2y$10$QRvV3iZiRmjkJh7yXXwOH.TolNCq.azIXR8c/AGk6Kw4niwpftbpy', 'Mi casita', 77932797, 'stanleyvasconcelos0@gmail.com', 1),
-(2, 'Carolina', 'Marcia', 'Caro', '$2y$10$P2T13gQOZFQkieZ7v0cKweShQRQsFz3EYvLsJP9QISihM.o6xEA.W', 'Su casita', 71463889, 'carolinamarcia@gmail.com', 1),
-(7, 'Frank', 'Vasconcelos', 'Frankie', '$2y$10$YsXV3ZMLPtZ8JR1/rj45Eueh30oN46EhsD/klru2BhKGX69uVjSmu', 'mi casa', 77932797, 'stanleyvasconcelos0@gmail.com', 1);
+INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apellido_administrador`, `alias_usuario`, `contrasenia`, `direccion`, `telefono`, `correo`, `estado`, `token_usuario`) VALUES
+(1, 'Frank', 'Vasconcelos', 'Frank', '$2y$10$QRvV3iZiRmjkJh7yXXwOH.TolNCq.azIXR8c/AGk6Kw4niwpftbpy', 'Mi casita', 77932797, 'stanleyvasconcelos0@gmail.com', 1, '5d656dbb60bbd'),
+(2, 'Carolina', 'Marcia', 'Caro', '$2y$10$P2T13gQOZFQkieZ7v0cKweShQRQsFz3EYvLsJP9QISihM.o6xEA.W', 'Su casita', 71463889, 'carolinamarcia@gmail.com', 1, ''),
+(7, 'Frank', 'Vasconcelos', 'Frankie', '$2y$10$YsXV3ZMLPtZ8JR1/rj45Eueh30oN46EhsD/klru2BhKGX69uVjSmu', 'mi casa', 77932797, 'stanleyvasconcelohifosd@gmail.com', 1, '5d658f8e77c8a');
 
 -- --------------------------------------------------------
 
@@ -121,18 +122,19 @@ CREATE TABLE `clientes` (
   `telefono` int(8) NOT NULL,
   `contrasenia` varchar(255) NOT NULL,
   `correo` varchar(120) NOT NULL,
-  `estado` tinyint(1) NOT NULL
+  `estado` tinyint(1) NOT NULL,
+  `token_cliente` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `clientes`
 --
 
-INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `alias_cliente`, `direccion`, `telefono`, `contrasenia`, `correo`, `estado`) VALUES
-(2, 'Raul ', 'Meana', 'Raul123', 'mi casa', 7894578, '123456', '', 1),
-(3, 'Arturo', 'Galileo', 'Arthur', 'su casa', 798563, '123456', '', 1),
-(4, 'Frank', 'Vasconcelos', 'Frank', 'mi casa', 77932797, '123456', 'jeje', 1),
-(5, 'Frank', 'Vasconcelos', 'Farbi', 'mi casa', 77932797, '$2y$10$2rWVHZ7ipGGXnsFPDd8y2OfeMzDMzaPb42rWXV2j1CwXGCDtGc7aG', 'stanleyvasconcelos0@gmail.com', 1);
+INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `alias_cliente`, `direccion`, `telefono`, `contrasenia`, `correo`, `estado`, `token_cliente`) VALUES
+(2, 'Raul ', 'Meana', 'Raul123', 'mi casa', 7894578, '123456', '', 1, ''),
+(3, 'Arturo', 'Galileo', 'Arthur', 'su casa', 798563, '123456', '', 1, ''),
+(4, 'Frank', 'Vasconcelos', 'Frank', 'mi casa', 77932797, '123456', 'jeje', 0, ''),
+(5, 'Frank', 'Vasconcelos', 'Farbi', 'mi casa', 77932797, '$2y$10$2rWVHZ7ipGGXnsFPDd8y2OfeMzDMzaPb42rWXV2j1CwXGCDtGc7aG', 'stanleyvasconcelos0@gmail.com', 1, '');
 
 -- --------------------------------------------------------
 

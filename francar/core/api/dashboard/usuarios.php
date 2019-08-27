@@ -3,6 +3,14 @@ require_once('../../helpers/database.php');
 require_once('../../helpers/validator.php');
 require_once('../../models/dashboard/usuarios.php');
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../../../core/libraries/PHPMailer-master/src/Exception.php';
+require '../../../core/libraries/PHPMailer-master/src/PHPMailer.php';
+require '../../../core/libraries/PHPMailer-master/src/SMTP.php';
+
+
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
 if (isset($_GET['action'])) {
     session_start();
@@ -69,13 +77,13 @@ if (isset($_GET['action'])) {
 
 
             case 'password':
-                if ($usuario->setId($_SESSION['id_usuario'])) {
+                if ($usuario->setId($_SESSION['id_administrador'])) {
                     $_POST = $usuario->validateForm($_POST);
-                    if ($_POST['clave_actual_1'] == $_POST['clave_actual_2']) {
-                        if ($usuario->setClave($_POST['clave_actual_1'])) {
+                    if ($_POST['actual1'] == $_POST['actual2']) {
+                        if ($usuario->setContrasenia($_POST['actual1'])) {
                             if ($usuario->checkPassword()) {
-                                if ($_POST['clave_nueva_1'] == $_POST['clave_nueva_2']) {
-                                    if ($usuario->setClave($_POST['clave_nueva_1'])) {
+                                if ($_POST['nueva1'] == $_POST['nueva2']) {
+                                    if ($usuario->setContrasenia($_POST['nueva1'])) {
                                         if ($usuario->changePassword()) {
                                             $result['status'] = 1;
                                         } else {
@@ -249,6 +257,83 @@ if (isset($_GET['action'])) {
                     $result['exception'] = 'No existen usuarios registrados';
                 }
             break;
+
+            case 'Recuperacion':
+                $_POST = $usuario->validateForm($_POST);
+                if ($usuario->setCorreo($_POST['correo_usuario'])) {
+                    if ($usuario->Correo_contra()) {  
+                        $token = uniqid();
+                        if ($usuario->setToken($token)) {
+                            if ($usuario->updateToken()) {
+                                if ($correousuario = $usuario->getCorreo()) {
+                                    $result['status'] = 1;
+                                    echo('PEPITO');
+                                    $mail = new PHPMailer(true);
+                                    $mail->CharSet = "UTF-8";
+                                try {
+                                    $mail->SMTPDebug = 2;
+                                    $mail->isSMTP();
+                                    $mail->Host = 'smtp.gmail.com';
+                                    $mail->SMTPAuth = true;
+                                    $mail->Username = 'libreriafrancar@gmail.com';
+                                    $mail->Password = 'Hola!1234';
+                                    $mail->SMTPSecure = 'tls';
+                                    $mail->Port = 587;
+
+                                    $mail->setFrom('libreriafrancar@gmail.com');
+                                    $mail->addAddress($correousuario);
+
+                                    $mail->isHTML(true);
+                                    $mail->Subject = 'Recuperacion de su contraseña';
+                                    $mail->ody = 'Puede hacer click';
+                                    $mail->Body = '<a href="http://localhost/Francar/francar/views/private/recuperacion_contrasenia.php?token='.$token.'">Haga click aqui para recuperar su contraseña</a>';
+
+                                    $mail->send();
+                                    echo 'Su mensaje ha sido enviado correctamente';
+                                } catch (Exception $e) {
+                                    echo "Su mensaje no pudo enviarse'{$mail->ErrorInfo}'";
+                                }
+                            } else {
+                                $result['exception'] = 'Correo inexistente';
+                            }
+                        } else {
+                            $result['exception'] = 'Correo invalido';
+                            }
+                        } else {
+                            $result['exception'] = 'Correo invalido';
+                        } 
+                    }else {
+                        $result['exception'] = 'Correo invalido';
+                    }
+                }else {
+                    $result['exception'] = 'Correo invalido';
+                }
+            break;
+
+            case 'RecuCambio':
+                $POST = $usuario->validateForm($_POST);
+                if ($usuario->setToken($_POST['token'])) {
+                    if ($usuario->getDatosToken()) {
+                        if ($_POST['contra_nuevita1'] == $_POST['contra_nuevita2']) {
+                            if ($usuario->setContrasenia(['contra_nuevita1'])) {
+                                if ($usuario->changePassword()) {
+                                $result['status'] = 1;
+                            } else {
+                                $result['exception'] = 'No se pudo ejecutar la peticion xdf';
+                            }
+                        } else {
+                            $result['exception'] = 'Clave incorrecta';
+                        }
+                    } else {
+                        $result['exception'] = 'Contraseñas diferentes';
+                    }
+                } else {
+                    $result['exception'] = 'No se pudo ejecutar la peticion DFDS';
+                }
+            } else {
+                $result['exception'] = 'Token inexistente';
+            }
+            break;
             
             case 'register':
                 $_POST = $usuario->validateForm($_POST);
@@ -261,14 +346,18 @@ if (isset($_GET['action'])) {
                                     if ($usuario->setTelefono($_POST['telefono'])) {
                                         if ($usuario->setCorreo($_POST['correo'])) {
                                             if ($_POST['clave1'] == $_POST['clave2']) {
+                                                if ($_POST['clave1'] != $_POST['alias']) {
                                                 if ($usuario->setContrasenia($_POST['clave1'])) {
                                                     if ($usuario->createUsuario()) {
                                                     $result['status'] = 1;
                                                         } else {
                                                     $result['exception'] = 'Operación fallida';
                                                 }
+                                                } else {
+                                                    $result['exception'] = 'Clave menor a 8 caracteres';
+                                                }
                                             } else {
-                                                $result['exception'] = 'Clave menor a 6 caracteres';
+                                                $result['exception'] = 'La clave no puede ser igual al alias';
                                             }
                                         } else {
                                             $result['exception'] = 'Claves diferentes';
@@ -290,7 +379,7 @@ if (isset($_GET['action'])) {
                     }       
                 } else {
                     $result['exception'] = 'Apellidos incorrectos';
-                    }
+                }
             } else {
                 $result['exception'] = 'Nombres incorrectos';
             }

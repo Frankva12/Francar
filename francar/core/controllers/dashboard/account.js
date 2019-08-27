@@ -105,12 +105,12 @@ $('#form-profile').submit(function () {
 })
 
 //Función para cambiar la contraseña del usuario que ha iniciado sesión
-$('#form-password').submit(function () {
+$('#form-contrasenia').submit(function () {
     event.preventDefault();
     $.ajax({
             url: apiAccount + 'password',
             type: 'post',
-            data: $('#form-password').serialize(),
+            data: $('#form-contrasenia').serialize(),
             datatype: 'json'
         })
         .done(function (response) {
@@ -119,7 +119,6 @@ $('#form-password').submit(function () {
                 const result = JSON.parse(response);
                 //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
                 if (result.status) {
-                    $('#modal-password').modal('close');
                     sweetAlert(1, 'Contraseña cambiada correctamente', 'private.php');
                 } else {
                     sweetAlert(2, result.exception, null);

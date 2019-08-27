@@ -289,14 +289,18 @@ if (isset($_GET['action'])) {
                                     if ($usuario->setTelefono($_POST['telefono'])) {
                                         if ($usuario->setCorreo($_POST['correo'])) {
                                             if ($_POST['clave1'] == $_POST['clave2']) {
+                                                if ($_POST['clave1'] != $_POST['alias']) {
                                                 if ($usuario->setContrasenia($_POST['clave1'])) {
                                                     if ($usuario->createUsuario()) {
                                                     $result['status'] = 1;
                                                         } else {
                                                     $result['exception'] = 'Operación fallida';
                                                 }
+                                                } else {
+                                                    $result['exception'] = 'Clave menor a 8 caracteres';
+                                                }
                                             } else {
-                                                $result['exception'] = 'Clave menor a 6 caracteres';
+                                                $result['exception'] = 'La clave debe ser diferente al alias';
                                             }
                                         } else {
                                             $result['exception'] = 'Claves diferentes';
@@ -324,6 +328,18 @@ if (isset($_GET['action'])) {
             }
         } else {
             $result['exception'] = 'Complete formulario de no soy un robot ';
+        }
+        break;
+
+        case 'bloquear':
+        $_POST = $usuario->validateForm($_POST);
+        if ($usuario->setAlias($_POST['alias'])) {
+            if ($usuario->checkAlias()) {
+                if ($usuario->bloquearUsuario()) {
+                    $result['status'] = 1;
+                    $result['message'] = 'Usuario bloqueado';                        
+                }
+            }
         }
         break;
         
