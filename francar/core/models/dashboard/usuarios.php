@@ -228,7 +228,7 @@ class Usuarios extends Validator
 		$sql = 'SELECT id_administrador FROM administrador WHERE token_usuario = ? LIMIT 1';
 		$params = array($this->$token);
 		$datos = Database::getRow($sql, $params);
-		if ($datos ) {
+		if ($datos) {
 			$this->id = $datos['id_administrador'];
 			return true;
 		}
