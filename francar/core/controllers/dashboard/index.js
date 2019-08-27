@@ -101,7 +101,7 @@ function recuperarContra() {
                 const dataset = JSON.parse(response);
                 //Se comprueba que no hay usuarios registrados para redireccionar al registro del primer usuario
                 if (dataset.status == 2) {
-                    sweetAlert(3, dataset.exception, 'registrar.php');
+                    sweetAlert(3, dataset.exception, 'recuperacion_contrasenia.php');
                 }
             } else {
                 console.log(response);

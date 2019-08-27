@@ -266,12 +266,13 @@ if (isset($_GET['action'])) {
                             if ($usuario->updateToken()) {
                                 if ($correousuario = $usuario->getCorreo()) {
                                     $result['status'] = 1;
-                                   // echo('PEPITO');
+                                    echo('PEPITO');
                                     $mail = new PHPMailer(true);
                                 try {
                                     $mail->SMTPDebug = 2;
                                     $mail->isSMTP();
                                     $mail->Host = 'smtp.gmail.com';
+                                    $mail->SMTPAuth = true;
                                     $mail->Username = 'libreriafrancar@gmail.com';
                                     $mail->Password = 'Hola!1234';
                                     $mail->SMTPSecure = 'tls';
