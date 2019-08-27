@@ -109,7 +109,7 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-                
+
             case 'read':
                 if ($result['dataset'] = $usuario->readUsuarios()) {
                     $result['status'] = 1;
@@ -145,7 +145,7 @@ if (isset($_GET['action'])) {
                                 }
                             } else {
                                 $result['exception'] = 'Telefono incorrecto';
-                            }  
+                            }
                         } else {
                             $result['exception'] = 'Direccion incorrecta';
                         }
@@ -195,7 +195,7 @@ if (isset($_GET['action'])) {
                                         }
                                     } else {
                                         $result['exception'] = 'Alias incorrecto';
-                                    }                                    
+                                    }
                                     } else {
                                         $result['exception'] = 'Estado incorrecto';
                                     }
@@ -261,7 +261,7 @@ if (isset($_GET['action'])) {
             case 'Recuperacion':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setCorreo($_POST['correo_usuario'])) {
-                    if ($usuario->Correo_contra()) {  
+                    if ($usuario->Correo_contra()) {
                         $token = uniqid();
                         if ($usuario->setToken($token)) {
                             if ($usuario->updateToken()) {
@@ -301,7 +301,7 @@ if (isset($_GET['action'])) {
                             }
                         } else {
                             $result['exception'] = 'Correo invalido';
-                        } 
+                        }
                     }else {
                         $result['exception'] = 'Correo invalido';
                     }
@@ -311,30 +311,28 @@ if (isset($_GET['action'])) {
             break;
 
             case 'RecuCambio':
-                $POST = $usuario->validateForm($_POST);
-                if ($usuario->setToken($_POST['token'])) {
-                    if ($usuario->getDatosToken()) {
-                        if ($_POST['contra_nuevita1'] == $_POST['contra_nuevita2']) {
-                            if ($usuario->setContrasenia(['contra_nuevita1'])) {
-                                if ($usuario->changePassword()) {
-                                $result['status'] = 1;
-                            } else {
-                                $result['exception'] = 'No se pudo ejecutar la peticion xdf';
-                            }
+            if ($usuario->setToken($_POST['token'])) {
+                $_POST = $usuario->validateForm($_POST);
+                if ($_POST['contra_nueva1'] == $_POST['contra_nueva2']) {
+                    if ($usuario->setContrasenia($_POST['contra_nueva1'])) {
+                        if ($usuario->tokenPass()) {
+                            $result['status'] = 1;
                         } else {
-                            $result['exception'] = 'Clave incorrecta';
+                            $result['exception'] = 'No se pudo actualizar la contraseña.';
                         }
+
                     } else {
-                        $result['exception'] = 'Contraseñas diferentes';
+                        $result['exception'] = 'La contraseña contiene menos de 6 caracteres.';
                     }
                 } else {
-                    $result['exception'] = 'No se pudo ejecutar la peticion DFDS';
+                    $result['exception'] = 'Las contraseñas ingresadas no coinciden.';
                 }
+
             } else {
-                $result['exception'] = 'Token inexistente';
+                $result['exception'] = 'Token invalido. Contacte al administrado.';
             }
             break;
-            
+
             case 'register':
                 $_POST = $usuario->validateForm($_POST);
                 if ($_POST['g-recaptcha-response']) {
@@ -376,7 +374,7 @@ if (isset($_GET['action'])) {
                         }
                     } else {
                     $result['exception'] = 'Alias incorrecto';
-                    }       
+                    }
                 } else {
                     $result['exception'] = 'Apellidos incorrectos';
                 }
@@ -395,13 +393,13 @@ if (isset($_GET['action'])) {
                     if ($usuario->checkAlias()) {
                         if ($usuario->setContrasenia($_POST['contrasenia'])) {
                             if ($usuario->checkPassword()) {
-                                $result['status'] = 1;       
+                                $result['status'] = 1;
                                 $_SESSION['id_administrador'] = $usuario->getId();
                                 $_SESSION['alias_usuario'] = $usuario->getAlias();
-                                }     
+                                }
                                 else {
                                     $result['exception'] = 'Clave inexistente';
-                                }             
+                                }
                             } else {
                                 $result['exception'] = 'Clave menor a 6 caracteres';
                             }
@@ -422,7 +420,7 @@ if (isset($_GET['action'])) {
                     if ($usuario->checkAlias()) {
                         if ($usuario->bloquearUsuario()) {
                             $result['status'] = 1;
-                            $result['message'] = 'Usuario bloqueado';                        
+                            $result['message'] = 'Usuario bloqueado';
                         }
                     }
                 }

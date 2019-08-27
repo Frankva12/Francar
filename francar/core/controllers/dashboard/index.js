@@ -1,5 +1,8 @@
 $(document).ready(function () {
     checkUsuarios();
+    let params = new URLSearchParams(location.search);
+    var token = params.get('token');
+    $("#token").val(token);
 })
 
 //Constante para establecer la ruta y parámetros de comunicación con la API
@@ -113,27 +116,13 @@ function recuperarContra() {
         });
 }
 
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
 $('#form-nueva-contrasena').submit(function()
 {   event.preventDefault();
-    var token = getParameterByName('token');
     console.log(token);
-    var password1 = $('#contra_nueva1').val(), password2 = $('#contra_nueva2').val();
     $.ajax({
         url: apiSesion + 'RecuCambio',
         type: 'post',
-        data: {
-            token: token,
-            contra_nuevita1: password1,
-            contra_nuevita2: password2
-        },
+        data: $("#form-nueva-contrasena").serialize(),
         datatype: 'json'
     })
     .done(function(response){
