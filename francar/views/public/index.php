@@ -16,81 +16,35 @@
 
 <body>
 
-  <div class="navbar-fixed">
-
-    <nav>
-      <div class="nav-wrapper black">
-        <!--Con este container se pone lo que es el nombre de nuestra tienda en linea-->
-
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-          <i class="material-icons">menu</i>
-        </a>
-        <div class="container">
-          <a href="index.php" class="brand-logo">Libreria Francar</a>
-          <ul class="right hide-on-med-and-down">
-            <!--Se colocan las opciones que va a llevar el menu-->
-            <li>
-              <a class="waves-effect waves-light btn modal-trigger black" href="#modal1">CONTÁCTANOS</a>
-            </li>
-            <li>
-              <a class="waves-effect waves-light btn modal-trigger black" href="#modal2">¿Quiénes somos?</a>
-            <li>
-              <a class="waves-effect waves-light btn modal-trigger black" href="libros.php">Libros disponibles</a>
-            <li>
-            <li>
-              <a class="waves-effect waves-light btn modal-trigger black" href="login.php">Iniciar sesion</a>
-            <li>
-              <a class="waves-effect waves-light btn modal-trigger black" href="carrito.php">
-                <i class="material-icons prefix">shopping_cart</i>
-              </a>
-
-        </div>
-      </div>
-    </nav>
-  </div>
-
-
+  <?php
+     require("../../core/helpers/public/menu.php");
+     Iniciar::navigate();
+  ?>
 
   <!-- Este es otro modal pero ahora en la opcion de contáctanos donde aparecera un formulario que automaticamente una persona deja ir un mensjae, al instante nos cae en nuestro correo electronico-->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4 class="center-align">Contactanos</h4>
-      <form method="post" id="form-update">
-
-        <div class="input-field col s6 m6 l12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate"
-            autocomplete="off" required />
-          <label for="update_nombre_administrador">Nombre</label>
-        </div>
-
-
-        <div class="input-field col s6 m6 l12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="update_apellido_administrador" type="text" name="update_apellido_administrador" class="validate"
-            autocomplete="off" required />
-          <label for="update_apellido_administrador">Apellido</label>
-        </div>
-
-        <div class="input-field col s6 m6 l12">
-          <i class="material-icons prefix">phone</i>
-          <input id="update_telefono" type="tel" name="update_telefono" class="validate" autocomplete="off" required />
-          <label for="update_telefono">telefono</label>
-        </div>
-
-        <div class="input-field col s6 m6 l12">
-          <i class="material-icons prefix">mail</i>
-          <input id="update_correo" type="email" name="update_correo" class="validate" autocomplete="off" required />
-          <label for="update_correo">Correo</label>
-        </div>
-
+      <blockquote>
+        <h3 class="header">Contactanos
+          <a class="btn-floating black pulse">
+            <i class="material-icons">group</i>
+          </a>
+        </h3>
+      </blockquote>
+      </blockquote>
+      <hr>
+      <h5>
+        <p align="left">Nuestros telefonos son: 2121-2828 y 2277-7777
+        </p>
+      </h5>
+      <h5>
+        <p align="left">
+          Nuestro correo: libreriafrancar@gmail.com.
+        </p>
+      </h5>
+      <hr>
+      <blockquote>
     </div>
-    <div class="row center-align">
-      <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Modificar"><i
-          class="material-icons">send</i></button>
-    </div>
-    </form>
-  </div>
   </div>
   </div>
 
