@@ -12,6 +12,7 @@ class Usuarios extends Validator
 	private $telefono = null;
 	private $correo = null;
 	private $estado = null;
+	private $token = null;
 	
 
 	//Métodos para sobrecarga de propiedades
@@ -58,6 +59,17 @@ class Usuarios extends Validator
 	public function getNombre()
 	{
 		return $this->nombre;
+	}
+
+	public function setToken($value)
+	{
+		$this->token = $value;
+		return true;
+	}
+
+	public function getToken()
+	{
+		return $this->token;
 	}
 
 	public function setApellido($value)
@@ -179,11 +191,49 @@ class Usuarios extends Validator
 		}
 	}
 
+	
+	public function changePassword()
+	{
+		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
+		$sql = 'UPDATE clientes SET contrasenia = ? WHERE id_cliente = ?';
+		$params = array($hash, $this->id);
+		return Database::executeRow($sql, $params);
+	}
+
+	//Metodos para manejar el CRUD
+	public function Correo_contraCliente()
+	{
+		$sql = 'SELECT id_cliente FROM clientes where correo = ? LIMIT 1';
+		$params = array($this->correo);
+		return Database::getRows($sql, $params);
+	}
+
+	public function updateTokenCliente()
+	{
+		$sql = 'UPDATE clientes SET token_cliente = ? WHERE correo = ?';
+		$params = array($this->token, $this->correo);
+		return Database::executeRow($sql, $params);
+	}
+
+	public function getDatosToken()
+	{
+		$sql = 'SELECT id_cliente FROM clientes WHERE token_cliente = ?';
+		$params = array($this->token);
+		$datos = Database::getRow($sql, $params);
+	}
+
+	public function tokenPass()
+	{
+		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);
+		$sql = 'UPDATE clientes SET contrasenia = ? WHERE token_cliente = ?';
+		$params = array($hash, $this->token);
+		return Database::executeRow($sql, $params);
+	}
 
 	//Metodos para manejar el CRUD
 	public function readUsuarios()
 	{
-		$sql = 'SELECT id_cliente, nombre_cliente, apellido_cliente, alias_cliente, direccion, telefono, estado FROM clientes ORDER BY nombre_cliente';
+		$sql = 'SELECT * FROM clientes ORDER BY nombre_cliente';
 		$params = array(null);
 		return Database::getRows($sql, $params);
 	}
