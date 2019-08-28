@@ -50,23 +50,25 @@
               <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
                   class="material-icons">send</i></button>
             </div>
+          </div>
+          <div class="col s12 center-align">
+            <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="recuperar_contrasena.php">¿Olvidó su contraseña?
+            </a>
+            <br>
+            <br>
+          </div>
 
-            <div class="input-field col s6 m6 l6">
-              <p align='right'>
-                <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="recuperar_contrasena.php">¿Olvidó su
-                  contraseña?
-                </a>
         </form>
-        </p>
 
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-            <!--Se importan los archivos de JavaScript-->
-            <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-            <script src="../../resources/js/materialize.min.js"></script>
-            <script src="../../resources/js/modal.js"></script>
-            <script src="../../resources/js/sweetalert.min.js"></script>
-            <script src="../../core/helpers/functions.js"></script>
-            <script src="../../core/controllers/dashboard/index.js"></script>
+
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <!--Se importan los archivos de JavaScript-->
+        <script src="../../resources/js/jquery-3.3.1.min.js"></script>
+        <script src="../../resources/js/materialize.min.js"></script>
+        <script src="../../resources/js/modal.js"></script>
+        <script src="../../resources/js/sweetalert.min.js"></script>
+        <script src="../../core/helpers/functions.js"></script>
+        <script src="../../core/controllers/dashboard/index.js"></script>
   </body>
 
 </html>

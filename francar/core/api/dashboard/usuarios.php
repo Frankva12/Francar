@@ -266,8 +266,7 @@ if (isset($_GET['action'])) {
                         if ($usuario->setToken($token)) {
                             if ($usuario->updateToken()) {
                                 if ($correousuario = $usuario->getCorreo()) {
-                                    $result['status'] = 1;
-                                    echo('PEPITO');
+                                    //echo('PEPITO');
                                     $mail = new PHPMailer(true);
                                     $mail->CharSet = "UTF-8";
                                 try {
@@ -285,27 +284,28 @@ if (isset($_GET['action'])) {
 
                                     $mail->isHTML(true);
                                     $mail->Subject = 'Recuperacion de su contraseña';
-                                    $mail->ody = 'Puede hacer click';
-                                    $mail->Body = '<a href="http://localhost/Francar/francar/views/private/recuperacion_contrasenia.php?token='.$token.'">Haga click aqui para recuperar su contraseña</a>';
+                                    $mail->Body = 'Bienvenido, '.$correousuario.' Usted ha solicitado un cambio de contraseña <br> <a href="http://localhost/Francar/francar/views/private/recuperacion_contrasenia.php?token='.$token.'">Por favor, haga click aqui para modificar su contraseña</a>';
 
                                     $mail->send();
                                     echo 'Su mensaje ha sido enviado correctamente';
+                                    $result['status'] = 1;
                                 } catch (Exception $e) {
                                     echo "Su mensaje no pudo enviarse'{$mail->ErrorInfo}'";
+                                    $result['exception'] = 'El correo no ha podido enviarse';
+                                    }
+                                } else {
+                                    $result['exception'] = 'Correo inexistente';
                                 }
                             } else {
-                                $result['exception'] = 'Correo inexistente';
-                            }
-                        } else {
-                            $result['exception'] = 'Correo invalido';
+                                $result['exception'] = 'Correo invalido';
                             }
                         } else {
                             $result['exception'] = 'Correo invalido';
                         }
-                    }else {
+                    } else {
                         $result['exception'] = 'Correo invalido';
                     }
-                }else {
+                } else {
                     $result['exception'] = 'Correo invalido';
                 }
             break;

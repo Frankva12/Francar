@@ -51,7 +51,6 @@ $('#form-sesion').submit(function () {
                 //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
                 if (dataset.status == 1) {
                     sweetAlert(1, 'Autenticación correcta', 'private.php');
-
                 } else {
                     if (i >= 3) {
                         $.ajax({
@@ -91,7 +90,7 @@ $('#form-sesion').submit(function () {
 
 function recuperarContra() {
     event.preventDefault();
-    console.log("holaaaaaaa");
+    //console.log("holaaaaaaa");
     $.ajax({
             url: apiSesion + 'Recuperacion',
             type: 'post',
@@ -102,9 +101,10 @@ function recuperarContra() {
             //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
             if (isJSONString(response)) {
                 const dataset = JSON.parse(response);
-                //Se comprueba que no hay usuarios registrados para redireccionar al registro del primer usuario
-                if (dataset.status == 2) {
-                    sweetAlert(3, dataset.exception, 'recuperacion_contrasenia.php');
+                if (dataset.status == 1) {
+                    sweetAlert(1, 'Su mensaje ha sido enviado correctamente', 'index.php');
+                } else {
+                    sweetAlert(3, dataset.exception, null);
                 }
             } else {
                 console.log(response);
@@ -116,31 +116,31 @@ function recuperarContra() {
         });
 }
 
-$('#form-nueva-contrasena').submit(function()
-{   event.preventDefault();
+$('#form-nueva-contrasena').submit(function () {
+    event.preventDefault();
     console.log(token);
     $.ajax({
-        url: apiSesion + 'RecuCambio',
-        type: 'post',
-        data: $("#form-nueva-contrasena").serialize(),
-        datatype: 'json'
-    })
-    .done(function(response){
-        //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
-        if (isJSONString(response)) {
-            const dataset = JSON.parse(response);
-            //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
-            if (dataset.status == 1) {
-                sweetAlert(1, 'Se ha restaurado la contraseña exitosamente', 'index.php');
+            url: apiSesion + 'RecuCambio',
+            type: 'post',
+            data: $("#form-nueva-contrasena").serialize(),
+            datatype: 'json'
+        })
+        .done(function (response) {
+            //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
+            if (isJSONString(response)) {
+                const dataset = JSON.parse(response);
+                //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
+                if (dataset.status == 1) {
+                    sweetAlert(1, 'Se ha restaurado la contraseña exitosamente', 'index.php');
+                } else {
+                    sweetAlert(2, dataset.exception, null);
+                }
             } else {
-                sweetAlert(2, dataset.exception, null);
+                console.log(response);
             }
-        } else {
-            console.log(response);
-        }
-    })
-    .fail(function(jqXHR){
-        //Se muestran en consola los posibles errores de la solicitud AJAX
-        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
-    });
+        })
+        .fail(function (jqXHR) {
+            //Se muestran en consola los posibles errores de la solicitud AJAX
+            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+        });
 })
