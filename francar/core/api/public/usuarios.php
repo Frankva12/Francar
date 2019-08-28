@@ -3,6 +3,14 @@ require_once('../../helpers/database.php');
 require_once('../../helpers/validator.php');
 require_once('../../models/public/usuarios.php');
 
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../../../core/libraries/PHPMailer-master/src/Exception.php';
+require '../../../core/libraries/PHPMailer-master/src/PHPMailer.php';
+require '../../../core/libraries/PHPMailer-master/src/SMTP.php';
+
 //Se comprueba si existe una petición del sitio web y la acción a realizar, de lo contrario se muestra una página de error
 if (isset($_GET['action'])) {
     session_start();
@@ -250,7 +258,82 @@ if (isset($_GET['action'])) {
                 }
             break;
 
-                
+            
+            case 'Recuperacion':
+                $_POST = $usuario->validateForm($_POST);
+                if ($usuario->setCorreo($_POST['correo_usuario'])) {
+                    if ($usuario->Correo_contraCliente()) {
+                        $token = uniqid();
+                        if ($usuario->setToken($token)) {
+                            if ($usuario->updateTokenCliente()) {
+                                if ($correousuario = $usuario->getCorreo()) {
+                                    //echo('PEPITO');
+                                    $mail = new PHPMailer(true);
+                                    $mail->CharSet = "UTF-8";
+                                try {
+                                    $mail->SMTPDebug = 2;
+                                    $mail->isSMTP();
+                                    $mail->Host = 'smtp.gmail.com';
+                                    $mail->SMTPAuth = true;
+                                    $mail->Username = 'libreriafrancar@gmail.com';
+                                    $mail->Password = 'Hola!1234';
+                                    $mail->SMTPSecure = 'tls';
+                                    $mail->Port = 587;
+
+                                    $mail->setFrom('libreriafrancar@gmail.com');
+                                    $mail->addAddress($correousuario);
+
+                                    $mail->isHTML(true);
+                                    $mail->Subject = 'Recuperacion de su contraseña';
+                                    $mail->Body = 'Bienvenido cliente, '.$correousuario.' Usted ha solicitado un cambio de contraseña <br> <a href="http://localhost/Francar/francar/views/public/recuperacion_contrasenia.php?token='.$token.'">Por favor, haga click aqui para modificar su contraseña</a>';
+
+                                    $mail->send();
+                                    echo 'Su mensaje ha sido enviado correctamente';
+                                    $result['status'] = 1;
+                                } catch (Exception $e) {
+                                    echo "Su mensaje no pudo enviarse'{$mail->ErrorInfo}'";
+                                    $result['exception'] = 'El correo no ha podido enviarse';
+                                    }
+                                } else {
+                                    $result['exception'] = 'Correo inexistente';
+                                }
+                            } else {
+                                $result['exception'] = 'Correo invalido';
+                            }
+                        } else {
+                            $result['exception'] = 'Correo invalido';
+                        }
+                    } else {
+                        $result['exception'] = 'Correo invalido';
+                    }
+                } else {
+                    $result['exception'] = 'Correo invalido';
+                }
+            break;
+
+            case 'RecuCambioContra':
+            if ($usuario->setToken($_POST['token'])) {
+                $_POST = $usuario->validateForm($_POST);
+                if ($_POST['contra_nueva1'] == $_POST['contra_nueva2']) {
+                    if ($usuario->setContrasenia($_POST['contra_nueva1'])) {
+                        if ($usuario->tokenPass()) {
+                            $result['status'] = 1;
+                        } else {
+                            $result['exception'] = 'No se pudo actualizar la contraseña.';
+                        }
+
+                    } else {
+                        $result['exception'] = 'La contraseña contiene menos de 6 caracteres.';
+                    }
+                } else {
+                    $result['exception'] = 'Las contraseñas ingresadas no coinciden.';
+                }
+
+            } else {
+                $result['exception'] = 'Token invalido. Contacte al administrado.';
+            }
+            break;
+
             case 'login':
             $_POST = $usuario->validateForm($_POST);
              if ($_POST['g-recaptcha-response']) {

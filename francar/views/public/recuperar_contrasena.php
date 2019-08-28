@@ -11,16 +11,17 @@
   <link rel="text/css" href="../../resources/css/fondo.css">
   <link rel="icon" type="ico" href="../../resources/img/icono.ico">
 </head>
+
 <!--Se hace un contenedor donde se le pone lo que es el login para el administrador-->
 <div class="container1">
 
-  <body background="../../resources/img/fondo_public.jpg">
+  <body background="../../resources/img/biblioteca.jpg">
     <div id="login-page" class="row center-align">
       <div class="col s12 m12 l12 z-depth-6 card-panel center-align">
-        <form method="post" id="form-sesion">
+        <form method="post" id="form-recuperar">
           <div class="row blue lighten-1">
             <br>
-            <h4 align="center"> Bienvenidos.
+            <h4>Bienvenidos.
               <br>
               <br>
               <i align="center" class="material-icons medium">account_circle</i>
@@ -29,57 +30,29 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">assignment_ind</i>
-              <input id="alias_cliente" type="text" name="alias_cliente" class="validate" minlength="5" maxlength="40"
+              <input id="correo_usuario" type="text" name="correo_usuario" class="validate" minlength="5" maxlength="80"
                 autocomplete="off" required />
-              <label for="alias_cliente">Alias</label>
+              <label for="correo_usuario">Correo</label>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <i class="material-icons prefix">lock_outline</i>
-              <input id="contrasenia" type="password" name="contrasenia" class="validate" minlength="5" maxlength="80"
-                autocomplete="off" required />
-              <label for="contrasenia">Contraseña</label>
-            </div>
-          </div>
-
-
           <div class="col s12 center-align">
-            <button type="submit" class="btn waves-effect black tooltipped" data-tooltip="Ingresar"><i
-                class="material-icons">send</i></button>
+            <button type="submit" class="btn waves-effect black tooltipped" id="botonRecuperar"
+              onclick="recuperacionContra()" data-tooltip="Ingresar"><i class="material-icons">send</i></button>
+            <br>
+            <br>
           </div>
-          <div class="input-field col s12 m12 l12">
-            <p align='center'>
-              <a class="waves-effect waves-light btn modal-trigger grey darken-4"
-                href="recuperar_contrasena.php">¿Olvidó su
-                contraseña?
-              </a>
-            </p>
-
-            <div class="row">
-              <div class="input-field col s12">
-                <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
-              </div>
-              <p align='center'>
-                <a class="waves-effect waves-light btn modal-trigger grey darken-4"
-                  href="registrar_cliente.php">Registrarse
-                </a>
-              </p>
         </form>
       </div>
     </div>
 </div>
-
+</body>
 
 <!--Se importan los archivos de JavaScript-->
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/materialize.min.js"></script>
 <script src="../../resources/js/modal.js"></script>
 <script src="../../resources/js/sweetalert.min.js"></script>
 <script src="../../core/helpers/functions.js"></script>
 <script src="../../core/controllers/public/index.js"></script>
-</body>
 
 </html>
