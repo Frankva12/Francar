@@ -52,7 +52,8 @@
             </div>
           </div>
           <div class="col s12 center-align">
-            <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="recuperar_contrasena.php">¿Olvidó su contraseña?
+            <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="recuperar_contrasena.php">¿Olvidó
+              su contraseña?
             </a>
             <br>
             <br>

@@ -50,47 +50,47 @@
   <!--Se hace tabla donde muestran los diferentes usuarios que hay-->
   <div class="container">
     <form method="post" id="form-contrasenia">
-    <input type="hidden" id="id_administrador" name="id_administrador">
-          <div class="input-field col s12 m6">
-            <i class="material-icons prefix">lock</i>
-            <input  type="password" class="form-control" id="actual1" name="actual1">
-            <label>Contraseña actual</label>
-          </div>
+      <input type="hidden" id="id_administrador" name="id_administrador">
+      <div class="input-field col s12 m6">
+        <i class="material-icons prefix">lock</i>
+        <input type="password" class="form-control" id="actual1" name="actual1">
+        <label>Contraseña actual</label>
+      </div>
 
-          <div class="input-field col s12 m6">
-            <i class="material-icons prefix">lock</i>
-            <input type="password" class="form-control" id="actual2" name="actual2">
-            <label>Repita contraseña actual</label>
-          </div>
+      <div class="input-field col s12 m6">
+        <i class="material-icons prefix">lock</i>
+        <input type="password" class="form-control" id="actual2" name="actual2">
+        <label>Repita contraseña actual</label>
+      </div>
 
-          <div class="input-field col s12 m6">
-            <i class="material-icons prefix">lock</i>
-            <input  type="password" class="form-control" id="nueva1" name="nueva1">
-            <label>Contraseña nueva</label>
-          </div>
+      <div class="input-field col s12 m6">
+        <i class="material-icons prefix">lock</i>
+        <input type="password" class="form-control" id="nueva1" name="nueva1">
+        <label>Contraseña nueva</label>
+      </div>
 
-          <div class="input-field col s12 m6">
-            <i class="material-icons prefix">lock</i>
-            <input type="password" class="form-control" id="nueva2" name="nueva2">
-            <label>Repita nueva contraseña</label>
-          </div>
+      <div class="input-field col s12 m6">
+        <i class="material-icons prefix">lock</i>
+        <input type="password" class="form-control" id="nueva2" name="nueva2">
+        <label>Repita nueva contraseña</label>
+      </div>
 
-          <div class="row center-align">
-      <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Guardar cambios"><i
-          class="material-icons"></i>Guardar Cambios</button>
-        </form>
-    </div>
+      <div class="row center-align">
+        <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Guardar cambios"><i
+            class="material-icons"></i>Guardar Cambios</button>
+    </form>
+  </div>
   </div>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <!--Es el footer de nuestra pagina donde lleva la informacion de la tienda en linea-->
   <?php
