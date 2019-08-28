@@ -346,9 +346,10 @@ if (isset($_GET['action'])) {
                     $contrasenia = $usuario->setContrasenia($_POST['contrasenia']);
                     if ($contrasenia[0]) {
                         if ($usuario->checkPassword()) {
-                            $_SESSION['id_administrador'] = $usuario->getId();
+                            $_SESSION['id_cliente'] = $usuario->getId();
                             $_SESSION['alias_cliente'] = $usuario->getAlias();
                             $result['status'] = 1;
+                            $_SESSION['tiempo'] = time();
                         } else {
                             $result['exception'] = 'Clave inexistente';
                         }

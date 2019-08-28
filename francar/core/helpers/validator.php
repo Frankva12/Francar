@@ -132,14 +132,14 @@ class Validator
 	public function validatePassword($value)
 	{
 		$error;
-		if (strlen($value) > 7 && strlen($value) < 20) {
+		if (strlen($value) > 7 && strlen($value) < 25) {
 			if (preg_match('#[0-9]+#', $value)) {
 				if (preg_match('#[a-z]+#', $value)) {
 					if (preg_match('#[A-Z]+#', $value)) {
 						if (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&]{8,12}$/", $value)) {
 							return array(true, '');
 						}
-						$error = 'Debe introducir al menos un signo y una longitud entre 8 a 12 caracteres';
+						$error = 'Debe introducir al menos un signo y una longitud entre 8 a 25 caracteres';
 						return array(false, $error);
 					}
 					$error = 'Debe introducir al menos una letra mayuscula';

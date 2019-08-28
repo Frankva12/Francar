@@ -20,26 +20,74 @@
 
 <body>
 
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper black">
-        <div class="container">
-          <a href="index.php" class="brand-logo">Libreria Francar</a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a class="waves-effect waves-light btn modal-trigger black" href="index.php">REGRESAR A PAGINA
-                PRINCIPAL</a>
-            </li>
-        </div>
-      </div>
-    </nav>
-  </div>
+<?php
+     require("../../core/helpers/public/menu.php");
+     Iniciar::navigate();
+  ?>
 
   <h3 align="center">CARRITO
     <a class="btn-floating black pulse">
       <i class="material-icons">shopping_cart</i>
     </a>
   </h3>
+
+
+  <!-- Este es otro modal pero ahora en la opcion de contáctanos donde aparecera un formulario que automaticamente una persona deja ir un mensjae, al instante nos cae en nuestro correo electronico-->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <blockquote>
+        <h3 class="header">Contactanos
+          <a class="btn-floating black pulse">
+            <i class="material-icons">group</i>
+          </a>
+        </h3>
+      </blockquote>
+      </blockquote>
+      <hr>
+      <h5>
+        <p align="left">Nuestros telefonos son: 2121-2828 y 2277-7777
+        </p>
+      </h5>
+      <h5>
+        <p align="left">
+          Nuestro correo: libreriafrancar@gmail.com.
+        </p>
+      </h5>
+      <hr>
+      <blockquote>
+    </div>
+  </div>
+  </div>
+  
+  <!--Con este div se crea lo que es un modal que significa que dentro de la misma pagina web va a salir uun recuadro con todo lo que 
+      nosotros le queramos poner para que le de un estilo Ajax a la pagina web en este caso seria en la opcion de ¿Quiénes somos?-->
+      <div id="modal2" class="modal">
+    <div class="modal-content">
+      <div class="row container">
+        <h2 align="center">¿Quiénes somos?</h2>
+        <hr>
+        <blockquote>
+          <h3 class="header">Misión
+            <a class="btn-floating black pulse">
+              <i class="material-icons">group</i>
+            </a>
+          </h3>
+        </blockquote>
+        <p align="left">Somos una empresa que busca fomentar la lectura en los jóvenes, apoyados de la
+          ayuda de la tecnología,
+          para obtenerlos de manera más efectiva virtualmente.</p>
+
+        <blockquote>
+          <h3 class="header">Visión
+            <a class="btn-floating black   pulse">
+              <i class="material-icons">lightbulb_outline</i>
+            </a>
+          </h3>
+        </blockquote>
+        <p align="left">Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.</p>
+      </div>
+    </div>
+  </div>
 
   <!--Se hace una tabla donde iran los libross que la persona pide, el costo de cada articulo, la cantidad y el total al pagar cuando llegue su pedido-->
   <!--Se hace una tabla con el nombre de cada editorial-->
