@@ -74,11 +74,12 @@ class Usuarios extends Validator
 
 	public function setContrasenia($value)
 	{
-		if ($this->validatePassword($value)) {
+	 	$validator = $this->validatePassword($value);
+		if ($validator[0]) {
 			$this->contrasenia = $value;
-			return true;
+			return array(true, '');
 		} else {
-			return false;
+			return array(false, $validator[1]);
 		}
 	}
 

@@ -80,17 +80,19 @@ if (isset($_GET['action'])) {
                 if ($usuario->setId($_SESSION['id_cliente'])) {
                     $_POST = $usuario->validateForm($_POST);
                     if ($_POST['clave_actual_1'] == $_POST['clave_actual_2']) {
-                        if ($usuario->setClave($_POST['clave_actual_1'])) {
+                        $contrasenia = $usuario->setClave($_POST['clave_actual_1']);
+                        if ($contrasenia[0]) {
                             if ($usuario->checkPassword()) {
                                 if ($_POST['clave_nueva_1'] == $_POST['clave_nueva_2']) {
-                                    if ($usuario->setClave($_POST['clave_nueva_1'])) {
+                                    $contrasenia = $usuario->setClave($_POST['clave_nueva_1']);
+                                        if ($contrasenia[0]) {
                                         if ($usuario->changePassword()) {
                                             $result['status'] = 1;
                                         } else {
                                             $result['exception'] = 'Operación fallida';
                                         }
                                     } else {
-                                        $result['exception'] = 'Clave nueva menor a 6 caracteres';
+                                        $result['exception'] = $contrasenia[1];
                                     }
                                 } else {
                                     $result['exception'] = 'Claves nuevas diferentes';
@@ -99,7 +101,7 @@ if (isset($_GET['action'])) {
                                 $result['exception'] = 'Clave actual incorrecta';
                             }
                         } else {
-                            $result['exception'] = 'Clave actual menor a 6 caracteres';
+                            $result['exception'] = $contrasenia[1];
                         }
                     } else {
                         $result['exception'] = 'Claves actuales diferentes';
@@ -124,43 +126,44 @@ if (isset($_GET['action'])) {
                     if ($usuario->setApellido($_POST['create_apellidos'])) {
                         if ($usuario->setCorreo($_POST['create_correo'])) {
                             if ($usuario->setTelefono($_POST['create_telefono'])) {
-                            if ($usuario->setDireccion($_POST['create_direccion'])) {
-                            if ($usuario->setAlias($_POST['create_alias'])) {
-                                if ($_POST['create_clave1'] == $_POST['create_clave2']) {
-                                    if ($usuario->setEstado(isset($_POST['create_estado']) ? 1 : 0)) {
-                                    if ($usuario->setContrasenia($_POST['create_clave1'])) {
-                                        if ($usuario->createUsuario()) {
-                                            $result['status'] = 1;
+                                if ($usuario->setDireccion($_POST['create_direccion'])) {
+                                    if ($usuario->setAlias($_POST['create_alias'])) {
+                                        if ($_POST['create_clave1'] == $_POST['create_clave2']) {
+                                            if ($usuario->setEstado(isset($_POST['create_estado']) ? 1 : 0)) {
+                                                $contrasenia = $usuario->setContrasenia($_POST['create_clave1']);
+                                                if ($contrasenia[0]) {   
+                                                    if ($usuario->createUsuario()) {
+                                                    $result['status'] = 1;
+                                                    } else {
+                                                        $result['exception'] = 'Operación fallida';
+                                                    }
+                                                } else {
+                                                    $result['exception'] = $contrasenia[1];
+                                                }
                                             } else {
-                                                $result['exception'] = 'Operación fallida';
+                                                $result['exception'] = 'Estado incorrecto';
                                             }
                                         } else {
-                                            $result['exception'] = 'Clave menor a 6 caracteres';
+                                            $result['exception'] = 'Claves diferentes';
                                         }
                                     } else {
-                                        $result['exception'] = 'Estado incorrecto';
+                                        $result['exception'] = 'Telefono incorrecto';
                                     }
                                 } else {
-                                    $result['exception'] = 'Claves diferentes';
+                                    $result['exception'] = 'Direccion incorrecta';
                                 }
                             } else {
-                                $result['exception'] = 'Telefono incorrecto';
+                                $result['exception'] = 'Alias incorrecto o alias repetido';
                             }
                         } else {
-                            $result['exception'] = 'Direccion incorrecta';
+                            $result['exception'] = 'Correo incorrecto';
                         }
                     } else {
-                        $result['exception'] = 'Alias incorrecto o alias repetido';
+                        $result['exception'] = 'Apellidos incorrectos';
                     }
                 } else {
-                    $result['exception'] = 'Correo incorrecto';
+                    $result['exception'] = 'Nombres incorrectos';
                 }
-            } else {
-                $result['exception'] = 'Apellidos incorrectos';
-            }
-        } else {
-            $result['exception'] = 'Nombres incorrectos';
-        }
         break;
 
             case 'get':
@@ -315,7 +318,8 @@ if (isset($_GET['action'])) {
             if ($usuario->setToken($_POST['token'])) {
                 $_POST = $usuario->validateForm($_POST);
                 if ($_POST['contra_nueva1'] == $_POST['contra_nueva2']) {
-                    if ($usuario->setContrasenia($_POST['contra_nueva1'])) {
+                    $contrasenia = $usuario->setContrasenia($_POST['contra_nueva1']);
+                    if ($contrasenia[0]) {
                         if ($usuario->tokenPass()) {
                             $result['status'] = 1;
                         } else {
@@ -323,7 +327,7 @@ if (isset($_GET['action'])) {
                         }
 
                     } else {
-                        $result['exception'] = 'La contraseña contiene menos de 6 caracteres.';
+                        $result['exception'] = $contrasenia[1];
                     }
                 } else {
                     $result['exception'] = 'Las contraseñas ingresadas no coinciden.';
@@ -339,7 +343,8 @@ if (isset($_GET['action'])) {
              if ($_POST['g-recaptcha-response']) {
             if ($usuario->setAlias($_POST['alias_cliente'])) {
                 if ($usuario->checkAlias()) {
-                    if ($usuario->setContrasenia($_POST['contrasenia'])) {
+                    $contrasenia = $usuario->setContrasenia($_POST['contrasenia']);
+                    if ($contrasenia[0]) {
                         if ($usuario->checkPassword()) {
                             $_SESSION['id_administrador'] = $usuario->getId();
                             $_SESSION['alias_cliente'] = $usuario->getAlias();
@@ -348,7 +353,7 @@ if (isset($_GET['action'])) {
                             $result['exception'] = 'Clave inexistente';
                         }
                     } else {
-                        $result['exception'] = 'Clave menor a 6 caracteres';
+                        $result['exception'] = $contrasenia[1];
                     }
                 } else {
                     $result['exception'] = 'Alias inexistente';
@@ -364,23 +369,23 @@ if (isset($_GET['action'])) {
             case 'register':
                 $_POST = $usuario->validateForm($_POST);
                 if ($_POST['g-recaptcha-response']) {
-                if ($usuario->setNombre($_POST['nombres'])) {
-                    if ($usuario->setApellido($_POST['apellidos'])) {
-                        if ($usuario->setAlias($_POST['alias'])) {
-                            if ($usuario->setContrasenia($_POST['clave1'])) {
+                    if ($usuario->setNombre($_POST['nombres'])) {
+                        if ($usuario->setApellido($_POST['apellidos'])) {
+                            if ($usuario->setAlias($_POST['alias'])) {
                                 if ($usuario->setDireccion($_POST['direccion'])) {
                                     if ($usuario->setTelefono($_POST['telefono'])) {
                                         if ($usuario->setCorreo($_POST['correo'])) {
                                             if ($_POST['clave1'] == $_POST['clave2']) {
-                                                if ($_POST['clave1'] != $_POST['alias']) {
-                                                if ($usuario->setContrasenia($_POST['clave1'])) {
+                                                if ($_POST['clave1'] != $_POST['alias']) { 
+                                                    $contrasenia = $usuario->setContrasenia($_POST['clave1']);
+                                                    if ($contrasenia[0]) {
                                                     if ($usuario->createUsuario()) {
                                                     $result['status'] = 1;
-                                                        } else {
-                                                    $result['exception'] = 'Operación fallida';
-                                                }
+                                                    } else {
+                                                $result['exception'] = 'Operación fallida';
+                                                    }
                                                 } else {
-                                                    $result['exception'] = 'Clave menor a 8 caracteres';
+                                                    $result['exception'] = $contrasenia[1];
                                                 }
                                             } else {
                                                 $result['exception'] = 'La clave debe ser diferente al alias';
@@ -398,20 +403,17 @@ if (isset($_GET['action'])) {
                                 $result['exception'] = 'Direccion incorrecta';
                             }
                         } else {
-                            $result['exception'] = 'Contraseña incorrecta, debe incluir una mayuscula, una minuscula y en un rango de 6 a 12 caracteres';
-                        }
+                        $result['exception'] = 'Alias incorrecto';
+                        }       
                     } else {
-                    $result['exception'] = 'Alias incorrecto';
-                    }       
-                } else {
-                    $result['exception'] = 'Apellidos incorrectos';
+                        $result['exception'] = 'Apellidos incorrectos';
                     }
+                } else {
+                    $result['exception'] = 'Nombres incorrectos';
+                }
             } else {
-                $result['exception'] = 'Nombres incorrectos';
+                $result['exception'] = 'Complete formulario de no soy un robot ';
             }
-        } else {
-            $result['exception'] = 'Complete formulario de no soy un robot ';
-        }
         break;
 
         case 'bloquear':

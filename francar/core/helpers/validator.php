@@ -31,28 +31,6 @@ class Validator
 		return $error;
 	}
 
-	
-	public function getContraError()
-	{
-		switch ($this->ContraError) {
-			case 1:
-				$error = 'Debe incluir al menos un numero';
-				break;
-			case 2:
-				$error = 'Debe incluir al menos una minuscula';
-				break;
-			case 3:
-				$error = 'Debe incluir al menos una mayuscula';
-				break;
-			case 4:
-				$error = 'Debe tener al menos 8 caracteres';
-				break;
-			default:
-				$error = 'Debe tener menos de 12 caracteres';
-		}
-		return $error;
-	}
-
 	public function validateForm($fields)
 	{
 		foreach ($fields as $index => $value) {
@@ -153,11 +131,28 @@ class Validator
 
 	public function validatePassword($value)
 	{
-		if (strlen($value) > 5) {
-			return true;
-		} else {
-			return false;
+		$error;
+		if (strlen($value) > 7 && strlen($value) < 20) {
+			if (preg_match('#[0-9]+#', $value)) {
+				if (preg_match('#[a-z]+#', $value)) {
+					if (preg_match('#[A-Z]+#', $value)) {
+						if (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&]{8,12}$/", $value)) {
+							return array(true, '');
+						}
+						$error = 'Debe introducir al menos un signo y una longitud entre 8 a 12 caracteres';
+						return array(false, $error);
+					}
+					$error = 'Debe introducir al menos una letra mayuscula';
+					return array(false, $error);
+				}
+				$error = 'Debe introducir al menos una letra minuscula';
+				return array(false, $error);
+			}
+			$error = 'Debe introducir al menos un numero entre 0-9';
+			return array(false, $error);
 		}
+		$error = 'Su contraseña no cumple con el formato de una mayuscula, una minuscula, un numero y un caracter especial';
+		return array(false, $error);
 	}
 
 	public function saveFile($file, $path, $name)
