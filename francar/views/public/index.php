@@ -270,6 +270,7 @@
 <script src="../../resources/js/carousel.js"></script>
 <script src="../../resources/js/parallax.js"></script>
 <script src="../../resources/js/modal.js"></script>
-
+<script src="../../resources/js/sweetalert.min.js"></script>
+<script src="../../core/controllers/public/account.js"></script>
 
 </html>

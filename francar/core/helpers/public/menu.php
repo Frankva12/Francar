@@ -5,7 +5,7 @@
             if (isset($_SESSION['id_cliente'])) {
                if (isset($_SESSION['tiempo'])) {
                    //Tiempo en segundos para dar vida a la sesión.
-				$inactivo = 10;//20min en este caso.
+				$inactivo = 300;//20min en este caso.
 			
 				//Calculamos tiempo de vida inactivo.
 				$vida_session = time() - $_SESSION['tiempo'];
@@ -53,7 +53,7 @@
                                 <a class="waves-effect waves-light btn modal-trigger black" href="libros.php">Libros disponibles</a>
                                 <li>
                                 <li>
-                                <a class="waves-effect waves-light btn modal-trigger black" href="login.php">Cerrar Sesion</a>
+                                <a class="waves-effect waves-light btn modal-trigger black" href="#" onclick="signOff()">Cerrar Sesion</a>
                                 <li>
                                 <a class="waves-effect waves-light btn modal-trigger black" href="carrito.php">
                                     <i class="material-icons prefix">shopping_cart</i>

@@ -20,7 +20,7 @@
 
 <body>
 
-<?php
+  <?php
      require("../../core/helpers/public/menu.php");
      Iniciar::navigate();
   ?>
@@ -58,10 +58,10 @@
     </div>
   </div>
   </div>
-  
+
   <!--Con este div se crea lo que es un modal que significa que dentro de la misma pagina web va a salir uun recuadro con todo lo que 
       nosotros le queramos poner para que le de un estilo Ajax a la pagina web en este caso seria en la opcion de ¿Quiénes somos?-->
-      <div id="modal2" class="modal">
+  <div id="modal2" class="modal">
     <div class="modal-content">
       <div class="row container">
         <h2 align="center">¿Quiénes somos?</h2>
@@ -124,6 +124,8 @@
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
   <script src="../../resources/js/materialize.min.js"></script>
   <script src="../../resources/js/modal.js"></script>
+  <script src="../../resources/js/sweetalert.min.js"></script>
+  <script src="../../core/controllers/public/account.js"></script>
 </body>
 
 </html>

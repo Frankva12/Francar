@@ -8,7 +8,6 @@ const apiLibros2 = '../../core/api/public/libros.php?site=public&action=';
 
 //Función para cerrar la sesión del usuario
 function signOff()
-
 {
     swal({
             title: 'Advertencia',
