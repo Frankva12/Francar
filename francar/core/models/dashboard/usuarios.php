@@ -248,6 +248,30 @@ class Usuarios extends Validator
 		return Database::executeRow($sql, $params);
 	}
 
+	//Metodos para manejar el CRUD
+	public function Intentos()
+	{
+		$sql = 'UPDATE administrador SET intentos = intentos + 1 WHERE alias_usuario = ?';
+		$params = array($this->alias);
+		return Database::executeRow($sql, $params);
+	}
+
+	//Metodos para manejar el CRUD
+	public function BloquearIntentos()
+	{
+		$sql = 'UPDATE administrador SET estado = 0, intentos = 0 WHERE alias_usuario = ? and intentos >= 3';
+		$params = array($this->alias);
+		return Database::executeRow($sql, $params);
+	}
+
+	//Metodos para manejar el CRUD
+	public function UpdateLogin()
+	{
+		$sql = 'UPDATE administrador SET intentos = 0';
+		$params = array(null);
+		return Database::executeRow($sql, $params);
+	} 
+
 	public function createUsuario()
 	{
 		$hash = password_hash($this->contrasenia, PASSWORD_DEFAULT);

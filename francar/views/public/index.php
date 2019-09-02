@@ -182,7 +182,6 @@
       <i class="material-icons">book</i>
     </a>
   </h2>
-  <!--
   <div class="row">
     <div class="col s12 m4">
       <div class="card">
@@ -252,8 +251,6 @@
     <h4 class="center blue-text" id="title"></h4>
     <div class="row" id="catalogo"></div>
   </div>
-
-
 
 
 </body>

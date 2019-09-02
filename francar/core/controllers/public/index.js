@@ -34,6 +34,88 @@ function checkUsuarios() {
         });
 }
 
+
+function sumarIntentos (alias_cliente)
+{
+    $.ajax({
+        url: apiSesion + 'intentos',
+        type: 'post',
+        data: {
+            alias_cliente: alias_cliente
+        },
+        datatype: 'json',
+    })
+    .done(function(response){
+        if (isJSONString(response)) {
+            const result = JSON.parse(response);
+            sweetAlert(2, 'Tiene 3 intentos disponibles para equivocarse ', null);
+        }else{
+            console.log(response);
+        }
+    })
+    .fail(function(jqXHR){
+        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+    });
+}
+
+function bloquearIntentos (alias_cliente)
+{
+    $.ajax({
+        url: apiSesion + 'BloquearIntentos',
+        type: 'post',
+        data: {
+            alias_cliente: alias_cliente
+        },
+        datatype: 'json',
+    })
+    .done(function(response){
+        if (isJSONString(response)) {
+            const result = JSON.parse(response);
+            sweetAlert(2, 'Usted tiene 3 intentos, si no su usuario se bloqueara', null);
+        }else{
+            console.log(response);
+        }
+    })
+    .fail(function(jqXHR){
+        console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+    });
+}
+
+
+
+$('#form-sesion').submit(function () {
+    event.preventDefault();
+    $.ajax({
+            url: apiSesion + 'login',
+            type: 'post',
+            data: $('#form-sesion').serialize(),
+            datatype: 'json'
+        })
+        .done(function (response) {
+            //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
+            if (isJSONString(response)) {
+                const dataset = JSON.parse(response);
+                //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
+                if (dataset.status == 1) {
+                    sweetAlert(1, 'Autenticación correcta', 'index.php');
+                }else{
+                    sweetAlert(2, dataset.exception, null);
+                    let alias_cliente = $('#alias_cliente').val();
+                    sumarIntentos(alias_cliente);
+                    bloquearIntentos(alias_cliente);
+                } 
+            }
+            else{
+                console.log(response);
+            }
+        })
+        .fail(function(jqXHR){
+            console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
+        });
+    }) 
+
+
+/* 
 var i = 0;
 //Función para validar el usuario al momento de iniciar sesión
 $('#form-sesion').submit(function () {
@@ -85,7 +167,7 @@ $('#form-sesion').submit(function () {
             //Se muestran en consola los posibles errores de la solicitud AJAX
             console.log('Error: ' + jqXHR.status + ' ' + jqXHR.statusText);
         });
-})
+}) */
 
 
 function recuperacionContra() {

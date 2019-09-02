@@ -139,19 +139,19 @@ class Validator
 						if (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&]{8,12}$/", $value)) {
 							return array(true, '');
 						}
-						$error = 'Debe introducir al menos un signo y una longitud entre 8 a 25 caracteres';
+						$error = 'Contraseña: debe introducir al menos un signo y una longitud entre 8 a 25 caracteres';
 						return array(false, $error);
 					}
-					$error = 'Debe introducir al menos una letra mayuscula';
+					$error = 'Contraseña: debe introducir al menos una letra mayuscula';
 					return array(false, $error);
 				}
-				$error = 'Debe introducir al menos una letra minuscula';
+				$error = 'Contraseña: debe introducir al menos una letra minuscula';
 				return array(false, $error);
 			}
-			$error = 'Debe introducir al menos un numero entre 0-9';
+			$error = 'Contraseña: debe introducir al menos un numero entre 0-9';
 			return array(false, $error);
 		}
-		$error = 'Su contraseña no cumple con el formato de una mayuscula, una minuscula, un numero y un caracter especial';
+		$error = 'Contraseña: su contraseña no cumple con el formato de una mayuscula, una minuscula, un numero y un caracter especial';
 		return array(false, $error);
 	}
 
