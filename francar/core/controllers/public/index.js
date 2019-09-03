@@ -184,7 +184,7 @@ function recuperacionContra() {
             if (isJSONString(response)) {
                 const dataset = JSON.parse(response);
                 if (dataset.status == 1) {
-                    sweetAlert(1, 'Su mensaje ha sido enviado correctamente', 'index.php');
+                    sweetAlert(1, 'Su correo ha sido enviado correctamente', 'login.php');
                 } else {
                     sweetAlert(3, dataset.exception, null);
                 }

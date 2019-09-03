@@ -183,11 +183,11 @@ function recuperarContra() {
         .done(function (response) {
             //Se verifica si la respuesta de la API es una cadena JSON, sino se muestra el resultado en consola
             if (isJSONString(response)) {
-                const dataset = JSON.parse(response);
-                if (dataset.status == 1) {
-                    sweetAlert(1, 'Su mensaje ha sido enviado correctamente', 'index.php');
+                const result = JSON.parse(response);
+                if (result.status == 1) {
+                    sweetAlert(1, 'Su correo ha sido enviado correctamente', 'index.php');
                 } else {
-                    sweetAlert(3, dataset.exception, null);
+                    sweetAlert(3, result.exception, null);
                 }
             } else {
                 console.log(response);

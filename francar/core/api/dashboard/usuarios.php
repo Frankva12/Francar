@@ -273,7 +273,6 @@ if (isset($_GET['action'])) {
                                     $mail = new PHPMailer(true);
                                     $mail->CharSet = "UTF-8";
                                 try {
-                                    $mail->SMTPDebug = 2;
                                     $mail->isSMTP();
                                     $mail->Host = 'smtp.gmail.com';
                                     $mail->SMTPAuth = true;
@@ -290,7 +289,6 @@ if (isset($_GET['action'])) {
                                     $mail->Body = 'Bienvenido, '.$correousuario.' Usted ha solicitado un cambio de contraseña <br> <a href="http://localhost/Francar/francar/views/private/recuperacion_contrasenia.php?token='.$token.'">Por favor, haga click aqui para modificar su contraseña</a>';
 
                                     $mail->send();
-                                    echo 'Su mensaje ha sido enviado correctamente';
                                     $result['status'] = 1;
                                 } catch (Exception $e) {
                                     echo "Su mensaje no pudo enviarse'{$mail->ErrorInfo}'";
