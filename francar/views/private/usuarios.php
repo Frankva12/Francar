@@ -246,19 +246,19 @@ Footer::foot();
 ?>
   <!--Se importan lo que son los archivos de JavaScript-->
 
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="../../resources/js/materialize.min.js"></script>
-  <script src="../../resources/js/initialize.js"></script>
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-  <script src="../../resources/js/modal.js"></script>
-  <script src="../../resources/js/combo.js"></script>
-  <script src="../../resources/js/datatables.min.js"></script>
-  <script src="../../resources/js/dataTables.material.min.js"></script>
-  <script src="../../resources/js/tabla.js"></script>
-  <script src="../../resources/js/sweetalert.min.js"></script>
-  <script src="../../core/helpers/functions.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+    <script src="../../resources/js/modal.js"></script>
+    <script src="../../resources/js/combo.js"></script>
+    <script src="../../resources/js/initialize.js"></script>
+    <script src="../../resources/js/datatables.min.js"></script>
+    <script src="../../resources/js/dataTables.material.min.js"></script>
+    <script src="../../resources/js/tabla.js"></script>
+    <script src="../../core/controllers/dashboard/account.js"></script>
+    <script src="../../resources/js/sweetalert.min.js"></script>
+    <script src="../../core/helpers/functions.js"></script>
+    <script src="../../core/helpers/traductor.js"></script>
   <script src="../../core/controllers/dashboard/usuarios.js"></script>
-  <script src="../../core/helpers/traductor.js"></script>
 </body>
 
 </html>
