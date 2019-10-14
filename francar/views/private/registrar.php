@@ -76,5 +76,6 @@
 <script type="text/javascript" src="../../core/helpers/functions.js"></script>
 <script type="text/javascript" src="../../core/controllers/dashboard/account.js"></script>
 <script type="text/javascript" src="../../core/controllers/dashboard/register.js"></script>
+<script src="../../core/helpers/traductor.js"></script>
 
 </html>

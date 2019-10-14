@@ -3,4 +3,5 @@
    $('.parallax').parallax();
    $('.materialboxed').materialbox();
    $('.sidenav').sidenav();
+   $('.dropdown-trigger').dropdown();
  });

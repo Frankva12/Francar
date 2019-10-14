@@ -124,8 +124,10 @@
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
   <script src="../../resources/js/materialize.min.js"></script>
   <script src="../../resources/js/modal.js"></script>
+  <script src="../../resources/js/initialize.js"></script>
   <script src="../../resources/js/sweetalert.min.js"></script>
   <script src="../../core/controllers/public/account.js"></script>
+  <script src="../../core/helpers/traductor.js"></script>
 </body>
 
 </html>

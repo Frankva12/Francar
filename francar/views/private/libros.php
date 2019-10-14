@@ -31,7 +31,7 @@
      require("../../core/helpers/dashboard/menu.php");
     inicio::navigate();
   ?>
-  <h3 align="center">libros
+  <h3 align="center" class="lang" key="titulo_libros">libros
     <a class="btn-floating black pulse" href="../../core/report/reporteLibrosVendidos.php">
       <i class="material-icons">book</i>
     </a>
@@ -41,8 +41,8 @@
     <div class="nav-wrapper cyan lighten-2">
       <div class="col s12">
         <a href="#!" class="breadcrumb"></a>
-        <a href="private.php" class="breadcrumb">Estadisticas</a>
-        <a href="libros.php" class="breadcrumb">libros</a>
+        <a href="private.php" class="breadcrumb lang" key="estadisticas">Estadisticas</a>
+        <a href="libros.php" class="breadcrumb lang" key="titulo_libros">libros</a>
       </div>
     </div>
   </nav>
@@ -53,14 +53,14 @@
     <table class="highlight" id="tabla_libros">
       <thead>
         <tr>
-          <th>Imagen</th>
-          <th>Nombre</th>
-          <th>Precio</th>
-          <th>Cantidad</th>
-          <th>Categoría</th>
-          <th>Editorial</th>
-          <th>Estado</th>
-          <th>Acciones</th>
+          <th class="lang" key="Imagen">Imagen</th>
+          <th class="lang" key="Nombre">Nombre</th>
+          <th class="lang" key="Precio">Precio</th>
+          <th class="lang" key="Cantidad">Cantidad</th>
+          <th class="lang" key="Categoria">Categoría</th>
+          <th class="lang" key="Editorial">Editorial</th>
+          <th class="lang" key="Estado">Estado</th>
+          <th class="lang" key="Acciones">Acciones</th>
         </tr>
       </thead>
       <tbody id="tbody-read">
@@ -68,20 +68,20 @@
     </table>
     <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
-      <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green" data-tooltip="Agregar"><i
-          class="material-icons"></i>Agregar Libros</a>
+      <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Agregar_libros" data-tooltip="Agregar"><i
+          class="material-icons "></i>Agregar Libros</a>
 
 
 
-      <a class="btn waves-effect indigo tooltipped modal-trigger green"
-        href="../../core/report/reporteLibrosVendidos.php"><i class="material-icons"></i>Reporte de ventas</a>
+      <a class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Reporte_ventas"
+        href="../../core/report/reporteLibrosVendidos.php"><i class="material-icons "></i>Reporte de ventas</a>
 
 
-      <a class="btn waves-effect indigo tooltipped modal-trigger green"
+      <a class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Reporte_ventas_categoria"
         href="../../core/report/reporteVentasporcat.php"><i class="material-icons"></i>Reporte de ventas por
         categoria</a>
 
-      <a class="btn waves-effect indigo tooltipped modal-trigger green"
+      <a class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Reporte_ventas_editorial"
         href="../../core/report/reporteVentasporedi.php"><i class="material-icons"></i>Reporte de ventas por
         editorial</a>
     </div>
@@ -93,41 +93,41 @@
   <!-- Ventana para crear un nuevo registro -->
   <div id="modal-create" class="modal">
     <div class="modal-content">
-      <h4 class="center-align">Crear libros</h4>
+      <h4 class="center-align lang" key="Agregar_libros">Crear libros</h4>
       <form method="post" id="form-create" enctype="multipart/form-data">
         <div class="row">
 
-          <div class="input-field col s12 m6">
+          <div class="input-field col s12 m6 ">
             <i class="material-icons prefix">note_add</i>
             <input id="create_nombre" type="text" name="create_nombre" class="validate" autocomplete="off" required />
-            <label for="create_nombre">Nombre del libro</label>
+            <label for="create_nombre" class="lang" key="Nombre_libro">Nombre del libro</label>
           </div>
 
-          <div class="input-field col s12 m6">
+          <div class="input-field col s12 m6 " >
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="create_cantidad" type="number" name="create_cantidad" class="validate" max="999.99" min="0.00"
               step="any" autocomplete="off" required />
-            <label for="create_cantidad">Cantidad</label>
+            <label for="create_cantidad" class="lang" key="Cantidad">Cantidad</label>
           </div>
 
-          <div class="input-field col s12 m6">
+          <div class="input-field col s12 m6" >
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="create_precio" type="number" name="create_precio" class="validate" max="999.99" min="0.00"
               step="any" autocomplete="off" required />
-            <label for="create_precio">Precio</label>
+            <label for="create_precio" class="lang" key ="Precio">Precio</label>
           </div>
 
-          <div class="input-field col s12 m6">
+          <div class="input-field col s12 m6 ">
             <i class="material-icons prefix">description</i>
             <input id="create_descripcion" type="text" name="create_descripcion" class="validate" autocomplete="off"
               required />
-            <label for="create_descripcion">Descripción</label>
+            <label for="create_descripcion" class="lang" key="Descripcion">Descripción</label>
           </div>
 
-          <div class="input-field col s12 m6">
+          <div class="input-field col s12 m6" >
             <i class="material-icons prefix">account_circle</i>
             <input id="create_autor" type="text" name="create_autor" class="validate" autocomplete="off" required />
-            <label for="create_autor">Autor</label>
+            <label for="create_autor" class="lang" key="Autor">Autor</label>
           </div>
 
           <div class="input-field col s12 m6">
@@ -155,7 +155,7 @@
         <div class="col s12 m6">
           <p>
             <div class="switch">
-              <span>Estado:</span>
+              <span class="lang" key="Estado">Estado:</span>
               <label>
                 <i class="material-icons">visibility_off</i>
                 <input id="create_estado" type="checkbox" name="create_estado" autocomplete="off" checked />
@@ -179,7 +179,7 @@
   <!-- Ventana para modificar un registro existente -->
   <div id="modal-update" class="modal">
     <div class="modal-content">
-      <h4 class="center-align">Modificar libros</h4>
+      <h4 class="center-align lang" key="Modificar_libros">Modificar libros</h4>
       <form method="post" id="form-update" enctype="multipart/form-data">
         <input type="hidden" id="id_libro" name="id_libro" autocomplete="off" />
         <input type="hidden" id="imagen_libro" name="imagen_libro" autocomplete="off" />
@@ -188,34 +188,34 @@
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">note_add</i>
             <input id="update_nombre" type="text" name="update_nombre" class="validate" autocomplete="off" required />
-            <label for="update_nombre">Nombre del libro</label>
+            <label for="update_nombre" class="lang" key="Nombre">Nombre del libro</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="update_cantidad" type="number" name="update_cantidad" class="validate" max="999" min="0"
               step="any" autocomplete="off" required />
-            <label for="update_cantidad">Cantidad</label>
+            <label for="update_cantidad" class ="lang" key="Cantidad">Cantidad</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="update_precio" type="number" name="update_precio" class="validate" max="999.99" min="0.01"
               step="any" autocomplete="off" required />
-            <label for="update_precio">Precio</label>
+            <label for="update_precio" class="lang" key="Precio">Precio</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">description</i>
             <input id="update_descripcion" type="text" name="update_descripcion" class="validate" autocomplete="off"
               required />
-            <label for="update_descripcion">Descripción</label>
+            <label for="update_descripcion" class="lang" key="Descripcion">Descripción</label>
           </div>
 
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
             <input id="update_autor" type="text" name="update_autor" class="validate" autocomplete="off" required />
-            <label for="update_autor">Autor</label>
+            <label for="update_autor" class="lang" key="Autor">Autor</label>
           </div>
 
           <div class="input-field col s12 m6">
@@ -240,7 +240,7 @@
           <div class="col s12 m6">
             <p>
               <div class="switch">
-                <span>Estado:</span>
+                <span class="lang" key="Estado">Estado:</span>
                 <label>
                   <i class="material-icons">visibility_off</i>
                   <input id="update_estado" type="checkbox" name="update_estado" autocomplete="off" checked />
@@ -278,7 +278,10 @@
   <script src="../../resources/js/tabla.js"></script>
   <script src="../../core/controllers/dashboard/account.js"></script>
   <script src="../../resources/js/sweetalert.min.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+<script src="../../resources/js/initialize.js"></script>
   <script src="../../core/helpers/functions.js"></script>
+  <script src="../../core/helpers/traductor.js"></script>
   <script src="../../core/controllers/dashboard/libros.js"></script>
 
 </html>

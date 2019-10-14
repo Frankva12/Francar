@@ -6,13 +6,13 @@
             <div class="container">
               <div class="row">
                 <div class="col s12 m6 l6">
-                    <h5 class="white-text">Ubicacion:</h5>
-                      <p  class="white-text text-lighten-4"> Nos ubicamos en avenida Aguilares 218, San Salvador</p>
-                      <h5 class="white-text text-lighten-4"> Correo: </h5><p class="white-text text-lighten-4"> libreriafrancar@gmail.com </p>
-                      <h5 class="white-text">Telefono:</h5><p class="white-text text-lighten-4">2235-2345</p>
+                    <h5 class="white-text lang" key="Ubicacion_footer">Ubicacion:</h5>
+                      <p  class="white-text text-lighten-4 lang" key="Direccion_footer"> Nos ubicamos en avenida Aguilares 218, San Salvador</p>
+                      <h5 class="white-text text-lighten-4 lang" key="Correo_footer"> Correo: </h5><p class="white-text text-lighten-4"> libreriafrancar@gmail.com </p>
+                      <h5 class="white-text lang" key="Telefono_footer">Telefono:</h5><p class="white-text text-lighten-4">2235-2345</p>
                 </div>
                 <div class="col s12 m6 l6">
-                      <h5 class="white-text" align="center">Redes Sociales</h5>
+                      <h5 class="white-text lang" align="center" key="Redes_sociales">Redes Sociales</h5>
                       <br>
                       <br>
                       <img src="../../resources/img/facebook.png"><a class="white-text text-lighten-4"  href="https://www.facebook.com/LibreriaFrancar-2047494525551474/"  target=”_blank”> FACEBOOK </a>

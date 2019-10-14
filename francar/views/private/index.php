@@ -21,7 +21,7 @@
         <form method="post" id="form-sesion">
           <div class="row teal lime grey lighten-1">
             <br>
-            <h4 align="center"> Bienvenidos.
+            <h4 align="center" class="lang" key="bienvenidos"> Bienvenidos.
               <br>
               <br>
               <i align="center" class="material-icons medium">account_circle</i>
@@ -39,7 +39,7 @@
             <div class="input-field col s12">
               <i class="material-icons prefix">lock_outline</i>
               <input id="contrasenia" type="password" name="contrasenia" class="validate" autocomplete="off" required />
-              <label for="contrasenia">Contraseña</label>
+              <label for="contrasenia" class="lang" key="Contrasenia">Contraseña</label>
             </div>
           </div>
           <div class="row">
@@ -52,23 +52,33 @@
             </div>
           </div>
           <div class="col s12 center-align">
-            <a class="waves-effect waves-light btn modal-trigger grey darken-4" href="recuperar_contrasena.php">¿Olvidó
+            <a class="waves-effect waves-light btn modal-trigger grey darken-4 lang" key="olvido" href="recuperar_contrasena.php">¿Olvidó
               su contraseña?
             </a>
             <br>
             <br>
+            <a class="dropdown-trigger" href="#" data-target="traslate"><span class="idioma">Idioma<span></a></li>
+				<ul id="traslate" class="dropdown-content">
+					<li><a class="españolOnclick" onclick="showEs()">Español</a></li> 
+					<li><a class="englishOnclick" onclick="showEn()">English</a></li>
+				</ul>
+					</nav> 
+			  </div>
+			  	<ul id="traslate2" class="dropdown-content">
+				  <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+				  <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+				</ul>
           </div>
-
         </form>
-
-
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <!--Se importan los archivos de JavaScript-->
         <script src="../../resources/js/jquery-3.3.1.min.js"></script>
         <script src="../../resources/js/materialize.min.js"></script>
+        <script src="../../resources/js/initialize.js"></script>
         <script src="../../resources/js/modal.js"></script>
         <script src="../../resources/js/sweetalert.min.js"></script>
         <script src="../../core/helpers/functions.js"></script>
+        <script src="../../core/helpers/traductor.js"></script>
         <script src="../../core/controllers/dashboard/index.js"></script>
   </body>
 

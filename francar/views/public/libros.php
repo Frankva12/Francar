@@ -190,6 +190,7 @@
   <script src="../../resources/js/initialize.js"></script>
   <script src="../../resources/js/sweetalert.min.js"></script>
   <script src="../../core/controllers/public/account.js"></script>
+  <script src="../../core/helpers/traductor.js"></script>
 </body>
 
 </html>

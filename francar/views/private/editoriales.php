@@ -29,7 +29,7 @@
   ?>
 
     <!--Se pone lo que es el titulo-->
-    <h4 align="center">Editoriales
+    <h4 align="center" class="lang" key="Editoriales_menu">Editoriales
         <a class="btn-floating black pulse" href="../../core/report/reporteVentasporedi.php">
             <i class="material-icons">book</i>
         </a>
@@ -38,8 +38,8 @@
         <div class="nav-wrapper cyan lighten-2">
             <div class="col s12">
                 <a href="#!" class="breadcrumb"></a>
-                <a href="private.php" class="breadcrumb">Estadisticas</a>
-                <a href="editoriales.php" class="breadcrumb">Editoriales</a>
+                <a href="private.php" class="breadcrumb lang" key="estadisticas">Estadisticas</a>
+                <a href="editoriales.php" class="breadcrumb lang" key="Editoriales_menu">Editoriales</a>
             </div>
         </div>
     </nav>
@@ -50,8 +50,8 @@
         <table class="highlight" id="tablaEditorial">
             <thead>
                 <tr>
-                    <th>Editoriales</th>
-                    <th>Acciones</th>
+                    <th class="lang" key="Editoriales_menu">Editoriales</th>
+                    <th class="lang" key="Acciones">Acciones</th>
                 </tr>
             </thead>
             <tbody id="tbody-read">
@@ -60,8 +60,8 @@
 
 
         <!-- Botón para abrir ventana de nuevo registro -->
-        <div class="input-field center-align col s12 m4">
-            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
+        <div class="input-field center-align col s12 m4 " >
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Agregar_editorial"
                 data-tooltip="Agregar">
                 <i class="material-icons"></i>Agregar Editorial</a>
         </div>
@@ -71,7 +71,7 @@
     <!--Ventana para crear un nuevo registro-->
     <div id="modal-create" class="modal">
         <div class="modal-content">
-            <h4 class="center-align">Crear editorial</h4>
+            <h4 class="center-align lang" key="Agregar_editorial">Crear editorial</h4>
             <form method="post" id="form-create" enctype="multipart/form-data">
                 <div class="row">
 
@@ -79,7 +79,7 @@
                         <i class="material-icons prefix">description</i>
                         <input id="create_editorial" type="text" name="create_editorial" class="validate" minlength="3"
                             maxlength="80" autocomplete="off" required />
-                        <label for="create_editorial">Editorial</label>
+                        <label for="create_editorial" class="lang" key="Editorial">Editorial</label>
                     </div>
                 </div>
                 <div class="row center-align">
@@ -98,7 +98,7 @@
     <!-- Ventana para modificar un registro existente -->
     <div id="modal-update" class="modal">
         <div class="modal-content">
-            <h4 class="center-align">Modificar editorial</h4>
+            <h4 class="center-align lang" key="Modificar_editorial">Modificar editorial</h4>
             <form method="post" id="form-update" enctype="multipart/form-data">
                 <div class="row">
                     <div class="input-field col s12 m6">
@@ -106,7 +106,7 @@
                         <i class="material-icons prefix">description</i>
                         <input id="update_editorial" type="text" name="update_editorial" class="validate"
                             autocomplete="off" minlength="5" maxlength="80" required />
-                        <label for="update_editorial">Nombre editorial</label>
+                        <label for="update_editorial" class="lang" key="Nombre">Nombre editorial</label>
                     </div>
                     <div class="row center-align">
                         <a href="#" class="btn waves-effect grey tooltipped modal-close" data-tooltip="Cancelar"><i
@@ -137,7 +137,10 @@
     <script src="../../resources/js/dataTables.material.min.js"></script>
     <script src="../../core/controllers/dashboard/account.js"></script>
     <script src="../../resources/js/sweetalert.min.js"></script>
+    <script src="../../resources/js/materialize.min.js"></script>
+<script src="../../resources/js/initialize.js"></script>
     <script src="../../core/helpers/functions.js"></script>
+    <script src="../../core/helpers/traductor.js"></script>
     <script src="../../core/controllers/dashboard/editoriales.js"></script>
 </body>
 
