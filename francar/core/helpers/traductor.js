@@ -98,7 +98,20 @@ var arrLang = {
         'Guardar_cambios': 'Guardar cambios',
         'bienvenidos': 'Bienvenidos',
         'Contraseña': 'Contraseña',
-
+        'Contactanos_publica': 'Contactanos',
+        'Quienes_somos': '¿Quienes somos?',
+        'mision': 'Misión',
+        'Vision':'Visión',
+        'lograr_Ser': 'Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.',
+        'Somos_empresa': 'Somos una empresa que busca fomentar la lectura en los jóvenes, apoyados de la ayuda de la tecnología, para obtenerlos de manera más efectiva virtualmente.',
+        'Libros_Disponibles': 'Libros disponibles',
+        'Iniciar_Sesion': 'Iniciar Sesion',
+        'Cerrar_Sesion': 'Cerrar sesion',    
+        'Nuestros_telefonos': 'Nuestros telefonos son: 2121-2828 y 2277-7777',
+        'Nuestro_Correo': 'Nuestro correo: libreriafrancar@gmail.com.',
+        'Libros_Recien': 'LIBROS RECIEN INGRESADOS', 
+        'Sintesis': 'Sintesis',
+        'Las_tediosas':'Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra más inquieto que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está sucediendo en Hogwarts. En efecto, cuando por fin comienza otro curso en el famoso colegio de magia y hechicería, sus temores se vuelven realidad.'
     },
     'EN':{
         'titulo': 'Library Francar',
@@ -150,5 +163,19 @@ var arrLang = {
         'Guardar_cambios': 'Save changes',
         'bienvenidos': 'Welcome',
         'Contraseña': 'Password',
+        'Contactanos_publica': 'Contact us',
+        'Quienes_somos': 'About us',
+        'mision': 'Mission',
+        'lograr_Ser': 'Achieve to be the best national bookstore with the help of technology.',
+        'Somos_empresa': 'We are a company that seeks to encourage reading among young people, supported by the help of technology, to obtain the most effective way virtually.',
+        'Vision':'Vision',
+        'Libros_Disponibles': 'available books',
+        'Iniciar_Sesion': 'Log in',
+        'Cerrar_Sesion': 'Log out', 
+        'Nuestros_telefonos': 'Our phones are: 2121-2828 and 2277-7777',   
+        'Nuestro_Correo': 'Our mail: libreriafrancar@gmail.com.',
+        'Libros_Recien': 'Newly entered books', 
+        'Sintesis': 'Synthesis',
+        'Las_tediosas': 'The tedious summer vacations at his uncles' house are not over yet and Harry is more restless than ever. He has barely heard from Ron and Hermione, and senses that something strange is happening at Hogwarts. Indeed, when another course at the famous school of magic and witchcraft finally begins, his fears become reality.'
     }
 }

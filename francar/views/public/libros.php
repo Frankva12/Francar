@@ -23,12 +23,11 @@
      require("../../core/helpers/public/menu.php");
      Iniciar::navigate();
   ?>
-
-  <!-- Este es otro modal pero ahora en la opcion de contáctanos donde aparecera un formulario que automaticamente una persona deja ir un mensjae, al instante nos cae en nuestro correo electronico-->
-  <div id="modal1" class="modal">
+ <!-- Este es otro modal pero ahora en la opcion de contáctanos donde aparecera un formulario que automaticamente una persona deja ir un mensjae, al instante nos cae en nuestro correo electronico-->
+ <div id="modal1" class="modal">
     <div class="modal-content">
       <blockquote>
-        <h3 class="header">Contactanos
+        <h3 class="header lang" key="Contactanos_publica">Contactanos
           <a class="btn-floating black pulse">
             <i class="material-icons">group</i>
           </a>
@@ -37,11 +36,11 @@
       </blockquote>
       <hr>
       <h5>
-        <p align="left">Nuestros telefonos son: 2121-2828 y 2277-7777
+        <p align="left" class="lang" key="Nuestros_telefonos">Nuestros telefonos son: 2121-2828 y 2277-7777
         </p>
       </h5>
       <h5>
-        <p align="left">
+        <p align="left" class="lang" key="Nuestro_Correo">
           Nuestro correo: libreriafrancar@gmail.com.
         </p>
       </h5>
@@ -51,36 +50,36 @@
   </div>
   </div>
 
-
   <!--Con este div se crea lo que es un modal que significa que dentro de la misma pagina web va a salir uun recuadro con todo lo que 
       nosotros le queramos poner para que le de un estilo Ajax a la pagina web en este caso seria en la opcion de ¿Quiénes somos?-->
   <div id="modal2" class="modal">
     <div class="modal-content">
       <div class="row container">
-        <h2 align="center">¿Quiénes somos?</h2>
+        <h2 align="center" class="lang" key="Quienes_somos">¿Quiénes somos?</h2>
         <hr>
         <blockquote>
-          <h3 class="header">Misión
+          <h3 class="header lang" key="mision">Misión
             <a class="btn-floating black pulse">
               <i class="material-icons">group</i>
             </a>
           </h3>
         </blockquote>
-        <p align="left">Somos una empresa que busca fomentar la lectura en los jóvenes, apoyados de la
-          ayuda de la tecnología,
+        <p align="left" class="lang" key="Somos_empresa">Somos una empresa que busca fomentar la lectura en los jóvenes, apoyados de la
+          ayuda de la tecnología, 
           para obtenerlos de manera más efectiva virtualmente.</p>
 
         <blockquote>
-          <h3 class="header">Visión
+          <h3 class="header lang" key="Vision"  >Visión
             <a class="btn-floating black   pulse">
               <i class="material-icons">lightbulb_outline</i>
             </a>
           </h3>
         </blockquote>
-        <p align="left">Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.</p>
+        <p align="left" class="lang" key="lograr_Ser">Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.</p>
       </div>
     </div>
   </div>
+
 
 
   <h3 align="center">LIBROS

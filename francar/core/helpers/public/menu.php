@@ -45,17 +45,17 @@
                             <ul class="">
                                 <!--Se colocan las opciones que va a llevar el menu-->
                                 <li>
-                                <a class="waves-effect waves-light btn modal-trigger black lang" key="" href="#modal1">CONTÁCTANOS</a>
+                                <a class="waves-effect waves-light btn modal-trigger black lang" key="Contactanos_publica" href="#modal1">contactanos</a>
                                 </li>
                                 <li>
-                                <a class="waves-effect waves-light btn modal-trigger black" href="#modal2">¿Quiénes somos?</a>
+                                <a class="waves-effect waves-light btn modal-trigger black lang" key="Quienes_somos" href="#modal2">¿Quiénes somos?</a>
                                 <li>
-                                <a class="waves-effect waves-light btn modal-trigger black" href="libros.php">Libros disponibles</a>
+                                <a class="waves-effect waves-light btn modal-trigger black lang" key="Libros_Disponibles"  href="libros.php">Libros disponibles</a>
                                 <li>
                                 <li>
-                                <a class="waves-effect waves-light btn modal-trigger black" href="#" onclick="signOff()">Cerrar Sesion</a>
+                                <a class="waves-effect waves-light btn modal-trigger black lang" key="Cerrar_Sesion" href="#" onclick="signOff()">Cerrar Sesion</a>
                                 <li>
-                                <a class="waves-effect waves-light btn modal-trigger black" href="carrito.php">
+                                <a class="waves-effect waves-light btn modal-trigger black lang" href="carrito.php">
                                     <i class="material-icons prefix">shopping_cart</i>
                                 </a>
                                 </ul>
@@ -96,15 +96,15 @@
                 <ul class="right hide-on-med-and-down">
                     <!--Se colocan las opciones que va a llevar el menu-->
                     <li>
-                    <a class="waves-effect waves-light btn modal-trigger black" href="#modal1">CONTÁCTANOS</a>
+                    <a class="waves-effect waves-light btn modal-trigger black lang" key="Contactanos_publica" href="#modal1">CONTÁCTANOS</a>
                     </li>
                     <li>
-                    <a class="waves-effect waves-light btn modal-trigger black" href="#modal2">¿Quiénes somos?</a>
+                    <a class="waves-effect waves-light btn modal-trigger black lang"  key="Quienes_somos" href="#modal2">¿Quiénes somos?</a>
                     <li>
-                    <a class="waves-effect waves-light btn modal-trigger black" href="libros.php">Libros disponibles</a>
+                    <a class="waves-effect waves-light btn modal-trigger black lang" key="Libros_Disponibles" href="libros.php">Libros disponibles</a>
                     <li>
                     <li>
-                    <a class="waves-effect waves-light btn modal-trigger black" href="login.php">Iniciar sesion</a>
+                    <a class="waves-effect waves-light btn modal-trigger black lang" key="Iniciar_Sesion" href="login.php">Iniciar sesion</a>
                     <li>
                     <a class="waves-effect waves-light btn modal-trigger black" href="carrito.php">
                         <i class="material-icons prefix">shopping_cart</i>
