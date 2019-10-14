@@ -45,7 +45,7 @@
                             <ul class="">
                                 <!--Se colocan las opciones que va a llevar el menu-->
                                 <li>
-                                <a class="waves-effect waves-light btn modal-trigger black" href="#modal1">CONTÁCTANOS</a>
+                                <a class="waves-effect waves-light btn modal-trigger black lang" key="" href="#modal1">CONTÁCTANOS</a>
                                 </li>
                                 <li>
                                 <a class="waves-effect waves-light btn modal-trigger black" href="#modal2">¿Quiénes somos?</a>

@@ -80,7 +80,7 @@
     <!-- Ventana para crear un nuevo registro -->
     <div id="modal-create" class="modal">
         <div class="modal-content">
-            <h4 class="center-align lang" key="Agregar_categoria">Crear categoría</h4>
+            <h4 class="center-align lang" key="Agregar_categorias">Crear categoría</h4>
             <form method="post" id="form-create" enctype="multipart/form-data">
                 <div class="row">
 
@@ -126,7 +126,7 @@
     <!-- Ventana para modificar un registro existente -->
     <div id="modal-update" class="modal">
         <div class="modal-content">
-            <h4 class="center-align">Modificar categoría</h4>
+            <h4 class="center-align lang" key="Modificar_categoria">Modificar categoría</h4>
             <form method="post" id="form-update" enctype="multipart/form-data">
 
                 <input type="hidden" id="id_categoria" name="id_categoria" autocomplete="off" />
