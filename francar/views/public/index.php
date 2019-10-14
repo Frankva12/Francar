@@ -182,7 +182,6 @@
       <i class="material-icons">book</i>
     </a>
   </h2>
-  <!--
   <div class="row">
     <div class="col s12 m4">
       <div class="card">
@@ -254,8 +253,6 @@
   </div>
 
 
-
-
 </body>
 <!--Aqui esta la seccion del pie de pagina donde lleva nuestra informacion de la tienda-->
 <?php
@@ -267,9 +264,12 @@
 <!--Se importan lo que son los archivos de JavaScript-->
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/materialize.min.js"></script>
+<script src="../../resources/js/initialize.js"></script>
 <script src="../../resources/js/carousel.js"></script>
 <script src="../../resources/js/parallax.js"></script>
 <script src="../../resources/js/modal.js"></script>
-
+<script src="../../resources/js/sweetalert.min.js"></script>
+<script src="../../core/helpers/traductor.js"></script>
+<script src="../../core/controllers/public/account.js"></script>
 
 </html>

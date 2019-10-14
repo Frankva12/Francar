@@ -240,6 +240,31 @@ class Usuarios extends Validator
 	}
 
 	//Metodos para manejar el CRUD
+	public function Intentos()
+	{
+		$sql = 'UPDATE clientes SET intentos = intentos + 1 WHERE alias_cliente = ?';
+		$params = array($this->alias);
+		return Database::executeRow($sql, $params);
+	}
+
+	//Metodos para manejar el CRUD
+	public function BloquearIntentos()
+	{
+		$sql = 'UPDATE clientes SET estado = 0, intentos = 0 WHERE alias_cliente = ? and intentos >= 3';
+		$params = array($this->alias);
+		return Database::executeRow($sql, $params);
+	}
+
+	//Metodos para manejar el CRUD
+	public function UpdateLogin()
+	{
+		$sql = 'UPDATE clientes SET intentos = 0';
+		$params = array(null);
+		return Database::executeRow($sql, $params);
+	} 
+
+
+	//Metodos para manejar el CRUD
 	public function bloquearUsuario()
 	{
 		$sql = 'UPDATE clientes SET estado = ? WHERE alias_cliente = ?';

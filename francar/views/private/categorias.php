@@ -28,7 +28,7 @@
   ?>
 
 
-    <h3 align="center">Categorias
+    <h3 align="center" class="lang" key="Categorias_menu">Categorias
         <a class="btn-floating black pulse" href="../../core/report/reporteVentasporcat.php">
             <i class="material-icons">book</i>
         </a>
@@ -39,8 +39,8 @@
 
             <div class="col s12">
                 <a href="#!" class="breadcrumb"></a>
-                <a href="private.php" class="breadcrumb">Estadisticas</a>
-                <a href="categorias.php" class="breadcrumb">Categorias</a>
+                <a href="private.php" class="breadcrumb lang" key="estadisticas">Estadisticas</a>
+                <a href="categorias.php" class="breadcrumb lang" key="Categorias_menu">Categorias</a>
             </div>
 
         </div>
@@ -54,10 +54,10 @@
         <table class="highlight" id="tablaCategorias">
             <thead>
                 <tr>
-                    <th>Imagen</th>
-                    <th>Categoria</th>
-                    <th>Descripción</th>
-                    <th>Acciones</th>
+                    <th class="lang" key="Imagen">Imagen</th>
+                    <th class="lang" key="Categoria">Categoria</th>
+                    <th class="lang" key="Descripcion">Descripción</th>
+                    <th class="lang" key="Acciones">Acciones</th>
                 </tr>
             </thead>
 
@@ -70,7 +70,7 @@
 
         <!-- Botón para abrir ventana de nuevo registro -->
         <div class="input-field center-align col s12 m4">
-            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green"
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Agregar_categorias"
                 data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Categorias</a>
         </div>
 
@@ -80,7 +80,7 @@
     <!-- Ventana para crear un nuevo registro -->
     <div id="modal-create" class="modal">
         <div class="modal-content">
-            <h4 class="center-align">Crear categoría</h4>
+            <h4 class="center-align lang" key="Agregar_categoria">Crear categoría</h4>
             <form method="post" id="form-create" enctype="multipart/form-data">
                 <div class="row">
 
@@ -88,13 +88,13 @@
                         <i class="material-icons prefix">note_add</i>
                         <input id="create_categoria" type="text" name="create_categoria" class="validate" minlength="5"
                             autocomplete="off" required />
-                        <label for="create_categoria">Categoria</label>
+                        <label for="create_categoria" class="lang" key="Categoria">Categoria</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
                         <input id="create_descripcion" type="text" name="create_descripcion" class="validate"
                             autocomplete="off" minlength="5" />
-                        <label for="create_descripcion">Descripción</label>
+                        <label for="create_descripcion" class="lang" key="Descripcion">Descripción</label>
                     </div>
 
                     <div class="file-field input-field col s12 m6">
@@ -137,14 +137,14 @@
                         <i class="material-icons prefix">note_add</i>
                         <input id="update_nombre" type="text" name="update_nombre" class="validate" autocomplete="off"
                             required />
-                        <label for="update_nombre">Categoria</label>
+                        <label for="update_nombre" class="lang" key="Categoria">Categoria</label>
                     </div>
 
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">description</i>
                         <input id="update_descripcion" type="text" name="update_descripcion" class="validate"
                             autocomplete="off" />
-                        <label for="update_descripcion">Descripción</label>
+                        <label for="update_descripcion" class="lang" key="Descripcion">Descripción</label>
                     </div>
 
                     <div class="file-field input-field col s12 m6">
@@ -185,12 +185,14 @@
     <script src="../../resources/js/materialize.min.js"></script>
     <script src="../../resources/js/modal.js"></script>
     <script src="../../resources/js/combo.js"></script>
+    <script src="../../resources/js/initialize.js"></script>
     <script src="../../resources/js/datatables.min.js"></script>
     <script src="../../resources/js/dataTables.material.min.js"></script>
     <script src="../../resources/js/tabla.js"></script>
     <script src="../../core/controllers/dashboard/account.js"></script>
     <script src="../../resources/js/sweetalert.min.js"></script>
     <script src="../../core/helpers/functions.js"></script>
+    <script src="../../core/helpers/traductor.js"></script>
     <script src="../../core/controllers/dashboard/categorias.js"></script>
 
 </html>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 27-08-2019 a las 19:57:01
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.3.1
+-- Host: 127.0.0.1
+-- Generation Time: Sep 02, 2019 at 05:54 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,17 +38,16 @@ CREATE TABLE `administrador` (
   `telefono` int(8) NOT NULL,
   `correo` varchar(255) NOT NULL,
   `estado` tinyint(1) NOT NULL DEFAULT '1',
-  `token_usuario` varchar(80) NOT NULL
+  `token_usuario` varchar(80) NOT NULL,
+  `intentos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `administrador`
 --
 
-INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apellido_administrador`, `alias_usuario`, `contrasenia`, `direccion`, `telefono`, `correo`, `estado`, `token_usuario`) VALUES
-(1, 'Frank', 'Vasconcelos', 'Frank', '$2y$10$QRvV3iZiRmjkJh7yXXwOH.TolNCq.azIXR8c/AGk6Kw4niwpftbpy', 'Mi casita', 77932797, 'stanleyvasconcelos0@gmail.com', 1, '5d656dbb60bbd'),
-(2, 'Carolina', 'Marcia', 'Caro', '$2y$10$P2T13gQOZFQkieZ7v0cKweShQRQsFz3EYvLsJP9QISihM.o6xEA.W', 'Su casita', 71463889, 'carolinamarcia@gmail.com', 1, ''),
-(7, 'Frank', 'Vasconcelos', 'Frankie', '$2y$10$YsXV3ZMLPtZ8JR1/rj45Eueh30oN46EhsD/klru2BhKGX69uVjSmu', 'mi casa', 77932797, 'stanleyvasconcelohifosd@gmail.com', 1, '5d658f8e77c8a');
+INSERT INTO `administrador` (`id_administrador`, `nombre_administrador`, `apellido_administrador`, `alias_usuario`, `contrasenia`, `direccion`, `telefono`, `correo`, `estado`, `token_usuario`, `intentos`) VALUES
+(8, 'Francisco', 'Vasconcelos', 'Frank', '$2y$10$15kKjcxwUkchQLg227zliei.19Wd6/VbDPnvRAJlHELnXeE1gNhye', 'mi casa', 77932797, 'stanleyvasconcelos0@gmail.com', 1, '5d6d3199540af', 0);
 
 -- --------------------------------------------------------
 
@@ -123,18 +122,16 @@ CREATE TABLE `clientes` (
   `contrasenia` varchar(255) NOT NULL,
   `correo` varchar(120) NOT NULL,
   `estado` tinyint(1) NOT NULL,
-  `token_cliente` varchar(80) NOT NULL
+  `token_cliente` varchar(80) NOT NULL,
+  `intentos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `clientes`
 --
 
-INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `alias_cliente`, `direccion`, `telefono`, `contrasenia`, `correo`, `estado`, `token_cliente`) VALUES
-(2, 'Raul ', 'Meana', 'Raul123', 'mi casa', 7894578, '123456', '', 1, ''),
-(3, 'Arturo', 'Galileo', 'Arthur', 'su casa', 798563, '123456', '', 1, ''),
-(4, 'Frank', 'Vasconcelos', 'Frank', 'mi casa', 77932797, '123456', 'jeje', 0, ''),
-(5, 'Frank', 'Vasconcelos', 'Farbi', 'mi casa', 77932797, '$2y$10$2rWVHZ7ipGGXnsFPDd8y2OfeMzDMzaPb42rWXV2j1CwXGCDtGc7aG', 'stanleyvasconcelos0@gmail.com', 1, '');
+INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `alias_cliente`, `direccion`, `telefono`, `contrasenia`, `correo`, `estado`, `token_cliente`, `intentos`) VALUES
+(5, 'Frank', 'Vasconcelos', 'Farbi', 'mi casa', 77932797, '$2y$10$.nClPxIwsEWMo.q3Vyom.uFbBd/Djdxbg8r7/a6TF8gTEue84qHMq', 'stanleyvasconcelos0@gmail.com', 1, '5d66f7787ef2e', 0);
 
 -- --------------------------------------------------------
 
@@ -155,13 +152,10 @@ CREATE TABLE `compra` (
 --
 
 INSERT INTO `compra` (`id_compra`, `id_libro`, `id_cliente`, `cantidad`, `precio`) VALUES
-(1, 1, 2, 12, 15.00),
-(2, 4, 2, 11, 17.00),
-(3, 2, 3, 2, 20.00),
-(4, 3, 3, 29, 120.00),
-(5, 4, 3, 36, 48.00),
-(6, 5, 3, 25, 14.00),
-(7, 6, 2, 7, 16.00);
+(1, 1, 5, 12, 15.00),
+(2, 4, 5, 11, 17.00),
+(8, 1, 5, 21, 12.00),
+(9, 4, 5, 5, 10.00);
 
 -- --------------------------------------------------------
 
@@ -316,7 +310,7 @@ ALTER TABLE `libros`
 -- AUTO_INCREMENT for table `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `bitacora`
@@ -340,7 +334,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT for table `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_compra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `detalle_compra`

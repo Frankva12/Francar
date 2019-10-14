@@ -273,7 +273,6 @@ if (isset($_GET['action'])) {
                                     $mail = new PHPMailer(true);
                                     $mail->CharSet = "UTF-8";
                                 try {
-                                    $mail->SMTPDebug = 2;
                                     $mail->isSMTP();
                                     $mail->Host = 'smtp.gmail.com';
                                     $mail->SMTPAuth = true;
@@ -290,7 +289,6 @@ if (isset($_GET['action'])) {
                                     $mail->Body = 'Bienvenido, '.$correousuario.' Usted ha solicitado un cambio de contraseña <br> <a href="http://localhost/Francar/francar/views/private/recuperacion_contrasenia.php?token='.$token.'">Por favor, haga click aqui para modificar su contraseña</a>';
 
                                     $mail->send();
-                                    echo 'Su mensaje ha sido enviado correctamente';
                                     $result['status'] = 1;
                                 } catch (Exception $e) {
                                     echo "Su mensaje no pudo enviarse'{$mail->ErrorInfo}'";
@@ -392,15 +390,18 @@ if (isset($_GET['action'])) {
                 if ($usuario->setAlias($_POST['alias_usuario'])) {
                     if ($usuario->checkAlias()) {
                         $contrasenia = $usuario->setContrasenia($_POST['contrasenia']);
-                        if ($contrasenia[0]) { 
-                            if ($usuario->checkPassword()) {
-                                $result['status'] = 1;
-                                $_SESSION['id_administrador'] = $usuario->getId();
-                                $_SESSION['alias_usuario'] = $usuario->getAlias();
-                                $_SESSION['tiempo'] = time();
-                                }     
-                                else {
-                                    $result['exception'] = 'Clave inexistente';
+                        if ($contrasenia[0]) {
+                            if ($usuario->UpdateLogin()) {
+                                if ($usuario->checkPassword()) {
+                                    $result['status'] = 1;
+                                    $_SESSION['id_administrador'] = $usuario->getId();
+                                    $_SESSION['alias_usuario'] = $usuario->getAlias();
+                                    $_SESSION['tiempo'] = time();
+                                    } else {
+                                        $result['exception'] = 'Clave inexistente';
+                                    }
+                                } else {
+                                        $result['exception'] = 'No pudimos actualizar los intentos';
                                 }
                             } else {
                                 $result['exception'] = $contrasenia[1];
@@ -416,7 +417,36 @@ if (isset($_GET['action'])) {
                 }
                 break;
 
-                case 'bloquear':
+
+                case 'intentos':
+                    $_POST = $usuario->validateForm($_POST);
+                        if ($usuario->setAlias($_POST['alias_usuario'])) {
+                            if ($result['dataset'] = $usuario->Intentos()) {
+                                $result['status'] = 1;
+                        }
+                        else {
+                            $result['exception'] = 'No pudimos sumar intentos';
+                        }
+                    }else {
+                        $result['exception'] = 'Alias incorrecto';
+                    }
+                    break;
+
+                case 'BloquearIntentos':
+                    $_POST = $usuario->validateForm($_POST);
+                    if ($usuario->setAlias($_POST['alias_usuario'])) {
+                        if ($result['dataset'] = $usuario->BloquearIntentos()) {
+                            $result['status'] = 2;
+                        }
+                            else {
+                                $result['exception'] = 'No hemos podido bloquear usuario';
+                            } 
+                        }
+                        else {
+                            $result['exception'] = 'Alias incorrecto';
+                    }
+                    break;
+              /*   case 'bloquear':
                 $_POST = $usuario->validateForm($_POST);
                 if ($usuario->setAlias($_POST['alias'])) {
                     if ($usuario->checkAlias()) {
@@ -426,7 +456,7 @@ if (isset($_GET['action'])) {
                         }
                     }
                 }
-                break;
+                break; */
             default:
                 exit('Acción no disponiblexd');
         }

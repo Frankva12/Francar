@@ -29,7 +29,7 @@
   ?>
 
 
-  <h4 align="center">Cambio de contraseña
+  <h4 align="center" class="lang" key="Cambiar_contraseña">Cambio de contraseña
     <a class="btn-floating black pulse">
       <i class="material-icons">account_circle</i>
     </a>
@@ -54,29 +54,29 @@
       <div class="input-field col s12 m6">
         <i class="material-icons prefix">lock</i>
         <input type="password" class="form-control" id="actual1" name="actual1">
-        <label>Contraseña actual</label>
+        <label class="lang" key="Contraseña_actual">Contraseña actual</label>
       </div>
 
       <div class="input-field col s12 m6">
         <i class="material-icons prefix">lock</i>
         <input type="password" class="form-control" id="actual2" name="actual2">
-        <label>Repita contraseña actual</label>
+        <label  class="lang" key="Repita_contraseña_actual">Repita contraseña actual</label>
       </div>
 
       <div class="input-field col s12 m6">
         <i class="material-icons prefix">lock</i>
         <input type="password" class="form-control" id="nueva1" name="nueva1">
-        <label>Contraseña nueva</label>
+        <label  class="lang" key="Contraseña_nueva">Contraseña nueva</label>
       </div>
 
       <div class="input-field col s12 m6">
         <i class="material-icons prefix">lock</i>
         <input type="password" class="form-control" id="nueva2" name="nueva2">
-        <label>Repita nueva contraseña</label>
+        <label  class="lang" key="Repita_contraseña_nueva">Repita nueva contraseña</label>
       </div>
 
       <div class="row center-align">
-        <button type="submit" class="btn waves-effect blue tooltipped" data-tooltip="Guardar cambios"><i
+        <button type="submit" class="btn waves-effect blue tooltipped lang" key="Guardar_cambios" data-tooltip="Guardar cambios"><i
             class="material-icons"></i>Guardar Cambios</button>
     </form>
   </div>
@@ -109,7 +109,10 @@ Footer::foot();
   <script src="../../resources/js/dataTables.material.min.js"></script>
   <script src="../../resources/js/tabla.js"></script>
   <script src="../../resources/js/sweetalert.min.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+<script src="../../resources/js/initialize.js"></script>
   <script src="../../core/helpers/functions.js"></script>
+  <script src="../../core/helpers/traductor.js"></script>
   <script src="../../core/controllers/dashboard/usuarios.js"></script>
   <script src="../../core/controllers/dashboard/account.js"></script>
 </body>

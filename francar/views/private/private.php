@@ -38,7 +38,7 @@
       <div class="nav-wrapper blue">
         <div class="col s12 m6">
           <a href="#!" class="breadcrumb"></a>
-          <a href="#!" class="breadcrumb">Estadisticas</a>
+          <a href="#!" class="breadcrumb lang" key="estadisticas">Estadisticas</a>
         </div>
       </div>
     </nav>
@@ -93,10 +93,17 @@
       <?php
   require("../../core/helpers/dashboard/footer.php");
   Footer::foot();
-?>
+      ?>
+
+      <script src="../../resources/js/materialize.min.js"></script>
+      <script src="../../resources/js/modal.js"></script>
+      <script src="../../resources/js/combo.js"></script>
+
+      <script src="../../resources/js/initialize.js"></script>
       <script src="../../resources/js/sweetalert.min.js"></script>
       <script src="../../core/controllers/dashboard/account.js"></script>
       <script src="../../core/helpers/functions.js"></script>
+      <script src="../../core/helpers/traductor.js"></script>
 
 </body>
 

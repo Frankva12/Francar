@@ -80,6 +80,7 @@
 <script src="../../resources/js/sweetalert.min.js"></script>
 <script src="../../core/helpers/functions.js"></script>
 <script src="../../core/controllers/public/index.js"></script>
+<script src="../../core/helpers/traductor.js"></script>
 </body>
 
 </html>

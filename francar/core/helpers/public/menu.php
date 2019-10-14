@@ -5,7 +5,7 @@
             if (isset($_SESSION['id_cliente'])) {
                if (isset($_SESSION['tiempo'])) {
                    //Tiempo en segundos para dar vida a la sesión.
-				$inactivo = 10;//20min en este caso.
+				$inactivo = 300;//20min en este caso.
 			
 				//Calculamos tiempo de vida inactivo.
 				$vida_session = time() - $_SESSION['tiempo'];
@@ -42,7 +42,7 @@
                             </a>
                             <div class="container">
                             <a href="index.php" class="brand-logo">Libreria Francar</a>
-                            <ul class="right hide-on-med-and-down">
+                            <ul class="">
                                 <!--Se colocan las opciones que va a llevar el menu-->
                                 <li>
                                 <a class="waves-effect waves-light btn modal-trigger black" href="#modal1">CONTÁCTANOS</a>
@@ -53,12 +53,24 @@
                                 <a class="waves-effect waves-light btn modal-trigger black" href="libros.php">Libros disponibles</a>
                                 <li>
                                 <li>
-                                <a class="waves-effect waves-light btn modal-trigger black" href="login.php">Cerrar Sesion</a>
+                                <a class="waves-effect waves-light btn modal-trigger black" href="#" onclick="signOff()">Cerrar Sesion</a>
                                 <li>
                                 <a class="waves-effect waves-light btn modal-trigger black" href="carrito.php">
                                     <i class="material-icons prefix">shopping_cart</i>
                                 </a>
-
+                                </ul>
+                                <li>
+                                    <a class="dropdown-trigger" href="#" data-target="traslate"><span class="idioma">Idioma<span></a></li>
+                                    <ul id="traslate" class="dropdown-content">
+                                        <li><a class="españolOnclick" onclick="showEs()">Español</a></li> 
+                                        <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+                                    </ul>
+                                        </nav> 
+                                </div>
+                                    <ul id="traslate2" class="dropdown-content">
+                                    <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+                                    <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+                                    </ul>
                             </div>
                         </div>
                         </nav>
@@ -97,7 +109,20 @@
                     <a class="waves-effect waves-light btn modal-trigger black" href="carrito.php">
                         <i class="material-icons prefix">shopping_cart</i>
                     </a>
-
+                    <li>
+				<a class="dropdown-trigger" href="#" data-target="traslate"><span class="idioma">Idioma<span></a></li>
+				<ul id="traslate" class="dropdown-content">
+					<li><a class="españolOnclick" onclick="showEs()">Español</a></li> 
+					<li><a class="englishOnclick" onclick="showEn()">English</a></li>
+				</ul>
+					</nav> 
+			  </div>
+			  	<ul id="traslate2" class="dropdown-content">
+				  <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+				  <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+				</ul>
+                    </ul>
+                    
                 </div>
             </div>
             </nav>

@@ -6,7 +6,7 @@
 			if(isset($_SESSION['tiempo']) ) {
 
 				//Tiempo en segundos para dar vida a la sesión.
-				$inactivo = 300;//20min en este caso.
+				$inactivo = 500;//20min en este caso.
 			
 				//Calculamos tiempo de vida inactivo.
 				$vida_session = time() - $_SESSION['tiempo'];
@@ -36,7 +36,6 @@
           if ($filename != 'index.php') {
             self::modals();
             print('
-
             <div class="navbar-fixed col s6 m12 l12"">
             <nav>
               <div class="nav-wrapper black">
@@ -44,14 +43,25 @@
                   <a href="private.php" class="brand-logo"></a>
                   <ul class="right hide-on-med-and-down">
                     <!--Opciones del menu-->
-                    <li><a class="waves-effect waves-light btn modal-trigger black" href="private.php">Estadisticas</a></li>
-                    <li><a class="waves-effect waves-light btn modal-trigger black" href="libros.php">libros</a></li>
-                    <li> <a class="waves-effect waves-light btn modal-trigger black" href="editoriales.php">Editoriales</a></li>
-                    <li> <a class="waves-effect waves-light btn modal-trigger black" href="categorias.php">Categorias</a></li>
-                    <li> <a class="waves-effect waves-light btn modal-trigger black" href="usuarios.php">Usuarios</a></li>  
-                    <li> <a class="waves-effect waves-light btn modal-trigger black" href="#" onclick="signOff()" > <i class="material-icons">settings_power</i></a> 
-                    </nav> 
-              </div>
+                    <li><a class="waves-effect waves-light btn modal-trigger black lang" key="Estadistica_menu" href="private.php">Estadisticas</a></li>
+                    <li><a class="waves-effect waves-light btn modal-trigger black lang" key="Libros_menu" href="libros.php">libros</a></li>
+                    <li><a class="waves-effect waves-light btn modal-trigger black lang" key="Editoriales_menu" href="editoriales.php">Editoriales</a></li>
+                    <li><a class="waves-effect waves-light btn modal-trigger black lang" key="Categorias_menu" href="categorias.php">Categorias</a></li>
+					<li><a class="waves-effect waves-light btn modal-trigger black lang" key="Usuarios_menu" href="usuarios.php">Usuarios</a></li>  
+					<li><a class="waves-effect waves-light btn modal-trigger black lang" key="Cerrar_sesion_menu" href="#" onclick="signOff()"> <i class="material-icons">settings_power</i></a> 
+					</ul>
+				<li>
+				<a class="dropdown-trigger" href="#" data-target="traslate"><span class="idioma">Idioma<span></a></li>
+				<ul id="traslate" class="dropdown-content">
+					<li><a class="españolOnclick" onclick="showEs()">Español</a></li> 
+					<li><a class="englishOnclick" onclick="showEn()">English</a></li>
+				</ul>
+					</nav> 
+			  </div>
+			  	<ul id="traslate2" class="dropdown-content">
+				  <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+				  <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+				</ul>
           </div>
       </div>');
     } else {
