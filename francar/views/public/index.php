@@ -110,7 +110,7 @@
         </div>
         <div class="card-content">
           <h3 align="center" class="lang" key="Sintesis">Sintesis</h3>
-          <p class="Las_tediosas">Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra más
+          <p class="lang" key="Las_tediosas">Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra más
             inquieto
             que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está sucediendo en
             Hogwarts.
@@ -133,8 +133,8 @@
           </a>
         </div>
         <div class="card-content">
-          <h3 align="center" class="lang" key="Sintesis">>Sintesis</h3>
-          <p>Con dieciséis años cumplidos, Harry Potter inicia el sexto curso en Hogwarts en medio de terribles
+          <h3 align="center" class="lang" key="Sintesis">Sintesis</h3>
+          <p class="lang" key="Hogwards">Con dieciséis años cumplidos, Harry Potter inicia el sexto curso en Hogwarts en medio de terribles
             acontecimientos
             que asolan Inglaterra. Elegido capitán del equipo de Quidditch, los entrenamientos, los exámenes y las
             chicas
@@ -157,10 +157,10 @@
         </div>
         <div class="card-content">
           <h3 align="center" class="lang" key="Sintesis">>Sintesis</h3>
-          <p>La fecha crucial se acerca. Cuando cumpla diecisiete años, Harry perderá el encantamiento protector que lo
+          <p class="lang" key="Fecha_Crucial">La fecha crucial se acerca. Cuando cumpla diecisiete años, Harry perderá el encantamiento protector que lo
             mantiene
             a salvo. El anunciado enfrentamiento a muerte con lord Voldemort es inminente, y la casi imposible misión de
-            encontrar y destruir los restantes Horrocruxes más urgente que nunca. </p>
+            encontrar y destruir los restantes Horrocruxes más urgente que nunca.</p>
           <br>
           <br>
           <br>
@@ -177,7 +177,7 @@
 
   <!--Aqui esta otra seccion de la pagina web donde se mostraran las categorias de los libros en unas tarjetas con una imagen alusiva y la descripcion de esa categoria-->
   <a name="categorias"></a>
-  <h2 align="center" class="header">Categorias.
+  <h2 align="center" class="header lang" key="Categorias">Categorias.
     <a class="btn-floating black pulse" id>
       <i class="material-icons">book</i>
     </a>
@@ -193,8 +193,8 @@
           </a>
         </div>
         <div class="card-content">
-          <h3 align="center">Misterio</h3>
-          <p>El término novela de misterio a menudo es utilizado como sinónimo de novela de detective o novela de
+          <h3 align="center" class="lang" key="Misterio">Misterio</h3>
+          <p class="lang" key="Novela">El término novela de misterio a menudo es utilizado como sinónimo de novela de detective o novela de
             crimen, es
             decir, una novela o cuento en la cual un detective (profesional o aficionado) investiga y resuelve un
             misterio
@@ -215,8 +215,8 @@
           </a>
         </div>
         <div class="card-content">
-          <h3 align="center">Aventura</h3>
-          <p>Se considera que los orígenes del género de aventuras se encuentran en La Odisea y en La Ilíada de Homero
+          <h3 align="center" class="lang" key="Aventura">Aventura</h3>
+          <p class="lang" key="Origenes">Se considera que los orígenes del género de aventuras se encuentran en La Odisea y en La Ilíada de Homero
             (siglo
             VIII a. d C.) y, por ende, en la épica clásica. En la primera, el héroe Ulises lucha por volver a su hogar
             en
@@ -238,7 +238,7 @@
         </div>
         <div class="card-content">
           <h3 align="center">Terror</h3>
-          <p>La Literatura de terror es un género de ficción literario que pretende o tiene la capacidad de asustar,
+          <p class="lang" key="Literatura_terror">La Literatura de terror es un género de ficción literario que pretende o tiene la capacidad de asustar,
             causar
             miedo o aterrorizar sus lectores o espectadores en inducir sentimientos de horror y terror. </p>
           <br>
