@@ -20,11 +20,8 @@
         <form method="post" id="form-sesion">
           <div class="row blue lighten-1">
             <br>
-            <h4 align="center"> Bienvenidos.
-              <br>
-              <br>
+            <h4 align="center" class="lang" key="bienvenidos"> Bienvenidos.</h4>
               <i align="center" class="material-icons medium">account_circle</i>
-            </h4>
           </div>
           <div class="row">
             <div class="input-field col s12">
@@ -39,7 +36,7 @@
               <i class="material-icons prefix">lock_outline</i>
               <input id="contrasenia" type="password" name="contrasenia" class="validate" minlength="5" maxlength="80"
                 autocomplete="off" required />
-              <label for="contrasenia">Contraseña</label>
+              <label for="contrasenia" class="lang" key="Contrasenia">Contraseña</label>
             </div>
           </div>
 
@@ -50,7 +47,7 @@
           </div>
           <div class="input-field col s12 m12 l12">
             <p align='center'>
-              <a class="waves-effect waves-light btn modal-trigger grey darken-4"
+              <a class="waves-effect waves-light btn modal-trigger grey darken-4 lang" key="olvido"
                 href="recuperar_contrasena.php">¿Olvidó su
                 contraseña?
               </a>
@@ -61,11 +58,23 @@
                 <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
               </div>
               <p align='center'>
-                <a class="waves-effect waves-light btn modal-trigger grey darken-4"
+                <a class="waves-effect waves-light btn modal-trigger grey darken-4 lang" key="Registrarse"
                   href="registrar_cliente.php">Registrarse
                 </a>
               </p>
         </form>
+        <a class="dropdown-trigger" href="#" data-target="traslate"><span class="idioma">Idioma<span></a></li>
+				<ul id="traslate" class="dropdown-content">
+					<li><a class="españolOnclick" onclick="showEs()">Español</a></li> 
+					<li><a class="englishOnclick" onclick="showEn()">English</a></li>
+				</ul>
+					</nav> 
+			  </div>
+			  	<ul id="traslate2" class="dropdown-content">
+				  <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+				  <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+				</ul>
+        </ul>
       </div>
     </div>
 </div>
@@ -76,6 +85,7 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/materialize.min.js"></script>
+<script src="../../resources/js/initialize.js"></script>
 <script src="../../resources/js/modal.js"></script>
 <script src="../../resources/js/sweetalert.min.js"></script>
 <script src="../../core/helpers/functions.js"></script>

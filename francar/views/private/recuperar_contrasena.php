@@ -21,18 +21,15 @@
         <form method="post" id="form-recuperar">
           <div class="row teal lime grey lighten-1">
             <br>
-            <h4>Bienvenidos.
-              <br>
-              <br>
+            <h4 class="lang" key="bienvenidos">Bienvenidos.</h4>        
               <i align="center" class="material-icons medium">account_circle</i>
-            </h4>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">assignment_ind</i>
               <input id="correo_usuario" type="text" name="correo_usuario" class="validate" minlength="5" maxlength="80"
                 autocomplete="off" required />
-              <label for="correo_usuario">Correo</label>
+              <label for="correo_usuario" class="lang" key="Correo_footer">Correo</label>
             </div>
           </div>
           <div class="col s12 center-align">
@@ -41,6 +38,18 @@
             <br>
             <br>
           </div>
+          <a class="dropdown-trigger" href="#" data-target="traslate"><span class="idioma">Idioma<span></a>
+                    </li>
+                    <ul id="traslate" class="dropdown-content">
+                        <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+                        <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+                    </ul>
+                    </nav>
+            </div>
+            <ul id="traslate2" class="dropdown-content">
+                <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+                <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+            </ul>
         </form>
       </div>
     </div>
@@ -51,6 +60,7 @@
 <script src="../../resources/js/jquery-3.3.1.min.js"></script>
 <script src="../../resources/js/materialize.min.js"></script>
 <script src="../../resources/js/modal.js"></script>
+<script src="../../resources/js/initialize.js"></script>
 <script src="../../resources/js/sweetalert.min.js"></script>
 <script src="../../core/helpers/functions.js"></script>
 <script src="../../core/controllers/dashboard/index.js"></script>

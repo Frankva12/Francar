@@ -70,8 +70,9 @@
 
         <!-- Botón para abrir ventana de nuevo registro -->
         <div class="input-field center-align col s12 m4">
-            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Agregar_categorias"
-                data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Categorias</a>
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang"
+                key="Agregar_categorias" data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar
+                Categorias</a>
         </div>
 
     </div>

@@ -26,46 +26,65 @@
   <form class="col s12" id="form-register">
     <div class="row">
       <div class="input-field col s6">
-        <input placeholder="Nombres" id="nombres" name="nombres" type="text" class="validate" autocomplete="off">
-        <label for="nombres"></label>
+        <input id="nombres" name="nombres" type="text" class="validate" autocomplete="off">
+        <label for="nombres" class="lang" key="Nombre"></label>
       </div>
       <div class="input-field col s6">
-        <input placeholder="Apellidos" id="apellidos" name="apellidos" type="text" class="validate" autocomplete="off">
-        <label for="apellidos"></label>
+        <input id="apellidos" name="apellidos" type="text" class="validate" autocomplete="off">
+        <label for="apellidos" class="lang" key="Apellido"></label>
       </div>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Alias" id="alias" name="alias" type="text" class="validate" autocomplete="off">
-      <label for="alias"></label>
+      <input id="alias" name="alias" type="text" class="validate" autocomplete="off">
+      <label for="alias">Alias</label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Contraseña" id="clave1" name="clave1" type="password" class="validate" autocomplete="off">
-      <label for="clave1"></label>
+      <input id="clave1" name="clave1" type="password" class="validate" autocomplete="off">
+      <label for="clave1" class="lang" key="Contrasenia"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Confirme su contraseña" id="clave2" name="clave2" type="password" class="validate"
-        autocomplete="off">
-      <label for="clave2"></label>
+      <input id="clave2" name="clave2" type="password" class="validate" autocomplete="off">
+      <label for="clave2" class="lang" key="Confirmar_contraseña"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Direccion" id="direccion" name="direccion" type="text" class="validate" autocomplete="off">
-      <label for="direccion"></label>
+      <input id="direccion" name="direccion" type="text" class="validate" autocomplete="off">
+      <label for="direccion" class="lang" key="Direccion"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Telefono" id="telefono" name="telefono" type="tel" class="validate" autocomplete="off">
-      <label for="telefono"></label>
+      <input id="telefono" name="telefono" type="tel" class="validate" autocomplete="off">
+      <label for="telefono" class="lang" key="Telefono_footer"></label>
     </div>
     <div class="input-field col s6">
-      <input placeholder="Correo" id="correo" name="correo" type="email" class="validate" autocomplete="off">
-      <label for="correo"></label>
+      <input id="correo" name="correo" type="email" class="validate" autocomplete="off">
+      <label for="correo" class="lang" key="Correo_footer"></label>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
         <div align="center" class="g-recaptcha" data-sitekey="6LcBzLMUAAAAAPt5z1pZnW6LYFHZ2Qga2DFGsSu0"></div>
       </div>
-      <button class="btn btn-lg btn-primary" type="submit" data-tooltip="Registrar">Registrarse</button></button>
+      <div align="center">
+        <button class="btn btn-lg btn-primary lang" key="Registrarse" type="submit"
+          data-tooltip="Registrar">Registrarse</button></button>
+      </div>
   </form>
+</div>
+<br>
+<br>
+<div align="center">
+  <a class="dropdown-trigger" href="#" data-target="traslate"><span class="idioma">Idioma<span></a>
+  </li>
+  <ul id="traslate" class="dropdown-content">
+    <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+    <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+  </ul>
+  </nav>
+</div>
+<ul id="traslate2" class="dropdown-content">
+  <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+  <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+</ul>
+</div>
 </div>
 
 
@@ -77,4 +96,5 @@
 <script type="text/javascript" src="../../core/controllers/public/account.js"></script>
 <script type="text/javascript" src="../../core/controllers/public/registrar.js"></script>
 <script src="../../core/helpers/traductor.js"></script>
+
 </html>

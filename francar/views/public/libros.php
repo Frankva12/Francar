@@ -82,7 +82,7 @@
 
 
 
-  <h3 align="center">LIBROS
+  <h3 align="center" class="lang" key="Libros_Disponibles">LIBROS
     <a class="btn-floating black pulse">
       <i class="material-icons">book</i>
     </a>
@@ -99,14 +99,14 @@
           </a>
         </div>
         <div class="card-content">
-          <h3 align="center">Informacion</h3>
-          <p> Título: Harry Potter y la Orden del Fenix</p>
+          <h3 align="center" class="lang" key="Informacion">Informacion </h3>
+          <p class="lang" key="Titulo_harry"> Título: Harry Potter y la Orden del Fenix</p>
           <br>
-          <p> Precio: $25.00</p>
+          <p class="lang" key="Precio_25"> Precio: $25.00</p>
           <br>
-          <p> Editorial: Salamandra</p>
+          <p class="lang" key="Editorial_sala"> Editorial: Salamandra</p>
           <br>
-          <p> Descripcion: Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se
+          <p class="lang" key="descripcion_1"> Descripcion: Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se
             encuentra
             más inquieto que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está
             sucediendo
@@ -129,14 +129,14 @@
           </a>
         </div>
         <div class="card-content">
-          <h3 align="center">Informacion:</h3>
-          <p> Título: Harry Potter y el misterio del principe</p>
+          <h3 align="center" class="lang" key="Informacion">Informacion:</h3>
+          <p class="lang" key="Titulo_harry2"> Título: Harry Potter y el misterio del principe</p>
           <br>
-          <p> Precio: $25.00</p>
+          <p class="lang" key="Precio_25"> Precio: $25.00</p>
           <br>
-          <p> Editorial: Salamandra</p>
+          <p class="lang" key="Editorial_sala"> Editorial: Salamandra</p>
           <br>
-          <p>Descripcion: Con dieciséis años cumplidos, Harry Potter inicia el sexto curso en Hogwarts en medio de
+          <p class="lang" key="descripcion_2">Descripcion: Con dieciséis años cumplidos, Harry Potter inicia el sexto curso en Hogwarts en medio de
             terribles
             acontecimientos que asolan Inglaterra. Elegido capitán del equipo de Quidditch, los entrenamientos, los
             exámenes
@@ -158,14 +158,14 @@
           </a>
         </div>
         <div class="card-content">
-          <h3 align="center">Informacion</h3>
-          <p> Título: Harry Potter y las reliquias de la muerte</p>
+          <h3 align="center" class="lang" key="Informacion">Informacion</h3>
+          <p class="lang" key="Titulo_harry3"> Título: Harry Potter y las reliquias de la muerte</p>
           <br>
-          <p> Precio: $25.00</p>
+          <p class="lang" key="Precio_25"> Precio: $25.00</p>
           <br>
-          <p> Editorial: Salamandra</p>
+          <p class="lang" key="Editorial_sala"> Editorial: Salamandra</p>
           <br>
-          <p>Descripcion: La fecha crucial se acerca. Cuando cumpla diecisiete años, Harry perderá el encantamiento
+          <p  class="lang" key="descripcion_3">Descripcion: La fecha crucial se acerca. Cuando cumpla diecisiete años, Harry perderá el encantamiento
             protector
             que lo mantiene a salvo. El anunciado enfrentamiento a muerte con lord Voldemort es inminente, y la casi
             imposible

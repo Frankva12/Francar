@@ -21,18 +21,15 @@
                 <form method="post" id="form-nueva-contrasena">
                     <div class="row blue lighten-1">
                         <br>
-                        <h4>Bienvenidos.
-                            <br>
-                            <br>
-                            <i align="center" class="material-icons medium">account_circle</i>
-                        </h4>
+                        <h4 class="lang" key="bienvenidos">Bienvenidos.</h4>
+                        <i align="center" class="material-icons medium">account_circle</i>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">lock</i>
                             <input id="contra_nueva1" type="password" name="contra_nueva1" class="validate"
                                 minlength="5" maxlength="20" autocomplete="off" required />
-                            <label for="contra_nueva1">Contraseña nueva</label>
+                            <label for="contra_nueva1" class="lang" key="Contraseña_nueva">Contraseña nueva</label>
                         </div>
                     </div>
                     <div class="row">
@@ -40,7 +37,8 @@
                             <i class="material-icons prefix">lock</i>
                             <input id="contra_nueva2" type="password" name="contra_nueva2" class="validate"
                                 minlength="5" maxlength="20" autocomplete="off" required />
-                            <label for="contra_nueva2">Confirmar contraseña</label>
+                            <label for="contra_nueva2" class="lang" key="Confirmar_contraseña">Confirmar
+                                contraseña</label>
                             <input type="hidden" id="token" name="token" value="">
                         </div>
                     </div>
@@ -50,9 +48,21 @@
                         <br>
                         <br>
                     </div>
-                </form>
+                    <a class="dropdown-trigger" href="#" data-target="traslate"><span class="idioma">Idioma<span></a>
+                    </li>
+                    <ul id="traslate" class="dropdown-content">
+                        <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+                        <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+                    </ul>
+                    </nav>
             </div>
+            <ul id="traslate2" class="dropdown-content">
+                <li><a class="españolOnclick" onclick="showEs()">Español</a></li>
+                <li><a class="englishOnclick" onclick="showEn()">English</a></li>
+            </ul>
+            </form>
         </div>
+</div>
 </div>
 </body>
 
@@ -65,4 +75,5 @@
 <script src="../../core/helpers/functions.js"></script>
 <script src="../../core/controllers/public/index.js"></script>
 <script src="../../core/helpers/traductor.js"></script>
+
 </html>

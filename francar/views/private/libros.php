@@ -22,8 +22,6 @@
   <script src="../../resources/js/modules.js"></script>
 
   <title>Libreria Francar</title>
-
-
 </head>
 
 <body background="">
@@ -68,8 +66,8 @@
     </table>
     <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
-      <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Agregar_libros" data-tooltip="Agregar"><i
-          class="material-icons "></i>Agregar Libros</a>
+      <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Agregar_libros"
+        data-tooltip="Agregar"><i class="material-icons "></i>Agregar Libros</a>
 
 
 
@@ -103,18 +101,18 @@
             <label for="create_nombre" class="lang" key="Nombre_libro">Nombre del libro</label>
           </div>
 
-          <div class="input-field col s12 m6 " >
+          <div class="input-field col s12 m6 ">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="create_cantidad" type="number" name="create_cantidad" class="validate" max="999.99" min="0.00"
               step="any" autocomplete="off" required />
             <label for="create_cantidad" class="lang" key="Cantidad">Cantidad</label>
           </div>
 
-          <div class="input-field col s12 m6" >
+          <div class="input-field col s12 m6">
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="create_precio" type="number" name="create_precio" class="validate" max="999.99" min="0.00"
               step="any" autocomplete="off" required />
-            <label for="create_precio" class="lang" key ="Precio">Precio</label>
+            <label for="create_precio" class="lang" key="Precio">Precio</label>
           </div>
 
           <div class="input-field col s12 m6 ">
@@ -124,7 +122,7 @@
             <label for="create_descripcion" class="lang" key="Descripcion">Descripción</label>
           </div>
 
-          <div class="input-field col s12 m6" >
+          <div class="input-field col s12 m6">
             <i class="material-icons prefix">account_circle</i>
             <input id="create_autor" type="text" name="create_autor" class="validate" autocomplete="off" required />
             <label for="create_autor" class="lang" key="Autor">Autor</label>
@@ -195,7 +193,7 @@
             <i class="material-icons prefix">add_circle_outline</i>
             <input id="update_cantidad" type="number" name="update_cantidad" class="validate" max="999" min="0"
               step="any" autocomplete="off" required />
-            <label for="update_cantidad" class ="lang" key="Cantidad">Cantidad</label>
+            <label for="update_cantidad" class="lang" key="Cantidad">Cantidad</label>
           </div>
 
           <div class="input-field col s12 m6">
@@ -279,7 +277,7 @@
   <script src="../../core/controllers/dashboard/account.js"></script>
   <script src="../../resources/js/sweetalert.min.js"></script>
   <script src="../../resources/js/materialize.min.js"></script>
-<script src="../../resources/js/initialize.js"></script>
+  <script src="../../resources/js/initialize.js"></script>
   <script src="../../core/helpers/functions.js"></script>
   <script src="../../core/helpers/traductor.js"></script>
   <script src="../../core/controllers/dashboard/libros.js"></script>

@@ -65,17 +65,19 @@
     </table>
     <!-- Botón para abrir ventana de nuevo registro -->
     <div class="input-field center-align col s12 m4">
-      <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Agregar_usuarios" data-tooltip="Agregar"><i
-          align="center" class="material-icons"></i>Agregar Usuarios</a>
+      <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Agregar_usuarios"
+        data-tooltip="Agregar"><i align="center" class="material-icons"></i>Agregar Usuarios</a>
 
-      <a href="../../views/private/contrasenia.php" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Cambiar_contraseña"><i
-          align="center" class="material-icons"></i>Cambiar contraseña</a>
+      <a href="../../views/private/contrasenia.php" class="btn waves-effect indigo tooltipped modal-trigger green lang"
+        key="Cambiar_contraseña"><i align="center" class="material-icons"></i>Cambiar contraseña</a>
 
-      <a href="../../core/report/reporteClientes.php" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Reporte_clientes"><i
-          align="center" class="material-icons"></i>Reporte Clientes</a>
+      <a href="../../core/report/reporteClientes.php"
+        class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Reporte_clientes"><i align="center"
+          class="material-icons"></i>Reporte Clientes</a>
 
-      <a href="../../core/report/reporteBitacora.php" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Reporte_Bitacora"><i
-          align="center" class="material-icons"></i>Reporte Bitacora</a>
+      <a href="../../core/report/reporteBitacora.php"
+        class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Reporte_Bitacora"><i align="center"
+          class="material-icons"></i>Reporte Bitacora</a>
     </div>
 
   </div>
@@ -178,7 +180,7 @@
             <i class="material-icons prefix">account_circle</i>
             <input id="update_nombre_administrador" type="text" name="update_nombre_administrador" class="validate"
               minlength="5" maxlength="80" autocomplete="off" required />
-            <label for="update_nombre_administrador"class="lang" key="Nombre">Nombre</label>
+            <label for="update_nombre_administrador" class="lang" key="Nombre">Nombre</label>
           </div>
           <div class="input-field col s12 m6">
             <i class="material-icons prefix">assignment_ind</i>
@@ -247,17 +249,17 @@ Footer::foot();
   <!--Se importan lo que son los archivos de JavaScript-->
 
   <script src="../../resources/js/jquery-3.3.1.min.js"></script>
-    <script src="../../resources/js/materialize.min.js"></script>
-    <script src="../../resources/js/modal.js"></script>
-    <script src="../../resources/js/combo.js"></script>
-    <script src="../../resources/js/initialize.js"></script>
-    <script src="../../resources/js/datatables.min.js"></script>
-    <script src="../../resources/js/dataTables.material.min.js"></script>
-    <script src="../../resources/js/tabla.js"></script>
-    <script src="../../core/controllers/dashboard/account.js"></script>
-    <script src="../../resources/js/sweetalert.min.js"></script>
-    <script src="../../core/helpers/functions.js"></script>
-    <script src="../../core/helpers/traductor.js"></script>
+  <script src="../../resources/js/materialize.min.js"></script>
+  <script src="../../resources/js/modal.js"></script>
+  <script src="../../resources/js/combo.js"></script>
+  <script src="../../resources/js/initialize.js"></script>
+  <script src="../../resources/js/datatables.min.js"></script>
+  <script src="../../resources/js/dataTables.material.min.js"></script>
+  <script src="../../resources/js/tabla.js"></script>
+  <script src="../../core/controllers/dashboard/account.js"></script>
+  <script src="../../resources/js/sweetalert.min.js"></script>
+  <script src="../../core/helpers/functions.js"></script>
+  <script src="../../core/helpers/traductor.js"></script>
   <script src="../../core/controllers/dashboard/usuarios.js"></script>
 </body>
 

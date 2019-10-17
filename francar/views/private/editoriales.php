@@ -60,9 +60,9 @@
 
 
         <!-- Botón para abrir ventana de nuevo registro -->
-        <div class="input-field center-align col s12 m4 " >
-            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang" key="Agregar_editorial"
-                data-tooltip="Agregar">
+        <div class="input-field center-align col s12 m4 ">
+            <a href="#modal-create" class="btn waves-effect indigo tooltipped modal-trigger green lang"
+                key="Agregar_editorial" data-tooltip="Agregar">
                 <i class="material-icons"></i>Agregar Editorial</a>
         </div>
     </div>
@@ -91,10 +91,6 @@
             </form>
         </div>
     </div>
-
-
-
-
     <!-- Ventana para modificar un registro existente -->
     <div id="modal-update" class="modal">
         <div class="modal-content">
@@ -138,7 +134,7 @@
     <script src="../../core/controllers/dashboard/account.js"></script>
     <script src="../../resources/js/sweetalert.min.js"></script>
     <script src="../../resources/js/materialize.min.js"></script>
-<script src="../../resources/js/initialize.js"></script>
+    <script src="../../resources/js/initialize.js"></script>
     <script src="../../core/helpers/functions.js"></script>
     <script src="../../core/helpers/traductor.js"></script>
     <script src="../../core/controllers/dashboard/editoriales.js"></script>

@@ -25,11 +25,10 @@
      Iniciar::navigate();
   ?>
 
-  <h3 align="center">CARRITO
+  <h3 align="center" class="lang" key="Carrito">CARRITO
     <a class="btn-floating black pulse">
       <i class="material-icons">shopping_cart</i>
-    </a>
-  </h3>
+    </a></h3>
 
 
   <!-- Este es otro modal pero ahora en la opcion de contáctanos donde aparecera un formulario que automaticamente una persona deja ir un mensjae, al instante nos cae en nuestro correo electronico-->
@@ -73,18 +72,20 @@
             </a>
           </h3>
         </blockquote>
-        <p align="left" class="lang" key="Somos_empresa">Somos una empresa que busca fomentar la lectura en los jóvenes, apoyados de la
-          ayuda de la tecnología, 
+        <p align="left" class="lang" key="Somos_empresa">Somos una empresa que busca fomentar la lectura en los jóvenes,
+          apoyados de la
+          ayuda de la tecnología,
           para obtenerlos de manera más efectiva virtualmente.</p>
 
         <blockquote>
-          <h3 class="header lang" key="Vision"  >Visión
+          <h3 class="header lang" key="Vision">Visión
             <a class="btn-floating black   pulse">
               <i class="material-icons">lightbulb_outline</i>
             </a>
           </h3>
         </blockquote>
-        <p align="left" class="lang" key="lograr_Ser">Lograr ser la mejor librería a nivel nacional con ayuda de la tecnología.</p>
+        <p align="left" class="lang" key="lograr_Ser">Lograr ser la mejor librería a nivel nacional con ayuda de la
+          tecnología.</p>
       </div>
     </div>
   </div>
@@ -96,11 +97,11 @@
     <table class="highlight" id="tablaCarrito">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Libro</th>
-          <th>Cantidad</th>
-          <th>Cliente</th>
-          <th>Precio</th>
+          <th class="lang" key="ID">ID</th>
+          <th class="lang" key="titulo_libros">Libro</th>
+          <th class="lang" key="Cantidad">Cantidad</th>
+          <th class="lang" key="Cliente">Cliente</th>
+          <th class="lang" key="Precio">Precio</th>
         </tr>
       </thead>
       <tbody id="tbody-read">
