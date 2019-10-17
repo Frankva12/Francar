@@ -48,7 +48,7 @@ function sumarIntentos (alias)
     .done(function(response){
         if (isJSONString(response)) {
             const result = JSON.parse(response);
-            sweetAlert(2, 'Tiene 3 intentos disponibles para equivocarse ', null);
+            sweetAlert(2, 'Tiene 3 intentos disponibles para equivocarse/You have 3 attempts available ', null);
         }else{
             console.log(response);
         }
@@ -71,7 +71,7 @@ function bloquearIntentos (alias)
     .done(function(response){
         if (isJSONString(response)) {
             const result = JSON.parse(response);
-            sweetAlert(2, 'Usted tiene 3 intentos, si no su usuario se bloqueara', null);
+            sweetAlert(2, 'Usted tiene 3 intentos, si no su usuario se bloqueara/ You have 3 attempts, otherwise your user will be blocked', null);
         }else{
             console.log(response);
         }
@@ -97,7 +97,7 @@ $('#form-sesion').submit(function () {
                 const dataset = JSON.parse(response);
                 //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
                 if (dataset.status == 1) {
-                    sweetAlert(1, 'Autenticación correcta', 'private.php');
+                    sweetAlert(1, 'Autenticación correcta/ Log in correctly', 'private.php');
                 }else{
                     sweetAlert(2, dataset.exception, null);
                     let alias = $('#alias_usuario').val();
@@ -185,7 +185,7 @@ function recuperarContra() {
             if (isJSONString(response)) {
                 const result = JSON.parse(response);
                 if (result.status == 1) {
-                    sweetAlert(1, 'Su correo ha sido enviado correctamente', 'index.php');
+                    sweetAlert(1, 'Su correo ha sido enviado correctamente/ Your email has sent correctly', 'index.php');
                 } else {
                     sweetAlert(3, result.exception, null);
                 }
@@ -214,7 +214,7 @@ $('#form-nueva-contrasena').submit(function () {
                 const dataset = JSON.parse(response);
                 //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
                 if (dataset.status == 1) {
-                    sweetAlert(1, 'Se ha restaurado la contraseña exitosamente', 'index.php');
+                    sweetAlert(1, 'Se ha restaurado la contraseña exitosamente/Password has been successfully restored', 'index.php');
                 } else {
                     sweetAlert(2, dataset.exception, null);
                 }

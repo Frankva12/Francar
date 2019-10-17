@@ -78,9 +78,9 @@ $('#form-create').submit(function () {
                     $('#form-create')[0].reset();
                     $('#modal-create').modal('close');
                     if (result.status == 1) {
-                        sweetAlert(1, 'Categoría creada correctamente', null);
+                        sweetAlert(1, 'Categoría creada correctamente/Category create successfully', null);
                     } else if (result.status == 2) {
-                        sweetAlert(3, 'Categoría creada. ' + result.exception, null);
+                        sweetAlert(3, 'Categoría creada./Category created ' + result.exception, null);
                     }
                     destroy('#tablaCategorias');
                     showTable();
@@ -153,12 +153,12 @@ $('#form-update').submit(function () {
                 if (result.status) {
                     $('#modal-update').modal('close');
                     if (result.status == 1) {
-                        sweetAlert(1, 'Categoría modificada correctamente', null);
+                        sweetAlert(1, 'Categoría modificada correctamente/Category modify successfully', null);
                         destroy('#tablaCategorias');
                     } else if (result.status == 2) {
-                        sweetAlert(3, 'Categoría modificada. ' + result.exception, null);
+                        sweetAlert(3, 'Categoría modificada./Category modify ' + result.exception, null);
                     } else if (result.status == 3) {
-                        sweetAlert(1, 'Categoría modificada. ' + result.exception, null);
+                        sweetAlert(1, 'Categoría modificada./Category modify ' + result.exception, null);
                     }
                     destroy('#tablaCategorias');
                     showTable();
@@ -203,15 +203,15 @@ function confirmDelete(id, file) {
                             //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
                             if (result.status) {
                                 if (result.status == 1) {
-                                    sweetAlert(1, 'Categoría eliminada correctamente', null);
+                                    sweetAlert(1, 'Categoría eliminada correctamente/Category removed correctly', null);
                                 } else if (result.status == 2) {
-                                    sweetAlert(2, 'Categoría eliminada. ' + result.exception, null);
+                                    sweetAlert(2, 'Categoría eliminada./Category Removed ' + result.exception, null);
                                 }
 
                                 destroy('#tablaCategorias');
                                 showTable();
                             } else {
-                                sweetAlert(1, 'Categoria eliminada correctamente', null);
+                                sweetAlert(1, 'Categoria eliminada correctamente/Category removed correctly', null);
 
                                 destroy('#tablaCategorias');
                                 showTable();
@@ -219,7 +219,7 @@ function confirmDelete(id, file) {
                         } else {
                             swal({
                                 title: 'Advertencia',
-                                text: 'Registro ocupado, no se puede borrar categoria',
+                                text: 'Registro ocupado, no se puede borrar categoria/Registration taken, category cannot be deleted',
                                 icon: 'error',
                                 buttons: ['Aceptar'],
                                 closeOnClickOutside: true,

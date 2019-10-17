@@ -49,7 +49,7 @@ $('#form-create').submit(function () {
                 if (result.status) {
                     $('#form-create')[0].reset();
                     $('#modal-create').modal('close');
-                    sweetAlert(1, 'Usuario creado correctamente', null);
+                    sweetAlert(1, 'Usuario creado correctamente/User created correctly', null);
 
                     destroy('#tablaUsuarios');
                     showTable();
@@ -121,7 +121,7 @@ $('#form-update').submit(function () {
                 //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
                 if (result.status) {
                     $('#modal-update').modal('close');
-                    sweetAlert(1, 'Usuario modificado correctamente', null);
+                    sweetAlert(1, 'Usuario modificado correctamente/User modify correctly', null);
 
                     destroy('#tablaUsuarios');
                     showTable();

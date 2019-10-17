@@ -165,10 +165,10 @@ $('#form-create').submit(function () {
                     $('#form-create')[0].reset();
                     $('#modal-create').modal('close');
                     if (result.status == 1) {
-                        sweetAlert(1, 'libro creado correctamente', null);
+                        sweetAlert(1, 'libro creado correctamente/book created correctly', null);
                         destroy('#tabla_libros');
                     } else if (result.status == 2) {
-                        sweetAlert(3, 'libro creado. ' + result.exception, null);
+                        sweetAlert(3, 'libro creado/book created ' + result.exception, null);
                     }
                     showTable();
                 } else {
@@ -246,11 +246,11 @@ $('#form-update').submit(function () {
                 if (result.status) {
                     $('#modal-update').modal('close');
                     if (result.status == 1) {
-                        sweetAlert(1, 'libro modificado correctamente', null);
+                        sweetAlert(1, 'libro modificado correctamente/book modify correctly', null);
                     } else if (result.status == 2) {
-                        sweetAlert(3, 'libro modificado. ' + result.exception, null);
+                        sweetAlert(3, 'libro modificado/book modify ' + result.exception, null);
                     } else if (result.status == 3) {
-                        sweetAlert(1, 'libro modificado. ' + result.exception, null);
+                        sweetAlert(1, 'libro modificado/book modify ' + result.exception, null);
                     }
                     showTable();
                 } else {
@@ -294,9 +294,9 @@ function confirmDelete(id, file) {
                             //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
                             if (result.status) {
                                 if (result.status == 1) {
-                                    sweetAlert(1, 'libro eliminado correctamente', null);
+                                    sweetAlert(1, 'libro eliminado correctamente/book removed correctly', null);
                                 } else if (result.status == 2) {
-                                    sweetAlert(3, 'libro eliminado. ' + result.exception, null);
+                                    sweetAlert(3, 'libro eliminado/book removed ' + result.exception, null);
                                 }
 
                                 destroy('#tabla_libros');

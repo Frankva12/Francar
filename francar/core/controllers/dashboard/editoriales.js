@@ -74,9 +74,9 @@ $('#form-create').submit(function () {
                     $('#form-create')[0].reset();
                     $('#modal-create').modal('close');
                     if (result.status == 1) {
-                        sweetAlert(1, 'Editorial creada correctamente', null);
+                        sweetAlert(1, 'Editorial creada correctamente/Publisher created correctly', null);
                     } else if (result.status == 2) {
-                        sweetAlert(3, 'Editorial creada. ' + result.exception, null);
+                        sweetAlert(3, 'Editorial creada/Publisher created ' + result.exception, null);
                     }
 
                     destroy('#tablaEditorial');
@@ -148,11 +148,11 @@ $('#form-update').submit(function () {
                 if (result.status) {
                     $('#modal-update').modal('close');
                     if (result.status == 1) {
-                        sweetAlert(1, 'Editorial modificada correctamente', null);
+                        sweetAlert(1, 'Editorial modificada correctamente/Publisher modify correctly', null);
                     } else if (result.status == 2) {
-                        sweetAlert(3, 'Editorial modificada. ' + result.exception, null);
+                        sweetAlert(3, 'Editorial modificada/Publisher modify ' + result.exception, null);
                     } else if (result.status == 3) {
-                        sweetAlert(1, 'Editorial modificada. ' + result.exception, null);
+                        sweetAlert(1, 'Editorial modificada/Publisher modiify ' + result.exception, null);
                     }
 
                     destroy('#tablaEditorial');
@@ -197,19 +197,19 @@ function confirmDelete(id, file) {
                             //Se comprueba si el resultado es satisfactorio, sino se muestra la excepción
                             if (result.status) {
                                 if (result.status == 1) {
-                                    sweetAlert(1, 'Editorial eliminada correctamente', null);
+                                    sweetAlert(1, 'Editorial eliminada correctamente/Publisher removed correctly', null);
                                 } else if (result.status == 2) {
-                                    sweetAlert(2, 'Editorial eliminada. ' + result.exception, null);
+                                    sweetAlert(2, 'Editorial eliminada/Publisher removed ' + result.exception, null);
                                 }
                                 showTable();
                             } else {
-                                sweetAlert(1, 'Editorial eliminada correctamente', result.exception, null);
+                                sweetAlert(1, 'Editorial eliminada correctamente/Publisher removed correctly', result.exception, null);
                                 showTable();
                             }
                         } else {
                             swal({
                                 title: 'Advertencia',
-                                text: 'Registro ocupado, no se puede borrar editorial',
+                                text: 'Registro ocupado, no se puede borrar editorial/Register taken, publisher cannot remove',
                                 icon: 'error',
                                 buttons: ['Aceptar'],
                                 closeOnClickOutside: true,

@@ -16,7 +16,7 @@ $('#form-register').submit(function () {
                 const dataset = JSON.parse(response);
                 //Se comprueba si la respuesta es satisfactoria, sino se muestra la excepción
                 if (dataset.status) {
-                    sweetAlert(1, 'Usuario registrado correctamente', 'index.php');
+                    sweetAlert(1, 'Usuario registrado correctamente/User registered correctly', 'index.php');
                 } else {
                     sweetAlert(2, dataset.exception, null);
                 }

@@ -16,7 +16,7 @@ function isJSONString(string) {
 function sweetAlert(type, text, url) {
     switch (type) {
         case 1:
-            title = "Éxito";
+            title = "Éxito/Success";
             icon = "success";
             break;
         case 2:
@@ -24,11 +24,11 @@ function sweetAlert(type, text, url) {
             icon = "error";
             break;
         case 3:
-            title = "Advertencia";
+            title = "Advertencia/Warning";
             icon = "warning";
             break;
         case 4:
-            title = "Aviso";
+            title = "Aviso/notice";
             icon = "info";
     }
     if (url) {
@@ -63,11 +63,11 @@ function grafica_editorial(id, xAxis, yAxis, legend) {
     $('#' + id).highcharts({
         title: {
             //titulo de la grafica
-            text: 'Existencia de libros por editorial'
+            text: 'Existencia de libros por editorial<br>Existence of books by publisher'
         },
         subtitle: {
             //subtitulo de la grafica
-            text: 'La existencia de los libros dependiendo de la editorial a la que pertenece cada uno.'
+            text: 'La existencia de los libros dependiendo de la editorial a la que pertenece cada uno.<br>The existence of books depending on the publisher to which each one belongs.'
         },
         xAxis: {
             //categorias de la grafica es decir los nombres a los que referencian los datos
@@ -116,10 +116,10 @@ function grafica_categoria(id, xAxis, yAxis, legend) {
     //se ocupan los parametros que se mandaron posteriormente del controlador
     $('#' + id).highcharts({
         title: {
-            text: 'Existencia de libros por categoria'
+            text: 'Existencia de libros por categoria<br>Existence of books by category'
         },
         subtitle: {
-            text: 'La existencia de los libros dependiendo de la categoria a la que pertenece cada uno.'
+            text: 'La existencia de los libros dependiendo de la categoria a la que pertenece cada uno.<br>The existence of books depending on the category to which each one belongs.'
         },
         xAxis: {
             categories: xAxis
@@ -179,7 +179,7 @@ function grafica_ventas(id, xAxis, yAxis, legend) {
             text: legend,
         },
         subtitle: {
-            text: 'La venta de libros en sus unidades fisicas.'
+            text: 'La venta de libros en sus unidades fisicas.<br>The sale of books in their physical units.'
         },
         xAxis: {
             categories: xAxis
@@ -241,7 +241,7 @@ function grafica_cantidad_libros_vendidos(id, xAxis, yAxis, legend) {
         },
         subtitle: {
             //subtitulo de la grafica
-            text: 'Cuantos dinero se ha adquirido con la venta de los libros.'
+            text: 'Cuantos dinero se ha adquirido con la venta de los libros.<br>How many money has been acquired with the sale of the books.'
         },
         xAxis: {
             //las categorias es decir los nombres a los que se refiere los datos
@@ -310,7 +310,7 @@ function grafica_ventas_categorias(id, xAxis, yAxis, legend) {
         },
         subtitle: {
             //subtitulo de la grafica
-            text: 'Cuanto dinero se ha obtenido filtrado en categorias de los libros.'
+            text: 'Cuanto dinero se ha obtenido filtrado en categorias de los libros.<br>How much money has been obtained filtered in categories of books.'
         },
         xAxis: {
             //categorias de la grafica es decir los nombres que poseeran los datos
@@ -379,7 +379,7 @@ function grafica_ventas_editoriales(id, xAxis, yAxis, legend) {
         },
         subtitle: {
             //subtitulo de la grafica
-            text: 'Cuanto dinero se ha obtenido filtrado en edioriales de los libros.'
+            text: 'Cuanto dinero se ha obtenido filtrado en edioriales de los libros<br>How much money has been obtained filtered in books edioriales.'
         },
         xAxis: {
             //categorias de la grafica es decir los nombres a los que se refieren los datos
